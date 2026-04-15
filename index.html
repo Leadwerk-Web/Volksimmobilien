@@ -183,7 +183,7 @@
           <span class="section-eyebrow">Vertrauen &amp; Substanz</span>
           <h2 id="intro-heading" class="intro-title">Immobilien sind Vertrauenssache – besonders vor Ort.</h2>
           <p class="intro-lead">
-            volksimmobilien begleitet Eigentümer und Käufer im Raum Rastatt–Karlsruhe mit dem Blick für Substanz, Markt und Menschen – ohne leere Versprechen und ohne anonyme Hotlines.
+            Volksimmobilien begleitet Eigentümer und Käufer im Raum Rastatt–Karlsruhe mit dem Blick für Substanz, Markt und Menschen – ohne leere Versprechen und ohne anonyme Hotlines.
           </p>
           <p>
             Ob Verkauf, Wertermittlung oder die Suche nach der passenden Immobilie: Wir nehmen uns Zeit, erklären transparent und bleiben an Deiner Seite – vom ersten Gespräch bis zur Unterschrift beim Notar.
@@ -236,49 +236,77 @@
        ═══════════════════════════════════════════════ -->
   <section class="section valuation-wizard-section reveal" id="wertermittlung">
     <div class="container">
-      <div class="valuation-wizard-header">
-        <span class="section-eyebrow">Wertermittlung</span>
-        <h2 class="section-title">Jetzt kostenlos bewerten</h2>
-      </div>
-
+      <!-- Störer: später auf kontakt.html verlinken -->
+      <a href="index.html" class="valuation-promo-badge" aria-label="400 Euro Gutschein für eine persönliche Markteinschätzung – zur Startseite">
+        <span class="valuation-promo-badge__inner">
+          <span class="valuation-promo-badge__amount">400&nbsp;€</span>
+          <span class="valuation-promo-badge__title">Gutschein</span>
+          <span class="valuation-promo-badge__sub">persönliche Markteinschätzung</span>
+        </span>
+      </a>
       <div class="valuation-wizard" id="valuationWizard">
         <div class="wizard-progress">
           <div class="wizard-progress-bar" id="wizardProgressBar"></div>
         </div>
 
         <div class="wizard-step active" data-step="1">
-          <h3 class="wizard-question">Wie viel ist Deine Immobilie wert?</h3>
+          <p class="wizard-step-eyebrow">Wertermittlung</p>
+          <h2 class="wizard-question">Jetzt online bewerten</h2>
           <p class="wizard-hint">Nutze unsere kostenlose Ersteinschätzung und finde es heraus!</p>
           <div class="wizard-options" data-name="type">
             <button type="button" class="wizard-option" data-value="einfamilienhaus">
-              <svg class="wizard-option-icon" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M8 30l24-18 24 18"/><rect x="14" y="30" width="36" height="24" rx="1.5"/><rect x="26" y="40" width="12" height="14"/><rect x="18" y="34" width="8" height="7" rx="1"/><rect x="38" y="34" width="8" height="7" rx="1"/></svg>
+              <span class="wizard-option-icon" aria-hidden="true">
+                <img class="wizard-option-icon__img wizard-option-icon__img--default" src="Fotos/EFH-grau.png" alt="" width="80" height="80" decoding="async">
+                <img class="wizard-option-icon__img wizard-option-icon__img--hover" src="Fotos/EFH-blau.png" alt="" width="80" height="80" decoding="async">
+                <img class="wizard-option-icon__img wizard-option-icon__img--selected" src="Fotos/EFH-rot.png" alt="" width="80" height="80" decoding="async">
+              </span>
               <span>Einfamilienhaus</span>
             </button>
             <button type="button" class="wizard-option" data-value="doppelhaushaelfte">
-              <svg class="wizard-option-icon" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M8 30l24-18 24 18"/><rect x="14" y="30" width="36" height="24" rx="1.5"/><line x1="32" y1="12" x2="32" y2="54"/><rect x="20" y="40" width="8" height="14"/><rect x="36" y="40" width="8" height="14"/></svg>
+              <span class="wizard-option-icon" aria-hidden="true">
+                <img class="wizard-option-icon__img wizard-option-icon__img--default" src="Fotos/DHH-grau.png" alt="" width="80" height="80" decoding="async">
+                <img class="wizard-option-icon__img wizard-option-icon__img--hover" src="Fotos/DHH-blau.png" alt="" width="80" height="80" decoding="async">
+                <img class="wizard-option-icon__img wizard-option-icon__img--selected" src="Fotos/DHH-rot.png" alt="" width="80" height="80" decoding="async">
+              </span>
               <span>Doppelhaushälfte</span>
             </button>
             <button type="button" class="wizard-option" data-value="reihenhaus">
-              <svg class="wizard-option-icon" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="22" width="18" height="32" rx="1.5"/><rect x="23" y="18" width="18" height="36" rx="1.5"/><rect x="42" y="22" width="18" height="32" rx="1.5"/><rect x="10" y="38" width="6" height="16"/><rect x="29" y="34" width="6" height="20"/><rect x="48" y="38" width="6" height="16"/></svg>
+              <span class="wizard-option-icon" aria-hidden="true">
+                <img class="wizard-option-icon__img wizard-option-icon__img--default" src="Fotos/RH-grau.png" alt="" width="80" height="80" decoding="async">
+                <img class="wizard-option-icon__img wizard-option-icon__img--hover" src="Fotos/RH-blau.png" alt="" width="80" height="80" decoding="async">
+                <img class="wizard-option-icon__img wizard-option-icon__img--selected" src="Fotos/RH-rot.png" alt="" width="80" height="80" decoding="async">
+              </span>
               <span>Reihenhaus</span>
             </button>
             <button type="button" class="wizard-option" data-value="mehrfamilienhaus">
-              <svg class="wizard-option-icon" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="12" y="10" width="40" height="44" rx="2"/><rect x="18" y="16" width="8" height="6" rx="1"/><rect x="30" y="16" width="8" height="6" rx="1"/><rect x="42" y="16" width="8" height="6" rx="1" opacity="0"/><rect x="18" y="26" width="8" height="6" rx="1"/><rect x="30" y="26" width="8" height="6" rx="1"/><rect x="38" y="26" width="8" height="6" rx="1"/><rect x="18" y="36" width="8" height="6" rx="1"/><rect x="30" y="36" width="8" height="6" rx="1"/><rect x="38" y="36" width="8" height="6" rx="1"/><rect x="26" y="46" width="12" height="8"/></svg>
+              <span class="wizard-option-icon" aria-hidden="true">
+                <img class="wizard-option-icon__img wizard-option-icon__img--default" src="Fotos/MFH-grau.png" alt="" width="80" height="80" decoding="async">
+                <img class="wizard-option-icon__img wizard-option-icon__img--hover" src="Fotos/MFH-blau.png" alt="" width="80" height="80" decoding="async">
+                <img class="wizard-option-icon__img wizard-option-icon__img--selected" src="Fotos/MFH-rot.png" alt="" width="80" height="80" decoding="async">
+              </span>
               <span>Mehrfamilienhaus</span>
             </button>
             <button type="button" class="wizard-option" data-value="wohnung">
-              <svg class="wizard-option-icon" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="10" y="6" width="44" height="52" rx="2"/><rect x="18" y="14" width="10" height="8" rx="1"/><rect x="36" y="14" width="10" height="8" rx="1"/><rect x="18" y="28" width="10" height="8" rx="1"/><rect x="36" y="28" width="10" height="8" rx="1"/><rect x="18" y="42" width="10" height="8" rx="1"/><rect x="36" y="42" width="10" height="8" rx="1"/><rect x="27" y="50" width="10" height="8"/></svg>
+              <span class="wizard-option-icon" aria-hidden="true">
+                <img class="wizard-option-icon__img wizard-option-icon__img--default" src="Fotos/WGH-grau.png" alt="" width="80" height="80" decoding="async">
+                <img class="wizard-option-icon__img wizard-option-icon__img--hover" src="Fotos/WGH-blau.png" alt="" width="80" height="80" decoding="async">
+                <img class="wizard-option-icon__img wizard-option-icon__img--selected" src="Fotos/WGH-rot.png" alt="" width="80" height="80" decoding="async">
+              </span>
               <span>Wohnung</span>
             </button>
             <button type="button" class="wizard-option" data-value="grundstueck">
-              <svg class="wizard-option-icon" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="8" y="14" width="48" height="36" rx="2"/><path d="M8 38l16-12 12 8 16-14"/><circle cx="44" cy="24" r="4"/></svg>
+              <span class="wizard-option-icon" aria-hidden="true">
+                <img class="wizard-option-icon__img wizard-option-icon__img--default" src="Fotos/GRS-grau.png" alt="" width="80" height="80" decoding="async">
+                <img class="wizard-option-icon__img wizard-option-icon__img--hover" src="Fotos/GRS-blau.png" alt="" width="80" height="80" decoding="async">
+                <img class="wizard-option-icon__img wizard-option-icon__img--selected" src="Fotos/GRS-rot.png" alt="" width="80" height="80" decoding="async">
+              </span>
               <span>Grundstück</span>
             </button>
           </div>
         </div>
 
         <div class="wizard-step" data-step="2">
-          <h3 class="wizard-question">Erzähl uns mehr über Deine Immobilie</h3>
+          <h2 class="wizard-question">Erzähl uns mehr über Deine Immobilie</h2>
           <p class="wizard-hint">Je genauer die Angaben, desto besser unsere Einschätzung.</p>
           <div class="wizard-form-grid">
             <div class="wizard-field">
@@ -305,7 +333,7 @@
         </div>
 
         <div class="wizard-step" data-step="3">
-          <h3 class="wizard-question">Wohin dürfen wir Deine Einschätzung senden?</h3>
+          <h2 class="wizard-question">Wohin dürfen wir Deine Einschätzung senden?</h2>
           <p class="wizard-hint">Wir melden uns persönlich – kein Spam, keine Weitergabe.</p>
           <div class="wizard-form-grid">
             <div class="wizard-field">
@@ -330,7 +358,7 @@
         <div class="wizard-step" data-step="4">
           <div class="wizard-success">
             <svg class="wizard-success-icon" width="56" height="56" viewBox="0 0 56 56" fill="none" stroke="var(--color-accent)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="28" cy="28" r="24"/><path d="M18 28l7 7 13-13"/></svg>
-            <h3 class="wizard-question">Vielen Dank!</h3>
+            <h2 class="wizard-question">Vielen Dank!</h2>
             <p class="wizard-hint">Wir haben Deine Anfrage erhalten und melden uns zeitnah bei Dir – persönlich und unverbindlich.</p>
           </div>
         </div>
