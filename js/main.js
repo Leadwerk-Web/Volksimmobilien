@@ -5,17 +5,26 @@
 (function () {
   'use strict';
 
-  /* ─── HEADER SCROLL BEHAVIOR ────────────────────── */
+  /* ─── HEADER SCROLL + SCROLL-TO-TOP ─────────────── */
   const header = document.getElementById('siteHeader');
+  const scrollToTopBtn = document.getElementById('scrollToTop');
   let lastScroll = 0;
   let ticking = false;
 
   function onScroll() {
     const scrollY = window.scrollY;
-    if (scrollY > 60) {
-      header.classList.add('scrolled');
-    } else {
-      header.classList.remove('scrolled');
+    if (header) {
+      if (scrollY > 60) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+      }
+    }
+    if (scrollToTopBtn) {
+      const showTop = scrollY > 400;
+      scrollToTopBtn.classList.toggle('is-visible', showTop);
+      scrollToTopBtn.setAttribute('aria-hidden', showTop ? 'false' : 'true');
+      scrollToTopBtn.tabIndex = showTop ? 0 : -1;
     }
     lastScroll = scrollY;
     ticking = false;
@@ -27,6 +36,16 @@
       ticking = true;
     }
   }, { passive: true });
+
+  onScroll();
+
+  if (scrollToTopBtn) {
+    scrollToTopBtn.addEventListener('click', function () {
+      const instant = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      window.scrollTo({ top: 0, behavior: instant ? 'auto' : 'smooth' });
+      scrollToTopBtn.blur();
+    });
+  }
 
   /* ─── HAMBURGER / MOBILE NAV ────────────────────── */
   const hamburger = document.getElementById('hamburger');
