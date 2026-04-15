@@ -177,7 +177,8 @@
   var wizard = document.getElementById('valuationWizard');
   if (wizard) {
     var steps = wizard.querySelectorAll('.wizard-step');
-    var progressBar = document.getElementById('wizardProgressBar');
+    /* Eigener Name: sonst überschreibt der Weil-Slider später dieselbe var progressBar im IIFE */
+    var wizardProgressEl = document.getElementById('wizardProgressBar');
     var btnNext = document.getElementById('wizardNext');
     var btnBack = document.getElementById('wizardBack');
     var navBar = document.getElementById('wizardNav');
@@ -190,7 +191,9 @@
       var step = wizard.querySelector('[data-step="' + n + '"]');
       if (step) step.classList.add('active');
 
-      progressBar.style.width = Math.min((n / totalSteps) * 100, 100) + '%';
+      if (wizardProgressEl) {
+        wizardProgressEl.style.width = Math.min((n / totalSteps) * 100, 100) + '%';
+      }
 
       if (n <= totalSteps) {
         navBar.style.display = 'flex';
@@ -273,7 +276,7 @@
   if (slider) {
     var slides = slider.querySelectorAll('.weil-slide');
     var dotsContainer = slider.querySelector('.weil-slider-dots');
-    var progressBar = slider.querySelector('.weil-slider-progress-bar');
+    var weilProgressBar = slider.querySelector('.weil-slider-progress-bar');
     var currentSlide = 0;
     var autoTimeout = null;
     var paused = false;
@@ -292,11 +295,11 @@
     var dots = dotsContainer.querySelectorAll('.weil-slider-dot');
 
     function resetProgress() {
-      progressBar.classList.remove('animating');
-      progressBar.style.width = '0%';
+      weilProgressBar.classList.remove('animating');
+      weilProgressBar.style.width = '0%';
       requestAnimationFrame(function () {
         requestAnimationFrame(function () {
-          progressBar.classList.add('animating');
+          weilProgressBar.classList.add('animating');
         });
       });
     }
@@ -331,9 +334,9 @@
     function stopAuto() {
       paused = true;
       clearTimeout(autoTimeout);
-      progressBar.classList.remove('animating');
-      progressBar.style.width = progressBar.getBoundingClientRect().width /
-        progressBar.parentElement.getBoundingClientRect().width * 100 + '%';
+      weilProgressBar.classList.remove('animating');
+      weilProgressBar.style.width = weilProgressBar.getBoundingClientRect().width /
+        weilProgressBar.parentElement.getBoundingClientRect().width * 100 + '%';
     }
 
     slider.addEventListener('mouseenter', stopAuto);
