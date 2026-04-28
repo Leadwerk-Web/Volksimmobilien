@@ -346,4 +346,296 @@
     startAuto();
   }
 
+  /* ─── HERO SLIDER (Mallorca) ─────────────────────── */
+  var heroSlider = document.getElementById('heroSlider');
+  if (heroSlider) {
+    var heroSlides = heroSlider.querySelectorAll('.hero-slide');
+    var heroDotsContainer = document.getElementById('heroSliderDots');
+    var heroProgress = document.getElementById('heroSliderProgressBar');
+    var heroCaptionEl = document.getElementById('heroSliderCaption');
+    var heroMeta = document.getElementById('heroSliderMeta');
+    var heroIndex = 0;
+    var heroTimer = null;
+    var heroPaused = false;
+    var HERO_INTERVAL = 6500;
+    var heroReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    /* Pagination-Dots erzeugen */
+    if (heroDotsContainer) {
+      for (var i = 0; i < heroSlides.length; i++) {
+        (function (idx) {
+          var dot = document.createElement('button');
+          dot.type = 'button';
+          dot.className = 'hero-slider-dot' + (idx === 0 ? ' is-active' : '');
+          dot.setAttribute('role', 'tab');
+          dot.setAttribute('aria-label', 'Slide ' + (idx + 1));
+          dot.addEventListener('click', function () {
+            heroGoTo(idx);
+            heroStart();
+          });
+          heroDotsContainer.appendChild(dot);
+        })(i);
+      }
+    }
+    var heroDots = heroDotsContainer ? heroDotsContainer.querySelectorAll('.hero-slider-dot') : [];
+
+    function heroResetProgress() {
+      if (!heroProgress) return;
+      heroProgress.classList.remove('is-running');
+      heroProgress.style.width = '0%';
+      requestAnimationFrame(function () {
+        requestAnimationFrame(function () {
+          heroProgress.classList.add('is-running');
+        });
+      });
+    }
+
+    function heroUpdateMeta(idx) {
+      if (!heroMeta || !heroCaptionEl) return;
+      var slide = heroSlides[idx];
+      var caption = slide ? slide.getAttribute('data-caption') : '';
+
+      heroMeta.classList.add('is-fading');
+      setTimeout(function () {
+        if (caption !== null) heroCaptionEl.innerHTML = caption;
+        heroMeta.classList.remove('is-fading');
+      }, 280);
+    }
+
+    function heroGoTo(idx) {
+      if (idx === heroIndex || idx < 0 || idx >= heroSlides.length) return;
+      heroSlides[heroIndex].classList.remove('is-active');
+      if (heroDots[heroIndex]) heroDots[heroIndex].classList.remove('is-active');
+
+      heroIndex = idx;
+      heroSlides[heroIndex].classList.add('is-active');
+      if (heroDots[heroIndex]) heroDots[heroIndex].classList.add('is-active');
+
+      heroUpdateMeta(heroIndex);
+      heroResetProgress();
+    }
+
+    function heroNext() {
+      heroGoTo((heroIndex + 1) % heroSlides.length);
+    }
+
+    function heroSchedule() {
+      clearTimeout(heroTimer);
+      heroTimer = setTimeout(function () {
+        heroNext();
+        if (!heroPaused) heroSchedule();
+      }, HERO_INTERVAL);
+    }
+
+    function heroStart() {
+      if (heroReducedMotion) return;
+      heroPaused = false;
+      heroResetProgress();
+      heroSchedule();
+    }
+
+    function heroStop() {
+      heroPaused = true;
+      clearTimeout(heroTimer);
+      if (heroProgress) {
+        var pct = heroProgress.getBoundingClientRect().width /
+          heroProgress.parentElement.getBoundingClientRect().width * 100;
+        heroProgress.classList.remove('is-running');
+        heroProgress.style.width = pct + '%';
+      }
+    }
+
+    /* Pause beim Hover über Hero-Inhalt (nicht über die Bilder selbst, damit
+       Touch-Geräte nicht versehentlich pausieren) */
+    heroSlider.addEventListener('mouseenter', heroStop);
+    heroSlider.addEventListener('mouseleave', heroStart);
+
+    /* Pause, wenn Tab im Hintergrund liegt */
+    document.addEventListener('visibilitychange', function () {
+      if (document.hidden) {
+        heroStop();
+      } else {
+        heroStart();
+      }
+    });
+
+    heroUpdateMeta(0);
+    if (!heroReducedMotion) {
+      heroResetProgress();
+      heroSchedule();
+    }
+  }
+
+  /* ─── PROCESS REEL (Mallorca) ─────────────────────────
+     Cinematic Stepper mit Auto-Crossfade, Klick auf Knoten,
+     Tastatur (←/→ / Pos1 / Ende), Pause auf Hover und
+     Mouse-Tilt-Parallax auf dem Visual. */
+  document.querySelectorAll('[data-process-reel]').forEach(function (reel) {
+    var nodes = Array.prototype.slice.call(reel.querySelectorAll('.process-reel-node'));
+    var scenes = Array.prototype.slice.call(reel.querySelectorAll('.process-reel-scene'));
+    var lineFill = reel.querySelector('[data-reel-line-fill]');
+    var stageBar = reel.querySelector('[data-reel-stage-bar]');
+    var tiltVisuals = Array.prototype.slice.call(reel.querySelectorAll('[data-reel-tilt]'));
+
+    if (!nodes.length || !scenes.length) return;
+
+    var total = nodes.length;
+    var interval = parseInt(reel.getAttribute('data-autoplay'), 10) || 6500;
+    var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var current = 0;
+    var timer = null;
+    var paused = reduceMotion;
+    var visible = false;
+
+    function setLine(index) {
+      if (!lineFill) return;
+      var pct = total > 1 ? (index / (total - 1)) * 100 : 0;
+      lineFill.style.width = pct + '%';
+    }
+
+    function restartStageBar() {
+      if (!stageBar) return;
+      stageBar.style.transition = 'none';
+      stageBar.style.transform = 'scaleX(0)';
+      // Reflow erzwingen, damit der Browser den Reset registriert.
+      void stageBar.offsetWidth;
+      if (!paused && !reduceMotion) {
+        stageBar.style.transition = 'transform ' + interval + 'ms linear';
+        stageBar.style.transform = 'scaleX(1)';
+      }
+    }
+
+    function freezeStageBar() {
+      if (!stageBar) return;
+      var rect = stageBar.getBoundingClientRect();
+      var parentRect = stageBar.parentElement.getBoundingClientRect();
+      var ratio = parentRect.width > 0 ? rect.width / parentRect.width : 0;
+      stageBar.style.transition = 'none';
+      stageBar.style.transform = 'scaleX(' + Math.max(0, Math.min(1, ratio)) + ')';
+    }
+
+    function setActive(index) {
+      var next = ((index % total) + total) % total;
+      nodes.forEach(function (node, i) {
+        var active = i === next;
+        node.classList.toggle('is-active', active);
+        node.setAttribute('aria-selected', active ? 'true' : 'false');
+        node.setAttribute('tabindex', active ? '0' : '-1');
+      });
+      /* Ein Durchgang: alte und neue Szene wechseln im selben Frame → Crossfade */
+      scenes.forEach(function (scene, i) {
+        var active = i === next;
+        scene.classList.toggle('is-active', active);
+        scene.setAttribute('aria-hidden', active ? 'false' : 'true');
+        if (typeof scene.toggleAttribute === 'function') {
+          if (active) scene.removeAttribute('inert');
+          else scene.setAttribute('inert', '');
+        }
+      });
+      setLine(next);
+      current = next;
+      restartStageBar();
+    }
+
+    function clearTimer() {
+      if (timer) {
+        window.clearInterval(timer);
+        timer = null;
+      }
+    }
+
+    function startAuto() {
+      if (paused || reduceMotion || !visible) return;
+      clearTimer();
+      timer = window.setInterval(function () {
+        setActive(current + 1);
+      }, interval);
+      restartStageBar();
+    }
+
+    function stopAuto() {
+      clearTimer();
+      freezeStageBar();
+    }
+
+    nodes.forEach(function (node) {
+      node.addEventListener('click', function () {
+        var idx = parseInt(node.getAttribute('data-index'), 10) || 0;
+        setActive(idx);
+        if (!paused) startAuto();
+      });
+    });
+
+    /* Tastatur: ←/→ wechselt, Pos1/Ende springt zum ersten/letzten Schritt */
+    reel.querySelector('.process-reel-track').addEventListener('keydown', function (e) {
+      if (e.key === 'ArrowRight') {
+        e.preventDefault();
+        setActive(current + 1);
+        nodes[current].focus();
+        if (!paused) startAuto();
+      } else if (e.key === 'ArrowLeft') {
+        e.preventDefault();
+        setActive(current - 1);
+        nodes[current].focus();
+        if (!paused) startAuto();
+      } else if (e.key === 'Home') {
+        e.preventDefault();
+        setActive(0);
+        nodes[0].focus();
+      } else if (e.key === 'End') {
+        e.preventDefault();
+        setActive(total - 1);
+        nodes[total - 1].focus();
+      }
+    });
+
+    /* Pause beim Hover/Focus, weiter beim Verlassen */
+    reel.addEventListener('mouseenter', stopAuto);
+    reel.addEventListener('mouseleave', function () { if (!paused) startAuto(); });
+    reel.addEventListener('focusin', stopAuto);
+    reel.addEventListener('focusout', function (e) {
+      if (!reel.contains(e.relatedTarget) && !paused) startAuto();
+    });
+
+    /* Pause, wenn Tab im Hintergrund liegt */
+    document.addEventListener('visibilitychange', function () {
+      if (document.hidden) stopAuto();
+      else if (!paused) startAuto();
+    });
+
+    /* Mouse-Tilt-Parallax auf dem Visual (cinematic, dezent) */
+    if (!reduceMotion && window.matchMedia('(hover: hover)').matches) {
+      tiltVisuals.forEach(function (visual) {
+        visual.addEventListener('mousemove', function (e) {
+          var rect = visual.getBoundingClientRect();
+          var x = (e.clientX - rect.left) / rect.width - 0.5;
+          var y = (e.clientY - rect.top) / rect.height - 0.5;
+          visual.style.setProperty('--tilt-x', (y * -5).toFixed(2) + 'deg');
+          visual.style.setProperty('--tilt-y', (x * 6).toFixed(2) + 'deg');
+        });
+        visual.addEventListener('mouseleave', function () {
+          visual.style.setProperty('--tilt-x', '0deg');
+          visual.style.setProperty('--tilt-y', '0deg');
+        });
+      });
+    }
+
+    /* Erst starten, wenn der Reel sichtbar ist */
+    if ('IntersectionObserver' in window) {
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          visible = entry.isIntersecting;
+          if (visible && !paused) startAuto();
+          else stopAuto();
+        });
+      }, { threshold: 0.35 });
+      io.observe(reel);
+    } else {
+      visible = true;
+      if (!paused) startAuto();
+    }
+
+    setActive(0);
+  });
+
 })();
