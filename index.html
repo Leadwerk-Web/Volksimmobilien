@@ -116,9 +116,9 @@
     </div>
     <div class="container hero-content">
       <div class="hero-text">
-        <p class="section-eyebrow reveal">Immobilienmakler Rastatt–Karlsruhe</p>
+        <p class="section-eyebrow reveal">Verkauf · Bewertung · Beratung</p>
         <h1 class="hero-title reveal">
-          Immobilie verkaufen im Raum Rastatt–Karlsruhe:<br>
+          Ihr Immobilienmakler –<br>
           <span class="text-highlight">persönlich vor Ort, ehrlich bewertet, klar vermarktet.</span>
         </h1>
         <p class="hero-sub reveal">
@@ -253,7 +253,7 @@
           <p class="wizard-step-eyebrow">Wertermittlung</p>
           <h2 class="wizard-question">Jetzt online bewerten</h2>
           <p class="wizard-hint">Nutze unsere kostenlose Ersteinschätzung und finde es heraus!</p>
-          <div class="wizard-options" data-name="type">
+          <div class="wizard-options wizard-options--triple" data-name="type">
             <button type="button" class="wizard-option" data-value="einfamilienhaus">
               <span class="wizard-option-icon" aria-hidden="true">
                 <img class="wizard-option-icon__img wizard-option-icon__img--default" src="Fotos/EFH-grau.png" alt="" width="80" height="80" decoding="async">
@@ -261,30 +261,6 @@
                 <img class="wizard-option-icon__img wizard-option-icon__img--selected" src="Fotos/EFH-rot.png" alt="" width="80" height="80" decoding="async">
               </span>
               <span>Einfamilienhaus</span>
-            </button>
-            <button type="button" class="wizard-option" data-value="doppelhaushaelfte">
-              <span class="wizard-option-icon" aria-hidden="true">
-                <img class="wizard-option-icon__img wizard-option-icon__img--default" src="Fotos/DHH-grau.png" alt="" width="80" height="80" decoding="async">
-                <img class="wizard-option-icon__img wizard-option-icon__img--hover" src="Fotos/DHH-blau.png" alt="" width="80" height="80" decoding="async">
-                <img class="wizard-option-icon__img wizard-option-icon__img--selected" src="Fotos/DHH-rot.png" alt="" width="80" height="80" decoding="async">
-              </span>
-              <span>Doppelhaushälfte</span>
-            </button>
-            <button type="button" class="wizard-option" data-value="reihenhaus">
-              <span class="wizard-option-icon" aria-hidden="true">
-                <img class="wizard-option-icon__img wizard-option-icon__img--default" src="Fotos/RH-grau.png" alt="" width="80" height="80" decoding="async">
-                <img class="wizard-option-icon__img wizard-option-icon__img--hover" src="Fotos/RH-blau.png" alt="" width="80" height="80" decoding="async">
-                <img class="wizard-option-icon__img wizard-option-icon__img--selected" src="Fotos/RH-rot.png" alt="" width="80" height="80" decoding="async">
-              </span>
-              <span>Reihenhaus</span>
-            </button>
-            <button type="button" class="wizard-option" data-value="mehrfamilienhaus">
-              <span class="wizard-option-icon" aria-hidden="true">
-                <img class="wizard-option-icon__img wizard-option-icon__img--default" src="Fotos/MFH-grau.png" alt="" width="80" height="80" decoding="async">
-                <img class="wizard-option-icon__img wizard-option-icon__img--hover" src="Fotos/MFH-blau.png" alt="" width="80" height="80" decoding="async">
-                <img class="wizard-option-icon__img wizard-option-icon__img--selected" src="Fotos/MFH-rot.png" alt="" width="80" height="80" decoding="async">
-              </span>
-              <span>Mehrfamilienhaus</span>
             </button>
             <button type="button" class="wizard-option" data-value="wohnung">
               <span class="wizard-option-icon" aria-hidden="true">
@@ -294,45 +270,290 @@
               </span>
               <span>Wohnung</span>
             </button>
-            <button type="button" class="wizard-option" data-value="grundstueck">
+            <button type="button" class="wizard-option" data-value="mehrfamilienhaus">
               <span class="wizard-option-icon" aria-hidden="true">
-                <img class="wizard-option-icon__img wizard-option-icon__img--default" src="Fotos/GRS-grau.png" alt="" width="80" height="80" decoding="async">
-                <img class="wizard-option-icon__img wizard-option-icon__img--hover" src="Fotos/GRS-blau.png" alt="" width="80" height="80" decoding="async">
-                <img class="wizard-option-icon__img wizard-option-icon__img--selected" src="Fotos/GRS-rot.png" alt="" width="80" height="80" decoding="async">
+                <img class="wizard-option-icon__img wizard-option-icon__img--default" src="Fotos/MFH-grau.png" alt="" width="80" height="80" decoding="async">
+                <img class="wizard-option-icon__img wizard-option-icon__img--hover" src="Fotos/MFH-blau.png" alt="" width="80" height="80" decoding="async">
+                <img class="wizard-option-icon__img wizard-option-icon__img--selected" src="Fotos/MFH-rot.png" alt="" width="80" height="80" decoding="async">
               </span>
-              <span>Grundstück</span>
+              <span>Mehrfamilienhaus</span>
             </button>
           </div>
         </div>
 
         <div class="wizard-step" data-step="2">
-          <h2 class="wizard-question">Erzähl uns mehr über Deine Immobilie</h2>
-          <p class="wizard-hint">Je genauer die Angaben, desto besser unsere Einschätzung.</p>
-          <div class="wizard-form-grid">
-            <div class="wizard-field">
-              <label for="wiz-plz">Postleitzahl</label>
-              <input type="text" id="wiz-plz" name="plz" placeholder="z. B. 76474" maxlength="5" inputmode="numeric" pattern="[0-9]{5}" required>
+          <p class="wizard-step-eyebrow">Wertermittlung</p>
+          <h2 class="wizard-question">Welche Ausprägung passt am besten?</h2>
+          <p class="wizard-hint">Wähle die Variante, die Deinem Objekt am nächsten kommt.</p>
+
+          <div class="wizard-choice-group wizard-choice-group--subtype wizard-choice-group--subtype-quad" data-subtype-for="einfamilienhaus" data-name="subtype" hidden>
+            <p class="wizard-choice-legend">Einfamilienhaus</p>
+            <div class="wizard-choices wizard-choices--cols-4 wizard-choices--icon-cards">
+              <button type="button" class="wizard-choice wizard-choice--with-icon" data-value="freistehend">
+                <span class="wizard-option-icon" aria-hidden="true">
+                  <img class="wizard-option-icon__img wizard-option-icon__img--default" src="Fotos/EFH-grau.png" alt="" width="80" height="80" decoding="async">
+                  <img class="wizard-option-icon__img wizard-option-icon__img--hover" src="Fotos/EFH-blau.png" alt="" width="80" height="80" decoding="async">
+                  <img class="wizard-option-icon__img wizard-option-icon__img--selected" src="Fotos/EFH-rot.png" alt="" width="80" height="80" decoding="async">
+                </span>
+                <span>Freistehend</span>
+              </button>
+              <button type="button" class="wizard-choice wizard-choice--with-icon" data-value="doppelhaushaelfte">
+                <span class="wizard-option-icon" aria-hidden="true">
+                  <img class="wizard-option-icon__img wizard-option-icon__img--default" src="Fotos/DHH-grau.png" alt="" width="80" height="80" decoding="async">
+                  <img class="wizard-option-icon__img wizard-option-icon__img--hover" src="Fotos/DHH-blau.png" alt="" width="80" height="80" decoding="async">
+                  <img class="wizard-option-icon__img wizard-option-icon__img--selected" src="Fotos/DHH-rot.png" alt="" width="80" height="80" decoding="async">
+                </span>
+                <span>Doppelhaushälfte</span>
+              </button>
+              <button type="button" class="wizard-choice wizard-choice--with-icon" data-value="reihenend">
+                <span class="wizard-option-icon" aria-hidden="true">
+                  <img class="wizard-option-icon__img wizard-option-icon__img--default" src="Fotos/RH-grau-aussen.png" alt="" width="80" height="80" decoding="async">
+                  <img class="wizard-option-icon__img wizard-option-icon__img--hover" src="Fotos/RH-blau-aussen.png" alt="" width="80" height="80" decoding="async">
+                  <img class="wizard-option-icon__img wizard-option-icon__img--selected" src="Fotos/RH-rot-aussen.png" alt="" width="80" height="80" decoding="async">
+                </span>
+                <span>Reihenendhaus</span>
+              </button>
+              <button type="button" class="wizard-choice wizard-choice--with-icon" data-value="reihenmittel">
+                <span class="wizard-option-icon" aria-hidden="true">
+                  <img class="wizard-option-icon__img wizard-option-icon__img--default" src="Fotos/RH-grau-mitte.png" alt="" width="80" height="80" decoding="async">
+                  <img class="wizard-option-icon__img wizard-option-icon__img--hover" src="Fotos/RH-blau.png" alt="" width="80" height="80" decoding="async">
+                  <img class="wizard-option-icon__img wizard-option-icon__img--selected" src="Fotos/RH-rot.png" alt="" width="80" height="80" decoding="async">
+                </span>
+                <span>Reihenmittelhaus</span>
+              </button>
             </div>
-            <div class="wizard-field">
-              <label for="wiz-ort">Ort</label>
-              <input type="text" id="wiz-ort" name="ort" placeholder="z. B. Au am Rhein">
-            </div>
-            <div class="wizard-field">
-              <label for="wiz-flaeche">Wohnfläche (m²)</label>
-              <input type="number" id="wiz-flaeche" name="flaeche" placeholder="z. B. 120" min="1" inputmode="numeric">
-            </div>
-            <div class="wizard-field">
-              <label for="wiz-zimmer">Zimmer</label>
-              <input type="number" id="wiz-zimmer" name="zimmer" placeholder="z. B. 4" min="1" inputmode="numeric">
-            </div>
-            <div class="wizard-field wizard-field--full">
-              <label for="wiz-baujahr">Baujahr</label>
-              <input type="number" id="wiz-baujahr" name="baujahr" placeholder="z. B. 1985" min="1800" max="2026" inputmode="numeric">
+          </div>
+
+          <div class="wizard-choice-group wizard-choice-group--subtype wizard-choice-group--subtype-six" data-subtype-for="wohnung" data-name="subtype" hidden>
+            <p class="wizard-choice-legend">Wohnung</p>
+            <div class="wizard-choices wizard-choices--cols-3 wizard-choices--icon-cards">
+              <button type="button" class="wizard-choice wizard-choice--with-icon" data-value="etagenwohnung">
+                <span class="wizard-option-icon" aria-hidden="true">
+                  <img class="wizard-option-icon__img wizard-option-icon__img--default" src="Fotos/WGH-grau.png" alt="" width="80" height="80" decoding="async">
+                  <img class="wizard-option-icon__img wizard-option-icon__img--hover" src="Fotos/WGH-blau.png" alt="" width="80" height="80" decoding="async">
+                  <img class="wizard-option-icon__img wizard-option-icon__img--selected" src="Fotos/WGH-rot.png" alt="" width="80" height="80" decoding="async">
+                </span>
+                <span>Etagenwohnung</span>
+              </button>
+              <button type="button" class="wizard-choice wizard-choice--with-icon" data-value="dachgeschoss">
+                <span class="wizard-option-icon" aria-hidden="true">
+                  <img class="wizard-option-icon__img wizard-option-icon__img--default" src="Fotos/WGH-DG-grau.png" alt="" width="80" height="80" decoding="async">
+                  <img class="wizard-option-icon__img wizard-option-icon__img--hover" src="Fotos/WGH-DG-blau.png" alt="" width="80" height="80" decoding="async">
+                  <img class="wizard-option-icon__img wizard-option-icon__img--selected" src="Fotos/WGH-DG-rot.png" alt="" width="80" height="80" decoding="async">
+                </span>
+                <span>Dachgeschoss</span>
+              </button>
+              <button type="button" class="wizard-choice wizard-choice--with-icon" data-value="maisonette">
+                <span class="wizard-option-icon" aria-hidden="true">
+                  <img class="wizard-option-icon__img wizard-option-icon__img--default" src="Fotos/WGH-Mais-grau.png" alt="" width="80" height="80" decoding="async">
+                  <img class="wizard-option-icon__img wizard-option-icon__img--hover" src="Fotos/WGH-Mais-blau.png" alt="" width="80" height="80" decoding="async">
+                  <img class="wizard-option-icon__img wizard-option-icon__img--selected" src="Fotos/WGH-Mais-rot.png" alt="" width="80" height="80" decoding="async">
+                </span>
+                <span>Maisonette</span>
+              </button>
+              <button type="button" class="wizard-choice wizard-choice--with-icon" data-value="penthouse">
+                <span class="wizard-option-icon" aria-hidden="true">
+                  <img class="wizard-option-icon__img wizard-option-icon__img--default" src="Fotos/WGH-PH-grau.png" alt="" width="80" height="80" decoding="async">
+                  <img class="wizard-option-icon__img wizard-option-icon__img--hover" src="Fotos/WGH-PH-blau.png" alt="" width="80" height="80" decoding="async">
+                  <img class="wizard-option-icon__img wizard-option-icon__img--selected" src="Fotos/WGH-PH-rot.png" alt="" width="80" height="80" decoding="async">
+                </span>
+                <span>Penthouse</span>
+              </button>
+              <button type="button" class="wizard-choice wizard-choice--with-icon" data-value="studio">
+                <span class="wizard-option-icon" aria-hidden="true">
+                  <img class="wizard-option-icon__img wizard-option-icon__img--default" src="Fotos/WGH-Studio-grau.png" alt="" width="80" height="80" decoding="async">
+                  <img class="wizard-option-icon__img wizard-option-icon__img--hover" src="Fotos/WGH-Studio-blau.png" alt="" width="80" height="80" decoding="async">
+                  <img class="wizard-option-icon__img wizard-option-icon__img--selected" src="Fotos/WGH-Studio-rot.png" alt="" width="80" height="80" decoding="async">
+                </span>
+                <span>Studio</span>
+              </button>
+              <button type="button" class="wizard-choice wizard-choice--with-icon" data-value="erdgeschoss">
+                <span class="wizard-option-icon" aria-hidden="true">
+                  <img class="wizard-option-icon__img wizard-option-icon__img--default" src="Fotos/WGH-EG-grau.png" alt="" width="80" height="80" decoding="async">
+                  <img class="wizard-option-icon__img wizard-option-icon__img--hover" src="Fotos/WGH-EG-blau.png" alt="" width="80" height="80" decoding="async">
+                  <img class="wizard-option-icon__img wizard-option-icon__img--selected" src="Fotos/WGH-EG-rot.png" alt="" width="80" height="80" decoding="async">
+                </span>
+                <span>Erdgeschoss</span>
+              </button>
             </div>
           </div>
         </div>
 
         <div class="wizard-step" data-step="3">
+          <p class="wizard-step-eyebrow">Wertermittlung</p>
+          <h2 class="wizard-question">Wo liegt die Immobilie?</h2>
+          <p class="wizard-hint">Straße und Ort helfen uns, die Lage einzuordnen – die Karte aktualisiert sich bei Eingabe.</p>
+          <div class="wizard-address-grid">
+            <div class="wizard-form-grid wizard-form-grid--inline">
+              <div class="wizard-field wizard-field--full">
+                <label for="wiz-strasse">Straße und Hausnummer</label>
+                <input type="text" id="wiz-strasse" name="strasse" placeholder="z. B. Musterstraße 12" autocomplete="street-address" required>
+              </div>
+              <div class="wizard-field">
+                <label for="wiz-plz">Postleitzahl</label>
+                <input type="text" id="wiz-plz" name="plz" placeholder="z. B. 76474" maxlength="5" inputmode="numeric" pattern="[0-9]{5}" required>
+              </div>
+              <div class="wizard-field">
+                <label for="wiz-ort">Ort</label>
+                <input type="text" id="wiz-ort" name="ort" placeholder="z. B. Au am Rhein" autocomplete="address-level2" required>
+              </div>
+            </div>
+            <div class="wizard-map-wrap">
+              <iframe class="wizard-map" id="wizardMap" title="Kartenvorschau" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=Deutschland&output=embed&z=6"></iframe>
+            </div>
+          </div>
+        </div>
+
+        <div class="wizard-step" data-step="4">
+          <p class="wizard-step-eyebrow">Wertermittlung</p>
+          <h2 class="wizard-question" id="wizEckdatenHeading">Erzähl uns mehr über Deine Immobilie</h2>
+          <p class="wizard-hint" id="wizEckdatenHint">Je genauer die Angaben, desto besser unsere Einschätzung.</p>
+          <div class="wizard-form-grid wizard-form-grid--eckdaten" id="wizEckdatenGrid">
+            <div class="wizard-field" id="wiz-eckdaten-zimmer-wrap">
+              <label for="wiz-zimmer">Zimmer</label>
+              <input type="number" id="wiz-zimmer" name="zimmer" placeholder="z. B. 4" min="1" max="99" step="0.5" inputmode="decimal" required>
+            </div>
+            <div class="wizard-field" id="wiz-eckdaten-wohneinheiten-wrap" hidden>
+              <label for="wiz-wohneinheiten">Anzahl Wohneinheiten</label>
+              <input type="number" id="wiz-wohneinheiten" name="wohneinheiten" placeholder="z. B. 6" min="1" max="200" step="1" inputmode="numeric" aria-label="Anzahl Wohneinheiten">
+            </div>
+            <div class="wizard-field">
+              <label for="wiz-baujahr">Baujahr</label>
+              <input type="number" id="wiz-baujahr" name="baujahr" placeholder="z. B. 1985" min="1800" max="2030" inputmode="numeric" required>
+            </div>
+            <div class="wizard-field wizard-field--flaeche">
+              <label for="wiz-flaeche-range">Wohnfläche (m²)</label>
+              <div class="wizard-slider-block">
+                <div class="wizard-slider-wrap">
+                  <input type="range" id="wiz-flaeche-range" min="30" max="400" step="1" value="100" aria-valuemin="30" aria-valuemax="400" aria-valuenow="100">
+                </div>
+                <div class="wizard-slider-limits"><span>30&nbsp;m²</span><span>400&nbsp;m²</span></div>
+                <div class="wizard-slider-manual">
+                  <input type="number" id="wiz-flaeche" name="flaeche" min="1" max="2000" step="1" value="100" inputmode="numeric" required aria-label="Wohnfläche in Quadratmetern" class="wizard-slider-manual__input">
+                </div>
+              </div>
+            </div>
+            <div class="wizard-field wizard-field--grund" id="wiz-eckdaten-grund-wrap">
+              <label for="wiz-grundstueck-range">Grundstücksfläche (m²)</label>
+              <div class="wizard-slider-block">
+                <div class="wizard-slider-wrap">
+                  <input type="range" id="wiz-grundstueck-range" min="0" max="5000" step="10" value="500" aria-valuemin="0" aria-valuemax="5000" aria-valuenow="500">
+                </div>
+                <div class="wizard-slider-limits"><span>0&nbsp;m²</span><span>5.000&nbsp;m²</span></div>
+                <div class="wizard-slider-manual">
+                  <input type="number" id="wiz-grundstueck" name="grundstueck" min="0" max="5000" step="1" value="500" inputmode="numeric" aria-label="Grundstücksfläche in Quadratmetern" class="wizard-slider-manual__input">
+                </div>
+              </div>
+            </div>
+            <div class="wizard-field wizard-field--full wizard-field--slider wizard-field--miete" id="wiz-eckdaten-mfh-miete-wrap" hidden>
+              <label for="wiz-mfh-miete-range">Jährliche Mieteinnahmen (€)</label>
+              <div class="wizard-slider-block">
+                <div class="wizard-slider-wrap">
+                  <input type="range" id="wiz-mfh-miete-range" min="0" max="500000" step="500" value="24000" aria-valuemin="0" aria-valuemax="500000" aria-valuenow="24000">
+                </div>
+                <div class="wizard-slider-limits"><span>0&nbsp;€</span><span>500.000&nbsp;€</span></div>
+                <div class="wizard-slider-manual">
+                  <input type="number" id="wiz-mfh-miete" name="mieteinnahmen_jahr" min="0" max="500000" step="100" value="24000" inputmode="numeric" aria-label="Jährliche Mieteinnahmen in Euro" class="wizard-slider-manual__input wizard-slider-manual__input--currency">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="wizard-step" data-step="5">
+          <p class="wizard-step-eyebrow">Wertermittlung</p>
+          <h2 class="wizard-question">Ausstattung &amp; Zustand</h2>
+          <p class="wizard-hint">Bitte wähle die passenden Einstufungen aus den Menüs.</p>
+          <div class="wizard-choice-pair wizard-choice-pair--glass">
+            <div class="wizard-choice-group wizard-choice-group--select" data-name="ausstattung">
+              <span class="wizard-choice-legend wizard-choice-legend--select" id="wiz-ausstattung-label">Ausstattungsstandard</span>
+              <div class="wizard-custom-select" data-custom-select>
+                <div class="wizard-custom-select__box">
+                  <select class="wizard-select-native" id="wiz-ausstattung" name="ausstattung" aria-labelledby="wiz-ausstattung-label">
+                    <option value="">Bitte wählen …</option>
+                    <option value="einfach">Einfach / funktional</option>
+                    <option value="normal">Mittlerer Standard</option>
+                    <option value="gehoben">Gehoben</option>
+                    <option value="luxus">Sehr hochwertig / Luxus</option>
+                  </select>
+                  <button type="button" class="wizard-select wizard-select--trigger" aria-haspopup="listbox" aria-expanded="false" aria-controls="wiz-ausstattung-menu" id="wiz-ausstattung-trigger">
+                    <span class="wizard-select__value">Bitte wählen …</span>
+                  </button>
+                  <ul id="wiz-ausstattung-menu" class="wizard-select__menu wizard-select__menu--glass" hidden role="listbox" aria-labelledby="wiz-ausstattung-label">
+                    <li role="option" class="wizard-select__option" data-value="" tabindex="0">Bitte wählen …</li>
+                    <li role="option" class="wizard-select__option" data-value="einfach" tabindex="0">Einfach / funktional</li>
+                    <li role="option" class="wizard-select__option" data-value="normal" tabindex="0">Mittlerer Standard</li>
+                    <li role="option" class="wizard-select__option" data-value="gehoben" tabindex="0">Gehoben</li>
+                    <li role="option" class="wizard-select__option" data-value="luxus" tabindex="0">Sehr hochwertig / Luxus</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="wizard-choice-group wizard-choice-group--select" data-name="zustand">
+              <span class="wizard-choice-legend wizard-choice-legend--select" id="wiz-zustand-label">Zustand &amp; Modernisierung</span>
+              <div class="wizard-custom-select" data-custom-select>
+                <div class="wizard-custom-select__box">
+                  <select class="wizard-select-native" id="wiz-zustand" name="zustand" aria-labelledby="wiz-zustand-label">
+                    <option value="">Bitte wählen …</option>
+                    <option value="sanierungsbeduerftig">Sanierungsbedürftig</option>
+                    <option value="gepflegt">Gepflegt</option>
+                    <option value="neuwertig">Neuwertig / wenig genutzt</option>
+                    <option value="kernsaniert">Kernsaniert / wie neu</option>
+                  </select>
+                  <button type="button" class="wizard-select wizard-select--trigger" aria-haspopup="listbox" aria-expanded="false" aria-controls="wiz-zustand-menu" id="wiz-zustand-trigger">
+                    <span class="wizard-select__value">Bitte wählen …</span>
+                  </button>
+                  <ul id="wiz-zustand-menu" class="wizard-select__menu wizard-select__menu--glass" hidden role="listbox" aria-labelledby="wiz-zustand-label">
+                    <li role="option" class="wizard-select__option" data-value="" tabindex="0">Bitte wählen …</li>
+                    <li role="option" class="wizard-select__option" data-value="sanierungsbeduerftig" tabindex="0">Sanierungsbedürftig</li>
+                    <li role="option" class="wizard-select__option" data-value="gepflegt" tabindex="0">Gepflegt</li>
+                    <li role="option" class="wizard-select__option" data-value="neuwertig" tabindex="0">Neuwertig / wenig genutzt</li>
+                    <li role="option" class="wizard-select__option" data-value="kernsaniert" tabindex="0">Kernsaniert / wie neu</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="wizard-step" data-step="6">
+          <p class="wizard-step-eyebrow">Wertermittlung</p>
+          <h2 class="wizard-question">Was ist der Anlass?</h2>
+          <p class="wizard-hint">Damit wir Dein Anliegen richtig einordnen können.</p>
+          <div class="wizard-anlass-wrap">
+            <div class="wizard-choice-group wizard-choice-group--select wizard-choice-group--anlass" data-name="anlass">
+              <span class="wizard-choice-legend wizard-choice-legend--select" id="wiz-anlass-label">Dein Anliegen</span>
+              <div class="wizard-custom-select" data-custom-select>
+                <div class="wizard-custom-select__box">
+                  <select class="wizard-select-native" id="wiz-anlass" name="anlass" aria-labelledby="wiz-anlass-label">
+                    <option value="">Bitte wählen …</option>
+                    <option value="verkauf">Verkauf vorbereiten / verkaufen</option>
+                    <option value="wert">Immobilienwert kennenlernen</option>
+                    <option value="erbe">Erbe / Nachlass</option>
+                    <option value="scheidung">Trennung / Scheidung</option>
+                    <option value="umzug">Umzug / Neuanschaffung</option>
+                    <option value="sonstiges">Sonstiges</option>
+                  </select>
+                  <button type="button" class="wizard-select wizard-select--trigger" aria-haspopup="listbox" aria-expanded="false" aria-controls="wiz-anlass-menu" id="wiz-anlass-trigger">
+                    <span class="wizard-select__value">Bitte wählen …</span>
+                  </button>
+                  <ul id="wiz-anlass-menu" class="wizard-select__menu wizard-select__menu--glass" hidden role="listbox" aria-labelledby="wiz-anlass-label">
+                    <li role="option" class="wizard-select__option" data-value="" tabindex="0">Bitte wählen …</li>
+                    <li role="option" class="wizard-select__option" data-value="verkauf" tabindex="0">Verkauf vorbereiten / verkaufen</li>
+                    <li role="option" class="wizard-select__option" data-value="wert" tabindex="0">Immobilienwert kennenlernen</li>
+                    <li role="option" class="wizard-select__option" data-value="erbe" tabindex="0">Erbe / Nachlass</li>
+                    <li role="option" class="wizard-select__option" data-value="scheidung" tabindex="0">Trennung / Scheidung</li>
+                    <li role="option" class="wizard-select__option" data-value="umzug" tabindex="0">Umzug / Neuanschaffung</li>
+                    <li role="option" class="wizard-select__option" data-value="sonstiges" tabindex="0">Sonstiges</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="wizard-step" data-step="7">
+          <p class="wizard-step-eyebrow">Wertermittlung</p>
           <h2 class="wizard-question">Wohin dürfen wir Deine Einschätzung senden?</h2>
           <p class="wizard-hint">Wir melden uns persönlich – kein Spam, keine Weitergabe.</p>
           <div class="wizard-form-grid">
@@ -352,10 +573,16 @@
               <label for="wiz-telefon">Telefon <span class="wizard-optional">(optional)</span></label>
               <input type="tel" id="wiz-telefon" name="telefon" placeholder="z. B. 0170 …">
             </div>
+            <div class="wizard-field wizard-field--check wizard-field--full">
+              <label class="wizard-check">
+                <input type="checkbox" id="wiz-datenschutz" name="datenschutz" value="1" required>
+                <span>Ich habe die <a href="datenschutz.html" target="_blank" rel="noopener">Datenschutzhinweise</a> gelesen und stimme der Verarbeitung meiner Angaben zu.</span>
+              </label>
+            </div>
           </div>
         </div>
 
-        <div class="wizard-step" data-step="4">
+        <div class="wizard-step" data-step="8">
           <div class="wizard-success">
             <svg class="wizard-success-icon" width="56" height="56" viewBox="0 0 56 56" fill="none" stroke="var(--color-accent)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="28" cy="28" r="24"/><path d="M18 28l7 7 13-13"/></svg>
             <h2 class="wizard-question">Vielen Dank!</h2>
@@ -386,47 +613,6 @@
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
             Persönliche Rückmeldung
           </span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ═══════════════════════════════════════════════
-       SECTION: SPEZIALISIERUNGEN
-       ═══════════════════════════════════════════════ -->
-  <section class="section section-dark specialization-section" id="spezialisierungen">
-    <div class="container">
-      <div class="section-header reveal">
-        <span class="section-eyebrow">Expertise</span>
-        <h2 class="section-title">Spezialisierungen mit Substanz</h2>
-        <p class="section-sub">Für komplexere Objekte braucht es mehr als den Standard – wir bringen die passende Expertise mit.</p>
-      </div>
-      <div class="specialization-grid">
-        <div class="specialization-card reveal">
-          <div class="specialization-card-content">
-            <span class="specialization-badge">MFH</span>
-            <h3>Mehrfamilienhaus verkaufen &amp; bewerten</h3>
-            <p>MFH ist kein EFH-Standard. Bewertung nach Ertrag und Substanz, sauber begründet. Diskrete Vermarktung und eine klare Unterlagenlogik – für Eigentümer, die Methodik erwarten.</p>
-            <ul class="specialization-features">
-              <li>Ertrags- und Substanzbewertung</li>
-              <li>Bauträger- &amp; Bestandserfahrung (ELDA)</li>
-              <li>Diskrete Vermarktung auf Wunsch</li>
-            </ul>
-            <a href="kontakt.html" class="btn btn-primary">Beratung anfragen</a>
-          </div>
-        </div>
-        <div class="specialization-card reveal">
-          <div class="specialization-card-content">
-            <span class="specialization-badge specialization-badge--teal">Gewerbe</span>
-            <h3>Gewerbeimmobilie &amp; Gewerbehalle verkaufen</h3>
-            <p>Klare Erst-Einschätzung zu Preisband, Vermarktungsweg und Timing. Zurückhaltend in der Ansprache, klar im Prozess – für Unternehmer, die Struktur und Diskretion schätzen.</p>
-            <ul class="specialization-features">
-              <li>Schnelle Erst-Einschätzung</li>
-              <li>Diskrete Vermarktung ohne Push-Optik</li>
-              <li>Strukturierter Prozess für Unternehmer</li>
-            </ul>
-            <a href="kontakt.html" class="btn btn-primary">Beratung anfragen</a>
-          </div>
         </div>
       </div>
     </div>
@@ -509,7 +695,10 @@
         <div class="region-left">
           <span class="section-eyebrow">Unser Marktgebiet</span>
           <h2 class="region-title">Lokal verwurzelt –<br> persönlich vor Ort</h2>
-          <p class="region-intro">Wir kennen den Markt im Raum Rastatt–Karlsruhe nicht aus der Ferne, sondern persönlich. Jede Region hat ihre Eigenheiten – wir kennen sie.</p>
+          <div class="region-intro">
+            <p>Unser Schwerpunkt liegt in der Region von Baden-Baden bis Heidelberg. Dort sind wir nah am Markt, kennen die Besonderheiten der einzelnen Standorte und wissen, welche Zielgruppen, Preisniveaus und Vermarktungsansätze in der Praxis funktionieren.</p>
+            <p>Für Projekte außerhalb dieser Region arbeiten wir mit einem zuverlässigen Netzwerk freiberuflicher Partner im gesamten Bundesgebiet zusammen. So bleiben wir regional verwurzelt und können zugleich auch überregional professionell begleiten.</p>
+          </div>
           <div class="region-stat-row">
             <div class="region-stat">
               <span class="region-stat-number">4</span>
@@ -520,8 +709,8 @@
               <span class="region-stat-label">Gemeinden</span>
             </div>
             <div class="region-stat">
-              <span class="region-stat-number">120+</span>
-              <span class="region-stat-label">vermittelte Immobilien</span>
+              <span class="region-stat-number">100 Mio</span>
+              <span class="region-stat-label">Volumen</span>
             </div>
           </div>
         </div>
@@ -529,6 +718,7 @@
           <div class="kreis-map-stage kreis-map-stage--embed" data-kreis-map>
             <div class="kreis-map-svg-host" id="kreisMapSvgHost" role="group" aria-label="Karte des Kerngebiets zwischen Baden-Baden und Heidelberg"><svg id="kreiseFinalSvg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 759.37 941.83"><g id="Neckar-Odenwald"><polygon id="polygon12" points="523.73 95.11 522.99 95.85 517.98 107.16 525.21 113.65 498.89 132.18 506.67 150.72 495.18 166.3 490.92 172.79 486.1 163.52 477.38 169.08 479.61 182.61 461.81 186.32 456.8 190.58 457.55 201.15 467.56 209.12 468.85 218.21 489.62 227.48 499.44 238.23 507.42 236.75 503.15 241.75 505.93 256.77 514.46 266.59 535.78 268.08 535.78 271.6 552.28 271.04 553.58 246.01 557.84 232.48 569.34 234.71 577.12 236 593.44 254.54 602.71 248.98 606.23 231.74 614.2 232.48 617.72 220.43 626.99 213.94 624.77 203.38 633.3 192.62 654.8 209.68 664.63 208.38 674.64 212.64 685.39 208.94 686.69 191.14 695.22 186.88 700.22 194.85 714.5 201.89 743.6 201.15 748.61 182.61 743.05 173.34 758.62 166.3 752.32 157.03 730.81 150.72 716.72 157.77 715.98 128.66 709.49 113.65 713.02 115.13 731.55 95.85 721.54 90.1 719.5 76.57 711.72 54.51 718.02 44.49 725.81 48.2 735.82 30.96 731.55 11.87 718.02 18.91 701.71 16.13 690.4 6.86 672.6 1.11 676.12 4.64 670.38 13.91 659.62 16.13 652.58 6.12 641.82 14.65 626.99 7.6 624.03 6.86 616.24 18.17 609.2 21.14 603.45 49.5 599.18 49.5 594.92 58.03 590.66 58.03 587.88 59.51 574.34 63.03 533 59.51 531.52 71.01 525.21 82.31 538.01 90.1 542.27 102.15 533.74 106.42 523.73 95.11" fill="#e6e6e6" stroke="#ccc" stroke-miterlimit="10"/><polygon id="polygon14" points="523.73 95.11 522.99 95.85 517.98 107.16 525.21 113.65 498.89 132.18 506.67 150.72 495.18 166.3 490.92 172.79 486.1 163.52 477.38 169.08 479.61 182.61 461.81 186.32 456.8 190.58 457.55 201.15 467.56 209.12 468.85 218.21 489.62 227.48 499.44 238.23 507.42 236.75 503.15 241.75 505.93 256.77 514.46 266.59 535.78 268.08 535.78 271.6 552.28 271.04 553.58 246.01 557.84 232.48 569.34 234.71 577.12 236 593.44 254.54 602.71 248.98 606.23 231.74 614.2 232.48 617.72 220.43 626.99 213.94 624.77 203.38 633.3 192.62 654.8 209.68 664.63 208.38 674.64 212.64 685.39 208.94 686.69 191.14 695.22 186.88 700.22 194.85 714.5 201.89 743.6 201.15 748.61 182.61 743.05 173.34 758.62 166.3 752.32 157.03 730.81 150.72 716.72 157.77 715.98 128.66 709.49 113.65 713.02 115.13 731.55 95.85 721.54 90.1 719.5 76.57 711.72 54.51 718.02 44.49 725.81 48.2 735.82 30.96 731.55 11.87 718.02 18.91 701.71 16.13 690.4 6.86 672.6 1.11 676.12 4.64 670.38 13.91 659.62 16.13 652.58 6.12 641.82 14.65 626.99 7.6 624.03 6.86 616.24 18.17 609.2 21.14 603.45 49.5 599.18 49.5 594.92 58.03 590.66 58.03 587.88 59.51 574.34 63.03 533 59.51 531.52 71.01 525.21 82.31 538.01 90.1 542.27 102.15 533.74 106.42 523.73 95.11" fill="#e6e6e6" stroke="#ccc" stroke-miterlimit="3.9"/></g><g id="Rhein-Neckar"><g id="g18"><polygon id="polygon20" points="523.17 95.85 515.2 92.33 512.42 97.33 504.45 114.39 492.4 114.39 479.61 105.86 471.82 111.42 463.85 108.64 466.82 115.68 454.77 132.93 463.29 143.49 451.06 152.02 441.23 150.72 437.52 164.81 431.96 170.56 416.95 184.84 401.37 183.35 394.88 173.34 410.46 161.29 409.16 142.01 405.64 137.75 418.43 123.66 424.73 137.19 440.49 122.92 440.49 110.12 421.21 111.42 409.16 115.68 404.89 110.86 406.19 95.11 397.66 95.85 391.36 101.6 383.57 98.63 380.05 100.85 351.5 86.58 353.54 78.05 347.24 72.3 343.72 50.24 350.76 41.71 348.54 24.66 305.15 33.19 303.67 35.97 301.63 37.45 303.12 45.98 307.38 44.49 314.42 78.05 296.63 95.85 299.41 107.9 291.62 114.39 283.83 115.68 279.57 124.95 297.37 137.19 295.88 160.55 308.12 162.77 317.2 149.98 326.47 153.5 370.04 147.76 368.56 140.71 372.82 139.97 380.61 142.75 379.31 154.99 391.36 173.34 379.87 195.4 373.56 196.14 370.6 199.11 360.77 201.89 360.03 208.38 353.54 211.16 335.74 207.64 332.22 213.2 324.44 200.41 317.95 212.64 303.67 202.63 306.64 196.14 311.64 194.11 321.47 189.1 320.17 175.57 318.69 169.08 308.68 175.57 291.62 168.52 290.32 167.78 279.57 167.04 278.09 170.56 257.51 170.56 256.77 172.79 256.77 174.08 256.77 175.57 256.77 177.05 242.49 186.88 241.75 193.36 246.76 196.14 258.25 186.32 254.73 208.38 243.98 219.69 237.49 225.44 236.19 236 249.72 243.98 251.02 254.54 276.05 273.82 278.09 269.56 284.58 271.6 290.32 274.57 288.1 279.57 300.89 285.87 308.12 290.14 322.95 290.88 340.75 298.67 342.97 298.67 363.55 298.67 370.6 315.72 384.13 320.73 397.66 318.69 399.89 323.69 419.73 337.23 434 330 433.26 318.69 463.29 311.46 466.07 305.9 484.61 286.62 482.39 275.86 488.14 278.83 503.15 267.33 493.88 253.25 505.93 256.77 503.15 241.75 507.42 236.75 499.44 238.23 489.62 227.48 468.85 218.21 467.56 209.12 457.55 201.15 456.8 190.58 461.81 186.32 479.61 182.61 477.38 169.08 486.1 163.52 490.92 172.79 495.18 166.3 506.67 150.72 498.89 132.18 525.21 113.65 517.98 107.16 522.99 95.85 523.17 95.85" fill="#e6e6e6" stroke="#ccc" stroke-miterlimit="10"/><polygon id="polygon22" points="523.17 95.85 515.2 92.33 512.42 97.33 504.45 114.39 492.4 114.39 479.61 105.86 471.82 111.42 463.85 108.64 466.82 115.68 454.77 132.93 463.29 143.49 451.06 152.02 441.23 150.72 437.52 164.81 431.96 170.56 416.95 184.84 401.37 183.35 394.88 173.34 410.46 161.29 409.16 142.01 405.64 137.75 418.43 123.66 424.73 137.19 440.49 122.92 440.49 110.12 421.21 111.42 409.16 115.68 404.89 110.86 406.19 95.11 397.66 95.85 391.36 101.6 383.57 98.63 380.05 100.85 351.5 86.58 353.54 78.05 347.24 72.3 343.72 50.24 350.76 41.71 348.54 24.66 305.15 33.19 303.67 35.97 301.63 37.45 303.12 45.98 307.38 44.49 314.42 78.05 296.63 95.85 299.41 107.9 291.62 114.39 283.83 115.68 279.57 124.95 297.37 137.19 295.88 160.55 308.12 162.77 317.2 149.98 326.47 153.5 370.04 147.76 368.56 140.71 372.82 139.97 380.61 142.75 379.31 154.99 391.36 173.34 379.87 195.4 373.56 196.14 370.6 199.11 360.77 201.89 360.03 208.38 353.54 211.16 335.74 207.64 332.22 213.2 324.44 200.41 317.95 212.64 303.67 202.63 306.64 196.14 311.64 194.11 321.47 189.1 320.17 175.57 318.69 169.08 308.68 175.57 291.62 168.52 290.32 167.78 279.57 167.04 278.09 170.56 257.51 170.56 256.77 172.79 256.77 174.08 256.77 175.57 256.77 177.05 242.49 186.88 241.75 193.36 246.76 196.14 258.25 186.32 254.73 208.38 243.98 219.69 237.49 225.44 236.19 236 249.72 243.98 251.02 254.54 276.05 273.82 278.09 269.56 284.58 271.6 290.32 274.57 288.1 279.57 300.89 285.87 308.12 290.14 322.95 290.88 340.75 298.67 342.97 298.67 363.55 298.67 370.6 315.72 384.13 320.73 397.66 318.69 399.89 323.69 419.73 337.23 434 330 433.26 318.69 463.29 311.46 466.07 305.9 484.61 286.62 482.39 275.86 488.14 278.83 503.15 267.33 493.88 253.25 505.93 256.77 503.15 241.75 507.42 236.75 499.44 238.23 489.62 227.48 468.85 218.21 467.56 209.12 457.55 201.15 456.8 190.58 461.81 186.32 479.61 182.61 477.38 169.08 486.1 163.52 490.92 172.79 495.18 166.3 506.67 150.72 498.89 132.18 525.21 113.65 517.98 107.16 522.99 95.85 523.17 95.85" fill="#e6e6e6" stroke="#ccc" stroke-miterlimit="3.9"/></g><g id="g24"><polygon id="polygon26" points="531.7 71.01 519.47 60.99 517.98 69.52 525.21 82.31 531.7 71.01" fill="#e6e6e6" stroke="#ccc" stroke-miterlimit="10"/><polygon id="polygon28" points="531.7 71.01 519.47 60.99 517.98 69.52 525.21 82.31 531.7 71.01" fill="#e6e6e6" stroke="#ccc" stroke-miterlimit="3.9"/></g></g><g id="Mannheim"><polygon id="polygon32" points="296.63 95.85 299.41 107.9 291.62 114.39 283.83 115.68 279.57 124.95 297.37 137.19 295.88 160.55 291.62 168.52 290.32 167.78 279.57 167.04 278.09 170.56 257.51 170.56 261.77 152.02 246.76 147.76 232.48 142.2 233.96 113.65 225.44 79.53 221.91 68.78 225.44 58.03 226.18 50.24 244.72 46.72 258.25 58.03 278.83 90.1 296.63 95.85" fill="#e6e6e6" stroke="#ccc" stroke-miterlimit="10"/><polygon id="polygon34" points="296.63 95.85 299.41 107.9 291.62 114.39 283.83 115.68 279.57 124.95 297.37 137.19 295.88 160.55 291.62 168.52 290.32 167.78 279.57 167.04 278.09 170.56 257.51 170.56 261.77 152.02 246.76 147.76 232.48 142.2 233.96 113.65 225.44 79.53 221.91 68.78 225.44 58.03 226.18 50.24 244.72 46.72 258.25 58.03 278.83 90.1 296.63 95.85" fill="#e6e6e6" stroke="#ccc" stroke-miterlimit="3.9"/></g><g id="Heidelberg"><polygon id="polygon38" points="291.62 168.52 308.68 175.57 318.69 169.08 320.17 175.57 321.47 189.1 311.64 194.11 306.64 196.14 303.67 202.63 317.95 212.64 324.44 200.41 332.22 213.2 335.74 207.64 353.54 211.16 360.03 208.38 360.77 201.89 370.6 199.11 373.56 196.14 379.87 195.4 391.36 173.34 379.31 154.99 380.61 142.75 372.82 139.97 368.56 140.71 370.04 147.76 326.47 153.5 317.2 149.98 308.12 162.77 295.88 160.55 291.62 168.52" fill="#e6e6e6" stroke="#ccc" stroke-miterlimit="10"/><polygon id="polygon40" points="291.62 168.52 308.68 175.57 318.69 169.08 320.17 175.57 321.47 189.1 311.64 194.11 306.64 196.14 303.67 202.63 317.95 212.64 324.44 200.41 332.22 213.2 335.74 207.64 353.54 211.16 360.03 208.38 360.77 201.89 370.6 199.11 373.56 196.14 379.87 195.4 391.36 173.34 379.31 154.99 380.61 142.75 372.82 139.97 368.56 140.71 370.04 147.76 326.47 153.5 317.2 149.98 308.12 162.77 295.88 160.55 291.62 168.52" fill="#e6e6e6" stroke="#ccc" stroke-miterlimit="3.9"/></g><g id="Freudenstadt"><polygon id="polygon216" points="353.54 889.51 332.22 883.2 325.92 873.93 293.85 875.97 278.83 871.15 274.56 872.45 265.3 868.93 251.02 868.93 253.99 880.98 236.19 884.5 243.98 901.74 229.7 908.79 243.23 923.06 240.45 931.59 224.69 932.33 216.91 940.86 211.9 925.84 198.37 925.84 178.53 913.79 179.09 886.73 165 879.68 152.76 906.01 150.72 906.01 147.2 899.52 127.18 873.19 120.88 868.93 130.7 860.4 141.45 815.54 141.45 814.8 137.93 807.01 126.44 806.27 116.61 795.7 114.39 760.1 125.7 746.57 112.35 729.33 119.39 728.77 136.45 738.6 162.77 740.08 180.57 730.07 193.36 718.76 196.33 706.71 205.6 705.23 226.18 721.54 231.93 729.52 263.26 742.31 264.55 742.31 275.31 755.84 281.61 750.84 282.35 758.62 273.82 767.89 285.32 772.9 293.85 769.93 298.85 774.94 305.15 777.9 292.36 797 308.12 804.23 325.92 797.74 334.45 815.54 353.54 814.24 363.55 802.74 392.1 826.29 394.88 831.29 392.1 833.33 369.3 848.35 370.6 863.18 367.82 867.45 363.55 885.99 353.54 889.51" fill="#e6e6e6" stroke="#ccc" stroke-miterlimit="10"/><polygon id="polygon218" points="353.54 889.51 332.22 883.2 325.92 873.93 293.85 875.97 278.83 871.15 274.56 872.45 265.3 868.93 251.02 868.93 253.99 880.98 236.19 884.5 243.98 901.74 229.7 908.79 243.23 923.06 240.45 931.59 224.69 932.33 216.91 940.86 211.9 925.84 198.37 925.84 178.53 913.79 179.09 886.73 165 879.68 152.76 906.01 150.72 906.01 147.2 899.52 127.18 873.19 120.88 868.93 130.7 860.4 141.45 815.54 141.45 814.8 137.93 807.01 126.44 806.27 116.61 795.7 114.39 760.1 125.7 746.57 112.35 729.33 119.39 728.77 136.45 738.6 162.77 740.08 180.57 730.07 193.36 718.76 196.33 706.71 205.6 705.23 226.18 721.54 231.93 729.52 263.26 742.31 264.55 742.31 275.31 755.84 281.61 750.84 282.35 758.62 273.82 767.89 285.32 772.9 293.85 769.93 298.85 774.94 305.15 777.9 292.36 797 308.12 804.23 325.92 797.74 334.45 815.54 353.54 814.24 363.55 802.74 392.1 826.29 394.88 831.29 392.1 833.33 369.3 848.35 370.6 863.18 367.82 867.45 363.55 885.99 353.54 889.51" fill="#e6e6e6" stroke="#ccc" stroke-miterlimit="3.9"/></g><g id="Pforzheim"><polygon id="polygon222" points="340.75 570.63 350.76 578.42 373.56 572.86 377.09 562.11 392.1 554.32 384.87 548.57 384.87 536.52 377.83 537.26 368.56 510.94 354.28 506.67 350.76 512.24 342.97 510.94 334.45 520.76 326.47 520.76 319.43 512.98 309.42 519.47 311.64 527.25 316.65 531.52 318.69 545.79 314.42 555.8 308.12 557.84 322.95 572.12 337.97 572.12 340.75 570.63" fill="#e6e6e6" stroke="#ccc" stroke-miterlimit="10"/><polygon id="polygon224" points="340.75 570.63 350.76 578.42 373.56 572.86 377.09 562.11 392.1 554.32 384.87 548.57 384.87 536.52 377.83 537.26 368.56 510.94 354.28 506.67 350.76 512.24 342.97 510.94 334.45 520.76 326.47 520.76 319.43 512.98 309.42 519.47 311.64 527.25 316.65 531.52 318.69 545.79 314.42 555.8 308.12 557.84 322.95 572.12 337.97 572.12 340.75 570.63" fill="#e6e6e6" stroke="#ccc" stroke-miterlimit="3.9"/></g><g id="Enzkreis"><polygon id="polygon228" points="246.76 580.65 252.5 584.91 261.03 587.69 257.51 596.96 263.26 605.49 272.53 601.22 276.79 588.43 289.58 584.17 294.59 590.66 304.41 576.38 320.17 587.69 340.01 584.17 337.97 572.12 322.95 572.12 308.12 557.84 314.42 555.8 318.69 545.79 316.65 531.52 311.64 527.25 309.42 519.47 319.43 512.98 326.47 520.76 334.45 520.76 342.97 510.94 350.76 512.24 354.28 506.67 368.56 510.94 377.83 537.26 384.87 536.52 384.87 548.57 392.1 554.32 377.09 562.11 373.56 572.86 350.76 578.42 340.75 570.63 355.02 598.44 360.77 594.92 372.82 612.72 389.14 612.72 394.88 606.97 406.93 597.7 411.94 602.71 427.7 595.66 431.22 599.19 433.26 596.96 429 592.7 434 587.13 431.22 580.65 421.21 586.95 426.96 577.12 420.47 573.6 431.22 565.63 434.74 556.36 446.79 552.1 440.49 525.77 437.52 521.51 442.53 519.47 434.74 512.24 437.52 498.15 446.79 502.41 456.06 500.19 455.32 488.14 437.52 444.75 437.52 444.01 424.73 434.74 425.47 418.24 406.93 416.2 405.64 432.52 372.08 426.22 359.29 439.75 359.29 458.84 360.03 461.81 350.02 466.07 330.74 461.81 325.92 452.54 314.42 463.85 295.88 466.82 293.1 466.07 286.62 465.33 279.57 483.13 269.56 488.88 275.31 512.24 260.29 525.77 263.26 540.79 251.02 554.32 236.19 562.85 246.76 580.65" fill="#e6e6e6" stroke="#ccc" stroke-miterlimit="10"/><polygon id="polygon230" points="246.76 580.65 252.5 584.91 261.03 587.69 257.51 596.96 263.26 605.49 272.53 601.22 276.79 588.43 289.58 584.17 294.59 590.66 304.41 576.38 320.17 587.69 340.01 584.17 337.97 572.12 322.95 572.12 308.12 557.84 314.42 555.8 318.69 545.79 316.65 531.52 311.64 527.25 309.42 519.47 319.43 512.98 326.47 520.76 334.45 520.76 342.97 510.94 350.76 512.24 354.28 506.67 368.56 510.94 377.83 537.26 384.87 536.52 384.87 548.57 392.1 554.32 377.09 562.11 373.56 572.86 350.76 578.42 340.75 570.63 355.02 598.44 360.77 594.92 372.82 612.72 389.14 612.72 394.88 606.97 406.93 597.7 411.94 602.71 427.7 595.66 431.22 599.19 433.26 596.96 429 592.7 434 587.13 431.22 580.65 421.21 586.95 426.96 577.12 420.47 573.6 431.22 565.63 434.74 556.36 446.79 552.1 440.49 525.77 437.52 521.51 442.53 519.47 434.74 512.24 437.52 498.15 446.79 502.41 456.06 500.19 455.32 488.14 437.52 444.75 437.52 444.01 424.73 434.74 425.47 418.24 406.93 416.2 405.64 432.52 372.08 426.22 359.29 439.75 359.29 458.84 360.03 461.81 350.02 466.07 330.74 461.81 325.92 452.54 314.42 463.85 295.88 466.82 293.1 466.07 286.62 465.33 279.57 483.13 269.56 488.88 275.31 512.24 260.29 525.77 263.26 540.79 251.02 554.32 236.19 562.85 246.76 580.65" fill="#e6e6e6" stroke="#ccc" stroke-miterlimit="3.9"/></g><g id="Calw"><polygon id="polygon234" points="246.76 580.65 252.5 584.91 261.03 587.69 257.51 596.96 263.26 605.49 272.53 601.22 276.79 588.43 289.58 584.17 294.59 590.66 304.41 576.38 320.17 587.69 340.01 584.17 337.97 572.12 340.75 570.63 355.02 598.44 360.77 594.92 372.82 612.72 389.14 612.72 387.1 616.98 395.63 623.29 403.41 629.03 399.89 641.83 411.94 643.31 421.95 651.09 411.94 662.59 414.91 666.85 394.88 688.17 394.88 691.7 384.87 695.22 383.57 711.53 382.83 740.08 361.51 732.3 360.77 738.6 365.78 766.41 370.6 771.41 365.04 776.42 370.04 789.95 363.55 802.74 353.54 814.24 334.45 815.54 325.92 797.74 308.12 804.23 292.36 797 305.15 777.9 298.85 774.94 293.85 769.93 285.32 772.9 273.82 767.89 282.35 758.62 281.61 750.84 275.31 755.84 264.55 742.31 263.26 742.31 231.93 729.52 226.18 721.54 205.6 705.23 215.43 702.45 216.17 690.95 222.66 687.43 223.95 673.16 237.49 647.57 241.75 624.77 233.22 619.02 213.39 633.3 219.13 614.02 215.43 599.93 199.85 591.4 208.38 585.65 205.6 577.87 194.85 572.12 196.33 570.63 208.38 573.6 211.9 569.34 220.43 580.65 246.76 580.65" fill="#e6e6e6" stroke="#ccc" stroke-miterlimit="10"/><polygon id="polygon236" points="246.76 580.65 252.5 584.91 261.03 587.69 257.51 596.96 263.26 605.49 272.53 601.22 276.79 588.43 289.58 584.17 294.59 590.66 304.41 576.38 320.17 587.69 340.01 584.17 337.97 572.12 340.75 570.63 355.02 598.44 360.77 594.92 372.82 612.72 389.14 612.72 387.1 616.98 395.63 623.29 403.41 629.03 399.89 641.83 411.94 643.31 421.95 651.09 411.94 662.59 414.91 666.85 394.88 688.17 394.88 691.7 384.87 695.22 383.57 711.53 382.83 740.08 361.51 732.3 360.77 738.6 365.78 766.41 370.6 771.41 365.04 776.42 370.04 789.95 363.55 802.74 353.54 814.24 334.45 815.54 325.92 797.74 308.12 804.23 292.36 797 305.15 777.9 298.85 774.94 293.85 769.93 285.32 772.9 273.82 767.89 282.35 758.62 281.61 750.84 275.31 755.84 264.55 742.31 263.26 742.31 231.93 729.52 226.18 721.54 205.6 705.23 215.43 702.45 216.17 690.95 222.66 687.43 223.95 673.16 237.49 647.57 241.75 624.77 233.22 619.02 213.39 633.3 219.13 614.02 215.43 599.93 199.85 591.4 208.38 585.65 205.6 577.87 194.85 572.12 196.33 570.63 208.38 573.6 211.9 569.34 220.43 580.65 246.76 580.65" fill="#e6e6e6" stroke="#ccc" stroke-miterlimit="3.9"/></g><g id="LK_Karlsruhe"><path id="path240" d="M269.56,488.88l10.01-5.75,7.04-17.8,6.49.74,2.78.74,18.54-2.78,11.31-11.31,5.01,9.27,19.28,4.26,10.01-4.26-.74-2.78v-19.28l12.79-13.53,33.37,6.49,1.48-16.31,18.54,2.22.74-15.02,6.49-.74-.74-19.28-7.79-15.57-20.02,4.26-.74-1.48,7.04-15.57-10.75-5.01,3.52-22.06-3.52-4.26-2.04-5.01-13.53,2.22-13.53-5.01-7.04-17.06h-22.8l-17.8-7.79-15.02-.74-7.04-4.26-12.79-6.49,2.22-5.01-5.75-2.78-6.49-2.22-2.22,4.26-24.84-19.28-9.27,5.01-10.01,10.75-15.02,11.31-7.04,5.75,2.78,15.02-11.31,23.54-2.22,3.52-3.52,15.57.74,9.27-2.22,10.75-3.52,19.28-5.01,8.53-4.26,6.49,2.78,10.75,21.32-2.78,13.53-14.28,5.75-.74-3.52,14.28,9.27,15.02,10.01,7.04,7.04-12.79,15.02,19.28v11.31l-10.01,15.02,3.52,14.28,13.53,13.53v-.74h.19ZM269.56,488.14l-23.54,8.53-18.54-2.22.74-11.31-26.33,1.48-11.31-12.79-15.57-10.01-22.06,3.52-2.22-4.26-7.04,5.75-1.48,15.02,5.75,4.26,18.54,3.52,18.54,10.75-1.48,5.01-24.84,9.27-4.26,18.54,7.04,16.31,23.54,13.53,22.06-10.01,5.01,16.31,8.53,11.31h26.33l-10.75-17.8,15.02-8.53,12.05-13.53-2.78-15.02,15.02-13.53-5.75-24.29h0l-.19.19Z" fill="#e6e6e6" fill-rule="evenodd" stroke="#ccc" stroke-miterlimit="10"/><path id="path242" d="M269.56,488.88l10.01-5.75,7.04-17.8,6.49.74,2.78.74,18.54-2.78,11.31-11.31,5.01,9.27,19.28,4.26,10.01-4.26-.74-2.78v-19.28l12.79-13.53,33.37,6.49,1.48-16.31,18.54,2.22.74-15.02,6.49-.74-.74-19.28-7.79-15.57-20.02,4.26-.74-1.48,7.04-15.57-10.75-5.01,3.52-22.06-3.52-4.26-2.04-5.01-13.53,2.22-13.53-5.01-7.04-17.06h-22.8l-17.8-7.79-15.02-.74-7.04-4.26-12.79-6.49,2.22-5.01-5.75-2.78-6.49-2.22-2.22,4.26-24.84-19.28-9.27,5.01-10.01,10.75-15.02,11.31-7.04,5.75,2.78,15.02-11.31,23.54-2.22,3.52-3.52,15.57.74,9.27-2.22,10.75-3.52,19.28-5.01,8.53-4.26,6.49,2.78,10.75,21.32-2.78,13.53-14.28,5.75-.74-3.52,14.28,9.27,15.02,10.01,7.04,7.04-12.79,15.02,19.28v11.31l-10.01,15.02,3.52,14.28,13.53,13.53v-.74h.19ZM269.56,488.14l-23.54,8.53-18.54-2.22.74-11.31-26.33,1.48-11.31-12.79-15.57-10.01-22.06,3.52-2.22-4.26-7.04,5.75-1.48,15.02,5.75,4.26,18.54,3.52,18.54,10.75-1.48,5.01-24.84,9.27-4.26,18.54,7.04,16.31,23.54,13.53,22.06-10.01,5.01,16.31,8.53,11.31h26.33l-10.75-17.8,15.02-8.53,12.05-13.53-2.78-15.02,15.02-13.53-5.75-24.29h0l-.19.19Z" fill="#e6e6e6" stroke="#ccc" stroke-miterlimit="3.9"/></g><g id="Stadt_Karlsruhe"><polygon id="polygon246" points="181.31 399.15 184.09 409.72 205.6 406.93 219.13 392.66 224.69 391.92 221.17 406.19 230.44 421.21 240.45 428.25 247.5 415.46 262.51 434.74 262.51 446.05 252.5 461.07 256.03 475.34 269.56 488.14 246.01 496.66 227.66 494.44 228.22 483.13 201.89 484.61 190.58 471.64 174.82 461.81 152.76 465.33 150.72 461.07 155.73 455.32 157.77 451.8 167.04 417.69 181.31 399.15" fill="#e6e6e6" stroke="#ccc" stroke-miterlimit="10"/><polygon id="polygon248" points="181.31 399.15 184.09 409.72 205.6 406.93 219.13 392.66 224.69 391.92 221.17 406.19 230.44 421.21 240.45 428.25 247.5 415.46 262.51 434.74 262.51 446.05 252.5 461.07 256.03 475.34 269.56 488.14 246.01 496.66 227.66 494.44 228.22 483.13 201.89 484.61 190.58 471.64 174.82 461.81 152.76 465.33 150.72 461.07 155.73 455.32 157.77 451.8 167.04 417.69 181.31 399.15" fill="#e6e6e6" stroke="#ccc" stroke-miterlimit="3.9"/></g><g id="Rastatt"><path id="path252" d="M143.68,466.82l-1.48,15.02,5.75,4.26,18.54,3.52,18.54,10.75-1.48,5.01-24.84,9.27-4.26,18.54,7.04,16.31,23.54,13.53,22.06-10.01,5.01,16.31-3.52,4.26-12.05-2.78-1.48,1.48,10.75,5.75,2.78,7.79-8.53,5.75,15.76,8.53,3.52,14.28-5.75,19.28,20.02-14.28,8.53,5.75-4.26,22.8-13.53,25.58-1.48,14.28-6.49,3.52-.74,11.31-10.01,2.78-9.27,1.48-2.78,12.05-12.79,11.31-17.8,10.01-26.33-1.48-17.06-10.01,11.31.74.74-4.26-7.04-2.22,4.26-8.53-5.75-5.01-11.31.74-2.22.74-26.33-20.58-12.79,4.26-5.01-3.52-13.53-12.05h-5.01l-15.02-7.04-5.01.74.74-4.26-13.53-1.48v-12.05l-13.53-9.27,5.01-24.29,29.11-22.8,15.02-.74,9.27-7.04,10.75-19.28,5.01-17.06,23.54-46.35,2.78-3.52,7.79-13.53,5.75-9.27,15.57-5.01,13.53-10.01h0ZM123.66,674.64l1.48,2.78,2.22,6.49,8.53-.74,8.53.74,21.32-26.33.74-2.04-2.22-20.58-15.57-17.8,4.26-5.75-.74-12.05-4.26,3.52-8.53-6.49-10.01-14.28-19.28-15.02-12.79,11.31-10.01,19.28,2.78,4.26,10.75,2.78,11.31,20.02-5.75,6.49-21.32.74-14.28,10.75,39.86,12.79,12.79,5.75v13.53h.19v-.19Z" fill="#e6e6e6" fill-rule="evenodd" stroke="#ccc" stroke-miterlimit="10"/><path id="path254" d="M143.68,466.82l-1.48,15.02,5.75,4.26,18.54,3.52,18.54,10.75-1.48,5.01-24.84,9.27-4.26,18.54,7.04,16.31,23.54,13.53,22.06-10.01,5.01,16.31-3.52,4.26-12.05-2.78-1.48,1.48,10.75,5.75,2.78,7.79-8.53,5.75,15.76,8.53,3.52,14.28-5.75,19.28,20.02-14.28,8.53,5.75-4.26,22.8-13.53,25.58-1.48,14.28-6.49,3.52-.74,11.31-10.01,2.78-9.27,1.48-2.78,12.05-12.79,11.31-17.8,10.01-26.33-1.48-17.06-10.01,11.31.74.74-4.26-7.04-2.22,4.26-8.53-5.75-5.01-11.31.74-2.22.74-26.33-20.58-12.79,4.26-5.01-3.52-13.53-12.05h-5.01l-15.02-7.04-5.01.74.74-4.26-13.53-1.48v-12.05l-13.53-9.27,5.01-24.29,29.11-22.8,15.02-.74,9.27-7.04,10.75-19.28,5.01-17.06,23.54-46.35,2.78-3.52,7.79-13.53,5.75-9.27,15.57-5.01,13.53-10.01h0ZM123.66,674.64l1.48,2.78,2.22,6.49,8.53-.74,8.53.74,21.32-26.33.74-2.04-2.22-20.58-15.57-17.8,4.26-5.75-.74-12.05-4.26,3.52-8.53-6.49-10.01-14.28-19.28-15.02-12.79,11.31-10.01,19.28,2.78,4.26,10.75,2.78,11.31,20.02-5.75,6.49-21.32.74-14.28,10.75,39.86,12.79,12.79,5.75v13.53h.19v-.19Z" fill="#e6e6e6" stroke="#ccc" stroke-miterlimit="3.9"/></g><g id="Baden-Baden"><polygon id="polygon258" points="123.66 674.64 125.14 677.42 127.18 683.91 135.71 683.17 144.23 683.91 165.74 657.58 166.3 655.36 164.26 634.78 148.5 616.98 152.76 611.24 152.21 599.19 147.94 602.71 139.23 596.22 129.4 582.13 110.12 567.11 97.33 578.42 87.32 597.7 90.1 601.97 100.85 604.93 112.35 624.77 106.6 631.26 85.28 631.81 71.01 642.57 110.86 655.36 123.66 661.11 123.66 674.64" fill="#e6e6e6" stroke="#ccc" stroke-miterlimit="10"/><polygon id="polygon260" points="123.66 674.64 125.14 677.42 127.18 683.91 135.71 683.17 144.23 683.91 165.74 657.58 166.3 655.36 164.26 634.78 148.5 616.98 152.76 611.24 152.21 599.19 147.94 602.71 139.23 596.22 129.4 582.13 110.12 567.11 97.33 578.42 87.32 597.7 90.1 601.97 100.85 604.93 112.35 624.77 106.6 631.26 85.28 631.81 71.01 642.57 110.86 655.36 123.66 661.11 123.66 674.64" fill="#e6e6e6" stroke="#ccc" stroke-miterlimit="3.9"/></g></svg></div>
             <div class="kreis-map-tooltip" id="kreisMapTooltip" role="status" aria-live="polite" hidden>
+              <span class="kreis-map-tooltip-type"></span>
               <span class="kreis-map-tooltip-name"></span>
               <span class="kreis-map-tooltip-count"></span>
             </div>
@@ -625,8 +815,8 @@
           <div class="trust-bento-icon">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
           </div>
-          <h3>Raum Rastatt–Karlsruhe</h3>
-          <p>Wir kennen den Markt vor Ort: Rastatt, Ettlingen, Durmersheim, Karlsruhe-Durlach und die Rheinorte – nicht aus der Ferne, sondern persönlich.</p>
+          <h3>Kerngebiet Baden-Baden–Heidelberg</h3>
+          <p>Unser Kerngebiet liegt zwischen Baden-Baden und Heidelberg – dort kennen wir den Markt persönlich, nicht aus der Ferne. Darüber hinaus stehen Freiberufler im gesamten Bundesgebiet für Sie bereit.</p>
         </div>
       </div>
     </div>
@@ -738,6 +928,47 @@
           </a>
         </div>
         <p class="cta-micro">Wir melden uns innerhalb von 24 Stunden – persönlich, nicht automatisiert.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════
+       SECTION: SPEZIALISIERUNGEN
+       ═══════════════════════════════════════════════ -->
+  <section class="section section-dark specialization-section" id="spezialisierungen">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-eyebrow">Expertise</span>
+        <h2 class="section-title">Spezialisierungen mit Substanz</h2>
+        <p class="section-sub">Für komplexere Objekte braucht es mehr als den Standard – wir bringen die passende Expertise mit.</p>
+      </div>
+      <div class="specialization-grid">
+        <div class="specialization-card reveal">
+          <div class="specialization-card-content">
+            <span class="specialization-badge">MFH</span>
+            <h3>Mehrfamilienhaus verkaufen &amp; bewerten</h3>
+            <p>MFH ist kein EFH-Standard. Bewertung nach Ertrag und Substanz, sauber begründet. Diskrete Vermarktung und eine klare Unterlagenlogik – für Eigentümer, die Methodik erwarten.</p>
+            <ul class="specialization-features">
+              <li>Ertrags- und Substanzbewertung</li>
+              <li>Bauträger- &amp; Bestandserfahrung (ELDA)</li>
+              <li>Diskrete Vermarktung auf Wunsch</li>
+            </ul>
+            <a href="kontakt.html" class="btn btn-primary">Beratung anfragen</a>
+          </div>
+        </div>
+        <div class="specialization-card reveal">
+          <div class="specialization-card-content">
+            <span class="specialization-badge specialization-badge--teal">Gewerbe</span>
+            <h3>Gewerbeimmobilie &amp; Gewerbehalle verkaufen</h3>
+            <p>Klare Erst-Einschätzung zu Preisband, Vermarktungsweg und Timing. Zurückhaltend in der Ansprache, klar im Prozess – für Unternehmer, die Struktur und Diskretion schätzen.</p>
+            <ul class="specialization-features">
+              <li>Schnelle Erst-Einschätzung</li>
+              <li>Diskrete Vermarktung ohne Push-Optik</li>
+              <li>Strukturierter Prozess für Unternehmer</li>
+            </ul>
+            <a href="kontakt.html" class="btn btn-primary">Beratung anfragen</a>
+          </div>
+        </div>
       </div>
     </div>
   </section>

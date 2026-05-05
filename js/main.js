@@ -174,9 +174,8 @@
   });
 
   /* ─── VALUATION WIZARD ─────────────────────────────────
-     7 Schritte (+ Erfolg): Typ → Subtyp (entfällt bei MFH)
-     → Adresse + Karte → Eckdaten (typ-abh.) → Ausstattung/Zustand
-     → Anlass/Zeitrahmen → Kontakt → Danke. */
+     7 Schritte (+ Erfolg): Typ → Subtyp (entfällt bei MFH) → Adresse
+     → Eckdaten → Ausstattung & Zustand → Anlass → Kontakt → Danke. */
   var wizard = document.getElementById('valuationWizard');
   if (wizard) {
     var steps = wizard.querySelectorAll('.wizard-step');
@@ -213,6 +212,56 @@
       });
     }
 
+    function applyEckdatenHeading() {
+      var h = wizard.querySelector('#wizEckdatenHeading');
+      var hint = wizard.querySelector('#wizEckdatenHint');
+      if (!h || !hint) return;
+      if (data.type === 'wohnung') {
+        h.textContent = 'Erzähl uns mehr über die Immobilie';
+        hint.textContent = 'Je genauer die Angaben zu Wohnfläche, Zimmer und Baujahr, desto besser unsere Einschätzung für Deine Eigentumswohnung.';
+      } else if (data.type === 'mehrfamilienhaus') {
+        h.textContent = 'Erzähl uns mehr über Deine Immobilie';
+        hint.textContent = 'Flächen, Wohneinheiten, Baujahr und Mieteinnahmen – je genauer, desto besser unsere Einordnung Deines Mehrfamilienhauses.';
+      } else {
+        h.textContent = 'Erzähl uns mehr über Deine Immobilie';
+        hint.textContent = 'Je genauer die Angaben, desto besser unsere Einschätzung.';
+      }
+    }
+
+    function applyEckdatenLayout() {
+      var grid = wizard.querySelector('#wizEckdatenGrid');
+      var grundWrap = wizard.querySelector('#wiz-eckdaten-grund-wrap');
+      var mietWrap = wizard.querySelector('#wiz-eckdaten-mfh-miete-wrap');
+      var zimmerWrap = wizard.querySelector('#wiz-eckdaten-zimmer-wrap');
+      var whEinWrap = wizard.querySelector('#wiz-eckdaten-wohneinheiten-wrap');
+      var zimmerInp = wizard.querySelector('#wiz-zimmer');
+      var whEinInp = wizard.querySelector('#wiz-wohneinheiten');
+      var mietRange = wizard.querySelector('#wiz-mfh-miete-range');
+      var mietNum = wizard.querySelector('#wiz-mfh-miete');
+      if (!grid || !grundWrap) return;
+      var isWhg = data.type === 'wohnung';
+      var isMfh = data.type === 'mehrfamilienhaus';
+      grundWrap.hidden = isWhg;
+      grid.classList.toggle('wizard-eckdaten--wohnung', isWhg);
+      if (zimmerWrap) zimmerWrap.hidden = isMfh;
+      if (whEinWrap) whEinWrap.hidden = !isMfh;
+      if (mietWrap) {
+        mietWrap.hidden = !isMfh;
+        mietWrap.setAttribute('aria-hidden', isMfh ? 'false' : 'true');
+      }
+      if (mietRange) mietRange.disabled = !isMfh;
+      if (mietNum) mietNum.disabled = !isMfh;
+      if (zimmerInp && whEinInp) {
+        if (isMfh) {
+          zimmerInp.removeAttribute('required');
+          whEinInp.setAttribute('required', 'required');
+        } else {
+          whEinInp.removeAttribute('required');
+          zimmerInp.setAttribute('required', 'required');
+        }
+      }
+    }
+
     function applyDetailVisibility() {
       var groups = wizard.querySelectorAll('.wizard-detail-fields');
       groups.forEach(function (g) {
@@ -222,11 +271,12 @@
     }
 
     function effectiveStepCount(n) {
-      /* Sichtbare Schritte für Fortschrittsanzeige; MFH überspringt Schritt 2 */
+      /* Fortschritt: MFH ohne Subtyp-Schritt → eine Stufe weniger */
       var skipsSubtype = !hasSubtype();
       var totalVisible = skipsSubtype ? totalSteps - 1 : totalSteps;
       var pos = n;
-      if (skipsSubtype && n >= 3) pos = n - 1;
+      if (n >= successStep) pos = totalVisible;
+      else if (skipsSubtype && n >= 3) pos = n - 1;
       return { pos: pos, total: totalVisible };
     }
 
@@ -237,10 +287,17 @@
 
       if (n === 2) applySubtypeVisibility();
       if (n === 4) {
+        applyEckdatenHeading();
+        applyEckdatenLayout();
+        syncEckdatenDetailSliders();
         applyDetailVisibility();
         if (data.type === 'einfamilienhaus') syncEfhSlidersFromValues();
         if (data.type === 'wohnung') syncWhgFlaecheSlider();
         if (data.type === 'mehrfamilienhaus') syncMfhSlidersFromValues();
+      }
+      if (n === 3) {
+        clearTimeout(mapDebounce);
+        mapDebounce = setTimeout(updateMapPreview, 200);
       }
 
       if (wizardProgressEl) {
@@ -283,14 +340,22 @@
         valid = isFilled(strasse) && isFilled(ort) &&
                 plz && /^[0-9]{5}$/.test(plz.value.trim());
       } else if (n === 4) {
-        var activeGroup = wizard.querySelector('.wizard-detail-fields[data-detail-for="' + data.type + '"]');
-        if (activeGroup) {
-          var inputs = activeGroup.querySelectorAll('input[data-detail-name]');
-          valid = inputs.length > 0;
-          inputs.forEach(function (inp) {
-            if (!isFilled(inp)) valid = false;
-            if (inp.type === 'number' && inp.validity && !inp.validity.valid) valid = false;
-          });
+        var flaeche = wizard.querySelector('#wiz-flaeche');
+        var zimmer = wizard.querySelector('#wiz-zimmer');
+        var wohnEin = wizard.querySelector('#wiz-wohneinheiten');
+        var baujahr = wizard.querySelector('#wiz-baujahr');
+        var grund = wizard.querySelector('#wiz-grundstueck');
+        var zimmerOk = data.type === 'mehrfamilienhaus'
+          ? !!(wohnEin && isFilled(wohnEin) && wohnEin.validity.valid)
+          : !!(zimmer && isFilled(zimmer) && zimmer.validity.valid);
+        valid = isFilled(flaeche) && zimmerOk && isFilled(baujahr) &&
+                flaeche.validity.valid && baujahr.validity.valid;
+        if (valid && data.type !== 'wohnung' && grund) {
+          valid = isFilled(grund) && grund.validity.valid;
+        }
+        if (valid && data.type === 'mehrfamilienhaus') {
+          var miete = wizard.querySelector('#wiz-mfh-miete');
+          valid = !!(miete && isFilled(miete) && miete.validity.valid);
         }
       } else if (n === 5) {
         var selAus = wizard.querySelector('#wiz-ausstattung');
@@ -298,8 +363,7 @@
         valid = !!(selAus && selAus.value && selZu && selZu.value);
       } else if (n === 6) {
         var selAnlass = wizard.querySelector('#wiz-anlass');
-        var selZeit = wizard.querySelector('#wiz-zeitrahmen');
-        valid = !!(selAnlass && selAnlass.value && selZeit && selZeit.value);
+        valid = !!(selAnlass && selAnlass.value);
       } else if (n === 7) {
         var vorname = wizard.querySelector('#wiz-vorname');
         var nachname = wizard.querySelector('#wiz-nachname');
@@ -330,6 +394,8 @@
         }
         applySubtypeVisibility();
         applyDetailVisibility();
+        applyEckdatenLayout();
+        applyEckdatenHeading();
         validateStep(current);
       });
     });
@@ -539,6 +605,27 @@
       rangeEl.setAttribute('aria-valuenow', String(val));
     }
 
+    function syncEckdatenDetailSliders() {
+      [
+        ['#wiz-flaeche-range', '#wiz-flaeche'],
+        ['#wiz-grundstueck-range', '#wiz-grundstueck'],
+        ['#wiz-mfh-miete-range', '#wiz-mfh-miete']
+      ].forEach(function (pair) {
+        var r = wizard.querySelector(pair[0]);
+        var num = wizard.querySelector(pair[1]);
+        if (!r || !num) return;
+        var v = parseFloat(num.value);
+        if (!isNaN(v)) {
+          v = clampNum(v, +r.min, +r.max);
+          num.value = String(v);
+          r.value = String(v);
+        } else if (num.value.trim() === '') {
+          num.value = r.value;
+        }
+        updateRangeFill(r);
+      });
+    }
+
     function syncEfhSlidersFromValues() {
       [
         ['#wiz-efh-flaeche-range', '#wiz-efh-flaeche'],
@@ -678,6 +765,9 @@
       bindPair('#wiz-whg-flaeche-range', '#wiz-whg-flaeche');
       bindPair('#wiz-mfh-flaeche-range', '#wiz-mfh-flaeche');
       bindPair('#wiz-mfh-grundstueck-range', '#wiz-mfh-grundstueck');
+      bindPair('#wiz-flaeche-range', '#wiz-flaeche');
+      bindPair('#wiz-grundstueck-range', '#wiz-grundstueck');
+      bindPair('#wiz-mfh-miete-range', '#wiz-mfh-miete');
     }
 
     bindEfhDetailControls();
@@ -686,6 +776,10 @@
     wizard.querySelectorAll('input').forEach(function (input) {
       var ev = input.type === 'checkbox' ? 'change' : 'input';
       input.addEventListener(ev, function () { validateStep(current); });
+    });
+
+    wizard.querySelectorAll('select.wizard-select-native').forEach(function (sel) {
+      sel.addEventListener('change', function () { validateStep(current); });
     });
 
     btnNext.addEventListener('click', function () {
@@ -697,11 +791,15 @@
           if (inp.type === 'checkbox') data[inp.name] = inp.checked;
           else data[inp.name] = inp.value;
         });
-        /* Detail-Felder der aktiven Typ-Gruppe sammeln (data-detail-name) */
         var detailInputs = wizard.querySelectorAll('.wizard-detail-fields[data-detail-for="' + data.type + '"] input[data-detail-name]');
         detailInputs.forEach(function (inp) {
           data[inp.getAttribute('data-detail-name')] = inp.value;
         });
+        if (!hasSubtype()) delete data.subtype;
+        if (data.type === 'wohnung') delete data.grundstueck;
+        if (data.type !== 'mehrfamilienhaus') delete data.mieteinnahmen_jahr;
+        if (data.type === 'mehrfamilienhaus') delete data.zimmer;
+        else delete data.wohneinheiten;
         current = successStep;
         showStep(current);
         return;
@@ -718,6 +816,7 @@
       }
     });
 
+    applyEckdatenLayout();
     showStep(1);
   }
 
@@ -1240,8 +1339,10 @@
         if (!tooltip) return;
         var d = districtData[id];
         if (!d) return;
+        var typeEl = tooltip.querySelector('.kreis-map-tooltip-type');
         var nameEl = tooltip.querySelector('.kreis-map-tooltip-name');
         var countEl = tooltip.querySelector('.kreis-map-tooltip-count');
+        if (typeEl) typeEl.textContent = d.type || '';
         if (nameEl) nameEl.textContent = d.name;
         var n = typeof d.listings === 'number' ? d.listings : parseInt(String(d.listings), 10) || 0;
         if (countEl) countEl.textContent = n === 1 ? '1 gelistete Immobilie' : n + ' gelistete Immobilien';
