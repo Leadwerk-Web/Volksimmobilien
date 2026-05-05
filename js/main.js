@@ -173,7 +173,10 @@
     });
   });
 
-  /* ─── VALUATION WIZARD ─────────────────────────── */
+  /* ─── VALUATION WIZARD ─────────────────────────────────
+     7 Schritte (+ Erfolg): Typ → Subtyp (entfällt bei MFH)
+     → Adresse + Karte → Eckdaten (typ-abh.) → Ausstattung/Zustand
+     → Anlass/Zeitrahmen → Kontakt → Danke. */
   var wizard = document.getElementById('valuationWizard');
   if (wizard) {
     var steps = wizard.querySelectorAll('.wizard-step');
@@ -182,31 +185,86 @@
     var btnNext = document.getElementById('wizardNext');
     var btnBack = document.getElementById('wizardBack');
     var navBar = document.getElementById('wizardNav');
+    var mapIframe = document.getElementById('wizardMap');
     var current = 1;
-    var totalSteps = 3;
+    var totalSteps = 7;
+    var successStep = 8;
     var data = {};
+    var mapDebounce = null;
+
+    function hasSubtype() {
+      return data.type === 'einfamilienhaus' || data.type === 'wohnung';
+    }
+
+    function nextStepFrom(n) {
+      if (n === 1 && !hasSubtype()) return 3;
+      return n + 1;
+    }
+
+    function prevStepFrom(n) {
+      if (n === 3 && !hasSubtype()) return 1;
+      return n - 1;
+    }
+
+    function applySubtypeVisibility() {
+      wizard.querySelectorAll('.wizard-choice-group--subtype').forEach(function (g) {
+        var match = g.getAttribute('data-subtype-for') === data.type;
+        g.hidden = !match;
+      });
+    }
+
+    function applyDetailVisibility() {
+      var groups = wizard.querySelectorAll('.wizard-detail-fields');
+      groups.forEach(function (g) {
+        var match = g.getAttribute('data-detail-for') === data.type;
+        g.hidden = !match;
+      });
+    }
+
+    function effectiveStepCount(n) {
+      /* Sichtbare Schritte für Fortschrittsanzeige; MFH überspringt Schritt 2 */
+      var skipsSubtype = !hasSubtype();
+      var totalVisible = skipsSubtype ? totalSteps - 1 : totalSteps;
+      var pos = n;
+      if (skipsSubtype && n >= 3) pos = n - 1;
+      return { pos: pos, total: totalVisible };
+    }
 
     function showStep(n) {
       steps.forEach(function (s) { s.classList.remove('active'); });
       var step = wizard.querySelector('[data-step="' + n + '"]');
       if (step) step.classList.add('active');
 
+      if (n === 2) applySubtypeVisibility();
+      if (n === 4) {
+        applyDetailVisibility();
+        if (data.type === 'einfamilienhaus') syncEfhSlidersFromValues();
+        if (data.type === 'wohnung') syncWhgFlaecheSlider();
+        if (data.type === 'mehrfamilienhaus') syncMfhSlidersFromValues();
+      }
+
       if (wizardProgressEl) {
-        wizardProgressEl.style.width = Math.min((n / totalSteps) * 100, 100) + '%';
+        var ec = effectiveStepCount(n);
+        wizardProgressEl.style.width = Math.min((ec.pos / ec.total) * 100, 100) + '%';
       }
 
       if (n <= totalSteps) {
         navBar.style.display = 'flex';
         btnBack.hidden = (n === 1);
-        btnNext.textContent = (n === totalSteps) ? 'Absenden' : 'Weiter';
-        if (n < totalSteps) {
-          btnNext.innerHTML += ' <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>';
+        if (n === totalSteps) {
+          btnNext.textContent = 'Absenden';
+        } else {
+          btnNext.innerHTML = 'Weiter <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>';
         }
       } else {
         navBar.style.display = 'none';
       }
 
       validateStep(n);
+    }
+
+    function isFilled(el) {
+      return el && el.value !== undefined && el.value.toString().trim() !== '';
     }
 
     function validateStep(n) {
@@ -216,54 +274,446 @@
       if (n === 1) {
         valid = !!wizard.querySelector('.wizard-option.selected');
       } else if (n === 2) {
-        var plz = wizard.querySelector('#wiz-plz');
-        valid = plz && plz.value.trim().length === 5;
+        var visibleSub = wizard.querySelector('.wizard-choice-group--subtype:not([hidden])');
+        valid = !!(visibleSub && visibleSub.querySelector('.wizard-choice.selected'));
       } else if (n === 3) {
+        var plz = wizard.querySelector('#wiz-plz');
+        var ort = wizard.querySelector('#wiz-ort');
+        var strasse = wizard.querySelector('#wiz-strasse');
+        valid = isFilled(strasse) && isFilled(ort) &&
+                plz && /^[0-9]{5}$/.test(plz.value.trim());
+      } else if (n === 4) {
+        var activeGroup = wizard.querySelector('.wizard-detail-fields[data-detail-for="' + data.type + '"]');
+        if (activeGroup) {
+          var inputs = activeGroup.querySelectorAll('input[data-detail-name]');
+          valid = inputs.length > 0;
+          inputs.forEach(function (inp) {
+            if (!isFilled(inp)) valid = false;
+            if (inp.type === 'number' && inp.validity && !inp.validity.valid) valid = false;
+          });
+        }
+      } else if (n === 5) {
+        var selAus = wizard.querySelector('#wiz-ausstattung');
+        var selZu = wizard.querySelector('#wiz-zustand');
+        valid = !!(selAus && selAus.value && selZu && selZu.value);
+      } else if (n === 6) {
+        var selAnlass = wizard.querySelector('#wiz-anlass');
+        var selZeit = wizard.querySelector('#wiz-zeitrahmen');
+        valid = !!(selAnlass && selAnlass.value && selZeit && selZeit.value);
+      } else if (n === 7) {
         var vorname = wizard.querySelector('#wiz-vorname');
         var nachname = wizard.querySelector('#wiz-nachname');
         var email = wizard.querySelector('#wiz-email');
-        valid = vorname && vorname.value.trim() !== '' &&
-                nachname && nachname.value.trim() !== '' &&
-                email && email.value.trim() !== '' && email.validity.valid;
+        var datenschutz = wizard.querySelector('#wiz-datenschutz');
+        valid = isFilled(vorname) && isFilled(nachname) &&
+                email && email.value.trim() !== '' && email.validity.valid &&
+                datenschutz && datenschutz.checked;
       }
 
       btnNext.disabled = !valid;
     }
 
+    /* Typ-Auswahl: setzt Subtyp zurück, wenn der Typ wechselt */
     wizard.querySelectorAll('.wizard-option').forEach(function (opt) {
       opt.addEventListener('click', function () {
+        var prevType = data.type;
         wizard.querySelectorAll('.wizard-option').forEach(function (o) {
           o.classList.remove('selected');
         });
         opt.classList.add('selected');
         data.type = opt.getAttribute('data-value');
+        if (prevType !== data.type) {
+          delete data.subtype;
+          wizard.querySelectorAll('.wizard-choice-group--subtype .wizard-choice').forEach(function (c) {
+            c.classList.remove('selected');
+          });
+        }
+        applySubtypeVisibility();
+        applyDetailVisibility();
         validateStep(current);
       });
     });
 
+    /* Choice-Gruppen (Subtyp, Anlass, Zeitrahmen) bzw. natives Select Ausstattung/Zustand (Custom-UI) */
+    wizard.querySelectorAll('.wizard-choice-group').forEach(function (group) {
+      var groupName = group.getAttribute('data-name');
+      var dropdown = group.querySelector('select.wizard-select-native');
+      if (dropdown) {
+        dropdown.addEventListener('change', function () {
+          if (groupName) data[groupName] = dropdown.value;
+          validateStep(current);
+        });
+        return;
+      }
+      group.querySelectorAll('.wizard-choice').forEach(function (choice) {
+        choice.addEventListener('click', function () {
+          group.querySelectorAll('.wizard-choice').forEach(function (c) {
+            c.classList.remove('selected');
+          });
+          choice.classList.add('selected');
+          if (groupName) data[groupName] = choice.getAttribute('data-value');
+          validateStep(current);
+        });
+      });
+    });
+
+    /* Custom-Dropdown (Glasmorphism-Liste, Menü an body gegen overflow: hidden) */
+    function initWizardCustomSelects(root) {
+      function getMenuFromBtn(btn) {
+        var id = btn.getAttribute('aria-controls');
+        return id ? document.getElementById(id) : null;
+      }
+
+      function syncOptionAria(menu, value) {
+        menu.querySelectorAll('.wizard-select__option').forEach(function (opt) {
+          opt.setAttribute('aria-selected', opt.getAttribute('data-value') === value ? 'true' : 'false');
+        });
+      }
+
+      function syncTriggerLabel(select, btn) {
+        var span = btn.querySelector('.wizard-select__value');
+        if (!span) return;
+        var v = select.value;
+        var text = '';
+        for (var i = 0; i < select.options.length; i++) {
+          if (select.options[i].value === v) {
+            text = select.options[i].textContent;
+            break;
+          }
+        }
+        span.textContent = text || 'Bitte wählen …';
+      }
+
+      function positionMenu(btn, menu) {
+        var r = btn.getBoundingClientRect();
+        var w = Math.min(r.width, window.innerWidth - 16);
+        var left = Math.max(8, Math.min(r.left, window.innerWidth - w - 8));
+        menu.style.left = left + 'px';
+        menu.style.top = (r.bottom + 6) + 'px';
+        menu.style.width = w + 'px';
+        var spaceBelow = window.innerHeight - r.bottom - 14;
+        var maxH = Math.min(Math.max(spaceBelow, 120), window.innerHeight * 0.45, 280);
+        menu.style.maxHeight = maxH + 'px';
+      }
+
+      function closeCustomSelect(wrap) {
+        var box = wrap.querySelector('.wizard-custom-select__box');
+        var btn = wrap.querySelector('.wizard-select--trigger');
+        var menu = btn ? getMenuFromBtn(btn) : null;
+        if (!menu || !btn || !box) return;
+        menu.hidden = true;
+        wrap.classList.remove('is-open');
+        btn.setAttribute('aria-expanded', 'false');
+        if (menu.parentNode === document.body) {
+          box.appendChild(menu);
+        }
+      }
+
+      function closeAllCustomExcept(keepWrap) {
+        root.querySelectorAll('[data-custom-select].is-open').forEach(function (w) {
+          if (w !== keepWrap) closeCustomSelect(w);
+        });
+      }
+
+      root.querySelectorAll('[data-custom-select]').forEach(function (wrap) {
+        if (wrap.getAttribute('data-custom-bound')) return;
+        wrap.setAttribute('data-custom-bound', '1');
+        var box = wrap.querySelector('.wizard-custom-select__box');
+        var select = wrap.querySelector('select.wizard-select-native');
+        var btn = wrap.querySelector('.wizard-select--trigger');
+        var menu = btn ? getMenuFromBtn(btn) : null;
+        if (!box || !select || !btn || !menu) return;
+
+        syncTriggerLabel(select, btn);
+        syncOptionAria(menu, select.value);
+
+        btn.addEventListener('click', function (e) {
+          e.stopPropagation();
+          var open = wrap.classList.contains('is-open');
+          closeAllCustomExcept(wrap);
+          if (open) {
+            closeCustomSelect(wrap);
+            return;
+          }
+          document.body.appendChild(menu);
+          positionMenu(btn, menu);
+          menu.hidden = false;
+          wrap.classList.add('is-open');
+          btn.setAttribute('aria-expanded', 'true');
+          requestAnimationFrame(function () {
+            positionMenu(btn, menu);
+          });
+        });
+
+        menu.addEventListener('click', function (e) {
+          var li = e.target.closest('.wizard-select__option');
+          if (!li || !menu.contains(li)) return;
+          e.stopPropagation();
+          var val = li.getAttribute('data-value');
+          select.value = val === null ? '' : val;
+          syncTriggerLabel(select, btn);
+          syncOptionAria(menu, select.value);
+          select.dispatchEvent(new Event('change', { bubbles: true }));
+          closeCustomSelect(wrap);
+          btn.focus();
+        });
+
+        select.addEventListener('change', function () {
+          syncTriggerLabel(select, btn);
+          syncOptionAria(menu, select.value);
+        });
+      });
+
+      document.addEventListener('click', function (e) {
+        root.querySelectorAll('[data-custom-select].is-open').forEach(function (w) {
+          var b = w.querySelector('.wizard-select--trigger');
+          var m = b ? getMenuFromBtn(b) : null;
+          if (!m || !b) return;
+          if (!w.contains(e.target) && !m.contains(e.target)) {
+            closeCustomSelect(w);
+          }
+        });
+      });
+
+      document.addEventListener('keydown', function (e) {
+        if (e.key !== 'Escape') return;
+        root.querySelectorAll('[data-custom-select].is-open').forEach(closeCustomSelect);
+      });
+
+      function repositionOpenMenus() {
+        root.querySelectorAll('[data-custom-select].is-open').forEach(function (w) {
+          var b = w.querySelector('.wizard-select--trigger');
+          var m = b ? getMenuFromBtn(b) : null;
+          if (b && m && !m.hidden) positionMenu(b, m);
+        });
+      }
+
+      window.addEventListener('resize', repositionOpenMenus);
+      window.addEventListener('scroll', repositionOpenMenus, true);
+    }
+
+    initWizardCustomSelects(wizard);
+
+    /* Google-Maps-Vorschau aus Adresse aktualisieren (debounced) */
+    function updateMapPreview() {
+      if (!mapIframe) return;
+      var s = (wizard.querySelector('#wiz-strasse') || {}).value || '';
+      var p = (wizard.querySelector('#wiz-plz') || {}).value || '';
+      var o = (wizard.querySelector('#wiz-ort') || {}).value || '';
+      s = s.trim(); p = p.trim(); o = o.trim();
+      if (!s && !p && !o) return;
+      var parts = [];
+      if (s) parts.push(s);
+      if (p && o) parts.push(p + ' ' + o);
+      else if (p) parts.push(p);
+      else if (o) parts.push(o);
+      var query = parts.join(', ');
+      var hasCity = !!o || /^[0-9]{5}$/.test(p);
+      if (!hasCity) return;
+      query += ', Deutschland';
+      var url = 'https://www.google.com/maps?q=' + encodeURIComponent(query) + '&output=embed&z=15';
+      mapIframe.src = url;
+    }
+
+    ['#wiz-strasse', '#wiz-plz', '#wiz-ort'].forEach(function (sel) {
+      var el = wizard.querySelector(sel);
+      if (!el) return;
+      el.addEventListener('input', function () {
+        clearTimeout(mapDebounce);
+        mapDebounce = setTimeout(updateMapPreview, 700);
+      });
+    });
+
+    function clampNum(n, min, max) {
+      if (typeof n !== 'number' || isNaN(n)) return min;
+      return Math.min(max, Math.max(min, n));
+    }
+
+    function updateRangeFill(rangeEl) {
+      if (!rangeEl) return;
+      var min = +rangeEl.min;
+      var max = +rangeEl.max;
+      var val = +rangeEl.value;
+      var pct = max > min ? ((val - min) / (max - min)) * 100 : 0;
+      rangeEl.style.setProperty('--wizard-range-fill', pct + '%');
+      rangeEl.setAttribute('aria-valuenow', String(val));
+    }
+
+    function syncEfhSlidersFromValues() {
+      [
+        ['#wiz-efh-flaeche-range', '#wiz-efh-flaeche'],
+        ['#wiz-efh-grundstueck-range', '#wiz-efh-grundstueck']
+      ].forEach(function (pair) {
+        var r = wizard.querySelector(pair[0]);
+        var num = wizard.querySelector(pair[1]);
+        if (!r || !num) return;
+        var v = parseFloat(num.value);
+        if (!isNaN(v)) {
+          v = clampNum(v, +r.min, +r.max);
+          num.value = String(v);
+          r.value = String(v);
+        } else if (num.value.trim() === '') {
+          num.value = r.value;
+        }
+        updateRangeFill(r);
+      });
+    }
+
+    function syncWhgFlaecheSlider() {
+      var r = wizard.querySelector('#wiz-whg-flaeche-range');
+      var num = wizard.querySelector('#wiz-whg-flaeche');
+      if (!r || !num) return;
+      var v = parseFloat(num.value);
+      if (!isNaN(v)) {
+        v = clampNum(v, +r.min, +r.max);
+        num.value = String(v);
+        r.value = String(v);
+      } else if (num.value.trim() === '') {
+        num.value = r.value;
+      }
+      updateRangeFill(r);
+    }
+
+    function syncMfhSlidersFromValues() {
+      [
+        ['#wiz-mfh-flaeche-range', '#wiz-mfh-flaeche'],
+        ['#wiz-mfh-grundstueck-range', '#wiz-mfh-grundstueck']
+      ].forEach(function (pair) {
+        var r = wizard.querySelector(pair[0]);
+        var num = wizard.querySelector(pair[1]);
+        if (!r || !num) return;
+        var v = parseFloat(num.value);
+        if (!isNaN(v)) {
+          v = clampNum(v, +r.min, +r.max);
+          num.value = String(v);
+          r.value = String(v);
+        } else if (num.value.trim() === '') {
+          num.value = r.value;
+        }
+        updateRangeFill(r);
+      });
+    }
+
+    function bindEfhDetailControls() {
+      wizard.querySelectorAll('.wizard-stepper').forEach(function (wrap) {
+        var inp = wrap.querySelector('.wizard-stepper__input[data-detail-name]');
+        var down = wrap.querySelector('[data-stepper-down]');
+        var up = wrap.querySelector('[data-stepper-up]');
+        if (!inp || !down || !up) return;
+        if (wrap.getAttribute('data-stepper-bound')) return;
+        wrap.setAttribute('data-stepper-bound', '1');
+        var step = parseFloat(inp.getAttribute('step')) || 1;
+        var min = parseFloat(inp.getAttribute('min')) || 0;
+        var max = parseFloat(inp.getAttribute('max')) || 99;
+        function roundStep(v) {
+          var x = Math.round(v / step) * step;
+          var p = (String(step).split('.')[1] || '').length;
+          return parseFloat(x.toFixed(p));
+        }
+        function clampVal(v) {
+          var x = roundStep(v);
+          if (x < min) x = min;
+          if (x > max) x = max;
+          return x;
+        }
+        down.addEventListener('click', function () {
+          var v = parseFloat(inp.value);
+          if (isNaN(v)) v = min;
+          inp.value = String(clampVal(v - step));
+          inp.dispatchEvent(new Event('input', { bubbles: true }));
+        });
+        up.addEventListener('click', function () {
+          var v = parseFloat(inp.value);
+          if (isNaN(v)) v = min;
+          inp.value = String(clampVal(v + step));
+          inp.dispatchEvent(new Event('input', { bubbles: true }));
+        });
+      });
+
+      function bindPair(rangeSel, numSel) {
+        var rangeEl = wizard.querySelector(rangeSel);
+        var numEl = wizard.querySelector(numSel);
+        if (!rangeEl || !numEl) return;
+        if (rangeEl.getAttribute('data-wizard-range-bound')) return;
+        rangeEl.setAttribute('data-wizard-range-bound', '1');
+        var rmin = +rangeEl.min;
+        var rmax = +rangeEl.max;
+
+        rangeEl.addEventListener('input', function () {
+          numEl.value = rangeEl.value;
+          updateRangeFill(rangeEl);
+          numEl.dispatchEvent(new Event('input', { bubbles: true }));
+        });
+
+        numEl.addEventListener('input', function () {
+          var raw = numEl.value.trim();
+          if (raw === '') {
+            updateRangeFill(rangeEl);
+            return;
+          }
+          var v = clampNum(parseFloat(raw), rmin, rmax);
+          numEl.value = String(v);
+          rangeEl.value = String(v);
+          updateRangeFill(rangeEl);
+        });
+
+        numEl.addEventListener('blur', function () {
+          var raw = numEl.value.trim();
+          if (raw === '' || isNaN(parseFloat(raw))) {
+            numEl.value = rangeEl.value;
+          } else {
+            var v = clampNum(parseFloat(raw), rmin, rmax);
+            numEl.value = String(v);
+            rangeEl.value = numEl.value;
+          }
+          updateRangeFill(rangeEl);
+          numEl.dispatchEvent(new Event('input', { bubbles: true }));
+        });
+
+        updateRangeFill(rangeEl);
+      }
+
+      bindPair('#wiz-efh-flaeche-range', '#wiz-efh-flaeche');
+      bindPair('#wiz-efh-grundstueck-range', '#wiz-efh-grundstueck');
+      bindPair('#wiz-whg-flaeche-range', '#wiz-whg-flaeche');
+      bindPair('#wiz-mfh-flaeche-range', '#wiz-mfh-flaeche');
+      bindPair('#wiz-mfh-grundstueck-range', '#wiz-mfh-grundstueck');
+    }
+
+    bindEfhDetailControls();
+
+    /* Inputs (text/number/email) und Checkboxen */
     wizard.querySelectorAll('input').forEach(function (input) {
-      input.addEventListener('input', function () { validateStep(current); });
+      var ev = input.type === 'checkbox' ? 'change' : 'input';
+      input.addEventListener(ev, function () { validateStep(current); });
     });
 
     btnNext.addEventListener('click', function () {
       if (btnNext.disabled) return;
 
       if (current === totalSteps) {
-        wizard.querySelectorAll('input').forEach(function (inp) {
-          data[inp.name] = inp.value;
+        /* Standard-Inputs mit name-Attribut sammeln */
+        wizard.querySelectorAll('input[name], select[name]').forEach(function (inp) {
+          if (inp.type === 'checkbox') data[inp.name] = inp.checked;
+          else data[inp.name] = inp.value;
         });
-        current = 4;
+        /* Detail-Felder der aktiven Typ-Gruppe sammeln (data-detail-name) */
+        var detailInputs = wizard.querySelectorAll('.wizard-detail-fields[data-detail-for="' + data.type + '"] input[data-detail-name]');
+        detailInputs.forEach(function (inp) {
+          data[inp.getAttribute('data-detail-name')] = inp.value;
+        });
+        current = successStep;
         showStep(current);
         return;
       }
 
-      current++;
+      current = nextStepFrom(current);
       showStep(current);
     });
 
     btnBack.addEventListener('click', function () {
       if (current > 1) {
-        current--;
+        current = prevStepFrom(current);
         showStep(current);
       }
     });
@@ -637,5 +1087,256 @@
 
     setActive(0);
   });
+
+  /* ═══════════════════════════════════════════════════════
+     KREISE-MAP – Interaktive SVG-Karte (Kerngebiet BW)
+
+     Lädt Fotos/Kreise_final.svg inline, dekoriert die benannten
+     <g>-Gruppen zentral mit class="district" + data-/aria-Attributen
+     und bindet zentrale Hover-, Focus- und Click-Logik. Die Hover-
+     Optik ist komplett in CSS gesteuert (.district), JS pflegt nur
+     den .is-active-Zustand sowie Tooltip- und Info-Panel-Inhalte.
+
+     Live-Daten: districtMapping[*].listings Platzhalter – im Live-System
+     mit echten Zählungen aus dem Immobiliensystem überschreiben.
+     ═══════════════════════════════════════════════════════ */
+  function initKreisMap() {
+    var root = document.querySelector('[data-kreis-map]');
+    if (!root) return;
+
+    var svgHost = root.querySelector('.kreis-map-svg-host');
+    var tooltip = document.getElementById('kreisMapTooltip');
+    var infoType = document.getElementById('kreisMapInfoType');
+    var infoName = document.getElementById('kreisMapInfoName');
+    var infoCount = document.getElementById('kreisMapInfoCount');
+    var infoDesc = document.getElementById('kreisMapInfoDesc');
+    var infoCta = document.getElementById('kreisMapInfoCta');
+    if (!svgHost) return;
+
+    /* Mapping: ursprüngliche <g id> aus Kreise_final.svg
+       → saubere data-district-id, Anzeigename, Typ und Beschreibung.
+       Eindeutige Zuordnung anhand der Gruppennamen aus der SVG-Quelle. */
+    /* listings: Platzhalter bis Anbindung ans Immobiliensystem */
+    var districtMapping = {
+      'Neckar-Odenwald': { id: 'neckar-odenwald-kreis', name: 'Neckar-Odenwald-Kreis', type: 'Landkreis',  listings: 4, description: 'Entdecken Sie aktuelle Immobilienangebote im Neckar-Odenwald-Kreis.' },
+      'Rhein-Neckar':    { id: 'rhein-neckar-kreis',    name: 'Rhein-Neckar-Kreis',    type: 'Landkreis',  listings: 18, description: 'Entdecken Sie aktuelle Immobilienangebote im Rhein-Neckar-Kreis.' },
+      'Mannheim':        { id: 'mannheim',              name: 'Mannheim',              type: 'Stadtkreis', listings: 12, description: 'Entdecken Sie aktuelle Immobilienangebote in Mannheim.' },
+      'Heidelberg':      { id: 'heidelberg',            name: 'Heidelberg',            type: 'Stadtkreis', listings: 9, description: 'Entdecken Sie aktuelle Immobilienangebote in Heidelberg.' },
+      'Freudenstadt':    { id: 'freudenstadt',          name: 'Landkreis Freudenstadt', type: 'Landkreis', listings: 2, description: 'Entdecken Sie aktuelle Immobilienangebote im Landkreis Freudenstadt.' },
+      'Pforzheim':       { id: 'pforzheim',             name: 'Pforzheim',             type: 'Stadtkreis', listings: 7, description: 'Entdecken Sie aktuelle Immobilienangebote in Pforzheim.' },
+      'Enzkreis':        { id: 'enzkreis',              name: 'Enzkreis',              type: 'Landkreis',  listings: 5, description: 'Entdecken Sie aktuelle Immobilienangebote im Enzkreis.' },
+      'Calw':            { id: 'calw',                  name: 'Landkreis Calw',        type: 'Landkreis',  listings: 3, description: 'Entdecken Sie aktuelle Immobilienangebote im Landkreis Calw.' },
+      'LK_Karlsruhe':    { id: 'landkreis-karlsruhe',   name: 'Landkreis Karlsruhe',   type: 'Landkreis',  listings: 11, description: 'Entdecken Sie aktuelle Immobilienangebote im Landkreis Karlsruhe.' },
+      'Stadt_Karlsruhe': { id: 'karlsruhe-stadt',       name: 'Karlsruhe',             type: 'Stadtkreis', listings: 15, description: 'Entdecken Sie aktuelle Immobilienangebote in Karlsruhe.' },
+      'Rastatt':         { id: 'rastatt',               name: 'Landkreis Rastatt',     type: 'Landkreis',  listings: 8, description: 'Entdecken Sie aktuelle Immobilienangebote im Landkreis Rastatt.' },
+      'Baden-Baden':     { id: 'baden-baden',           name: 'Baden-Baden',           type: 'Stadtkreis', listings: 6, description: 'Entdecken Sie aktuelle Immobilienangebote in Baden-Baden.' }
+    };
+
+    /* Lookup nach data-district-id für Tooltip- und Panel-Inhalte */
+    var districtData = {};
+    Object.keys(districtMapping).forEach(function (origId) {
+      var info = districtMapping[origId];
+      districtData[info.id] = info;
+    });
+
+    /* SVG ist inline im DOM – einfach übernehmen.
+       Vorteil: funktioniert auch lokal per file:// (kein Fetch nötig). */
+    var svg = svgHost.querySelector('svg');
+    if (!svg) {
+      svgHost.innerHTML = '<p class="kreis-map-error">Karte konnte derzeit nicht geladen werden.</p>';
+      return;
+    }
+
+    svg.setAttribute('role', 'group');
+    svg.setAttribute('aria-label', 'Stadt- und Landkreise im Kerngebiet zwischen Baden-Baden und Heidelberg');
+    svg.setAttribute('focusable', 'false');
+
+    Object.keys(districtMapping).forEach(function (origId) {
+      var info = districtMapping[origId];
+      var g = svg.querySelector('g[id="' + origId + '"]');
+      if (!g) return;
+      g.classList.add('district');
+      g.setAttribute('data-district-id', info.id);
+      g.setAttribute('data-district-name', info.name);
+      g.setAttribute('tabindex', '0');
+      g.setAttribute('role', 'button');
+      g.setAttribute('aria-label', info.name + ', ' + info.listings + ' gelistete Immobilien');
+    });
+
+    attachInteractions(svg);
+
+    function attachInteractions(svg) {
+      var supportsHover = window.matchMedia('(hover: hover)').matches;
+      var activeId = null;
+      var hideTimer = null;
+
+      /* SVG-Malreihenfolge = DOM-Reihenfolge. Gehoverter / aktiver Kreis
+         wird ans Ende gehängt, damit er garantiert über allen anderen liegt.
+         Beim Zurücksetzen wird die ursprüngliche Reihenfolge wiederhergestellt. */
+      var districtOrder = Array.prototype.slice.call(svg.querySelectorAll('.district'));
+
+      function restoreDistrictLayerOrder() {
+        districtOrder.forEach(function (g) {
+          if (g && g.parentNode === svg) svg.appendChild(g);
+        });
+      }
+
+      function bringDistrictToFront(g) {
+        if (g && g.parentNode === svg) svg.appendChild(g);
+      }
+
+      function hasInfoPanel() {
+        return !!(infoType && infoName && infoCount && infoDesc);
+      }
+
+      function defaultPanel() {
+        if (!hasInfoPanel()) return;
+        infoType.textContent = 'Region auswählen';
+        infoName.textContent = 'Baden-Württemberg';
+        infoCount.textContent = 'Kerngebiet zwischen Baden-Baden und Heidelberg';
+        infoDesc.textContent = 'Bewege die Maus oder tippe auf einen Stadt- oder Landkreis, um aktuelle Immobilien zum Verkauf zu sehen.';
+        if (infoCta) {
+          infoCta.disabled = true;
+          delete infoCta.dataset.districtId;
+        }
+      }
+
+      function updatePanel(id) {
+        if (!hasInfoPanel()) return;
+        var d = id ? districtData[id] : null;
+        if (!d) { defaultPanel(); return; }
+        infoType.textContent = d.type;
+        infoName.textContent = d.name;
+        infoCount.textContent = d.listings === 1 ? '1 gelistete Immobilie' : d.listings + ' gelistete Immobilien';
+        infoDesc.textContent = d.description;
+        if (infoCta) {
+          infoCta.disabled = false;
+          infoCta.dataset.districtId = id;
+        }
+      }
+
+      function setActive(id) {
+        if (activeId === id) return;
+        if (activeId) {
+          var prev = svg.querySelector('[data-district-id="' + activeId + '"]');
+          if (prev) prev.classList.remove('is-active');
+        }
+        if (id) {
+          var cur = svg.querySelector('[data-district-id="' + id + '"]');
+          if (cur) {
+            cur.classList.add('is-active');
+            bringDistrictToFront(cur);
+          }
+        } else {
+          restoreDistrictLayerOrder();
+        }
+        activeId = id;
+        updatePanel(id);
+        if (!id) hideTooltip();
+        else if (tooltip) showTooltip(id);
+      }
+
+      function showTooltip(id) {
+        if (!tooltip) return;
+        var d = districtData[id];
+        if (!d) return;
+        var nameEl = tooltip.querySelector('.kreis-map-tooltip-name');
+        var countEl = tooltip.querySelector('.kreis-map-tooltip-count');
+        if (nameEl) nameEl.textContent = d.name;
+        var n = typeof d.listings === 'number' ? d.listings : parseInt(String(d.listings), 10) || 0;
+        if (countEl) countEl.textContent = n === 1 ? '1 gelistete Immobilie' : n + ' gelistete Immobilien';
+        tooltip.style.left = '';
+        tooltip.style.top = '';
+        tooltip.removeAttribute('hidden');
+        window.clearTimeout(hideTimer);
+        tooltip.setAttribute('data-visible', 'true');
+      }
+
+      function hideTooltip() {
+        if (!tooltip) return;
+        tooltip.removeAttribute('data-visible');
+        window.clearTimeout(hideTimer);
+        hideTimer = window.setTimeout(function () {
+          tooltip.setAttribute('hidden', '');
+        }, 220);
+      }
+
+      function getDistrict(target) {
+        return target && target.closest ? target.closest('.district') : null;
+      }
+
+      /* Maus */
+      svg.addEventListener('mouseover', function (e) {
+        var d = getDistrict(e.target);
+        if (!d) return;
+        var id = d.getAttribute('data-district-id');
+        setActive(id);
+      });
+      svg.addEventListener('mouseleave', function () {
+        if (!supportsHover) return;
+        setActive(null);
+      });
+
+      /* Tastatur-Fokus */
+      svg.addEventListener('focusin', function (e) {
+        var d = getDistrict(e.target);
+        if (!d) return;
+        var id = d.getAttribute('data-district-id');
+        setActive(id);
+      });
+      svg.addEventListener('focusout', function (e) {
+        if (e.relatedTarget && svg.contains(e.relatedTarget)) return;
+        setActive(null);
+      });
+
+      /* Click + Enter/Space – aktuell nur Console-Log + Custom-Event,
+         damit später eine echte Filter-/Routing-Logik andocken kann. */
+      function selectDistrict(id) {
+        var d = districtData[id];
+        if (!d) return;
+        // eslint-disable-next-line no-console
+        console.log('Kreis ausgewählt:', { id: id, name: d.name });
+        document.dispatchEvent(new CustomEvent('kreis-map:select', {
+          detail: { id: id, district: d }
+        }));
+      }
+
+      svg.addEventListener('click', function (e) {
+        var d = getDistrict(e.target);
+        if (!d) return;
+        var id = d.getAttribute('data-district-id');
+        setActive(id);
+        selectDistrict(id);
+      });
+      svg.addEventListener('keydown', function (e) {
+        if (e.key !== 'Enter' && e.key !== ' ') return;
+        var d = getDistrict(e.target);
+        if (!d) return;
+        e.preventDefault();
+        var id = d.getAttribute('data-district-id');
+        setActive(id);
+        selectDistrict(id);
+      });
+
+      if (infoCta) {
+        infoCta.addEventListener('click', function () {
+          var id = infoCta.dataset.districtId;
+          if (!id) return;
+          selectDistrict(id);
+        });
+      }
+
+      /* Touch: Tap außerhalb der Map setzt Auswahl zurück */
+      if (!supportsHover) {
+        document.addEventListener('click', function (e) {
+          if (!root.contains(e.target)) setActive(null);
+        });
+      }
+
+      defaultPanel();
+    }
+  }
+
+  initKreisMap();
 
 })();
