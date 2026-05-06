@@ -1400,6 +1400,7 @@
         document.dispatchEvent(new CustomEvent('kreis-map:select', {
           detail: { id: id, district: d }
         }));
+        window.open('https://volks.immobilien/angebote/', '_blank', 'noopener,noreferrer');
       }
 
       svg.addEventListener('click', function (e) {
@@ -1437,6 +1438,61 @@
       defaultPanel();
     }
   }
+
+  /* ─── Immobilienarten: horizontales Accordion (verkaufen.html) ─ */
+  function initImmoAccordion() {
+    var root = document.querySelector('[data-immo-accordion]');
+    if (!root) return;
+    var panels = root.querySelectorAll('[data-immo-panel]');
+    if (!panels.length) return;
+
+    function activate(index) {
+      panels.forEach(function (panel, i) {
+        var on = i === index;
+        panel.classList.toggle('is-active', on);
+        panel.setAttribute('aria-expanded', on ? 'true' : 'false');
+        panel.tabIndex = on ? 0 : -1;
+      });
+    }
+
+    panels.forEach(function (panel, idx) {
+      panel.addEventListener('click', function (e) {
+        if (e.target.closest('a')) return;
+        activate(idx);
+      });
+
+      panel.addEventListener('keydown', function (e) {
+        if (e.target.closest('a')) return;
+        var len = panels.length;
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          activate(idx);
+          return;
+        }
+        if (e.key === 'ArrowRight') {
+          e.preventDefault();
+          var next = (idx + 1) % len;
+          activate(next);
+          panels[next].focus();
+        } else if (e.key === 'ArrowLeft') {
+          e.preventDefault();
+          var prev = (idx - 1 + len) % len;
+          activate(prev);
+          panels[prev].focus();
+        } else if (e.key === 'Home') {
+          e.preventDefault();
+          activate(0);
+          panels[0].focus();
+        } else if (e.key === 'End') {
+          e.preventDefault();
+          activate(len - 1);
+          panels[len - 1].focus();
+        }
+      });
+    });
+  }
+
+  initImmoAccordion();
 
   initKreisMap();
 
