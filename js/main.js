@@ -1496,4 +1496,26 @@
 
   initKreisMap();
 
+  /* Suchwunsch-Formular (kaufen.html): Mailto mit zusammengefasstem Text */
+  var suchwunschForm = document.getElementById('suchwunschForm');
+  if (suchwunschForm) {
+    suchwunschForm.addEventListener('submit', function (e) {
+      e.preventDefault();
+      if (!suchwunschForm.checkValidity()) {
+        suchwunschForm.reportValidity();
+        return;
+      }
+      var fd = new FormData(suchwunschForm);
+      var lines = [];
+      fd.forEach(function (v, k) {
+        if (k === 'datenschutz') return;
+        lines.push(k + ': ' + v);
+      });
+      var body = lines.join('\n');
+      var subject = encodeURIComponent('Suchwunsch Immobilie (Kaufen)');
+      window.location.href =
+        'mailto:post@volks.immobilien?subject=' + subject + '&body=' + encodeURIComponent(body);
+    });
+  }
+
 })();

@@ -1536,7 +1536,8 @@ h1, h2, h3, h4, h5, h6 { font-family: var(--font-heading); font-weight: 700; lin
   color: var(--color-gray-400);
 }
 
-.wizard-field input {
+.wizard-field input,
+.wizard-field textarea {
   padding: 0.75rem 1rem;
   border: 2px solid var(--color-gray-200);
   border-radius: var(--radius-md);
@@ -1548,9 +1549,16 @@ h1, h2, h3, h4, h5, h6 { font-family: var(--font-heading); font-weight: 700; lin
   outline: none;
   width: 100%;
 }
-.wizard-field input::placeholder { color: var(--color-gray-400); }
+.wizard-field textarea {
+  min-height: 6.5rem;
+  resize: vertical;
+  line-height: 1.55;
+}
+.wizard-field input::placeholder,
+.wizard-field textarea::placeholder { color: var(--color-gray-400); }
 
-.wizard-field input:focus {
+.wizard-field input:focus,
+.wizard-field textarea:focus {
   border-color: var(--color-accent);
   box-shadow: 0 0 0 3px rgba(127, 189, 189, 0.15);
 }
@@ -2405,6 +2413,23 @@ h1, h2, h3, h4, h5, h6 { font-family: var(--font-heading); font-weight: 700; lin
   padding-bottom: 96px;
 }
 
+.region-section.region-section--marktgebiet {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+/* Kaufseite: „Unser Marktgebiet“ zieht sich über den Beginn von „Kaufmotive“ */
+#marktgebiet.region-section {
+  margin-bottom: -150px;
+  z-index: 3;
+}
+
+#kaeufergruppen.property-types-section {
+  position: relative;
+  z-index: 1;
+  padding-top: 250px;
+}
+
 .region-section::before {
   content: "";
   position: absolute;
@@ -3153,6 +3178,53 @@ h1, h2, h3, h4, h5, h6 { font-family: var(--font-heading); font-weight: 700; lin
   color: var(--color-gray-900);
 }
 
+.listing-card-teaser {
+  font-size: var(--fs-sm);
+  color: var(--color-gray-600);
+  line-height: 1.55;
+  margin: 0;
+  margin-top: var(--space-xs);
+}
+
+.listing-card-cta {
+  display: inline-flex;
+  margin-top: var(--space-md);
+  align-self: flex-start;
+  padding: 0.45rem 1rem;
+  border-radius: var(--radius-md);
+  border: 2px solid var(--color-primary);
+  font-family: var(--font-heading);
+  font-size: var(--fs-sm);
+  font-weight: 700;
+  color: var(--color-primary);
+  transition: background var(--transition-base), color var(--transition-base);
+}
+
+.listing-card:hover .listing-card-cta {
+  background: var(--color-primary);
+  color: var(--color-white);
+}
+
+.listings-empty-note {
+  margin-top: var(--space-3xl);
+  padding: var(--space-xl) var(--space-2xl);
+  max-width: 40rem;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  background: var(--color-white);
+  border: 1px solid var(--color-gray-200);
+  border-radius: var(--radius-xl);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+}
+
+.listings-empty-note p {
+  margin: 0 0 var(--space-md);
+  font-size: var(--fs-lg);
+  color: var(--color-gray-600);
+  line-height: 1.6;
+}
+
 .listings-cta {
   text-align: center;
   margin-top: var(--space-3xl);
@@ -3745,6 +3817,10 @@ h1, h2, h3, h4, h5, h6 { font-family: var(--font-heading); font-weight: 700; lin
   .section.region-section {
     padding-top: 96px;
     padding-bottom: 96px;
+  }
+  .section.region-section.region-section--marktgebiet {
+    padding-top: 20px;
+    padding-bottom: 20px;
   }
   .container { padding: 0 var(--space-md); }
 
@@ -6009,11 +6085,43 @@ h1, h2, h3, h4, h5, h6 { font-family: var(--font-heading); font-weight: 700; lin
   background-position: center center;
 }
 
-.region-section--sell {
+/* ═══════════════════════════════════════════════════════
+   KAUFEN-UNTERSEITE (Schwesterseite zu Verkaufen)
+   ═══════════════════════════════════════════════════════ */
+
+.page-kauf .hero--kauf {
+  padding-bottom: var(--space-3xl);
+}
+
+.page-kauf .hero--kauf .hero-bg {
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+}
+
+.page-kauf .hero-static-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  border-radius: inherit;
+  background-color: var(--color-near-black);
+  background-image: url('../Fotos/Slider2.jpg');
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+.page-kauf .hero--kauf .hero-overlay {
+  z-index: 1;
+}
+
+.region-section--sell,
+.region-section--buy {
   background: #f2f2f2;
 }
 
-.region-section--sell::before {
+.region-section--sell::before,
+.region-section--buy::before {
   left: 0;
   right: 0;
   border-radius: 0;
@@ -6021,7 +6129,8 @@ h1, h2, h3, h4, h5, h6 { font-family: var(--font-heading); font-weight: 700; lin
   box-shadow: none;
 }
 
-.sell-wertermittlung-section .sell-wertermittlung-grid {
+.sell-wertermittlung-section .sell-wertermittlung-grid,
+.suchwunsch-section .suchwunsch-grid {
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr);
   gap: var(--space-3xl);
@@ -6036,7 +6145,8 @@ h1, h2, h3, h4, h5, h6 { font-family: var(--font-heading); font-weight: 700; lin
   max-width: 36rem;
 }
 
-.sell-wertermittlung-form-wrap {
+.sell-wertermittlung-form-wrap,
+.suchwunsch-form-wrap {
   background: var(--color-white);
   border: 1px solid var(--color-gray-200);
   border-radius: var(--radius-xl);
@@ -6059,7 +6169,94 @@ h1, h2, h3, h4, h5, h6 { font-family: var(--font-heading); font-weight: 700; lin
 }
 
 @media (max-width: 1024px) {
-  .sell-wertermittlung-section .sell-wertermittlung-grid {
+  .sell-wertermittlung-section .sell-wertermittlung-grid,
+  .suchwunsch-section .suchwunsch-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.suchwunsch-section {
+  background: var(--color-gray-50);
+}
+
+.suchwunsch-intro .section-title {
+  text-align: left;
+  max-width: none;
+}
+
+.suchwunsch-intro .section-sub {
+  text-align: left;
+  margin: var(--space-md) 0 0;
+  max-width: 36rem;
+}
+
+.buyer-motives-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--space-lg);
+  margin-top: var(--space-2xl);
+}
+
+.buyer-motive-card {
+  padding: var(--space-xl);
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: var(--radius-xl);
+  transition:
+    background var(--transition-base),
+    border-color var(--transition-base),
+    transform var(--transition-base),
+    box-shadow var(--transition-base);
+}
+
+.buyer-motive-card:hover {
+  background: rgba(255, 255, 255, 0.11);
+  border-color: rgba(255, 255, 255, 0.24);
+  transform: translateY(-5px);
+  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.28);
+}
+
+.buyer-motive-card h3 {
+  margin: 0 0 var(--space-sm);
+  font-size: var(--fs-xl);
+  font-family: var(--font-heading);
+  font-weight: 700;
+  color: var(--color-white);
+}
+
+.buyer-motive-card p {
+  margin: 0;
+  font-size: var(--fs-lg);
+  line-height: 1.55;
+  color: rgba(255, 255, 255, 0.78);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .buyer-motive-card {
+    transition: none;
+  }
+  .buyer-motive-card:hover {
+    transform: none;
+  }
+}
+
+.buyer-trust-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--space-lg);
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.faq-section--alt {
+  background: var(--color-white);
+}
+
+@media (max-width: 900px) {
+  .buyer-motives-grid {
+    grid-template-columns: 1fr;
+  }
+  .buyer-trust-grid {
     grid-template-columns: 1fr;
   }
 }
@@ -6096,7 +6293,7 @@ h1, h2, h3, h4, h5, h6 { font-family: var(--font-heading); font-weight: 700; lin
   padding: var(--space-lg) var(--space-xl);
   font-family: var(--font-heading);
   font-weight: 600;
-  font-size: var(--fs-md);
+  font-size: var(--fs-lg);
   color: var(--color-gray-900);
   display: flex;
   align-items: center;
@@ -6153,6 +6350,10 @@ h1, h2, h3, h4, h5, h6 { font-family: var(--font-heading); font-weight: 700; lin
   .section.region-section {
     padding-top: 96px;
     padding-bottom: 96px;
+  }
+  .section.region-section.region-section--marktgebiet {
+    padding-top: 20px;
+    padding-bottom: 20px;
   }
   .hero { min-height: auto; height: auto; margin: 0; border-radius: 0; background: #fff; color: #000; }
   .hero-bg,
