@@ -821,11 +821,19 @@
   }
 
   /* ─── WEIL SLIDER ──────────────────────────────────── */
-  var slider = document.querySelector('.weil-slider');
+  /* Nur „echte" Slider initialisieren. Die statische Variante
+     (.weil-slider--static, z. B. Suchwunsch-Block auf der Kaufen-Seite)
+     hat keine Slides/Dots/Progress-Bar und würde sonst crashen. */
+  var slider = document.querySelector('.weil-slider:not(.weil-slider--static)');
   if (slider) {
     var slides = slider.querySelectorAll('.weil-slide');
     var dotsContainer = slider.querySelector('.weil-slider-dots');
     var weilProgressBar = slider.querySelector('.weil-slider-progress-bar');
+    if (!slides.length || !dotsContainer || !weilProgressBar) {
+      slider = null;
+    }
+  }
+  if (slider) {
     var currentSlide = 0;
     var autoTimeout = null;
     var paused = false;
@@ -1341,11 +1349,8 @@
         if (!d) return;
         var typeEl = tooltip.querySelector('.kreis-map-tooltip-type');
         var nameEl = tooltip.querySelector('.kreis-map-tooltip-name');
-        var countEl = tooltip.querySelector('.kreis-map-tooltip-count');
         if (typeEl) typeEl.textContent = d.type || '';
         if (nameEl) nameEl.textContent = d.name;
-        var n = typeof d.listings === 'number' ? d.listings : parseInt(String(d.listings), 10) || 0;
-        if (countEl) countEl.textContent = n === 1 ? '1 gelistete Immobilie' : n + ' gelistete Immobilien';
         tooltip.style.left = '';
         tooltip.style.top = '';
         tooltip.removeAttribute('hidden');
@@ -1495,27 +1500,5 @@
   initImmoAccordion();
 
   initKreisMap();
-
-  /* Suchwunsch-Formular (kaufen.html): Mailto mit zusammengefasstem Text */
-  var suchwunschForm = document.getElementById('suchwunschForm');
-  if (suchwunschForm) {
-    suchwunschForm.addEventListener('submit', function (e) {
-      e.preventDefault();
-      if (!suchwunschForm.checkValidity()) {
-        suchwunschForm.reportValidity();
-        return;
-      }
-      var fd = new FormData(suchwunschForm);
-      var lines = [];
-      fd.forEach(function (v, k) {
-        if (k === 'datenschutz') return;
-        lines.push(k + ': ' + v);
-      });
-      var body = lines.join('\n');
-      var subject = encodeURIComponent('Suchwunsch Immobilie (Kaufen)');
-      window.location.href =
-        'mailto:post@volks.immobilien?subject=' + subject + '&body=' + encodeURIComponent(body);
-    });
-  }
 
 })();
