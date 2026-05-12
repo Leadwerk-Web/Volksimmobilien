@@ -125,28 +125,24 @@
 
 <header class="site-header" id="siteHeader">
   <div class="header-inner">
-    <a href="index.html" class="logo" aria-label="volksimmobilien Startseite">
+    <a href="index.html#hero" class="logo" aria-label="volksimmobilien Startseite">
       <img src="Fotos/volksimmobilien-logo-weiss.png" alt="volksimmobilien Logo" class="logo-img">
     </a>
 
     <nav class="main-nav" id="mainNav" aria-label="Hauptnavigation">
       <ul class="nav-list">
-        <li><a href="index.html" class="nav-link">Startseite</a></li>
-        <li><a href="verkaufen.html" class="nav-link">Verkaufen</a></li>
-        <li><a href="kaufen.html" class="nav-link active">Kaufen</a></li>
-        <li><a href="bewerten.html" class="nav-link">Bewerten</a></li>
-        <li><a href="mallorca.html" class="nav-link">Mallorca</a></li>
-        <li><a href="ueber-uns.html" class="nav-link">Über uns</a></li>
-        <li><a href="kontakt.html" class="nav-link">Kontakt</a></li>
+        <li><a href="index.html#hero" class="nav-link">Start</a></li>
+        <li><a href="index.html#wertermittlung" class="nav-link">Wertermittlung</a></li>
+        <li><a href="index.html#prozess" class="nav-link">Verkauf</a></li>
+        <li><a href="index.html#regionen" class="nav-link">Region</a></li>
+        <li><a href="index.html#vertrauen" class="nav-link">Qualifikation</a></li>
+        <li><a href="index.html#kontakt-formular" class="nav-link">Kontakt</a></li>
       </ul>
     </nav>
 
     <div class="header-actions">
-      <a href="tel:+491702985141" class="header-phone" aria-label="Jetzt anrufen: +49 170 2 98 51 41">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
-        <span>+49 170 2 98 51 41</span>
-      </a>
-      <a href="kontakt.html" class="btn btn-primary btn-sm header-cta">Kontakt</a>
+      <a href="bewerten.html" class="btn btn-outline-accent btn-sm header-bewerten-btn">Bewerten</a>
+      <a href="index.html#kontakt-formular" class="btn btn-primary btn-sm header-cta">Kontakt</a>
       <button class="hamburger" id="hamburger" aria-label="Menü öffnen" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
@@ -157,20 +153,19 @@
 <div class="mobile-overlay" id="mobileOverlay">
   <nav aria-label="Mobile Navigation">
     <ul class="mobile-nav-list">
-      <li><a href="index.html">Startseite</a></li>
-      <li><a href="verkaufen.html">Verkaufen</a></li>
-      <li><a href="kaufen.html" class="active">Kaufen</a></li>
-      <li><a href="bewerten.html">Bewerten</a></li>
-      <li><a href="mallorca.html">Mallorca</a></li>
-      <li><a href="ueber-uns.html">Über uns</a></li>
-      <li><a href="kontakt.html">Kontakt</a></li>
+      <li><a href="index.html#hero">Start</a></li>
+      <li><a href="index.html#wertermittlung">Wertermittlung</a></li>
+      <li><a href="index.html#prozess">Verkauf</a></li>
+      <li><a href="index.html#regionen">Region</a></li>
+      <li><a href="index.html#vertrauen">Qualifikation</a></li>
+      <li><a href="index.html#kontakt-formular">Kontakt</a></li>
     </ul>
     <div class="mobile-overlay-actions">
       <a href="tel:+491702985141" class="mobile-phone-link">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
         +49 170 2 98 51 41
       </a>
-      <a href="kontakt.html" class="btn btn-primary" style="width:100%;text-align:center;">Kontakt</a>
+      <a href="index.html#kontakt-formular" class="btn btn-primary" style="width:100%;text-align:center;">Kontakt</a>
     </div>
   </nav>
 </div>
@@ -760,56 +755,98 @@
     </div>
   </section>
 
-  <section class="section faq-section faq-section--alt" id="faq" aria-labelledby="faq-heading">
+  <section class="section faq-section faq-section--split" id="faq" aria-labelledby="faq-heading">
     <div class="container">
-      <div class="section-header reveal">
-        <span class="section-eyebrow">FAQ</span>
-        <h2 id="faq-heading" class="section-title">Häufige Fragen zum Immobilienkauf</h2>
-        <p class="section-sub">Kurz beantwortet – im Gespräch gehen wir gern ins Detail.</p>
-      </div>
-      <div class="faq-list reveal">
-        <details class="faq-item">
-          <summary>Wie frage ich ein Immobilienangebot an?</summary>
-          <div class="faq-answer">
-            <p>Über die jeweilige Detailseite können Sie direkt Kontakt aufnehmen. Wir melden uns anschließend mit den nächsten Schritten.</p>
+      <div class="faq-split-grid reveal">
+        <div class="faq-split-intro">
+          <span class="section-eyebrow">FAQ</span>
+          <h2 id="faq-heading" class="intro-title">Häufig gestellte Fragen zum Kauf</h2>
+          <p class="intro-lead">
+            Die wichtigsten Antworten zu Anfrage, Suchwunsch, Unterlagen und Ablauf – transparent und ohne Fachchinesisch. Für Ihr konkretes Objekt sind wir gern persönlich für Sie da.
+          </p>
+          <div class="section-cta-row intro-cta">
+            <a href="kontakt.html" class="btn btn-primary btn-lg">Kontakt aufnehmen</a>
           </div>
-        </details>
-        <details class="faq-item">
-          <summary>Kann ich einen Suchwunsch hinterlegen?</summary>
-          <div class="faq-answer">
-            <p>Ja. Wenn aktuell keine passende Immobilie dabei ist, können Sie uns Ihre Suchkriterien mitteilen.</p>
-          </div>
-        </details>
-        <details class="faq-item">
-          <summary>Welche Unterlagen bekomme ich vor dem Kauf?</summary>
-          <div class="faq-answer">
-            <p>Je nach Objekt erhalten Sie relevante Unterlagen wie Grundrisse, Energieausweis, Exposé und weitere verfügbare Informationen.</p>
-          </div>
-        </details>
-        <details class="faq-item">
-          <summary>Unterstützt volksimmobilien bei der Finanzierung?</summary>
-          <div class="faq-answer">
-            <p>Wir beraten nicht selbst als Bank, können aber bei Bedarf passende Ansprechpartner aus unserem Netzwerk empfehlen.</p>
-          </div>
-        </details>
-        <details class="faq-item">
-          <summary>Wie läuft eine Besichtigung ab?</summary>
-          <div class="faq-answer">
-            <p>Nach Ihrer Anfrage prüfen wir das Interesse und koordinieren einen passenden Termin.</p>
-          </div>
-        </details>
-        <details class="faq-item">
-          <summary>Gibt es auch diskrete Immobilienangebote?</summary>
-          <div class="faq-answer">
-            <p>Je nach Eigentümerwunsch können einzelne Immobilien zunächst nicht öffentlich vermarktet werden. Ein hinterlegter Suchwunsch kann daher sinnvoll sein.</p>
-          </div>
-        </details>
-        <details class="faq-item">
-          <summary>Was passiert nach meiner Anfrage?</summary>
-          <div class="faq-answer">
-            <p>Wir prüfen Ihre Anfrage und melden uns mit den nächsten Schritten, passenden Informationen oder einem Terminvorschlag.</p>
-          </div>
-        </details>
+        </div>
+        <div class="faq-list faq-list--split" itemscope itemtype="https://schema.org/FAQPage">
+          <details class="faq-item faq-item--split" name="faq-kauf" open itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <summary>
+              <span class="faq-item__label" itemprop="name">Wie frage ich ein Immobilienangebot an?</span>
+              <span class="faq-item__toggle" aria-hidden="true">
+                <svg class="faq-item__chev" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+              </span>
+            </summary>
+            <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <p itemprop="text">Über die jeweilige Detailseite können Sie direkt Kontakt aufnehmen. Wir melden uns anschließend mit den nächsten Schritten.</p>
+            </div>
+          </details>
+          <details class="faq-item faq-item--split" name="faq-kauf" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <summary>
+              <span class="faq-item__label" itemprop="name">Kann ich einen Suchwunsch hinterlegen?</span>
+              <span class="faq-item__toggle" aria-hidden="true">
+                <svg class="faq-item__chev" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+              </span>
+            </summary>
+            <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <p itemprop="text">Ja. Wenn aktuell keine passende Immobilie dabei ist, können Sie uns Ihre Suchkriterien mitteilen.</p>
+            </div>
+          </details>
+          <details class="faq-item faq-item--split" name="faq-kauf" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <summary>
+              <span class="faq-item__label" itemprop="name">Welche Unterlagen bekomme ich vor dem Kauf?</span>
+              <span class="faq-item__toggle" aria-hidden="true">
+                <svg class="faq-item__chev" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+              </span>
+            </summary>
+            <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <p itemprop="text">Je nach Objekt erhalten Sie relevante Unterlagen wie Grundrisse, Energieausweis, Exposé und weitere verfügbare Informationen.</p>
+            </div>
+          </details>
+          <details class="faq-item faq-item--split" name="faq-kauf" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <summary>
+              <span class="faq-item__label" itemprop="name">Unterstützt volksimmobilien bei der Finanzierung?</span>
+              <span class="faq-item__toggle" aria-hidden="true">
+                <svg class="faq-item__chev" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+              </span>
+            </summary>
+            <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <p itemprop="text">Wir beraten nicht selbst als Bank, können aber bei Bedarf passende Ansprechpartner aus unserem Netzwerk empfehlen.</p>
+            </div>
+          </details>
+          <details class="faq-item faq-item--split" name="faq-kauf" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <summary>
+              <span class="faq-item__label" itemprop="name">Wie läuft eine Besichtigung ab?</span>
+              <span class="faq-item__toggle" aria-hidden="true">
+                <svg class="faq-item__chev" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+              </span>
+            </summary>
+            <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <p itemprop="text">Nach Ihrer Anfrage prüfen wir das Interesse und koordinieren einen passenden Termin.</p>
+            </div>
+          </details>
+          <details class="faq-item faq-item--split" name="faq-kauf" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <summary>
+              <span class="faq-item__label" itemprop="name">Gibt es auch diskrete Immobilienangebote?</span>
+              <span class="faq-item__toggle" aria-hidden="true">
+                <svg class="faq-item__chev" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+              </span>
+            </summary>
+            <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <p itemprop="text">Je nach Eigentümerwunsch können einzelne Immobilien zunächst nicht öffentlich vermarktet werden. Ein hinterlegter Suchwunsch kann daher sinnvoll sein.</p>
+            </div>
+          </details>
+          <details class="faq-item faq-item--split" name="faq-kauf" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <summary>
+              <span class="faq-item__label" itemprop="name">Was passiert nach meiner Anfrage?</span>
+              <span class="faq-item__toggle" aria-hidden="true">
+                <svg class="faq-item__chev" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+              </span>
+            </summary>
+            <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <p itemprop="text">Wir prüfen Ihre Anfrage und melden uns mit den nächsten Schritten, passenden Informationen oder einem Terminvorschlag.</p>
+            </div>
+          </details>
+        </div>
       </div>
     </div>
   </section>
@@ -842,7 +879,7 @@
       <img src="Fotos/volksimmobilien-logo-weiss.png" alt="volksimmobilien Logo" class="footer-logo">
       <p>Immobilienmakler von Heidelberg bis Baden-Baden. Persönlich vor Ort, ehrlich eingeordnet, klar im Prozess.</p>
       <div class="footer-cta-row">
-        <a href="kontakt.html" class="btn btn-primary btn-sm">Kontakt</a>
+        <a href="index.html#kontakt-formular" class="btn btn-primary btn-sm">Kontakt</a>
         <a href="kaufen.html#angebote" class="btn btn-outline-light btn-sm">Angebote</a>
         <a href="https://volks.immobilien/angebote/" class="btn btn-outline-light btn-sm" target="_blank" rel="noopener">Alle Exposés</a>
       </div>
@@ -850,22 +887,12 @@
     <div class="footer-col">
       <h4>Navigation</h4>
       <ul>
-        <li><a href="index.html">Startseite</a></li>
-        <li><a href="verkaufen.html">Verkaufen</a></li>
-        <li><a href="kaufen.html">Kaufen</a></li>
-        <li><a href="bewerten.html">Bewerten</a></li>
-        <li><a href="mallorca.html">Mallorca</a></li>
-        <li><a href="ueber-uns.html">Über uns</a></li>
-        <li><a href="kontakt.html">Kontakt</a></li>
-      </ul>
-    </div>
-    <div class="footer-col">
-      <h4>Spezialisierungen</h4>
-      <ul>
-        <li><a href="index.html#spezialisierungen">Mehrfamilienhaus</a></li>
-        <li><a href="index.html#spezialisierungen">Gewerbeimmobilie</a></li>
-        <li><a href="mallorca.html">Immobilien Mallorca</a></li>
-        <li><a href="index.html#regionen">Raum Heidelberg–Baden-Baden</a></li>
+        <li><a href="index.html#hero">Start</a></li>
+        <li><a href="index.html#wertermittlung">Wertermittlung</a></li>
+        <li><a href="index.html#prozess">Verkauf</a></li>
+        <li><a href="index.html#regionen">Region</a></li>
+        <li><a href="index.html#vertrauen">Qualifikation</a></li>
+        <li><a href="index.html#kontakt-formular">Kontakt</a></li>
       </ul>
     </div>
     <div class="footer-col">
@@ -902,7 +929,7 @@
     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
     Anrufen
   </a>
-  <a href="kontakt.html" class="mobile-sticky-btn mobile-sticky-btn--callback">
+  <a href="index.html#kontakt-formular" class="mobile-sticky-btn mobile-sticky-btn--callback">
     Kontakt
   </a>
   <a href="#suchwunsch" class="mobile-sticky-btn mobile-sticky-btn--valuation">

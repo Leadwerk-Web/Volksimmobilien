@@ -1499,6 +1499,45 @@
 
   initImmoAccordion();
 
+  /* ─── Startseite: Kontaktformular (mailto) ────────── */
+  function initHomeContactForm() {
+    var forms = document.querySelectorAll('.home-contact-form');
+    if (!forms.length) return;
+
+    forms.forEach(function (form) {
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        if (!form.checkValidity()) {
+          form.reportValidity();
+          return;
+        }
+
+        var name = (form.querySelector('[name="name"]') || {}).value || '';
+        var email = (form.querySelector('[name="email"]') || {}).value || '';
+        var phone = (form.querySelector('[name="phone"]') || {}).value || '';
+        var subject = (form.querySelector('[name="subject"]') || {}).value || '';
+        var message = (form.querySelector('[name="message"]') || {}).value || '';
+
+        var subjectLine = 'volks.immobilien: ' + subject;
+        var body =
+          'Name: ' + name + '\r\n' +
+          'E-Mail: ' + email + '\r\n' +
+          'Telefon: ' + (phone || '—') + '\r\n' +
+          'Thema: ' + subject + '\r\n\r\n' +
+          'Nachricht:\r\n' + message;
+
+        var mailto =
+          'mailto:post@volks.immobilien' +
+          '?subject=' + encodeURIComponent(subjectLine) +
+          '&body=' + encodeURIComponent(body);
+
+        window.location.href = mailto;
+      });
+    });
+  }
+
+  initHomeContactForm();
+
   initKreisMap();
 
 })();
