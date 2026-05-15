@@ -1203,6 +1203,8 @@
      und bindet zentrale Hover-, Focus- und Click-Logik. Die Hover-
      Optik ist komplett in CSS gesteuert (.district), JS pflegt nur
      den .is-active-Zustand sowie Tooltip- und Info-Panel-Inhalte.
+     Klick öffnet keine externe URL; es wird ein Custom-Event
+     „kreis-map:select“ ausgelöst.
 
      Live-Daten: districtMapping[*].listings Platzhalter – im Live-System
      mit echten Zählungen aus dem Immobiliensystem überschreiben.
@@ -1395,8 +1397,8 @@
         setActive(null);
       });
 
-      /* Click + Enter/Space – aktuell nur Console-Log + Custom-Event,
-         damit später eine echte Filter-/Routing-Logik andocken kann. */
+      /* Click + Enter/Space: Auswahl im Panel/Tooltip, ohne externe Navigation.
+         Custom-Event für spätere Filter-/Routing-Anbindung. */
       function selectDistrict(id) {
         var d = districtData[id];
         if (!d) return;
@@ -1405,7 +1407,6 @@
         document.dispatchEvent(new CustomEvent('kreis-map:select', {
           detail: { id: id, district: d }
         }));
-        window.open('https://volks.immobilien/angebote/', '_blank', 'noopener,noreferrer');
       }
 
       svg.addEventListener('click', function (e) {
