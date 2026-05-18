@@ -7004,6 +7004,43 @@ body.page-home .site-header {
   z-index: 1;
 }
 
+.valuation-options-section--bewerten + .valuation-wizard-section {
+  margin-top: clamp(2rem, 4vw, 3.5rem);
+}
+
+.valuation-wizard-section + .faq-section {
+  margin-top: clamp(2rem, 4vw, 3.5rem);
+}
+
+.valuation-options-section--bewerten {
+  padding-bottom: 0;
+}
+
+.valuation-options-section--bewerten .valuation-personal-detail-band {
+  background: var(--color-white);
+  margin-top: clamp(2.5rem, 5vw, 4rem);
+  padding: clamp(2.5rem, 5vw, 4rem) 0 var(--space-4xl);
+}
+
+.valuation-options-section--bewerten .valuation-personal-detail {
+  margin-top: 0;
+  padding-top: 0;
+  border-top: none;
+}
+
+.valuation-options-section--bewerten .valuation-personal-detail .section-eyebrow {
+  display: block;
+  margin-bottom: var(--space-sm);
+}
+
+.valuation-options-section--bewerten .valuation-personal-detail .editorial-title {
+  margin-bottom: var(--space-md);
+}
+
+.valuation-options-section--bewerten .valuation-personal-detail .editorial-lead {
+  font-weight: 400;
+}
+
 .region-section--sell,
 .region-section--buy {
   background: #f2f2f2;
@@ -7645,24 +7682,44 @@ body.page-home .site-header {
   box-shadow: 0 6px 14px -6px rgba(127, 189, 189, 0.65);
 }
 
-/* Gutschein-Störer: Ecke oben rechts; begrenzter Überstand, damit nichts abgeschnitten wird */
+/* Gutschein-Störer: leicht über die Kachel hinaus, Titel/Kicker bleiben links frei */
 .valuation-option-card--featured .valuation-promo-badge {
-  top: clamp(-1.35rem, -1.4vw, -0.35rem);
-  right: clamp(-1.35rem, -3.5vw, -0.5rem);
+  top: clamp(-1rem, -1.2vw, -0.2rem);
+  right: clamp(-1rem, -2.8vw, -0.35rem);
   left: auto;
-  width: clamp(124px, 24vw, 158px);
-  height: clamp(124px, 24vw, 158px);
+  width: clamp(118px, 22vw, 150px);
+  height: clamp(118px, 22vw, 150px);
   z-index: 4;
   padding: var(--space-sm) var(--space-md);
+  transform: rotate(10deg) scale(1);
+}
+
+.valuation-option-card--featured .valuation-promo-badge:hover {
+  transform: rotate(17deg) scale(1.08);
+}
+
+.valuation-option-card--featured .valuation-promo-badge:active {
+  transform: rotate(17deg) scale(1.04);
 }
 
 .valuation-option-card--featured .valuation-promo-badge__amount {
-  font-size: clamp(1.75rem, 5.2vw, 2.35rem);
+  font-size: clamp(1.65rem, 5vw, 2.25rem);
 }
 
 .valuation-option-card--featured .valuation-promo-badge__sub {
-  font-size: clamp(0.62rem, 2vw, 0.74rem);
-  max-width: 10em;
+  font-size: clamp(0.58rem, 1.8vw, 0.7rem);
+  max-width: 9em;
+}
+
+.valuation-option-card--featured:has(.valuation-promo-badge) .valuation-option-card__head {
+  padding-right: clamp(6.75rem, 34%, 9.5rem);
+  padding-top: clamp(0.25rem, 1vw, 0.65rem);
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.valuation-option-card--featured:has(.valuation-promo-badge) .valuation-option-card__kicker {
+  line-height: 1.25;
 }
 
 .valuation-option-card__head {
@@ -7826,14 +7883,18 @@ body.page-home .site-header {
   }
 
   .valuation-option-card--featured .valuation-promo-badge {
-    right: clamp(-0.65rem, -0.8vw, 0.65rem);
-    top: clamp(-0.65rem, -0.9vw, 0.2rem);
-    width: clamp(104px, 22vw, 132px);
-    height: clamp(104px, 22vw, 132px);
+    top: clamp(-0.75rem, -0.9vw, 0.1rem);
+    right: clamp(-0.75rem, -2vw, 0.35rem);
+    width: clamp(104px, 20vw, 128px);
+    height: clamp(104px, 20vw, 128px);
   }
 
   .valuation-option-card--featured .valuation-promo-badge__amount {
-    font-size: clamp(1.45rem, 4.5vw, 2rem);
+    font-size: clamp(1.45rem, 4.5vw, 1.9rem);
+  }
+
+  .valuation-option-card--featured:has(.valuation-promo-badge) .valuation-option-card__head {
+    padding-right: clamp(5.75rem, 30%, 7.5rem);
   }
 }
 
@@ -7844,6 +7905,17 @@ body.page-home .site-header {
     padding-top: clamp(1.25rem, 4vw, 2.25rem);
     padding-right: clamp(1rem, 5vw, 2.75rem);
     padding-left: clamp(0.25rem, 2vw, 0.75rem);
+  }
+
+  .valuation-option-card--featured .valuation-promo-badge {
+    top: clamp(-0.55rem, -1.5vw, 0.15rem);
+    right: clamp(-0.55rem, -2.5vw, 0.5rem);
+    width: clamp(96px, 22vw, 112px);
+    height: clamp(96px, 22vw, 112px);
+  }
+
+  .valuation-option-card--featured:has(.valuation-promo-badge) .valuation-option-card__head {
+    padding-right: clamp(5.25rem, 28vw, 6.75rem);
   }
 }
 
