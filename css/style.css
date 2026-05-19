@@ -106,6 +106,11 @@ html::-webkit-scrollbar-corner {
   background: var(--color-gray-100);
 }
 
+html {
+  overflow-x: hidden;
+  max-width: 100%;
+}
+
 body {
   font-family: var(--font-body);
   font-size: var(--fs-lg);
@@ -115,6 +120,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
+  max-width: 100%;
   padding-top: 0;
 }
 
@@ -496,6 +502,19 @@ body.page-home .site-header {
 
 .mobile-overlay-actions {
   margin-top: var(--space-2xl);
+  text-align: center;
+}
+
+.mobile-overlay-ctas {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+  width: min(100%, 20rem);
+  margin: 0 auto;
+}
+
+.mobile-overlay-cta {
+  width: 100%;
   text-align: center;
 }
 
@@ -1400,10 +1419,10 @@ body.page-home .site-header {
 
 @media (max-width: 640px) {
   .valuation-promo-badge {
-    width: 118px;
-    height: 118px;
+    width: clamp(100px, 28vw, 118px);
+    height: clamp(100px, 28vw, 118px);
     top: var(--space-xl);
-    right: 124px;
+    right: clamp(var(--space-md), 4vw, 2.5rem);
   }
   .valuation-promo-badge__amount {
     font-size: clamp(2rem, 11vw, 2.45rem);
@@ -2793,12 +2812,12 @@ body.page-home .site-header {
   margin-top: var(--space-xs);
 }
 
-/* Bis 1100px: drei Kennzahlen in einer Zeile halten */
+/* Bis 1100px: Kennzahlen kompakt, auf schmalen Screens umbrechen (kein Seiten-Overflow) */
 @media (max-width: 1100px) {
   .region-stat-row {
-    flex-wrap: nowrap;
-    gap: var(--space-xs) var(--space-sm);
-    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: var(--space-md) var(--space-lg);
+    justify-content: center;
   }
 
   .region-stat {
@@ -4457,7 +4476,7 @@ body.page-home .site-header {
 /* Bis 1280px: kein horizontales Überstehen; Weil-Slider weniger aggressiv über Region */
 @media (max-width: 1280px) {
   body {
-    overflow-x: clip;
+    overflow-x: hidden;
   }
 
   #regionen.region-section + .weil-slider {
@@ -4546,9 +4565,69 @@ body.page-home .site-header {
 }
 
 @media (max-width: 1024px) {
-  .main-nav { display: none; }
-  .hamburger { display: flex; }
-  .header-cta { display: none; }
+  .main-nav {
+    display: none !important;
+  }
+
+  .header-inner {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: center;
+    column-gap: var(--space-sm);
+    padding: 1rem var(--space-md);
+  }
+
+  .logo {
+    grid-column: 1;
+    grid-row: 1;
+    min-width: 0;
+    max-width: 100%;
+    margin: 0;
+    overflow: hidden;
+    justify-self: start;
+  }
+
+  .logo-img {
+    display: block;
+    height: 24px;
+    width: auto;
+    max-width: 100%;
+    object-fit: contain;
+    object-position: left center;
+  }
+
+  .header-actions {
+    grid-column: 2;
+    grid-row: 1;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 0;
+    flex-shrink: 0;
+    margin: 0;
+  }
+
+  .header-bewerten-btn,
+  .header-cta {
+    display: none !important;
+  }
+
+  .hamburger {
+    display: flex !important;
+    flex-shrink: 0;
+    width: 44px;
+    height: 44px;
+    margin: 0;
+  }
+
+  body.page-home .site-header {
+    overflow: visible;
+  }
+
+  body.page-home .header-inner {
+    padding-left: max(clamp(1rem, 5.5vw, 1.5rem), env(safe-area-inset-left, 0px));
+    padding-right: max(clamp(1rem, 5.5vw, 1.5rem), env(safe-area-inset-right, 0px));
+  }
 
   .listings-grid { grid-template-columns: repeat(2, 1fr); }
   .services-grid { grid-template-columns: repeat(2, 1fr); }
@@ -4612,9 +4691,19 @@ body.page-home .site-header {
 
 @media (max-width: 768px) {
   :root {
-    --header-h: calc(3rem + 3rem + 2.5rem);
+    --header-h: calc(1.25rem + 1.25rem + 2.75rem);
     --hero-frame-inset: clamp(0.75rem, 5vw, 1.125rem);
     --hero-frame-radius: var(--radius-lg);
+  }
+
+  .header-inner {
+    padding-top: 0.875rem;
+    padding-bottom: 0.875rem;
+  }
+
+  .hamburger {
+    width: 44px;
+    height: 44px;
   }
 
   .section { padding: var(--space-3xl) 0; }
@@ -4782,9 +4871,16 @@ body.page-home .site-header {
   .services-grid { grid-template-columns: 1fr; }
   .specialization-grid { grid-template-columns: 1fr; }
   .region-stat-row {
-    flex-wrap: nowrap;
-    gap: var(--space-xs) var(--space-sm);
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--space-md) var(--space-lg);
   }
+
+  .region-stat {
+    flex: 1 1 min(5.5rem, 32%);
+    min-width: 0;
+  }
+
   .trust-bento-card { padding: var(--space-lg); }
 
   .section-cta-row .btn { width: 100%; justify-content: center; }
@@ -4846,6 +4942,17 @@ body.page-home .site-header {
   .hero-title { font-size: clamp(1.75rem, 1.4rem + 1.75vw, 2.5rem); }
   .step-content { padding-top: 0; }
   .process-step { gap: var(--space-md); }
+
+  .region-stat-row {
+    flex-direction: column;
+    align-items: stretch;
+    gap: var(--space-md);
+  }
+
+  .region-stat {
+    flex: 1 1 auto;
+    align-items: center;
+  }
 }
 
 /* ═══════════════════════════════════════════════════════
@@ -5420,6 +5527,8 @@ body.page-home .site-header {
   align-items: stretch;
   gap: var(--space-md);
   width: 100%;
+  min-width: 0;
+  max-width: 100%;
   min-height: clamp(360px, 50vh, 520px);
   border-radius: var(--radius-xl);
   overflow: visible;
@@ -5774,9 +5883,13 @@ body.page-home .site-header {
   .immobilien-accordion__track {
     min-height: clamp(320px, 42vh, 440px);
     overflow-x: auto;
+    overflow-y: hidden;
     scroll-snap-type: x mandatory;
     scroll-padding-inline: var(--space-sm);
     -webkit-overflow-scrolling: touch;
+    overscroll-behavior-x: contain;
+    min-width: 0;
+    max-width: 100%;
   }
 
   .immobilien-accordion__panel {
@@ -6522,9 +6635,12 @@ body.page-home .site-header {
     grid-template-columns: repeat(6, minmax(46px, 1fr));
     overflow-x: auto;
     overflow-y: hidden;
+    min-width: 0;
+    max-width: 100%;
     padding-bottom: var(--space-sm);
     scroll-snap-type: x mandatory;
     scrollbar-width: none;
+    overscroll-behavior-x: contain;
   }
   .process-reel-track::-webkit-scrollbar { display: none; }
   .process-reel-line {
@@ -7875,16 +7991,19 @@ body.page-home .site-header {
   color: var(--color-accent);
 }
 
-/* Schmale Viewports: Badge voll sichtbar, Überstand moderat (Grid-Padding fängt rechts ab) */
-@media (max-width: 1100px) {
+/* Schmale Viewports: Badge innerhalb der Kachel (kein Überstand nach rechts) */
+@media (max-width: 1100px) and (min-width: 721px) {
   .valuation-options-grid {
     padding-top: clamp(1rem, 3vw, 2rem);
     padding-right: clamp(0.75rem, 4vw, 2.5rem);
+    overflow: hidden;
+    max-width: 100%;
+    box-sizing: border-box;
   }
 
   .valuation-option-card--featured .valuation-promo-badge {
-    top: clamp(-0.75rem, -0.9vw, 0.1rem);
-    right: clamp(-0.75rem, -2vw, 0.35rem);
+    top: clamp(-0.35rem, -0.5vw, 0.15rem);
+    right: 0.35rem;
     width: clamp(104px, 20vw, 128px);
     height: clamp(104px, 20vw, 128px);
   }
@@ -7903,15 +8022,18 @@ body.page-home .site-header {
     grid-template-columns: 1fr;
     gap: 2rem;
     padding-top: clamp(1.25rem, 4vw, 2.25rem);
-    padding-right: clamp(1rem, 5vw, 2.75rem);
-    padding-left: clamp(0.25rem, 2vw, 0.75rem);
+    padding-right: var(--space-md);
+    padding-left: var(--space-md);
+    overflow: hidden;
+    max-width: 100%;
+    box-sizing: border-box;
   }
 
   .valuation-option-card--featured .valuation-promo-badge {
-    top: clamp(-0.55rem, -1.5vw, 0.15rem);
-    right: clamp(-0.55rem, -2.5vw, 0.5rem);
-    width: clamp(96px, 22vw, 112px);
-    height: clamp(96px, 22vw, 112px);
+    top: 0.35rem;
+    right: 0.35rem;
+    width: clamp(88px, 24vw, 104px);
+    height: clamp(88px, 24vw, 104px);
   }
 
   .valuation-option-card--featured:has(.valuation-promo-badge) .valuation-option-card__head {
@@ -8065,5 +8187,207 @@ body.page-home .site-header {
   .legal-prose__nav-back .btn {
     width: 100%;
     justify-content: center;
+  }
+}
+
+/* ─── Mobile / Tablet: kein horizontales Scrollen (ohne Inhalte abzuschneiden) ─── */
+@media (max-width: 1024px) {
+  html,
+  body {
+    overflow-x: hidden;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  #main {
+    max-width: 100%;
+    overflow-x: clip;
+  }
+
+  /* Kein seitlicher Reveal-Shift (verursacht Scroll-Spielraum) */
+  .region-section.reveal,
+  .region-section.reveal.visible,
+  .valuation-wizard-section.reveal,
+  .valuation-wizard-section.reveal.visible {
+    transform: none;
+  }
+
+  .region-section.reveal .region-left,
+  .region-section.reveal .region-right,
+  .region-section.reveal.visible .region-left,
+  .region-section.reveal.visible .region-right,
+  .valuation-wizard-section.reveal .valuation-wizard,
+  .valuation-wizard-section.reveal.visible .valuation-wizard {
+    transform: none;
+  }
+
+  .valuation-wizard-section .container {
+    margin-left: 0;
+    margin-right: 0;
+    width: 100%;
+    max-width: 100%;
+    padding-left: var(--space-md);
+    padding-right: var(--space-md);
+    box-sizing: border-box;
+  }
+
+  .valuation-wizard-section::before {
+    left: 0;
+    right: 0;
+    border-radius: var(--radius-lg);
+  }
+
+  .valuation-option-card {
+    overflow: hidden;
+    max-width: 100%;
+  }
+
+  .valuation-option-card--featured .valuation-promo-badge {
+    right: 0.35rem;
+    top: 0.35rem;
+  }
+
+  .valuation-wizard-section > .valuation-promo-badge,
+  .valuation-wizard-section .container > .valuation-promo-badge {
+    right: var(--space-md);
+    max-width: min(118px, 28vw);
+    max-height: min(118px, 28vw);
+  }
+
+  .immobilien-accordion {
+    max-width: 100%;
+    overflow-x: clip;
+  }
+
+  .immobilien-accordion__track {
+    min-width: 0;
+    max-width: 100%;
+    overscroll-behavior-x: contain;
+  }
+
+  .process-reel {
+    max-width: 100%;
+    overflow-x: clip;
+  }
+
+  .process-reel-track {
+    min-width: 0;
+    max-width: 100%;
+  }
+
+  .process-reel-scene-content {
+    overflow: hidden;
+  }
+
+  .region-stat-row {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--space-md) var(--space-lg);
+  }
+
+  .region-stat {
+    flex: 1 1 min(5.5rem, 32%);
+    min-width: 0;
+  }
+
+  img,
+  video,
+  iframe {
+    max-width: 100%;
+  }
+}
+
+/* Startseite: Scroll verhindern, Schatten/Badges/Intent-Hub nicht abschneiden */
+@media (max-width: 1024px) {
+  body.page-home {
+    overflow-x: hidden;
+  }
+
+  body.page-home #main {
+    overflow-x: visible;
+  }
+
+  body.page-home .hero {
+    overflow: visible;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  body.page-home .hero-bg {
+    overflow: hidden;
+  }
+
+  body.page-home .intent-hub-wrapper,
+  body.page-home .intent-hub {
+    max-width: 100%;
+    overflow: visible;
+  }
+
+  body.page-home .section {
+    max-width: 100%;
+    overflow-x: visible;
+  }
+
+  body.page-home .region-section::before {
+    left: var(--space-md);
+    right: var(--space-md);
+    border-radius: var(--radius-lg);
+  }
+
+  body.page-home .region-section,
+  body.page-home .valuation-options-section,
+  body.page-home .weil-slider,
+  body.page-home .process-section {
+    overflow-x: visible;
+  }
+
+  body.page-home .valuation-options-grid {
+    overflow: visible;
+    max-width: 100%;
+    box-sizing: border-box;
+    padding-left: var(--space-md);
+    padding-right: var(--space-md);
+  }
+
+  body.page-home .kreis-map-stage--embed,
+  body.page-home .kreis-map-svg-host,
+  body.page-home .kreis-map-svg-host > svg {
+    max-width: 100%;
+    width: 100%;
+    height: auto;
+  }
+
+  body.page-home .weil-slide-content {
+    padding-left: var(--space-lg);
+    padding-right: var(--space-lg);
+    box-sizing: border-box;
+  }
+
+  body.page-home .region-layout,
+  body.page-home .region-left,
+  body.page-home .region-right {
+    min-width: 0;
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding-left: var(--space-md);
+    padding-right: var(--space-md);
+  }
+
+  body.page-home .intent-hub-wrapper .container {
+    padding-left: var(--space-md);
+    padding-right: var(--space-md);
+  }
+
+  body.page-home .region-section::before {
+    left: var(--space-sm);
+    right: var(--space-sm);
+  }
+
+  .region-stat-number {
+    font-size: clamp(1.125rem, 5vw + 0.5rem, 1.5rem);
   }
 }
