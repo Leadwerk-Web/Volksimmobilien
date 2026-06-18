@@ -6513,6 +6513,7 @@ body.page-home .site-header {
     0 22px 48px -20px rgba(15, 23, 42, 0.14);
 }
 
+/* Schritt-Farbverlauf als Overlay über dem Seitenfoto */
 .process-reel-scene-visual--icon .process-reel-scene-bg {
   position: absolute;
   inset: 0;
@@ -6540,7 +6541,6 @@ body.page-home .site-header {
   100% { transform: scale(1.12) translate3d(-1.2%, -0.8%, 0); }
 }
 
-/* Schritt-Farbverlauf als Overlay über dem Foto (wie früher, nur mit Bild darunter) */
 .process-reel-scene-visual--icon::before {
   content: "";
   position: absolute;
@@ -6553,19 +6553,26 @@ body.page-home .site-header {
     radial-gradient(circle at 8% 88%, rgba(255, 255, 255, 0.55) 0%, transparent 38%),
     linear-gradient(
       145deg,
-      color-mix(in srgb, var(--scene-bg-from, #e8f4f4) 72%, transparent) 0%,
-      color-mix(in srgb, var(--scene-bg-to, #d4ecec) 78%, transparent) 100%
+      color-mix(in srgb, var(--scene-bg-from, #e8f4f4) 68%, transparent) 0%,
+      color-mix(in srgb, var(--scene-bg-to, #d4ecec) 74%, transparent) 100%
     );
 }
 
 @supports not (background: color-mix(in srgb, white 50%, transparent)) {
   .process-reel-scene-visual--icon::before {
-    opacity: 0.68;
+    opacity: 0.72;
     background:
       radial-gradient(circle at 88% 12%, var(--scene-glow) 0%, transparent 44%),
       radial-gradient(circle at 8% 88%, rgba(255, 255, 255, 0.55) 0%, transparent 38%),
       linear-gradient(145deg, var(--scene-bg-from, #e8f4f4) 0%, var(--scene-bg-to, #d4ecec) 100%);
   }
+}
+
+.process-reel-scene-visual--icon::after {
+  z-index: 2;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.14) 0%, transparent 42%, rgba(255, 255, 255, 0.04) 100%);
+  opacity: 1;
 }
 
 /* Türkis → Terracotta → Gold im Wechsel (Schritte 1–6) */
@@ -6594,14 +6601,6 @@ body.page-home .site-header {
   --scene-icon-color: #9a8f3a;
   --scene-glow: rgba(222, 210, 78, 0.52);
   border-color: rgba(222, 210, 78, 0.35);
-}
-
-/* Dezenter Lichtreflex – Farbverlauf bleibt dominant */
-.process-reel-scene-visual--icon::after {
-  z-index: 2;
-  background:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.14) 0%, transparent 42%, rgba(255, 255, 255, 0.04) 100%);
-  opacity: 1;
 }
 
 .process-reel-scene-icon {
