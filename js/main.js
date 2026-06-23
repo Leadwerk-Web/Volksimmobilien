@@ -14,7 +14,7 @@
   function onScroll() {
     const scrollY = window.scrollY;
     if (header) {
-      if (scrollY > 60) {
+      if (scrollY > 0) {
         header.classList.add('scrolled');
       } else {
         header.classList.remove('scrolled');
@@ -185,6 +185,9 @@
     var btnBack = document.getElementById('wizardBack');
     var navBar = document.getElementById('wizardNav');
     var mapIframe = document.getElementById('wizardMap');
+    var promoBadge = wizard.closest('.valuation-wizard-section')
+      ? wizard.closest('.valuation-wizard-section').querySelector('.valuation-promo-badge')
+      : null;
     var current = 1;
     var totalSteps = 7;
     var successStep = 8;
@@ -303,6 +306,10 @@
       if (wizardProgressEl) {
         var ec = effectiveStepCount(n);
         wizardProgressEl.style.width = Math.min((ec.pos / ec.total) * 100, 100) + '%';
+      }
+
+      if (promoBadge) {
+        promoBadge.hidden = n !== 1;
       }
 
       if (n <= totalSteps) {
@@ -1449,22 +1456,147 @@
   function initImmoAccordion() {
     var root = document.querySelector('[data-immo-accordion]');
     if (!root) return;
+    var track = root.querySelector('.immobilien-accordion__track');
     var panels = root.querySelectorAll('[data-immo-panel]');
-    if (!panels.length) return;
+    if (!panels.length || !track) return;
 
-    function activate(index) {
+    var SLIDER_MQ = window.matchMedia('(max-width: 768px)');
+    var activeIndex = 0;
+    var scrollRaf = 0;
+    var dots = [];
+    var prevBtn = null;
+    var nextBtn = null;
+
+    panels.forEach(function (panel, i) {
+      if (panel.classList.contains('is-active')) activeIndex = i;
+    });
+
+    function buildControls() {
+      if (root.querySelector('.immobilien-accordion__controls')) {
+        dots = Array.prototype.slice.call(root.querySelectorAll('.immobilien-accordion__dot'));
+        prevBtn = root.querySelector('.immobilien-accordion__nav--prev');
+        nextBtn = root.querySelector('.immobilien-accordion__nav--next');
+        return;
+      }
+
+      var controlsEl = document.createElement('div');
+      controlsEl.className = 'immobilien-accordion__controls';
+      controlsEl.innerHTML =
+        '<button type="button" class="immobilien-accordion__nav immobilien-accordion__nav--prev" aria-label="Vorherige Objektart">' +
+          '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg>' +
+        '</button>' +
+        '<div class="immobilien-accordion__dots" role="tablist" aria-label="Objektart wählen"></div>' +
+        '<button type="button" class="immobilien-accordion__nav immobilien-accordion__nav--next" aria-label="Nächste Objektart">' +
+          '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg>' +
+        '</button>';
+      root.appendChild(controlsEl);
+
+      prevBtn = controlsEl.querySelector('.immobilien-accordion__nav--prev');
+      nextBtn = controlsEl.querySelector('.immobilien-accordion__nav--next');
+      var dotsContainer = controlsEl.querySelector('.immobilien-accordion__dots');
+
+      dots = [];
+      panels.forEach(function (panel, i) {
+        var dot = document.createElement('button');
+        dot.type = 'button';
+        dot.className = 'immobilien-accordion__dot' + (i === activeIndex ? ' is-active' : '');
+        dot.setAttribute('role', 'tab');
+        dot.setAttribute('aria-label', 'Objektart ' + (i + 1));
+        dot.setAttribute('aria-selected', i === activeIndex ? 'true' : 'false');
+        dot.addEventListener('click', function () {
+          activate(i, true);
+        });
+        dotsContainer.appendChild(dot);
+        dots.push(dot);
+      });
+
+      prevBtn.addEventListener('click', function () {
+        activate(activeIndex - 1, true);
+      });
+      nextBtn.addEventListener('click', function () {
+        activate(activeIndex + 1, true);
+      });
+    }
+
+    function isSliderMode() {
+      return SLIDER_MQ.matches;
+    }
+
+    function updateNavState() {
+      if (!prevBtn || !nextBtn) return;
+      prevBtn.disabled = activeIndex <= 0;
+      nextBtn.disabled = activeIndex >= panels.length - 1;
+    }
+
+    function activate(index, shouldScroll) {
+      index = Math.max(0, Math.min(panels.length - 1, index));
+      activeIndex = index;
+
       panels.forEach(function (panel, i) {
         var on = i === index;
         panel.classList.toggle('is-active', on);
         panel.setAttribute('aria-expanded', on ? 'true' : 'false');
         panel.tabIndex = on ? 0 : -1;
       });
+
+      dots.forEach(function (dot, i) {
+        dot.classList.toggle('is-active', i === index);
+        dot.setAttribute('aria-selected', i === index ? 'true' : 'false');
+      });
+
+      updateNavState();
+
+      if (isSliderMode() && shouldScroll) {
+        panels[index].scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+      }
     }
+
+    function syncFromScroll() {
+      if (!isSliderMode()) return;
+
+      var trackCenter = track.scrollLeft + track.clientWidth / 2;
+      var closest = 0;
+      var closestDist = Infinity;
+
+      panels.forEach(function (panel, i) {
+        var panelCenter = panel.offsetLeft + panel.offsetWidth / 2;
+        var dist = Math.abs(panelCenter - trackCenter);
+        if (dist < closestDist) {
+          closestDist = dist;
+          closest = i;
+        }
+      });
+
+      if (closest !== activeIndex) {
+        activate(closest, false);
+      }
+    }
+
+    function setSliderMode(on) {
+      root.classList.toggle('immobilien-accordion--slider', on);
+      if (on) {
+        buildControls();
+        activate(activeIndex, false);
+        window.requestAnimationFrame(function () {
+          panels[activeIndex].scrollIntoView({ behavior: 'auto', inline: 'center', block: 'nearest' });
+        });
+      }
+    }
+
+    track.addEventListener('scroll', function () {
+      if (!isSliderMode()) return;
+      if (scrollRaf) window.cancelAnimationFrame(scrollRaf);
+      scrollRaf = window.requestAnimationFrame(syncFromScroll);
+    }, { passive: true });
 
     panels.forEach(function (panel, idx) {
       panel.addEventListener('click', function (e) {
         if (e.target.closest('a')) return;
-        activate(idx);
+        if (isSliderMode()) {
+          activate(idx, true);
+          return;
+        }
+        activate(idx, false);
       });
 
       panel.addEventListener('keydown', function (e) {
@@ -1472,33 +1604,74 @@
         var len = panels.length;
         if (e.key === 'Enter' || e.key === ' ') {
           e.preventDefault();
-          activate(idx);
+          activate(idx, isSliderMode());
           return;
         }
         if (e.key === 'ArrowRight') {
           e.preventDefault();
-          var next = (idx + 1) % len;
-          activate(next);
-          panels[next].focus();
+          activate((idx + 1) % len, isSliderMode());
+          if (isSliderMode()) panels[(idx + 1) % len].focus();
+          else panels[(idx + 1) % len].focus();
         } else if (e.key === 'ArrowLeft') {
           e.preventDefault();
           var prev = (idx - 1 + len) % len;
-          activate(prev);
+          activate(prev, isSliderMode());
           panels[prev].focus();
         } else if (e.key === 'Home') {
           e.preventDefault();
-          activate(0);
+          activate(0, isSliderMode());
           panels[0].focus();
         } else if (e.key === 'End') {
           e.preventDefault();
-          activate(len - 1);
+          activate(len - 1, isSliderMode());
           panels[len - 1].focus();
         }
       });
     });
+
+    SLIDER_MQ.addEventListener('change', function () {
+      setSliderMode(isSliderMode());
+    });
+
+    setSliderMode(isSliderMode());
   }
 
   initImmoAccordion();
+
+  /* Promo-Badge im Wizard: mobil unter wizard-hint */
+  function initPromoBadgeMobilePlacement() {
+    var mq = window.matchMedia('(max-width: 768px)');
+
+    document.querySelectorAll('.valuation-wizard-section').forEach(function (section) {
+      var container = section.querySelector('.container');
+      if (!container) return;
+
+      var promo = container.querySelector(':scope > .valuation-promo-badge');
+      var wizard = container.querySelector('.valuation-wizard');
+      var hint = section.querySelector('.wizard-step[data-step="1"] .wizard-hint');
+      if (!promo || !wizard || !hint) return;
+
+      var home = document.createComment('promo-badge-home');
+      wizard.parentNode.insertBefore(home, wizard);
+
+      function apply() {
+        if (mq.matches) {
+          hint.insertAdjacentElement('afterend', promo);
+          promo.classList.add('valuation-promo-badge--inline');
+        } else if (home.parentNode) {
+          home.parentNode.insertBefore(promo, wizard);
+          promo.classList.remove('valuation-promo-badge--inline');
+        }
+        var step1 = section.querySelector('.wizard-step[data-step="1"]');
+        promo.hidden = !(step1 && step1.classList.contains('active'));
+      }
+
+      mq.addEventListener('change', apply);
+      apply();
+    });
+  }
+
+  initPromoBadgeMobilePlacement();
 
   /* ─── Startseite: Kontaktformular (mailto) ────────── */
   function initHomeContactForm() {
@@ -1528,7 +1701,7 @@
           'Nachricht:\r\n' + message;
 
         var mailto =
-          'mailto:post@volks.immobilien' +
+          'mailto:info@volksimmobilien.eu' +
           '?subject=' + encodeURIComponent(subjectLine) +
           '&body=' + encodeURIComponent(body);
 
