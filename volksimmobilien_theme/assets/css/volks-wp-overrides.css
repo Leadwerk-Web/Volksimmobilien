@@ -1,0 +1,84 @@
+/**
+ * WordPress-only CSS overrides (not in static root css/style.css).
+ * Loaded after the synced main stylesheet.
+ */
+
+.nav-link {
+  letter-spacing: 0.02em;
+  font-feature-settings: "liga" 0, "calt" 0;
+  font-variant-ligatures: none;
+}
+
+.mobile-nav-list a {
+  font-feature-settings: "liga" 0, "calt" 0;
+  font-variant-ligatures: none;
+  letter-spacing: 0.02em;
+}
+
+.hero:has(.intent-hub-wrapper) .hero-actions {
+  margin-bottom: clamp(1.75rem, 3.5vw, 3rem);
+}
+
+.hero:has(.intent-hub-wrapper) .hero-content {
+  padding-bottom: clamp(1.25rem, 2.5vw, 2rem);
+}
+
+/* Startseite: Intent-Hub unter den CTAs – keine Überlappung der Buttons */
+body.page-home .hero {
+  justify-content: flex-start;
+  height: auto;
+  min-height: min(82vh, 48rem);
+  padding-bottom: clamp(2rem, 4vw, 3.5rem);
+}
+
+body.page-home .hero-content {
+  flex: 0 1 auto;
+  position: relative;
+  z-index: 3;
+}
+
+body.page-home .hero:has(.intent-hub-wrapper) .hero-actions {
+  position: relative;
+  z-index: 4;
+}
+
+body.page-home .intent-hub-wrapper {
+  position: relative;
+  bottom: auto;
+  left: auto;
+  right: auto;
+  transform: none;
+  flex: 0 0 auto;
+  align-self: stretch;
+  width: 100%;
+  margin-top: clamp(1.75rem, 3vw, 2.75rem);
+  z-index: 2;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+body.page-home .intro-section {
+  padding-top: clamp(2.75rem, 4vw + 1.5rem, 4.5rem);
+}
+
+@media (min-width: 1367px) and (max-width: 1500px) {
+  body.page-home {
+    --hero-frame-inset: clamp(1.25rem, 2.5vw, 2rem);
+  }
+
+  body.page-home .hero .container.hero-content {
+    padding-left: clamp(2rem, 4vw, 3rem);
+    padding-right: clamp(2rem, 4vw, 3rem);
+    box-sizing: border-box;
+  }
+
+  body.page-home .intent-hub-wrapper .container {
+    padding-left: clamp(2rem, 4vw, 3rem);
+    padding-right: clamp(2rem, 4vw, 3rem);
+    box-sizing: border-box;
+  }
+
+  body.page-home .hero-text {
+    max-width: min(720px, 100%);
+  }
+}

@@ -1,0 +1,100 @@
+{
+  "version": "1",
+  "project": "volksimmobilien",
+  "site_title": "volksimmobilien km GmbH",
+  "site_tagline": "Immobilienmakler von Heidelberg bis Baden-Baden",
+  "translations_enabled": false,
+  "pages": [
+    {
+      "source_key": "volks-home-v1",
+      "field_name": "volks_home_sections",
+      "source_file": "index.html",
+      "title": "volksimmobilien",
+      "slug": "home",
+      "target_type": "page",
+      "post_status": "publish",
+      "is_front_page": true
+    },
+    {
+      "source_key": "volks-bewerten-v1",
+      "field_name": "volks_bewerten_sections",
+      "source_file": "bewerten.html",
+      "title": "Immobilie bewerten",
+      "slug": "bewerten",
+      "target_type": "page",
+      "post_status": "publish"
+    },
+    {
+      "source_key": "volks-kaufen-v1",
+      "field_name": "volks_kaufen_sections",
+      "source_file": "kaufen.html",
+      "title": "Immobilie kaufen",
+      "slug": "kaufen",
+      "target_type": "page",
+      "post_status": "publish"
+    },
+    {
+      "source_key": "volks-verkaufen-v1",
+      "field_name": "volks_verkaufen_sections",
+      "source_file": "verkaufen.html",
+      "title": "Immobilie verkaufen",
+      "slug": "verkaufen",
+      "target_type": "page",
+      "post_status": "publish"
+    },
+    {
+      "source_key": "volks-ausland-v1",
+      "field_name": "volks_ausland_sections",
+      "source_file": "ausland.html",
+      "title": "Immobilien Ausland",
+      "slug": "ausland",
+      "target_type": "page",
+      "post_status": "publish"
+    },
+    {
+      "source_key": "volks-mallorca-v1",
+      "field_name": "volks_mallorca_sections",
+      "source_file": "mallorca.html",
+      "title": "Mallorca",
+      "slug": "mallorca",
+      "target_type": "page",
+      "post_status": "publish"
+    },
+    {
+      "source_key": "volks-impressum-v1",
+      "field_name": "volks_impressum_page",
+      "source_file": "impressum.html",
+      "title": "Impressum",
+      "slug": "impressum",
+      "target_type": "page",
+      "post_status": "publish"
+    },
+    {
+      "source_key": "volks-datenschutz-v1",
+      "field_name": "volks_datenschutz_page",
+      "source_file": "datenschutz.html",
+      "title": "Datenschutz",
+      "slug": "datenschutz",
+      "target_type": "page",
+      "post_status": "publish"
+    },
+    {
+      "source_key": "volks-danke-v1",
+      "field_name": "volks_danke_page",
+      "source_file": "danke.html",
+      "title": "Vielen Dank",
+      "slug": "danke",
+      "target_type": "page",
+      "post_status": "publish"
+    },
+    {
+      "source_key": "volks-404-v1",
+      "field_name": "volks_404_page",
+      "source_file": "404.html",
+      "title": "Seite nicht gefunden",
+      "slug": "404",
+      "target_type": "page",
+      "post_status": "publish"
+    }
+  ]
+}

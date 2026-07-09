@@ -1,0 +1,2337 @@
+{
+  "created_at": "2026-07-09T12:16:14",
+  "root": "/Users/atlas/Documents/Github/Volksimmobilien",
+  "total_images": 233,
+  "images": [
+    {
+      "filename": "0I0A2102.jpg",
+      "stem": "0I0A2102",
+      "extension": ".jpg",
+      "relative_path": "Fotos/0I0A2102.jpg",
+      "absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/Fotos/0I0A2102.jpg",
+      "target_webp_relative_path": "Fotos/0I0A2102.webp",
+      "target_webp_absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/Fotos/0I0A2102.webp",
+      "size_bytes": 1335049
+    },
+    {
+      "filename": "10.png",
+      "stem": "10",
+      "extension": ".png",
+      "relative_path": "Fotos/10.png",
+      "absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/Fotos/10.png",
+      "target_webp_relative_path": "Fotos/10.webp",
+      "target_webp_absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/Fotos/10.webp",
+      "size_bytes": 3298013
+    },
+    {
+      "filename": "11.png",
+      "stem": "11",
+      "extension": ".png",
+      "relative_path": "Fotos/11.png",
+      "absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/Fotos/11.png",
+      "target_webp_relative_path": "Fotos/11.webp",
+      "target_webp_absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/Fotos/11.webp",
+      "size_bytes": 1964281
+    },
+    {
+      "filename": "12.png",
+      "stem": "12",
+      "extension": ".png",
+      "relative_path": "Fotos/12.png",
+      "absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/Fotos/12.png",
+      "target_webp_relative_path": "Fotos/12.webp",
+      "target_webp_absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/Fotos/12.webp",
+      "size_bytes": 1102821
+    },
+    {
+      "filename": "13.png",
+      "stem": "13",
+      "extension": ".png",
+      "relative_path": "Fotos/13.png",
+      "absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/Fotos/13.png",
+      "target_webp_relative_path": "Fotos/13.webp",
+      "target_webp_absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/Fotos/13.webp",
+      "size_bytes": 2482103
+    },
+    {
+      "filename": "14.png",
+      "stem": "14",
+      "extension": ".png",
+      "relative_path": "Fotos/14.png",
+      "absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/Fotos/14.png",
+      "target_webp_relative_path": "Fotos/14.webp",
+      "target_webp_absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/Fotos/14.webp",
+      "size_bytes": 2215324
+    },
+    {
+      "filename": "15.png",
+      "stem": "15",
+      "extension": ".png",
+      "relative_path": "Fotos/15.png",
+      "absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/Fotos/15.png",
+      "target_webp_relative_path": "Fotos/15.webp",
+      "target_webp_absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/Fotos/15.webp",
+      "size_bytes": 2321663
+    },
+    {
+      "filename": "3516235.png",
+      "stem": "3516235",
+      "extension": ".png",
+      "relative_path": "Fotos/3516235.png",
+      "absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/Fotos/3516235.png",
+      "target_webp_relative_path": "Fotos/3516235.webp",
+      "target_webp_absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/Fotos/3516235.webp",
+      "size_bytes": 4910
+    },
+    {
+      "filename": "5655652.png",
+      "stem": "5655652",
+      "extension": ".png",
+      "relative_path": "Fotos/5655652.png",
+      "absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/Fotos/5655652.png",
+      "target_webp_relative_path": "Fotos/5655652.webp",
+      "target_webp_absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/Fotos/5655652.webp",
+      "size_bytes": 599690
+    },
+    {
+      "filename": "8.png",
+      "stem": "8",
+      "extension": ".png",
+      "relative_path": "Fotos/8.png",
+      "absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/Fotos/8.png",
+      "target_webp_relative_path": "Fotos/8.webp",
+      "target_webp_absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/Fotos/8.webp",
+      "size_bytes": 2884453
+    },
+    {
+      "filename": "9.png",
+      "stem": "9",
+      "extension": ".png",
+      "relative_path": "Fotos/9.png",
+      "absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/Fotos/9.png",
+      "target_webp_relative_path": "Fotos/9.webp",
+      "target_webp_absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/Fotos/9.webp",
+      "size_bytes": 1733877
+    },
+    {
+      "filename": "Angebot1.png",
+      "stem": "Angebot1",
+      "extension": ".png",
+      "relative_path": "Fotos/Angebot1.png",
+      "absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/Fotos/Angebot1.png",
+      "target_webp_relative_path": "Fotos/Angebot1.webp",
+      "target_webp_absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/Fotos/Angebot1.webp",
+      "size_bytes": 1464697
+    },
+    {
+      "filename": "Angebot2.png",
+      "stem": "Angebot2",
+      "extension": ".png",
+      "relative_path": "Fotos/Angebot2.png",
+      "absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/Fotos/Angebot2.png",
+      "target_webp_relative_path": "Fotos/Angebot2.webp",
+      "target_webp_absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/Fotos/Angebot2.webp",
+      "size_bytes": 1409738
+    },
+    {
+      "filename": "Angebot3.png",
+      "stem": "Angebot3",
+      "extension": ".png",
+      "relative_path": "Fotos/Angebot3.png",
+      "absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/Fotos/Angebot3.png",
+      "target_webp_relative_path": "Fotos/Angebot3.webp",
+      "target_webp_absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/Fotos/Angebot3.webp",
+      "size_bytes": 1128228
+    },
+    {
+      "filename": "DHH-blau.png",
+      "stem": "DHH-blau",
+      "extension": ".png",
+      "relative_path": "Fotos/DHH-blau.png",
+      "absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/Fotos/DHH-blau.png",
+      "target_webp_relative_path": "Fotos/DHH-blau.webp",
+      "target_webp_absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/Fotos/DHH-blau.webp",
+      "size_bytes": 11043
+    },
+    {
+      "filename": "DHH-grau.png",
+      "stem": "DHH-grau",
+      "extension": ".png",
+      "relative_path": "Fotos/DHH-grau.png",
+      "absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/Fotos/DHH-grau.png",
+      "target_webp_relative_path": "Fotos/DHH-grau.webp",
+      "target_webp_absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/Fotos/DHH-grau.webp",
+      "size_bytes": 10071
+    },
+    {
+      "filename": "DHH-rot.png",
+      "stem": "DHH-rot",
+      "extension": ".png",
+      "relative_path": "Fotos/DHH-rot.png",
+      "absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/Fotos/DHH-rot.png",
+      "target_webp_relative_path": "Fotos/DHH-rot.webp",
+      "target_webp_absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/Fotos/DHH-rot.webp",
+      "size_bytes": 10469
+    },
+    {
+      "filename": "EFH-blau.png",
+      "stem": "EFH-blau",
+      "extension": ".png",
+      "relative_path": "Fotos/EFH-blau.png",
+      "absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/Fotos/EFH-blau.png",
+      "target_webp_relative_path": "Fotos/EFH-blau.webp",
+      "target_webp_absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/Fotos/EFH-blau.webp",
+      "size_bytes": 9978
+    },
+    {
+      "filename": "EFH-grau.png",
+      "stem": "EFH-grau",
+      "extension": ".png",
+      "relative_path": "Fotos/EFH-grau.png",
+      "absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/Fotos/EFH-grau.png",
+      "target_webp_relative_path": "Fotos/EFH-grau.webp",
+      "target_webp_absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/Fotos/EFH-grau.webp",
+      "size_bytes": 9756
+    },
+    {
+      "filename": "EFH-rot.png",
+      "stem": "EFH-rot",
+      "extension": ".png",
+      "relative_path": "Fotos/EFH-rot.png",
+      "absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/Fotos/EFH-rot.png",
+      "target_webp_relative_path": "Fotos/EFH-rot.webp",
+      "target_webp_absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/Fotos/EFH-rot.webp",
+      "size_bytes": 10115
+    },
+    {
+      "filename": "Finca 1.png",
+      "stem": "Finca 1",
+      "extension": ".png",
+      "relative_path": "Fotos/Finca 1.png",
+      "absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/Fotos/Finca 1.png",
+      "target_webp_relative_path": "Fotos/Finca 1.webp",
+      "target_webp_absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/Fotos/Finca 1.webp",
+      "size_bytes": 3868274
+    },
+    {
+      "filename": "Finca 2.png",
+      "stem": "Finca 2",
+      "extension": ".png",
+      "relative_path": "Fotos/Finca 2.png",
+      "absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/Fotos/Finca 2.png",
+      "target_webp_relative_path": "Fotos/Finca 2.webp",
+      "target_webp_absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/Fotos/Finca 2.webp",
+      "size_bytes": 4351528
+    },
+    {
+      "filename": "Finca 3.png",
+      "stem": "Finca 3",
+      "extension": ".png",
+      "relative_path": "Fotos/Finca 3.png",
+      "absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/Fotos/Finca 3.png",
+      "target_webp_relative_path": "Fotos/Finca 3.webp",
+      "target_webp_absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/Fotos/Finca 3.webp",
+      "size_bytes": 4581244
+    },
+    {
+      "filename": "GRS-blau.png",
+      "stem": "GRS-blau",
+      "extension": ".png",
+      "relative_path": "Fotos/GRS-blau.png",
+      "absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/Fotos/GRS-blau.png",
+      "target_webp_relative_path": "Fotos/GRS-blau.webp",
+      "target_webp_absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/Fotos/GRS-blau.webp",
+      "size_bytes": 13568
+    },
+    {
+      "filename": "GRS-grau.png",
+      "stem": "GRS-grau",
+      "extension": ".png",
+      "relative_path": "Fotos/GRS-grau.png",
+      "absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/Fotos/GRS-grau.png",
+      "target_webp_relative_path": "Fotos/GRS-grau.webp",
+      "target_webp_absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/Fotos/GRS-grau.webp",
+      "size_bytes": 13185
+    },
+    {
+      "filename": "GRS-rot.png",
+      "stem": "GRS-rot",
+      "extension": ".png",
+      "relative_path": "Fotos/GRS-rot.png",
+      "absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/Fotos/GRS-rot.png",
+      "target_webp_relative_path": "Fotos/GRS-rot.webp",
+      "target_webp_absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/Fotos/GRS-rot.webp",
+      "size_bytes": 13897
+    },
+    {
+      "filename": "Gemini_Generated_Image_2wdsr12wdsr12wds.png",
+      "stem": "Gemini_Generated_Image_2wdsr12wdsr12wds",
+      "extension": ".png",
+      "relative_path": "Fotos/Gemini_Generated_Image_2wdsr12wdsr12wds.png",
+      "absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/Fotos/Gemini_Generated_Image_2wdsr12wdsr12wds.png",
+      "target_webp_relative_path": "Fotos/Gemini_Generated_Image_2wdsr12wdsr12wds.webp",
+      "target_webp_absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/Fotos/Gemini_Generated_Image_2wdsr12wdsr12wds.webp",
+      "size_bytes": 7205170
+    },
+    {
+      "filename": "Icon_Bewerten.png",
+      "stem": "Icon_Bewerten",
+      "extension": ".png",
+      "relative_path": "Fotos/Icon_Bewerten.png",
+      "absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/Fotos/Icon_Bewerten.png",
+      "target_webp_relative_path": "Fotos/Icon_Bewerten.webp",
+      "target_webp_absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/Fotos/Icon_Bewerten.webp",
+      "size_bytes": 8368
+    },
+    {
+      "filename": "Icon_Kaufen.png",
+      "stem": "Icon_Kaufen",
+      "extension": ".png",
+      "relative_path": "Fotos/Icon_Kaufen.png",
+      "absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/Fotos/Icon_Kaufen.png",
+      "target_webp_relative_path": "Fotos/Icon_Kaufen.webp",
+      "target_webp_absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/Fotos/Icon_Kaufen.webp",
+      "size_bytes": 4769
+    },
+    {
+      "filename": "Icon_Mieten.png",
+      "stem": "Icon_Mieten",
+      "extension": ".png",
+      "relative_path": "Fotos/Icon_Mieten.png",
+      "absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/Fotos/Icon_Mieten.png",
+      "target_webp_relative_path": "Fotos/Icon_Mieten.webp",
+      "target_webp_absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/Fotos/Icon_Mieten.webp",
+      "size_bytes": 3874
+    },
+    {
+      "filename": "Icon_Verkaufen.png",
+      "stem": "Icon_Verkaufen",
+      "extension": ".png",
+      "relative_path": "Fotos/Icon_Verkaufen.png",
+      "absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/Fotos/Icon_Verkaufen.png",
+      "target_webp_relative_path": "Fotos/Icon_Verkaufen.webp",
+      "target_webp_absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/Fotos/Icon_Verkaufen.webp",
+      "size_bytes": 3104
+    },
+    {
+      "filename": "MFH-blau.png",
+      "stem": "MFH-blau",
+      "extension": ".png",
+      "relative_path": "Fotos/MFH-blau.png",
+      "absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/Fotos/MFH-blau.png",
+      "target_webp_relative_path": "Fotos/MFH-blau.webp",
+      "target_webp_absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/Fotos/MFH-blau.webp",
+      "size_bytes": 11098
+    },
+    {
+      "filename": "MFH-grau.png",
+      "stem": "MFH-grau",
+      "extension": ".png",
+      "relative_path": "Fotos/MFH-grau.png",
+      "absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/Fotos/MFH-grau.png",
+      "target_webp_relative_path": "Fotos/MFH-grau.webp",
+      "target_webp_absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/Fotos/MFH-grau.webp",
+      "size_bytes": 10780
+    },
+    {
+      "filename": "MFH-rot.png",
+      "stem": "MFH-rot",
+      "extension": ".png",
+      "relative_path": "Fotos/MFH-rot.png",
+      "absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/Fotos/MFH-rot.png",
+      "target_webp_relative_path": "Fotos/MFH-rot.webp",
+      "target_webp_absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/Fotos/MFH-rot.webp",
+      "size_bytes": 11241
+    },
+    {
+      "filename": "Mallorca 1.png",
+      "stem": "Mallorca 1",
+      "extension": ".png",
+      "relative_path": "Fotos/Mallorca 1.png",
+      "absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/Fotos/Mallorca 1.png",
+      "target_webp_relative_path": "Fotos/Mallorca 1.webp",
+      "target_webp_absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/Fotos/Mallorca 1.webp",
+      "size_bytes": 4605402
+    },
+    {
+      "filename": "Mallorca 2.png",
+      "stem": "Mallorca 2",
+      "extension": ".png",
+      "relative_path": "Fotos/Mallorca 2.png",
+      "absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/Fotos/Mallorca 2.png",
+      "target_webp_relative_path": "Fotos/Mallorca 2.webp",
+      "target_webp_absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/Fotos/Mallorca 2.webp",
+      "size_bytes": 4664511
+    },
+    {
+      "filename": "Mallorca 3.png",
+      "stem": "Mallorca 3",
+      "extension": ".png",
+      "relative_path": "Fotos/Mallorca 3.png",
+      "absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/Fotos/Mallorca 3.png",
+      "target_webp_relative_path": "Fotos/Mallorca 3.webp",
+      "target_webp_absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/Fotos/Mallorca 3.webp",
+      "size_bytes": 3681474
+    },
+    {
+      "filename": "Mallorca 4.png",
+      "stem": "Mallorca 4",
+      "extension": ".png",
+      "relative_path": "Fotos/Mallorca 4.png",
+      "absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/Fotos/Mallorca 4.png",
+      "target_webp_relative_path": "Fotos/Mallorca 4.webp",
+      "target_webp_absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/Fotos/Mallorca 4.webp",
+      "size_bytes": 3902493
+    },
+    {
+      "filename": "Onlinerechner.png",
+      "stem": "Onlinerechner",
+      "extension": ".png",
+      "relative_path": "Fotos/Onlinerechner.png",
+      "absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/Fotos/Onlinerechner.png",
+      "target_webp_relative_path": "Fotos/Onlinerechner.webp",
+      "target_webp_absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/Fotos/Onlinerechner.webp",
+      "size_bytes": 9560
+    },
+    {
+      "filename": "RH-blau-aussen.png",
+      "stem": "RH-blau-aussen",
+      "extension": ".png",
+      "relative_path": "Fotos/RH-blau-aussen.png",
+      "absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/Fotos/RH-blau-aussen.png",
+      "target_webp_relative_path": "Fotos/RH-blau-aussen.webp",
+      "target_webp_absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/Fotos/RH-blau-aussen.webp",
+      "size_bytes": 9032
+    },
+    {
+      "filename": "RH-blau.png",
+      "stem": "RH-blau",
+      "extension": ".png",
+      "relative_path": "Fotos/RH-blau.png",
+      "absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/Fotos/RH-blau.png",
+      "target_webp_relative_path": "Fotos/RH-blau.webp",
+      "target_webp_absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/Fotos/RH-blau.webp",
+      "size_bytes": 8622
+    },
+    {
+      "filename": "RH-grau-aussen.png",
+      "stem": "RH-grau-aussen",
+      "extension": ".png",
+      "relative_path": "Fotos/RH-grau-aussen.png",
+      "absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/Fotos/RH-grau-aussen.png",
+      "target_webp_relative_path": "Fotos/RH-grau-aussen.webp",
+      "target_webp_absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/Fotos/RH-grau-aussen.webp",
+      "size_bytes": 10037
+    },
+    {
+      "filename": "RH-grau-mitte.png",
+      "stem": "RH-grau-mitte",
+      "extension": ".png",
+      "relative_path": "Fotos/RH-grau-mitte.png",
+      "absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/Fotos/RH-grau-mitte.png",
+      "target_webp_relative_path": "Fotos/RH-grau-mitte.webp",
+      "target_webp_absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/Fotos/RH-grau-mitte.webp",
+      "size_bytes": 9699
+    },
+    {
+      "filename": "RH-grau.png",
+      "stem": "RH-grau",
+      "extension": ".png",
+      "relative_path": "Fotos/RH-grau.png",
+      "absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/Fotos/RH-grau.png",
+      "target_webp_relative_path": "Fotos/RH-grau.webp",
+      "target_webp_absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/Fotos/RH-grau.webp",
+      "size_bytes": 9319
+    },
+    {
+      "filename": "RH-rot-aussen.png",
+      "stem": "RH-rot-aussen",
+      "extension": ".png",
+      "relative_path": "Fotos/RH-rot-aussen.png",
+      "absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/Fotos/RH-rot-aussen.png",
+      "target_webp_relative_path": "Fotos/RH-rot-aussen.webp",
+      "target_webp_absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/Fotos/RH-rot-aussen.webp",
+      "size_bytes": 9327
+    },
+    {
+      "filename": "RH-rot.png",
+      "stem": "RH-rot",
+      "extension": ".png",
+      "relative_path": "Fotos/RH-rot.png",
+      "absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/Fotos/RH-rot.png",
+      "target_webp_relative_path": "Fotos/RH-rot.webp",
+      "target_webp_absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/Fotos/RH-rot.webp",
+      "size_bytes": 8862
+    },
+    {
+      "filename": "Slider1.jpg",
+      "stem": "Slider1",
+      "extension": ".jpg",
+      "relative_path": "Fotos/Slider1.jpg",
+      "absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/Fotos/Slider1.jpg",
+      "target_webp_relative_path": "Fotos/Slider1.webp",
+      "target_webp_absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/Fotos/Slider1.webp",
+      "size_bytes": 39612
+    },
+    {
+      "filename": "Slider2.jpg",
+      "stem": "Slider2",
+      "extension": ".jpg",
+      "relative_path": "Fotos/Slider2.jpg",
+      "absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/Fotos/Slider2.jpg",
+      "target_webp_relative_path": "Fotos/Slider2.webp",
+      "target_webp_absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/Fotos/Slider2.webp",
+      "size_bytes": 39314
+    },
+    {
+      "filename": "Slider3.jpg",
+      "stem": "Slider3",
+      "extension": ".jpg",
+      "relative_path": "Fotos/Slider3.jpg",
+      "absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/Fotos/Slider3.jpg",
+      "target_webp_relative_path": "Fotos/Slider3.webp",
+      "target_webp_absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/Fotos/Slider3.webp",
+      "size_bytes": 30340
+    },
+    {
+      "filename": "Slider3_optimiert.png",
+      "stem": "Slider3_optimiert",
+      "extension": ".png",
+      "relative_path": "Fotos/Slider3_optimiert.png",
+      "absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/Fotos/Slider3_optimiert.png",
+      "target_webp_relative_path": "Fotos/Slider3_optimiert.webp",
+      "target_webp_absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/Fotos/Slider3_optimiert.webp",
+      "size_bytes": 1200082
+    },
+    {
+      "filename": "Vertrauen.jpg",
+      "stem": "Vertrauen",
+      "extension": ".jpg",
+      "relative_path": "Fotos/Vertrauen.jpg",
+      "absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/Fotos/Vertrauen.jpg",
+      "target_webp_relative_path": "Fotos/Vertrauen.webp",
+      "target_webp_absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/Fotos/Vertrauen.webp",
+      "size_bytes": 98753
+    },
+    {
+      "filename": "WGH-DG-blau.png",
+      "stem": "WGH-DG-blau",
+      "extension": ".png",
+      "relative_path": "Fotos/WGH-DG-blau.png",
+      "absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/Fotos/WGH-DG-blau.png",
+      "target_webp_relative_path": "Fotos/WGH-DG-blau.webp",
+      "target_webp_absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/Fotos/WGH-DG-blau.webp",
+      "size_bytes": 14143
+    },
+    {
+      "filename": "WGH-DG-grau.png",
+      "stem": "WGH-DG-grau",
+      "extension": ".png",
+      "relative_path": "Fotos/WGH-DG-grau.png",
+      "absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/Fotos/WGH-DG-grau.png",
+      "target_webp_relative_path": "Fotos/WGH-DG-grau.webp",
+      "target_webp_absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/Fotos/WGH-DG-grau.webp",
+      "size_bytes": 14809
+    },
+    {
+      "filename": "WGH-DG-rot.png",
+      "stem": "WGH-DG-rot",
+      "extension": ".png",
+      "relative_path": "Fotos/WGH-DG-rot.png",
+      "absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/Fotos/WGH-DG-rot.png",
+      "target_webp_relative_path": "Fotos/WGH-DG-rot.webp",
+      "target_webp_absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/Fotos/WGH-DG-rot.webp",
+      "size_bytes": 14901
+    },
+    {
+      "filename": "WGH-EG-blau.png",
+      "stem": "WGH-EG-blau",
+      "extension": ".png",
+      "relative_path": "Fotos/WGH-EG-blau.png",
+      "absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/Fotos/WGH-EG-blau.png",
+      "target_webp_relative_path": "Fotos/WGH-EG-blau.webp",
+      "target_webp_absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/Fotos/WGH-EG-blau.webp",
+      "size_bytes": 11434
+    },
+    {
+      "filename": "WGH-EG-grau.png",
+      "stem": "WGH-EG-grau",
+      "extension": ".png",
+      "relative_path": "Fotos/WGH-EG-grau.png",
+      "absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/Fotos/WGH-EG-grau.png",
+      "target_webp_relative_path": "Fotos/WGH-EG-grau.webp",
+      "target_webp_absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/Fotos/WGH-EG-grau.webp",
+      "size_bytes": 11917
+    },
+    {
+      "filename": "WGH-EG-rot.png",
+      "stem": "WGH-EG-rot",
+      "extension": ".png",
+      "relative_path": "Fotos/WGH-EG-rot.png",
+      "absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/Fotos/WGH-EG-rot.png",
+      "target_webp_relative_path": "Fotos/WGH-EG-rot.webp",
+      "target_webp_absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/Fotos/WGH-EG-rot.webp",
+      "size_bytes": 11854
+    },
+    {
+      "filename": "WGH-Mais-blau.png",
+      "stem": "WGH-Mais-blau",
+      "extension": ".png",
+      "relative_path": "Fotos/WGH-Mais-blau.png",
+      "absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/Fotos/WGH-Mais-blau.png",
+      "target_webp_relative_path": "Fotos/WGH-Mais-blau.webp",
+      "target_webp_absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/Fotos/WGH-Mais-blau.webp",
+      "size_bytes": 11421
+    },
+    {
+      "filename": "WGH-Mais-grau.png",
+      "stem": "WGH-Mais-grau",
+      "extension": ".png",
+      "relative_path": "Fotos/WGH-Mais-grau.png",
+      "absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/Fotos/WGH-Mais-grau.png",
+      "target_webp_relative_path": "Fotos/WGH-Mais-grau.webp",
+      "target_webp_absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/Fotos/WGH-Mais-grau.webp",
+      "size_bytes": 12038
+    },
+    {
+      "filename": "WGH-Mais-rot.png",
+      "stem": "WGH-Mais-rot",
+      "extension": ".png",
+      "relative_path": "Fotos/WGH-Mais-rot.png",
+      "absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/Fotos/WGH-Mais-rot.png",
+      "target_webp_relative_path": "Fotos/WGH-Mais-rot.webp",
+      "target_webp_absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/Fotos/WGH-Mais-rot.webp",
+      "size_bytes": 11905
+    },
+    {
+      "filename": "WGH-PH-blau.png",
+      "stem": "WGH-PH-blau",
+      "extension": ".png",
+      "relative_path": "Fotos/WGH-PH-blau.png",
+      "absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/Fotos/WGH-PH-blau.png",
+      "target_webp_relative_path": "Fotos/WGH-PH-blau.webp",
+      "target_webp_absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/Fotos/WGH-PH-blau.webp",
+      "size_bytes": 11041
+    },
+    {
+      "filename": "WGH-PH-grau.png",
+      "stem": "WGH-PH-grau",
+      "extension": ".png",
+      "relative_path": "Fotos/WGH-PH-grau.png",
+      "absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/Fotos/WGH-PH-grau.png",
+      "target_webp_relative_path": "Fotos/WGH-PH-grau.webp",
+      "target_webp_absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/Fotos/WGH-PH-grau.webp",
+      "size_bytes": 11296
+    },
+    {
+      "filename": "WGH-PH-rot.png",
+      "stem": "WGH-PH-rot",
+      "extension": ".png",
+      "relative_path": "Fotos/WGH-PH-rot.png",
+      "absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/Fotos/WGH-PH-rot.png",
+      "target_webp_relative_path": "Fotos/WGH-PH-rot.webp",
+      "target_webp_absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/Fotos/WGH-PH-rot.webp",
+      "size_bytes": 11448
+    },
+    {
+      "filename": "WGH-Studio-blau.png",
+      "stem": "WGH-Studio-blau",
+      "extension": ".png",
+      "relative_path": "Fotos/WGH-Studio-blau.png",
+      "absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/Fotos/WGH-Studio-blau.png",
+      "target_webp_relative_path": "Fotos/WGH-Studio-blau.webp",
+      "target_webp_absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/Fotos/WGH-Studio-blau.webp",
+      "size_bytes": 11340
+    },
+    {
+      "filename": "WGH-Studio-grau.png",
+      "stem": "WGH-Studio-grau",
+      "extension": ".png",
+      "relative_path": "Fotos/WGH-Studio-grau.png",
+      "absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/Fotos/WGH-Studio-grau.png",
+      "target_webp_relative_path": "Fotos/WGH-Studio-grau.webp",
+      "target_webp_absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/Fotos/WGH-Studio-grau.webp",
+      "size_bytes": 11948
+    },
+    {
+      "filename": "WGH-Studio-rot.png",
+      "stem": "WGH-Studio-rot",
+      "extension": ".png",
+      "relative_path": "Fotos/WGH-Studio-rot.png",
+      "absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/Fotos/WGH-Studio-rot.png",
+      "target_webp_relative_path": "Fotos/WGH-Studio-rot.webp",
+      "target_webp_absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/Fotos/WGH-Studio-rot.webp",
+      "size_bytes": 11737
+    },
+    {
+      "filename": "WGH-blau.png",
+      "stem": "WGH-blau",
+      "extension": ".png",
+      "relative_path": "Fotos/WGH-blau.png",
+      "absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/Fotos/WGH-blau.png",
+      "target_webp_relative_path": "Fotos/WGH-blau.webp",
+      "target_webp_absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/Fotos/WGH-blau.webp",
+      "size_bytes": 11758
+    },
+    {
+      "filename": "WGH-grau.png",
+      "stem": "WGH-grau",
+      "extension": ".png",
+      "relative_path": "Fotos/WGH-grau.png",
+      "absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/Fotos/WGH-grau.png",
+      "target_webp_relative_path": "Fotos/WGH-grau.webp",
+      "target_webp_absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/Fotos/WGH-grau.webp",
+      "size_bytes": 11781
+    },
+    {
+      "filename": "WGH-rot.png",
+      "stem": "WGH-rot",
+      "extension": ".png",
+      "relative_path": "Fotos/WGH-rot.png",
+      "absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/Fotos/WGH-rot.png",
+      "target_webp_relative_path": "Fotos/WGH-rot.webp",
+      "target_webp_absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/Fotos/WGH-rot.webp",
+      "size_bytes": 11955
+    },
+    {
+      "filename": "Zadar.png",
+      "stem": "Zadar",
+      "extension": ".png",
+      "relative_path": "Fotos/Zadar.png",
+      "absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/Fotos/Zadar.png",
+      "target_webp_relative_path": "Fotos/Zadar.webp",
+      "target_webp_absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/Fotos/Zadar.webp",
+      "size_bytes": 3393068
+    },
+    {
+      "filename": "Zadar1.png",
+      "stem": "Zadar1",
+      "extension": ".png",
+      "relative_path": "Fotos/Zadar1.png",
+      "absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/Fotos/Zadar1.png",
+      "target_webp_relative_path": "Fotos/Zadar1.webp",
+      "target_webp_absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/Fotos/Zadar1.webp",
+      "size_bytes": 3799282
+    },
+    {
+      "filename": "Zadar2.png",
+      "stem": "Zadar2",
+      "extension": ".png",
+      "relative_path": "Fotos/Zadar2.png",
+      "absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/Fotos/Zadar2.png",
+      "target_webp_relative_path": "Fotos/Zadar2.webp",
+      "target_webp_absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/Fotos/Zadar2.webp",
+      "size_bytes": 3542507
+    },
+    {
+      "filename": "Zadar3.png",
+      "stem": "Zadar3",
+      "extension": ".png",
+      "relative_path": "Fotos/Zadar3.png",
+      "absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/Fotos/Zadar3.png",
+      "target_webp_relative_path": "Fotos/Zadar3.webp",
+      "target_webp_absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/Fotos/Zadar3.webp",
+      "size_bytes": 3172510
+    },
+    {
+      "filename": "Zadar4.png",
+      "stem": "Zadar4",
+      "extension": ".png",
+      "relative_path": "Fotos/Zadar4.png",
+      "absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/Fotos/Zadar4.png",
+      "target_webp_relative_path": "Fotos/Zadar4.webp",
+      "target_webp_absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/Fotos/Zadar4.webp",
+      "size_bytes": 1502895
+    },
+    {
+      "filename": "Zadar5.png",
+      "stem": "Zadar5",
+      "extension": ".png",
+      "relative_path": "Fotos/Zadar5.png",
+      "absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/Fotos/Zadar5.png",
+      "target_webp_relative_path": "Fotos/Zadar5.webp",
+      "target_webp_absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/Fotos/Zadar5.webp",
+      "size_bytes": 2208668
+    },
+    {
+      "filename": "persönliche-Bewertung.png",
+      "stem": "persönliche-Bewertung",
+      "extension": ".png",
+      "relative_path": "Fotos/persönliche-Bewertung.png",
+      "absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/Fotos/persönliche-Bewertung.png",
+      "target_webp_relative_path": "Fotos/persönliche-Bewertung.webp",
+      "target_webp_absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/Fotos/persönliche-Bewertung.webp",
+      "size_bytes": 13005
+    },
+    {
+      "filename": "volksimmobilien-logo-weiss.png",
+      "stem": "volksimmobilien-logo-weiss",
+      "extension": ".png",
+      "relative_path": "Fotos/volksimmobilien-logo-weiss.png",
+      "absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/Fotos/volksimmobilien-logo-weiss.png",
+      "target_webp_relative_path": "Fotos/volksimmobilien-logo-weiss.webp",
+      "target_webp_absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/Fotos/volksimmobilien-logo-weiss.webp",
+      "size_bytes": 2606
+    },
+    {
+      "filename": "volksimmobilien_kaufen.jpg",
+      "stem": "volksimmobilien_kaufen",
+      "extension": ".jpg",
+      "relative_path": "Fotos/volksimmobilien_kaufen.jpg",
+      "absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/Fotos/volksimmobilien_kaufen.jpg",
+      "target_webp_relative_path": "Fotos/volksimmobilien_kaufen.webp",
+      "target_webp_absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/Fotos/volksimmobilien_kaufen.webp",
+      "size_bytes": 232964
+    },
+    {
+      "filename": "volksimmobilien_verkaufen.jpg",
+      "stem": "volksimmobilien_verkaufen",
+      "extension": ".jpg",
+      "relative_path": "Fotos/volksimmobilien_verkaufen.jpg",
+      "absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/Fotos/volksimmobilien_verkaufen.jpg",
+      "target_webp_relative_path": "Fotos/volksimmobilien_verkaufen.webp",
+      "target_webp_absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/Fotos/volksimmobilien_verkaufen.webp",
+      "size_bytes": 236180
+    },
+    {
+      "filename": "zadar6.png",
+      "stem": "zadar6",
+      "extension": ".png",
+      "relative_path": "Fotos/zadar6.png",
+      "absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/Fotos/zadar6.png",
+      "target_webp_relative_path": "Fotos/zadar6.webp",
+      "target_webp_absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/Fotos/zadar6.webp",
+      "size_bytes": 3132202
+    },
+    {
+      "filename": "0I0A2102.jpg",
+      "stem": "0I0A2102",
+      "extension": ".jpg",
+      "relative_path": "leadwerk_importer/source_assets/Fotos/0I0A2102.jpg",
+      "absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/leadwerk_importer/source_assets/Fotos/0I0A2102.jpg",
+      "target_webp_relative_path": "leadwerk_importer/source_assets/Fotos/0I0A2102.webp",
+      "target_webp_absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/leadwerk_importer/source_assets/Fotos/0I0A2102.webp",
+      "size_bytes": 1335049
+    },
+    {
+      "filename": "10.png",
+      "stem": "10",
+      "extension": ".png",
+      "relative_path": "leadwerk_importer/source_assets/Fotos/10.png",
+      "absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/leadwerk_importer/source_assets/Fotos/10.png",
+      "target_webp_relative_path": "leadwerk_importer/source_assets/Fotos/10.webp",
+      "target_webp_absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/leadwerk_importer/source_assets/Fotos/10.webp",
+      "size_bytes": 3298013
+    },
+    {
+      "filename": "11.png",
+      "stem": "11",
+      "extension": ".png",
+      "relative_path": "leadwerk_importer/source_assets/Fotos/11.png",
+      "absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/leadwerk_importer/source_assets/Fotos/11.png",
+      "target_webp_relative_path": "leadwerk_importer/source_assets/Fotos/11.webp",
+      "target_webp_absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/leadwerk_importer/source_assets/Fotos/11.webp",
+      "size_bytes": 1964281
+    },
+    {
+      "filename": "12.png",
+      "stem": "12",
+      "extension": ".png",
+      "relative_path": "leadwerk_importer/source_assets/Fotos/12.png",
+      "absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/leadwerk_importer/source_assets/Fotos/12.png",
+      "target_webp_relative_path": "leadwerk_importer/source_assets/Fotos/12.webp",
+      "target_webp_absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/leadwerk_importer/source_assets/Fotos/12.webp",
+      "size_bytes": 1102821
+    },
+    {
+      "filename": "13.png",
+      "stem": "13",
+      "extension": ".png",
+      "relative_path": "leadwerk_importer/source_assets/Fotos/13.png",
+      "absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/leadwerk_importer/source_assets/Fotos/13.png",
+      "target_webp_relative_path": "leadwerk_importer/source_assets/Fotos/13.webp",
+      "target_webp_absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/leadwerk_importer/source_assets/Fotos/13.webp",
+      "size_bytes": 2482103
+    },
+    {
+      "filename": "14.png",
+      "stem": "14",
+      "extension": ".png",
+      "relative_path": "leadwerk_importer/source_assets/Fotos/14.png",
+      "absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/leadwerk_importer/source_assets/Fotos/14.png",
+      "target_webp_relative_path": "leadwerk_importer/source_assets/Fotos/14.webp",
+      "target_webp_absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/leadwerk_importer/source_assets/Fotos/14.webp",
+      "size_bytes": 2215324
+    },
+    {
+      "filename": "15.png",
+      "stem": "15",
+      "extension": ".png",
+      "relative_path": "leadwerk_importer/source_assets/Fotos/15.png",
+      "absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/leadwerk_importer/source_assets/Fotos/15.png",
+      "target_webp_relative_path": "leadwerk_importer/source_assets/Fotos/15.webp",
+      "target_webp_absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/leadwerk_importer/source_assets/Fotos/15.webp",
+      "size_bytes": 2321663
+    },
+    {
+      "filename": "3516235.png",
+      "stem": "3516235",
+      "extension": ".png",
+      "relative_path": "leadwerk_importer/source_assets/Fotos/3516235.png",
+      "absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/leadwerk_importer/source_assets/Fotos/3516235.png",
+      "target_webp_relative_path": "leadwerk_importer/source_assets/Fotos/3516235.webp",
+      "target_webp_absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/leadwerk_importer/source_assets/Fotos/3516235.webp",
+      "size_bytes": 4910
+    },
+    {
+      "filename": "5655652.png",
+      "stem": "5655652",
+      "extension": ".png",
+      "relative_path": "leadwerk_importer/source_assets/Fotos/5655652.png",
+      "absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/leadwerk_importer/source_assets/Fotos/5655652.png",
+      "target_webp_relative_path": "leadwerk_importer/source_assets/Fotos/5655652.webp",
+      "target_webp_absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/leadwerk_importer/source_assets/Fotos/5655652.webp",
+      "size_bytes": 599690
+    },
+    {
+      "filename": "8.png",
+      "stem": "8",
+      "extension": ".png",
+      "relative_path": "leadwerk_importer/source_assets/Fotos/8.png",
+      "absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/leadwerk_importer/source_assets/Fotos/8.png",
+      "target_webp_relative_path": "leadwerk_importer/source_assets/Fotos/8.webp",
+      "target_webp_absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/leadwerk_importer/source_assets/Fotos/8.webp",
+      "size_bytes": 2884453
+    },
+    {
+      "filename": "9.png",
+      "stem": "9",
+      "extension": ".png",
+      "relative_path": "leadwerk_importer/source_assets/Fotos/9.png",
+      "absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/leadwerk_importer/source_assets/Fotos/9.png",
+      "target_webp_relative_path": "leadwerk_importer/source_assets/Fotos/9.webp",
+      "target_webp_absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/leadwerk_importer/source_assets/Fotos/9.webp",
+      "size_bytes": 1733877
+    },
+    {
+      "filename": "Angebot1.png",
+      "stem": "Angebot1",
+      "extension": ".png",
+      "relative_path": "leadwerk_importer/source_assets/Fotos/Angebot1.png",
+      "absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/leadwerk_importer/source_assets/Fotos/Angebot1.png",
+      "target_webp_relative_path": "leadwerk_importer/source_assets/Fotos/Angebot1.webp",
+      "target_webp_absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/leadwerk_importer/source_assets/Fotos/Angebot1.webp",
+      "size_bytes": 1464697
+    },
+    {
+      "filename": "Angebot2.png",
+      "stem": "Angebot2",
+      "extension": ".png",
+      "relative_path": "leadwerk_importer/source_assets/Fotos/Angebot2.png",
+      "absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/leadwerk_importer/source_assets/Fotos/Angebot2.png",
+      "target_webp_relative_path": "leadwerk_importer/source_assets/Fotos/Angebot2.webp",
+      "target_webp_absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/leadwerk_importer/source_assets/Fotos/Angebot2.webp",
+      "size_bytes": 1409738
+    },
+    {
+      "filename": "Angebot3.png",
+      "stem": "Angebot3",
+      "extension": ".png",
+      "relative_path": "leadwerk_importer/source_assets/Fotos/Angebot3.png",
+      "absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/leadwerk_importer/source_assets/Fotos/Angebot3.png",
+      "target_webp_relative_path": "leadwerk_importer/source_assets/Fotos/Angebot3.webp",
+      "target_webp_absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/leadwerk_importer/source_assets/Fotos/Angebot3.webp",
+      "size_bytes": 1128228
+    },
+    {
+      "filename": "DHH-blau.png",
+      "stem": "DHH-blau",
+      "extension": ".png",
+      "relative_path": "leadwerk_importer/source_assets/Fotos/DHH-blau.png",
+      "absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/leadwerk_importer/source_assets/Fotos/DHH-blau.png",
+      "target_webp_relative_path": "leadwerk_importer/source_assets/Fotos/DHH-blau.webp",
+      "target_webp_absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/leadwerk_importer/source_assets/Fotos/DHH-blau.webp",
+      "size_bytes": 11043
+    },
+    {
+      "filename": "DHH-grau.png",
+      "stem": "DHH-grau",
+      "extension": ".png",
+      "relative_path": "leadwerk_importer/source_assets/Fotos/DHH-grau.png",
+      "absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/leadwerk_importer/source_assets/Fotos/DHH-grau.png",
+      "target_webp_relative_path": "leadwerk_importer/source_assets/Fotos/DHH-grau.webp",
+      "target_webp_absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/leadwerk_importer/source_assets/Fotos/DHH-grau.webp",
+      "size_bytes": 10071
+    },
+    {
+      "filename": "DHH-rot.png",
+      "stem": "DHH-rot",
+      "extension": ".png",
+      "relative_path": "leadwerk_importer/source_assets/Fotos/DHH-rot.png",
+      "absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/leadwerk_importer/source_assets/Fotos/DHH-rot.png",
+      "target_webp_relative_path": "leadwerk_importer/source_assets/Fotos/DHH-rot.webp",
+      "target_webp_absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/leadwerk_importer/source_assets/Fotos/DHH-rot.webp",
+      "size_bytes": 10469
+    },
+    {
+      "filename": "EFH-blau.png",
+      "stem": "EFH-blau",
+      "extension": ".png",
+      "relative_path": "leadwerk_importer/source_assets/Fotos/EFH-blau.png",
+      "absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/leadwerk_importer/source_assets/Fotos/EFH-blau.png",
+      "target_webp_relative_path": "leadwerk_importer/source_assets/Fotos/EFH-blau.webp",
+      "target_webp_absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/leadwerk_importer/source_assets/Fotos/EFH-blau.webp",
+      "size_bytes": 9978
+    },
+    {
+      "filename": "EFH-grau.png",
+      "stem": "EFH-grau",
+      "extension": ".png",
+      "relative_path": "leadwerk_importer/source_assets/Fotos/EFH-grau.png",
+      "absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/leadwerk_importer/source_assets/Fotos/EFH-grau.png",
+      "target_webp_relative_path": "leadwerk_importer/source_assets/Fotos/EFH-grau.webp",
+      "target_webp_absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/leadwerk_importer/source_assets/Fotos/EFH-grau.webp",
+      "size_bytes": 9756
+    },
+    {
+      "filename": "EFH-rot.png",
+      "stem": "EFH-rot",
+      "extension": ".png",
+      "relative_path": "leadwerk_importer/source_assets/Fotos/EFH-rot.png",
+      "absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/leadwerk_importer/source_assets/Fotos/EFH-rot.png",
+      "target_webp_relative_path": "leadwerk_importer/source_assets/Fotos/EFH-rot.webp",
+      "target_webp_absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/leadwerk_importer/source_assets/Fotos/EFH-rot.webp",
+      "size_bytes": 10115
+    },
+    {
+      "filename": "Finca 1.png",
+      "stem": "Finca 1",
+      "extension": ".png",
+      "relative_path": "leadwerk_importer/source_assets/Fotos/Finca 1.png",
+      "absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/leadwerk_importer/source_assets/Fotos/Finca 1.png",
+      "target_webp_relative_path": "leadwerk_importer/source_assets/Fotos/Finca 1.webp",
+      "target_webp_absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/leadwerk_importer/source_assets/Fotos/Finca 1.webp",
+      "size_bytes": 3868274
+    },
+    {
+      "filename": "Finca 2.png",
+      "stem": "Finca 2",
+      "extension": ".png",
+      "relative_path": "leadwerk_importer/source_assets/Fotos/Finca 2.png",
+      "absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/leadwerk_importer/source_assets/Fotos/Finca 2.png",
+      "target_webp_relative_path": "leadwerk_importer/source_assets/Fotos/Finca 2.webp",
+      "target_webp_absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/leadwerk_importer/source_assets/Fotos/Finca 2.webp",
+      "size_bytes": 4351528
+    },
+    {
+      "filename": "Finca 3.png",
+      "stem": "Finca 3",
+      "extension": ".png",
+      "relative_path": "leadwerk_importer/source_assets/Fotos/Finca 3.png",
+      "absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/leadwerk_importer/source_assets/Fotos/Finca 3.png",
+      "target_webp_relative_path": "leadwerk_importer/source_assets/Fotos/Finca 3.webp",
+      "target_webp_absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/leadwerk_importer/source_assets/Fotos/Finca 3.webp",
+      "size_bytes": 4581244
+    },
+    {
+      "filename": "GRS-blau.png",
+      "stem": "GRS-blau",
+      "extension": ".png",
+      "relative_path": "leadwerk_importer/source_assets/Fotos/GRS-blau.png",
+      "absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/leadwerk_importer/source_assets/Fotos/GRS-blau.png",
+      "target_webp_relative_path": "leadwerk_importer/source_assets/Fotos/GRS-blau.webp",
+      "target_webp_absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/leadwerk_importer/source_assets/Fotos/GRS-blau.webp",
+      "size_bytes": 13568
+    },
+    {
+      "filename": "GRS-grau.png",
+      "stem": "GRS-grau",
+      "extension": ".png",
+      "relative_path": "leadwerk_importer/source_assets/Fotos/GRS-grau.png",
+      "absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/leadwerk_importer/source_assets/Fotos/GRS-grau.png",
+      "target_webp_relative_path": "leadwerk_importer/source_assets/Fotos/GRS-grau.webp",
+      "target_webp_absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/leadwerk_importer/source_assets/Fotos/GRS-grau.webp",
+      "size_bytes": 13185
+    },
+    {
+      "filename": "GRS-rot.png",
+      "stem": "GRS-rot",
+      "extension": ".png",
+      "relative_path": "leadwerk_importer/source_assets/Fotos/GRS-rot.png",
+      "absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/leadwerk_importer/source_assets/Fotos/GRS-rot.png",
+      "target_webp_relative_path": "leadwerk_importer/source_assets/Fotos/GRS-rot.webp",
+      "target_webp_absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/leadwerk_importer/source_assets/Fotos/GRS-rot.webp",
+      "size_bytes": 13897
+    },
+    {
+      "filename": "Gemini_Generated_Image_2wdsr12wdsr12wds.png",
+      "stem": "Gemini_Generated_Image_2wdsr12wdsr12wds",
+      "extension": ".png",
+      "relative_path": "leadwerk_importer/source_assets/Fotos/Gemini_Generated_Image_2wdsr12wdsr12wds.png",
+      "absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/leadwerk_importer/source_assets/Fotos/Gemini_Generated_Image_2wdsr12wdsr12wds.png",
+      "target_webp_relative_path": "leadwerk_importer/source_assets/Fotos/Gemini_Generated_Image_2wdsr12wdsr12wds.webp",
+      "target_webp_absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/leadwerk_importer/source_assets/Fotos/Gemini_Generated_Image_2wdsr12wdsr12wds.webp",
+      "size_bytes": 7205170
+    },
+    {
+      "filename": "Icon_Bewerten.png",
+      "stem": "Icon_Bewerten",
+      "extension": ".png",
+      "relative_path": "leadwerk_importer/source_assets/Fotos/Icon_Bewerten.png",
+      "absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/leadwerk_importer/source_assets/Fotos/Icon_Bewerten.png",
+      "target_webp_relative_path": "leadwerk_importer/source_assets/Fotos/Icon_Bewerten.webp",
+      "target_webp_absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/leadwerk_importer/source_assets/Fotos/Icon_Bewerten.webp",
+      "size_bytes": 8368
+    },
+    {
+      "filename": "Icon_Kaufen.png",
+      "stem": "Icon_Kaufen",
+      "extension": ".png",
+      "relative_path": "leadwerk_importer/source_assets/Fotos/Icon_Kaufen.png",
+      "absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/leadwerk_importer/source_assets/Fotos/Icon_Kaufen.png",
+      "target_webp_relative_path": "leadwerk_importer/source_assets/Fotos/Icon_Kaufen.webp",
+      "target_webp_absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/leadwerk_importer/source_assets/Fotos/Icon_Kaufen.webp",
+      "size_bytes": 4769
+    },
+    {
+      "filename": "Icon_Mieten.png",
+      "stem": "Icon_Mieten",
+      "extension": ".png",
+      "relative_path": "leadwerk_importer/source_assets/Fotos/Icon_Mieten.png",
+      "absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/leadwerk_importer/source_assets/Fotos/Icon_Mieten.png",
+      "target_webp_relative_path": "leadwerk_importer/source_assets/Fotos/Icon_Mieten.webp",
+      "target_webp_absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/leadwerk_importer/source_assets/Fotos/Icon_Mieten.webp",
+      "size_bytes": 3874
+    },
+    {
+      "filename": "Icon_Verkaufen.png",
+      "stem": "Icon_Verkaufen",
+      "extension": ".png",
+      "relative_path": "leadwerk_importer/source_assets/Fotos/Icon_Verkaufen.png",
+      "absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/leadwerk_importer/source_assets/Fotos/Icon_Verkaufen.png",
+      "target_webp_relative_path": "leadwerk_importer/source_assets/Fotos/Icon_Verkaufen.webp",
+      "target_webp_absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/leadwerk_importer/source_assets/Fotos/Icon_Verkaufen.webp",
+      "size_bytes": 3104
+    },
+    {
+      "filename": "MFH-blau.png",
+      "stem": "MFH-blau",
+      "extension": ".png",
+      "relative_path": "leadwerk_importer/source_assets/Fotos/MFH-blau.png",
+      "absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/leadwerk_importer/source_assets/Fotos/MFH-blau.png",
+      "target_webp_relative_path": "leadwerk_importer/source_assets/Fotos/MFH-blau.webp",
+      "target_webp_absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/leadwerk_importer/source_assets/Fotos/MFH-blau.webp",
+      "size_bytes": 11098
+    },
+    {
+      "filename": "MFH-grau.png",
+      "stem": "MFH-grau",
+      "extension": ".png",
+      "relative_path": "leadwerk_importer/source_assets/Fotos/MFH-grau.png",
+      "absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/leadwerk_importer/source_assets/Fotos/MFH-grau.png",
+      "target_webp_relative_path": "leadwerk_importer/source_assets/Fotos/MFH-grau.webp",
+      "target_webp_absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/leadwerk_importer/source_assets/Fotos/MFH-grau.webp",
+      "size_bytes": 10780
+    },
+    {
+      "filename": "MFH-rot.png",
+      "stem": "MFH-rot",
+      "extension": ".png",
+      "relative_path": "leadwerk_importer/source_assets/Fotos/MFH-rot.png",
+      "absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/leadwerk_importer/source_assets/Fotos/MFH-rot.png",
+      "target_webp_relative_path": "leadwerk_importer/source_assets/Fotos/MFH-rot.webp",
+      "target_webp_absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/leadwerk_importer/source_assets/Fotos/MFH-rot.webp",
+      "size_bytes": 11241
+    },
+    {
+      "filename": "Mallorca 1.png",
+      "stem": "Mallorca 1",
+      "extension": ".png",
+      "relative_path": "leadwerk_importer/source_assets/Fotos/Mallorca 1.png",
+      "absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/leadwerk_importer/source_assets/Fotos/Mallorca 1.png",
+      "target_webp_relative_path": "leadwerk_importer/source_assets/Fotos/Mallorca 1.webp",
+      "target_webp_absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/leadwerk_importer/source_assets/Fotos/Mallorca 1.webp",
+      "size_bytes": 4605402
+    },
+    {
+      "filename": "Mallorca 2.png",
+      "stem": "Mallorca 2",
+      "extension": ".png",
+      "relative_path": "leadwerk_importer/source_assets/Fotos/Mallorca 2.png",
+      "absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/leadwerk_importer/source_assets/Fotos/Mallorca 2.png",
+      "target_webp_relative_path": "leadwerk_importer/source_assets/Fotos/Mallorca 2.webp",
+      "target_webp_absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/leadwerk_importer/source_assets/Fotos/Mallorca 2.webp",
+      "size_bytes": 4664511
+    },
+    {
+      "filename": "Mallorca 3.png",
+      "stem": "Mallorca 3",
+      "extension": ".png",
+      "relative_path": "leadwerk_importer/source_assets/Fotos/Mallorca 3.png",
+      "absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/leadwerk_importer/source_assets/Fotos/Mallorca 3.png",
+      "target_webp_relative_path": "leadwerk_importer/source_assets/Fotos/Mallorca 3.webp",
+      "target_webp_absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/leadwerk_importer/source_assets/Fotos/Mallorca 3.webp",
+      "size_bytes": 3681474
+    },
+    {
+      "filename": "Mallorca 4.png",
+      "stem": "Mallorca 4",
+      "extension": ".png",
+      "relative_path": "leadwerk_importer/source_assets/Fotos/Mallorca 4.png",
+      "absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/leadwerk_importer/source_assets/Fotos/Mallorca 4.png",
+      "target_webp_relative_path": "leadwerk_importer/source_assets/Fotos/Mallorca 4.webp",
+      "target_webp_absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/leadwerk_importer/source_assets/Fotos/Mallorca 4.webp",
+      "size_bytes": 3902493
+    },
+    {
+      "filename": "Onlinerechner.png",
+      "stem": "Onlinerechner",
+      "extension": ".png",
+      "relative_path": "leadwerk_importer/source_assets/Fotos/Onlinerechner.png",
+      "absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/leadwerk_importer/source_assets/Fotos/Onlinerechner.png",
+      "target_webp_relative_path": "leadwerk_importer/source_assets/Fotos/Onlinerechner.webp",
+      "target_webp_absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/leadwerk_importer/source_assets/Fotos/Onlinerechner.webp",
+      "size_bytes": 9560
+    },
+    {
+      "filename": "RH-blau-aussen.png",
+      "stem": "RH-blau-aussen",
+      "extension": ".png",
+      "relative_path": "leadwerk_importer/source_assets/Fotos/RH-blau-aussen.png",
+      "absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/leadwerk_importer/source_assets/Fotos/RH-blau-aussen.png",
+      "target_webp_relative_path": "leadwerk_importer/source_assets/Fotos/RH-blau-aussen.webp",
+      "target_webp_absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/leadwerk_importer/source_assets/Fotos/RH-blau-aussen.webp",
+      "size_bytes": 9032
+    },
+    {
+      "filename": "RH-blau.png",
+      "stem": "RH-blau",
+      "extension": ".png",
+      "relative_path": "leadwerk_importer/source_assets/Fotos/RH-blau.png",
+      "absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/leadwerk_importer/source_assets/Fotos/RH-blau.png",
+      "target_webp_relative_path": "leadwerk_importer/source_assets/Fotos/RH-blau.webp",
+      "target_webp_absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/leadwerk_importer/source_assets/Fotos/RH-blau.webp",
+      "size_bytes": 8622
+    },
+    {
+      "filename": "RH-grau-aussen.png",
+      "stem": "RH-grau-aussen",
+      "extension": ".png",
+      "relative_path": "leadwerk_importer/source_assets/Fotos/RH-grau-aussen.png",
+      "absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/leadwerk_importer/source_assets/Fotos/RH-grau-aussen.png",
+      "target_webp_relative_path": "leadwerk_importer/source_assets/Fotos/RH-grau-aussen.webp",
+      "target_webp_absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/leadwerk_importer/source_assets/Fotos/RH-grau-aussen.webp",
+      "size_bytes": 10037
+    },
+    {
+      "filename": "RH-grau-mitte.png",
+      "stem": "RH-grau-mitte",
+      "extension": ".png",
+      "relative_path": "leadwerk_importer/source_assets/Fotos/RH-grau-mitte.png",
+      "absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/leadwerk_importer/source_assets/Fotos/RH-grau-mitte.png",
+      "target_webp_relative_path": "leadwerk_importer/source_assets/Fotos/RH-grau-mitte.webp",
+      "target_webp_absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/leadwerk_importer/source_assets/Fotos/RH-grau-mitte.webp",
+      "size_bytes": 9699
+    },
+    {
+      "filename": "RH-grau.png",
+      "stem": "RH-grau",
+      "extension": ".png",
+      "relative_path": "leadwerk_importer/source_assets/Fotos/RH-grau.png",
+      "absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/leadwerk_importer/source_assets/Fotos/RH-grau.png",
+      "target_webp_relative_path": "leadwerk_importer/source_assets/Fotos/RH-grau.webp",
+      "target_webp_absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/leadwerk_importer/source_assets/Fotos/RH-grau.webp",
+      "size_bytes": 9319
+    },
+    {
+      "filename": "RH-rot-aussen.png",
+      "stem": "RH-rot-aussen",
+      "extension": ".png",
+      "relative_path": "leadwerk_importer/source_assets/Fotos/RH-rot-aussen.png",
+      "absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/leadwerk_importer/source_assets/Fotos/RH-rot-aussen.png",
+      "target_webp_relative_path": "leadwerk_importer/source_assets/Fotos/RH-rot-aussen.webp",
+      "target_webp_absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/leadwerk_importer/source_assets/Fotos/RH-rot-aussen.webp",
+      "size_bytes": 9327
+    },
+    {
+      "filename": "RH-rot.png",
+      "stem": "RH-rot",
+      "extension": ".png",
+      "relative_path": "leadwerk_importer/source_assets/Fotos/RH-rot.png",
+      "absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/leadwerk_importer/source_assets/Fotos/RH-rot.png",
+      "target_webp_relative_path": "leadwerk_importer/source_assets/Fotos/RH-rot.webp",
+      "target_webp_absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/leadwerk_importer/source_assets/Fotos/RH-rot.webp",
+      "size_bytes": 8862
+    },
+    {
+      "filename": "Slider1.jpg",
+      "stem": "Slider1",
+      "extension": ".jpg",
+      "relative_path": "leadwerk_importer/source_assets/Fotos/Slider1.jpg",
+      "absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/leadwerk_importer/source_assets/Fotos/Slider1.jpg",
+      "target_webp_relative_path": "leadwerk_importer/source_assets/Fotos/Slider1.webp",
+      "target_webp_absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/leadwerk_importer/source_assets/Fotos/Slider1.webp",
+      "size_bytes": 39612
+    },
+    {
+      "filename": "Slider2.jpg",
+      "stem": "Slider2",
+      "extension": ".jpg",
+      "relative_path": "leadwerk_importer/source_assets/Fotos/Slider2.jpg",
+      "absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/leadwerk_importer/source_assets/Fotos/Slider2.jpg",
+      "target_webp_relative_path": "leadwerk_importer/source_assets/Fotos/Slider2.webp",
+      "target_webp_absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/leadwerk_importer/source_assets/Fotos/Slider2.webp",
+      "size_bytes": 39314
+    },
+    {
+      "filename": "Slider3.jpg",
+      "stem": "Slider3",
+      "extension": ".jpg",
+      "relative_path": "leadwerk_importer/source_assets/Fotos/Slider3.jpg",
+      "absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/leadwerk_importer/source_assets/Fotos/Slider3.jpg",
+      "target_webp_relative_path": "leadwerk_importer/source_assets/Fotos/Slider3.webp",
+      "target_webp_absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/leadwerk_importer/source_assets/Fotos/Slider3.webp",
+      "size_bytes": 30340
+    },
+    {
+      "filename": "Slider3_optimiert.png",
+      "stem": "Slider3_optimiert",
+      "extension": ".png",
+      "relative_path": "leadwerk_importer/source_assets/Fotos/Slider3_optimiert.png",
+      "absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/leadwerk_importer/source_assets/Fotos/Slider3_optimiert.png",
+      "target_webp_relative_path": "leadwerk_importer/source_assets/Fotos/Slider3_optimiert.webp",
+      "target_webp_absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/leadwerk_importer/source_assets/Fotos/Slider3_optimiert.webp",
+      "size_bytes": 1200082
+    },
+    {
+      "filename": "Vertrauen.jpg",
+      "stem": "Vertrauen",
+      "extension": ".jpg",
+      "relative_path": "leadwerk_importer/source_assets/Fotos/Vertrauen.jpg",
+      "absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/leadwerk_importer/source_assets/Fotos/Vertrauen.jpg",
+      "target_webp_relative_path": "leadwerk_importer/source_assets/Fotos/Vertrauen.webp",
+      "target_webp_absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/leadwerk_importer/source_assets/Fotos/Vertrauen.webp",
+      "size_bytes": 98753
+    },
+    {
+      "filename": "WGH-DG-blau.png",
+      "stem": "WGH-DG-blau",
+      "extension": ".png",
+      "relative_path": "leadwerk_importer/source_assets/Fotos/WGH-DG-blau.png",
+      "absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/leadwerk_importer/source_assets/Fotos/WGH-DG-blau.png",
+      "target_webp_relative_path": "leadwerk_importer/source_assets/Fotos/WGH-DG-blau.webp",
+      "target_webp_absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/leadwerk_importer/source_assets/Fotos/WGH-DG-blau.webp",
+      "size_bytes": 14143
+    },
+    {
+      "filename": "WGH-DG-grau.png",
+      "stem": "WGH-DG-grau",
+      "extension": ".png",
+      "relative_path": "leadwerk_importer/source_assets/Fotos/WGH-DG-grau.png",
+      "absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/leadwerk_importer/source_assets/Fotos/WGH-DG-grau.png",
+      "target_webp_relative_path": "leadwerk_importer/source_assets/Fotos/WGH-DG-grau.webp",
+      "target_webp_absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/leadwerk_importer/source_assets/Fotos/WGH-DG-grau.webp",
+      "size_bytes": 14809
+    },
+    {
+      "filename": "WGH-DG-rot.png",
+      "stem": "WGH-DG-rot",
+      "extension": ".png",
+      "relative_path": "leadwerk_importer/source_assets/Fotos/WGH-DG-rot.png",
+      "absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/leadwerk_importer/source_assets/Fotos/WGH-DG-rot.png",
+      "target_webp_relative_path": "leadwerk_importer/source_assets/Fotos/WGH-DG-rot.webp",
+      "target_webp_absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/leadwerk_importer/source_assets/Fotos/WGH-DG-rot.webp",
+      "size_bytes": 14901
+    },
+    {
+      "filename": "WGH-EG-blau.png",
+      "stem": "WGH-EG-blau",
+      "extension": ".png",
+      "relative_path": "leadwerk_importer/source_assets/Fotos/WGH-EG-blau.png",
+      "absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/leadwerk_importer/source_assets/Fotos/WGH-EG-blau.png",
+      "target_webp_relative_path": "leadwerk_importer/source_assets/Fotos/WGH-EG-blau.webp",
+      "target_webp_absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/leadwerk_importer/source_assets/Fotos/WGH-EG-blau.webp",
+      "size_bytes": 11434
+    },
+    {
+      "filename": "WGH-EG-grau.png",
+      "stem": "WGH-EG-grau",
+      "extension": ".png",
+      "relative_path": "leadwerk_importer/source_assets/Fotos/WGH-EG-grau.png",
+      "absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/leadwerk_importer/source_assets/Fotos/WGH-EG-grau.png",
+      "target_webp_relative_path": "leadwerk_importer/source_assets/Fotos/WGH-EG-grau.webp",
+      "target_webp_absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/leadwerk_importer/source_assets/Fotos/WGH-EG-grau.webp",
+      "size_bytes": 11917
+    },
+    {
+      "filename": "WGH-EG-rot.png",
+      "stem": "WGH-EG-rot",
+      "extension": ".png",
+      "relative_path": "leadwerk_importer/source_assets/Fotos/WGH-EG-rot.png",
+      "absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/leadwerk_importer/source_assets/Fotos/WGH-EG-rot.png",
+      "target_webp_relative_path": "leadwerk_importer/source_assets/Fotos/WGH-EG-rot.webp",
+      "target_webp_absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/leadwerk_importer/source_assets/Fotos/WGH-EG-rot.webp",
+      "size_bytes": 11854
+    },
+    {
+      "filename": "WGH-Mais-blau.png",
+      "stem": "WGH-Mais-blau",
+      "extension": ".png",
+      "relative_path": "leadwerk_importer/source_assets/Fotos/WGH-Mais-blau.png",
+      "absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/leadwerk_importer/source_assets/Fotos/WGH-Mais-blau.png",
+      "target_webp_relative_path": "leadwerk_importer/source_assets/Fotos/WGH-Mais-blau.webp",
+      "target_webp_absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/leadwerk_importer/source_assets/Fotos/WGH-Mais-blau.webp",
+      "size_bytes": 11421
+    },
+    {
+      "filename": "WGH-Mais-grau.png",
+      "stem": "WGH-Mais-grau",
+      "extension": ".png",
+      "relative_path": "leadwerk_importer/source_assets/Fotos/WGH-Mais-grau.png",
+      "absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/leadwerk_importer/source_assets/Fotos/WGH-Mais-grau.png",
+      "target_webp_relative_path": "leadwerk_importer/source_assets/Fotos/WGH-Mais-grau.webp",
+      "target_webp_absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/leadwerk_importer/source_assets/Fotos/WGH-Mais-grau.webp",
+      "size_bytes": 12038
+    },
+    {
+      "filename": "WGH-Mais-rot.png",
+      "stem": "WGH-Mais-rot",
+      "extension": ".png",
+      "relative_path": "leadwerk_importer/source_assets/Fotos/WGH-Mais-rot.png",
+      "absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/leadwerk_importer/source_assets/Fotos/WGH-Mais-rot.png",
+      "target_webp_relative_path": "leadwerk_importer/source_assets/Fotos/WGH-Mais-rot.webp",
+      "target_webp_absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/leadwerk_importer/source_assets/Fotos/WGH-Mais-rot.webp",
+      "size_bytes": 11905
+    },
+    {
+      "filename": "WGH-PH-blau.png",
+      "stem": "WGH-PH-blau",
+      "extension": ".png",
+      "relative_path": "leadwerk_importer/source_assets/Fotos/WGH-PH-blau.png",
+      "absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/leadwerk_importer/source_assets/Fotos/WGH-PH-blau.png",
+      "target_webp_relative_path": "leadwerk_importer/source_assets/Fotos/WGH-PH-blau.webp",
+      "target_webp_absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/leadwerk_importer/source_assets/Fotos/WGH-PH-blau.webp",
+      "size_bytes": 11041
+    },
+    {
+      "filename": "WGH-PH-grau.png",
+      "stem": "WGH-PH-grau",
+      "extension": ".png",
+      "relative_path": "leadwerk_importer/source_assets/Fotos/WGH-PH-grau.png",
+      "absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/leadwerk_importer/source_assets/Fotos/WGH-PH-grau.png",
+      "target_webp_relative_path": "leadwerk_importer/source_assets/Fotos/WGH-PH-grau.webp",
+      "target_webp_absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/leadwerk_importer/source_assets/Fotos/WGH-PH-grau.webp",
+      "size_bytes": 11296
+    },
+    {
+      "filename": "WGH-PH-rot.png",
+      "stem": "WGH-PH-rot",
+      "extension": ".png",
+      "relative_path": "leadwerk_importer/source_assets/Fotos/WGH-PH-rot.png",
+      "absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/leadwerk_importer/source_assets/Fotos/WGH-PH-rot.png",
+      "target_webp_relative_path": "leadwerk_importer/source_assets/Fotos/WGH-PH-rot.webp",
+      "target_webp_absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/leadwerk_importer/source_assets/Fotos/WGH-PH-rot.webp",
+      "size_bytes": 11448
+    },
+    {
+      "filename": "WGH-Studio-blau.png",
+      "stem": "WGH-Studio-blau",
+      "extension": ".png",
+      "relative_path": "leadwerk_importer/source_assets/Fotos/WGH-Studio-blau.png",
+      "absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/leadwerk_importer/source_assets/Fotos/WGH-Studio-blau.png",
+      "target_webp_relative_path": "leadwerk_importer/source_assets/Fotos/WGH-Studio-blau.webp",
+      "target_webp_absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/leadwerk_importer/source_assets/Fotos/WGH-Studio-blau.webp",
+      "size_bytes": 11340
+    },
+    {
+      "filename": "WGH-Studio-grau.png",
+      "stem": "WGH-Studio-grau",
+      "extension": ".png",
+      "relative_path": "leadwerk_importer/source_assets/Fotos/WGH-Studio-grau.png",
+      "absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/leadwerk_importer/source_assets/Fotos/WGH-Studio-grau.png",
+      "target_webp_relative_path": "leadwerk_importer/source_assets/Fotos/WGH-Studio-grau.webp",
+      "target_webp_absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/leadwerk_importer/source_assets/Fotos/WGH-Studio-grau.webp",
+      "size_bytes": 11948
+    },
+    {
+      "filename": "WGH-Studio-rot.png",
+      "stem": "WGH-Studio-rot",
+      "extension": ".png",
+      "relative_path": "leadwerk_importer/source_assets/Fotos/WGH-Studio-rot.png",
+      "absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/leadwerk_importer/source_assets/Fotos/WGH-Studio-rot.png",
+      "target_webp_relative_path": "leadwerk_importer/source_assets/Fotos/WGH-Studio-rot.webp",
+      "target_webp_absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/leadwerk_importer/source_assets/Fotos/WGH-Studio-rot.webp",
+      "size_bytes": 11737
+    },
+    {
+      "filename": "WGH-blau.png",
+      "stem": "WGH-blau",
+      "extension": ".png",
+      "relative_path": "leadwerk_importer/source_assets/Fotos/WGH-blau.png",
+      "absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/leadwerk_importer/source_assets/Fotos/WGH-blau.png",
+      "target_webp_relative_path": "leadwerk_importer/source_assets/Fotos/WGH-blau.webp",
+      "target_webp_absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/leadwerk_importer/source_assets/Fotos/WGH-blau.webp",
+      "size_bytes": 11758
+    },
+    {
+      "filename": "WGH-grau.png",
+      "stem": "WGH-grau",
+      "extension": ".png",
+      "relative_path": "leadwerk_importer/source_assets/Fotos/WGH-grau.png",
+      "absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/leadwerk_importer/source_assets/Fotos/WGH-grau.png",
+      "target_webp_relative_path": "leadwerk_importer/source_assets/Fotos/WGH-grau.webp",
+      "target_webp_absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/leadwerk_importer/source_assets/Fotos/WGH-grau.webp",
+      "size_bytes": 11781
+    },
+    {
+      "filename": "WGH-rot.png",
+      "stem": "WGH-rot",
+      "extension": ".png",
+      "relative_path": "leadwerk_importer/source_assets/Fotos/WGH-rot.png",
+      "absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/leadwerk_importer/source_assets/Fotos/WGH-rot.png",
+      "target_webp_relative_path": "leadwerk_importer/source_assets/Fotos/WGH-rot.webp",
+      "target_webp_absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/leadwerk_importer/source_assets/Fotos/WGH-rot.webp",
+      "size_bytes": 11955
+    },
+    {
+      "filename": "Zadar.png",
+      "stem": "Zadar",
+      "extension": ".png",
+      "relative_path": "leadwerk_importer/source_assets/Fotos/Zadar.png",
+      "absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/leadwerk_importer/source_assets/Fotos/Zadar.png",
+      "target_webp_relative_path": "leadwerk_importer/source_assets/Fotos/Zadar.webp",
+      "target_webp_absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/leadwerk_importer/source_assets/Fotos/Zadar.webp",
+      "size_bytes": 3393068
+    },
+    {
+      "filename": "Zadar1.png",
+      "stem": "Zadar1",
+      "extension": ".png",
+      "relative_path": "leadwerk_importer/source_assets/Fotos/Zadar1.png",
+      "absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/leadwerk_importer/source_assets/Fotos/Zadar1.png",
+      "target_webp_relative_path": "leadwerk_importer/source_assets/Fotos/Zadar1.webp",
+      "target_webp_absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/leadwerk_importer/source_assets/Fotos/Zadar1.webp",
+      "size_bytes": 3799282
+    },
+    {
+      "filename": "Zadar2.png",
+      "stem": "Zadar2",
+      "extension": ".png",
+      "relative_path": "leadwerk_importer/source_assets/Fotos/Zadar2.png",
+      "absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/leadwerk_importer/source_assets/Fotos/Zadar2.png",
+      "target_webp_relative_path": "leadwerk_importer/source_assets/Fotos/Zadar2.webp",
+      "target_webp_absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/leadwerk_importer/source_assets/Fotos/Zadar2.webp",
+      "size_bytes": 3542507
+    },
+    {
+      "filename": "Zadar3.png",
+      "stem": "Zadar3",
+      "extension": ".png",
+      "relative_path": "leadwerk_importer/source_assets/Fotos/Zadar3.png",
+      "absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/leadwerk_importer/source_assets/Fotos/Zadar3.png",
+      "target_webp_relative_path": "leadwerk_importer/source_assets/Fotos/Zadar3.webp",
+      "target_webp_absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/leadwerk_importer/source_assets/Fotos/Zadar3.webp",
+      "size_bytes": 3172510
+    },
+    {
+      "filename": "Zadar4.png",
+      "stem": "Zadar4",
+      "extension": ".png",
+      "relative_path": "leadwerk_importer/source_assets/Fotos/Zadar4.png",
+      "absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/leadwerk_importer/source_assets/Fotos/Zadar4.png",
+      "target_webp_relative_path": "leadwerk_importer/source_assets/Fotos/Zadar4.webp",
+      "target_webp_absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/leadwerk_importer/source_assets/Fotos/Zadar4.webp",
+      "size_bytes": 1502895
+    },
+    {
+      "filename": "Zadar5.png",
+      "stem": "Zadar5",
+      "extension": ".png",
+      "relative_path": "leadwerk_importer/source_assets/Fotos/Zadar5.png",
+      "absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/leadwerk_importer/source_assets/Fotos/Zadar5.png",
+      "target_webp_relative_path": "leadwerk_importer/source_assets/Fotos/Zadar5.webp",
+      "target_webp_absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/leadwerk_importer/source_assets/Fotos/Zadar5.webp",
+      "size_bytes": 2208668
+    },
+    {
+      "filename": "persönliche-Bewertung.png",
+      "stem": "persönliche-Bewertung",
+      "extension": ".png",
+      "relative_path": "leadwerk_importer/source_assets/Fotos/persönliche-Bewertung.png",
+      "absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/leadwerk_importer/source_assets/Fotos/persönliche-Bewertung.png",
+      "target_webp_relative_path": "leadwerk_importer/source_assets/Fotos/persönliche-Bewertung.webp",
+      "target_webp_absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/leadwerk_importer/source_assets/Fotos/persönliche-Bewertung.webp",
+      "size_bytes": 13005
+    },
+    {
+      "filename": "volksimmobilien-logo-weiss.png",
+      "stem": "volksimmobilien-logo-weiss",
+      "extension": ".png",
+      "relative_path": "leadwerk_importer/source_assets/Fotos/volksimmobilien-logo-weiss.png",
+      "absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/leadwerk_importer/source_assets/Fotos/volksimmobilien-logo-weiss.png",
+      "target_webp_relative_path": "leadwerk_importer/source_assets/Fotos/volksimmobilien-logo-weiss.webp",
+      "target_webp_absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/leadwerk_importer/source_assets/Fotos/volksimmobilien-logo-weiss.webp",
+      "size_bytes": 2606
+    },
+    {
+      "filename": "volksimmobilien_kaufen.jpg",
+      "stem": "volksimmobilien_kaufen",
+      "extension": ".jpg",
+      "relative_path": "leadwerk_importer/source_assets/Fotos/volksimmobilien_kaufen.jpg",
+      "absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/leadwerk_importer/source_assets/Fotos/volksimmobilien_kaufen.jpg",
+      "target_webp_relative_path": "leadwerk_importer/source_assets/Fotos/volksimmobilien_kaufen.webp",
+      "target_webp_absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/leadwerk_importer/source_assets/Fotos/volksimmobilien_kaufen.webp",
+      "size_bytes": 232964
+    },
+    {
+      "filename": "volksimmobilien_verkaufen.jpg",
+      "stem": "volksimmobilien_verkaufen",
+      "extension": ".jpg",
+      "relative_path": "leadwerk_importer/source_assets/Fotos/volksimmobilien_verkaufen.jpg",
+      "absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/leadwerk_importer/source_assets/Fotos/volksimmobilien_verkaufen.jpg",
+      "target_webp_relative_path": "leadwerk_importer/source_assets/Fotos/volksimmobilien_verkaufen.webp",
+      "target_webp_absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/leadwerk_importer/source_assets/Fotos/volksimmobilien_verkaufen.webp",
+      "size_bytes": 236180
+    },
+    {
+      "filename": "zadar6.png",
+      "stem": "zadar6",
+      "extension": ".png",
+      "relative_path": "leadwerk_importer/source_assets/Fotos/zadar6.png",
+      "absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/leadwerk_importer/source_assets/Fotos/zadar6.png",
+      "target_webp_relative_path": "leadwerk_importer/source_assets/Fotos/zadar6.webp",
+      "target_webp_absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/leadwerk_importer/source_assets/Fotos/zadar6.webp",
+      "size_bytes": 3132202
+    },
+    {
+      "filename": "0I0A2102.jpg",
+      "stem": "0I0A2102",
+      "extension": ".jpg",
+      "relative_path": "volksimmobilien_theme/assets/Fotos/0I0A2102.jpg",
+      "absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/volksimmobilien_theme/assets/Fotos/0I0A2102.jpg",
+      "target_webp_relative_path": "volksimmobilien_theme/assets/Fotos/0I0A2102.webp",
+      "target_webp_absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/volksimmobilien_theme/assets/Fotos/0I0A2102.webp",
+      "size_bytes": 1335049
+    },
+    {
+      "filename": "10.png",
+      "stem": "10",
+      "extension": ".png",
+      "relative_path": "volksimmobilien_theme/assets/Fotos/10.png",
+      "absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/volksimmobilien_theme/assets/Fotos/10.png",
+      "target_webp_relative_path": "volksimmobilien_theme/assets/Fotos/10.webp",
+      "target_webp_absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/volksimmobilien_theme/assets/Fotos/10.webp",
+      "size_bytes": 3298013
+    },
+    {
+      "filename": "11.png",
+      "stem": "11",
+      "extension": ".png",
+      "relative_path": "volksimmobilien_theme/assets/Fotos/11.png",
+      "absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/volksimmobilien_theme/assets/Fotos/11.png",
+      "target_webp_relative_path": "volksimmobilien_theme/assets/Fotos/11.webp",
+      "target_webp_absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/volksimmobilien_theme/assets/Fotos/11.webp",
+      "size_bytes": 1964281
+    },
+    {
+      "filename": "12.png",
+      "stem": "12",
+      "extension": ".png",
+      "relative_path": "volksimmobilien_theme/assets/Fotos/12.png",
+      "absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/volksimmobilien_theme/assets/Fotos/12.png",
+      "target_webp_relative_path": "volksimmobilien_theme/assets/Fotos/12.webp",
+      "target_webp_absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/volksimmobilien_theme/assets/Fotos/12.webp",
+      "size_bytes": 1102821
+    },
+    {
+      "filename": "13.png",
+      "stem": "13",
+      "extension": ".png",
+      "relative_path": "volksimmobilien_theme/assets/Fotos/13.png",
+      "absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/volksimmobilien_theme/assets/Fotos/13.png",
+      "target_webp_relative_path": "volksimmobilien_theme/assets/Fotos/13.webp",
+      "target_webp_absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/volksimmobilien_theme/assets/Fotos/13.webp",
+      "size_bytes": 2482103
+    },
+    {
+      "filename": "14.png",
+      "stem": "14",
+      "extension": ".png",
+      "relative_path": "volksimmobilien_theme/assets/Fotos/14.png",
+      "absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/volksimmobilien_theme/assets/Fotos/14.png",
+      "target_webp_relative_path": "volksimmobilien_theme/assets/Fotos/14.webp",
+      "target_webp_absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/volksimmobilien_theme/assets/Fotos/14.webp",
+      "size_bytes": 2215324
+    },
+    {
+      "filename": "15.png",
+      "stem": "15",
+      "extension": ".png",
+      "relative_path": "volksimmobilien_theme/assets/Fotos/15.png",
+      "absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/volksimmobilien_theme/assets/Fotos/15.png",
+      "target_webp_relative_path": "volksimmobilien_theme/assets/Fotos/15.webp",
+      "target_webp_absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/volksimmobilien_theme/assets/Fotos/15.webp",
+      "size_bytes": 2321663
+    },
+    {
+      "filename": "3516235.png",
+      "stem": "3516235",
+      "extension": ".png",
+      "relative_path": "volksimmobilien_theme/assets/Fotos/3516235.png",
+      "absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/volksimmobilien_theme/assets/Fotos/3516235.png",
+      "target_webp_relative_path": "volksimmobilien_theme/assets/Fotos/3516235.webp",
+      "target_webp_absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/volksimmobilien_theme/assets/Fotos/3516235.webp",
+      "size_bytes": 4910
+    },
+    {
+      "filename": "5655652.png",
+      "stem": "5655652",
+      "extension": ".png",
+      "relative_path": "volksimmobilien_theme/assets/Fotos/5655652.png",
+      "absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/volksimmobilien_theme/assets/Fotos/5655652.png",
+      "target_webp_relative_path": "volksimmobilien_theme/assets/Fotos/5655652.webp",
+      "target_webp_absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/volksimmobilien_theme/assets/Fotos/5655652.webp",
+      "size_bytes": 599690
+    },
+    {
+      "filename": "8.png",
+      "stem": "8",
+      "extension": ".png",
+      "relative_path": "volksimmobilien_theme/assets/Fotos/8.png",
+      "absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/volksimmobilien_theme/assets/Fotos/8.png",
+      "target_webp_relative_path": "volksimmobilien_theme/assets/Fotos/8.webp",
+      "target_webp_absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/volksimmobilien_theme/assets/Fotos/8.webp",
+      "size_bytes": 2884453
+    },
+    {
+      "filename": "9.png",
+      "stem": "9",
+      "extension": ".png",
+      "relative_path": "volksimmobilien_theme/assets/Fotos/9.png",
+      "absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/volksimmobilien_theme/assets/Fotos/9.png",
+      "target_webp_relative_path": "volksimmobilien_theme/assets/Fotos/9.webp",
+      "target_webp_absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/volksimmobilien_theme/assets/Fotos/9.webp",
+      "size_bytes": 1733877
+    },
+    {
+      "filename": "Angebot1.png",
+      "stem": "Angebot1",
+      "extension": ".png",
+      "relative_path": "volksimmobilien_theme/assets/Fotos/Angebot1.png",
+      "absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/volksimmobilien_theme/assets/Fotos/Angebot1.png",
+      "target_webp_relative_path": "volksimmobilien_theme/assets/Fotos/Angebot1.webp",
+      "target_webp_absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/volksimmobilien_theme/assets/Fotos/Angebot1.webp",
+      "size_bytes": 1464697
+    },
+    {
+      "filename": "Angebot2.png",
+      "stem": "Angebot2",
+      "extension": ".png",
+      "relative_path": "volksimmobilien_theme/assets/Fotos/Angebot2.png",
+      "absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/volksimmobilien_theme/assets/Fotos/Angebot2.png",
+      "target_webp_relative_path": "volksimmobilien_theme/assets/Fotos/Angebot2.webp",
+      "target_webp_absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/volksimmobilien_theme/assets/Fotos/Angebot2.webp",
+      "size_bytes": 1409738
+    },
+    {
+      "filename": "Angebot3.png",
+      "stem": "Angebot3",
+      "extension": ".png",
+      "relative_path": "volksimmobilien_theme/assets/Fotos/Angebot3.png",
+      "absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/volksimmobilien_theme/assets/Fotos/Angebot3.png",
+      "target_webp_relative_path": "volksimmobilien_theme/assets/Fotos/Angebot3.webp",
+      "target_webp_absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/volksimmobilien_theme/assets/Fotos/Angebot3.webp",
+      "size_bytes": 1128228
+    },
+    {
+      "filename": "DHH-blau.png",
+      "stem": "DHH-blau",
+      "extension": ".png",
+      "relative_path": "volksimmobilien_theme/assets/Fotos/DHH-blau.png",
+      "absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/volksimmobilien_theme/assets/Fotos/DHH-blau.png",
+      "target_webp_relative_path": "volksimmobilien_theme/assets/Fotos/DHH-blau.webp",
+      "target_webp_absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/volksimmobilien_theme/assets/Fotos/DHH-blau.webp",
+      "size_bytes": 11043
+    },
+    {
+      "filename": "DHH-grau.png",
+      "stem": "DHH-grau",
+      "extension": ".png",
+      "relative_path": "volksimmobilien_theme/assets/Fotos/DHH-grau.png",
+      "absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/volksimmobilien_theme/assets/Fotos/DHH-grau.png",
+      "target_webp_relative_path": "volksimmobilien_theme/assets/Fotos/DHH-grau.webp",
+      "target_webp_absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/volksimmobilien_theme/assets/Fotos/DHH-grau.webp",
+      "size_bytes": 10071
+    },
+    {
+      "filename": "DHH-rot.png",
+      "stem": "DHH-rot",
+      "extension": ".png",
+      "relative_path": "volksimmobilien_theme/assets/Fotos/DHH-rot.png",
+      "absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/volksimmobilien_theme/assets/Fotos/DHH-rot.png",
+      "target_webp_relative_path": "volksimmobilien_theme/assets/Fotos/DHH-rot.webp",
+      "target_webp_absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/volksimmobilien_theme/assets/Fotos/DHH-rot.webp",
+      "size_bytes": 10469
+    },
+    {
+      "filename": "EFH-blau.png",
+      "stem": "EFH-blau",
+      "extension": ".png",
+      "relative_path": "volksimmobilien_theme/assets/Fotos/EFH-blau.png",
+      "absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/volksimmobilien_theme/assets/Fotos/EFH-blau.png",
+      "target_webp_relative_path": "volksimmobilien_theme/assets/Fotos/EFH-blau.webp",
+      "target_webp_absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/volksimmobilien_theme/assets/Fotos/EFH-blau.webp",
+      "size_bytes": 9978
+    },
+    {
+      "filename": "EFH-grau.png",
+      "stem": "EFH-grau",
+      "extension": ".png",
+      "relative_path": "volksimmobilien_theme/assets/Fotos/EFH-grau.png",
+      "absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/volksimmobilien_theme/assets/Fotos/EFH-grau.png",
+      "target_webp_relative_path": "volksimmobilien_theme/assets/Fotos/EFH-grau.webp",
+      "target_webp_absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/volksimmobilien_theme/assets/Fotos/EFH-grau.webp",
+      "size_bytes": 9756
+    },
+    {
+      "filename": "EFH-rot.png",
+      "stem": "EFH-rot",
+      "extension": ".png",
+      "relative_path": "volksimmobilien_theme/assets/Fotos/EFH-rot.png",
+      "absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/volksimmobilien_theme/assets/Fotos/EFH-rot.png",
+      "target_webp_relative_path": "volksimmobilien_theme/assets/Fotos/EFH-rot.webp",
+      "target_webp_absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/volksimmobilien_theme/assets/Fotos/EFH-rot.webp",
+      "size_bytes": 10115
+    },
+    {
+      "filename": "Finca 1.png",
+      "stem": "Finca 1",
+      "extension": ".png",
+      "relative_path": "volksimmobilien_theme/assets/Fotos/Finca 1.png",
+      "absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/volksimmobilien_theme/assets/Fotos/Finca 1.png",
+      "target_webp_relative_path": "volksimmobilien_theme/assets/Fotos/Finca 1.webp",
+      "target_webp_absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/volksimmobilien_theme/assets/Fotos/Finca 1.webp",
+      "size_bytes": 3868274
+    },
+    {
+      "filename": "Finca 2.png",
+      "stem": "Finca 2",
+      "extension": ".png",
+      "relative_path": "volksimmobilien_theme/assets/Fotos/Finca 2.png",
+      "absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/volksimmobilien_theme/assets/Fotos/Finca 2.png",
+      "target_webp_relative_path": "volksimmobilien_theme/assets/Fotos/Finca 2.webp",
+      "target_webp_absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/volksimmobilien_theme/assets/Fotos/Finca 2.webp",
+      "size_bytes": 4351528
+    },
+    {
+      "filename": "Finca 3.png",
+      "stem": "Finca 3",
+      "extension": ".png",
+      "relative_path": "volksimmobilien_theme/assets/Fotos/Finca 3.png",
+      "absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/volksimmobilien_theme/assets/Fotos/Finca 3.png",
+      "target_webp_relative_path": "volksimmobilien_theme/assets/Fotos/Finca 3.webp",
+      "target_webp_absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/volksimmobilien_theme/assets/Fotos/Finca 3.webp",
+      "size_bytes": 4581244
+    },
+    {
+      "filename": "GRS-blau.png",
+      "stem": "GRS-blau",
+      "extension": ".png",
+      "relative_path": "volksimmobilien_theme/assets/Fotos/GRS-blau.png",
+      "absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/volksimmobilien_theme/assets/Fotos/GRS-blau.png",
+      "target_webp_relative_path": "volksimmobilien_theme/assets/Fotos/GRS-blau.webp",
+      "target_webp_absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/volksimmobilien_theme/assets/Fotos/GRS-blau.webp",
+      "size_bytes": 13568
+    },
+    {
+      "filename": "GRS-grau.png",
+      "stem": "GRS-grau",
+      "extension": ".png",
+      "relative_path": "volksimmobilien_theme/assets/Fotos/GRS-grau.png",
+      "absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/volksimmobilien_theme/assets/Fotos/GRS-grau.png",
+      "target_webp_relative_path": "volksimmobilien_theme/assets/Fotos/GRS-grau.webp",
+      "target_webp_absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/volksimmobilien_theme/assets/Fotos/GRS-grau.webp",
+      "size_bytes": 13185
+    },
+    {
+      "filename": "GRS-rot.png",
+      "stem": "GRS-rot",
+      "extension": ".png",
+      "relative_path": "volksimmobilien_theme/assets/Fotos/GRS-rot.png",
+      "absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/volksimmobilien_theme/assets/Fotos/GRS-rot.png",
+      "target_webp_relative_path": "volksimmobilien_theme/assets/Fotos/GRS-rot.webp",
+      "target_webp_absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/volksimmobilien_theme/assets/Fotos/GRS-rot.webp",
+      "size_bytes": 13897
+    },
+    {
+      "filename": "Gemini_Generated_Image_2wdsr12wdsr12wds.png",
+      "stem": "Gemini_Generated_Image_2wdsr12wdsr12wds",
+      "extension": ".png",
+      "relative_path": "volksimmobilien_theme/assets/Fotos/Gemini_Generated_Image_2wdsr12wdsr12wds.png",
+      "absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/volksimmobilien_theme/assets/Fotos/Gemini_Generated_Image_2wdsr12wdsr12wds.png",
+      "target_webp_relative_path": "volksimmobilien_theme/assets/Fotos/Gemini_Generated_Image_2wdsr12wdsr12wds.webp",
+      "target_webp_absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/volksimmobilien_theme/assets/Fotos/Gemini_Generated_Image_2wdsr12wdsr12wds.webp",
+      "size_bytes": 7205170
+    },
+    {
+      "filename": "Icon_Bewerten.png",
+      "stem": "Icon_Bewerten",
+      "extension": ".png",
+      "relative_path": "volksimmobilien_theme/assets/Fotos/Icon_Bewerten.png",
+      "absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/volksimmobilien_theme/assets/Fotos/Icon_Bewerten.png",
+      "target_webp_relative_path": "volksimmobilien_theme/assets/Fotos/Icon_Bewerten.webp",
+      "target_webp_absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/volksimmobilien_theme/assets/Fotos/Icon_Bewerten.webp",
+      "size_bytes": 8368
+    },
+    {
+      "filename": "Icon_Kaufen.png",
+      "stem": "Icon_Kaufen",
+      "extension": ".png",
+      "relative_path": "volksimmobilien_theme/assets/Fotos/Icon_Kaufen.png",
+      "absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/volksimmobilien_theme/assets/Fotos/Icon_Kaufen.png",
+      "target_webp_relative_path": "volksimmobilien_theme/assets/Fotos/Icon_Kaufen.webp",
+      "target_webp_absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/volksimmobilien_theme/assets/Fotos/Icon_Kaufen.webp",
+      "size_bytes": 4769
+    },
+    {
+      "filename": "Icon_Mieten.png",
+      "stem": "Icon_Mieten",
+      "extension": ".png",
+      "relative_path": "volksimmobilien_theme/assets/Fotos/Icon_Mieten.png",
+      "absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/volksimmobilien_theme/assets/Fotos/Icon_Mieten.png",
+      "target_webp_relative_path": "volksimmobilien_theme/assets/Fotos/Icon_Mieten.webp",
+      "target_webp_absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/volksimmobilien_theme/assets/Fotos/Icon_Mieten.webp",
+      "size_bytes": 3874
+    },
+    {
+      "filename": "Icon_Verkaufen.png",
+      "stem": "Icon_Verkaufen",
+      "extension": ".png",
+      "relative_path": "volksimmobilien_theme/assets/Fotos/Icon_Verkaufen.png",
+      "absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/volksimmobilien_theme/assets/Fotos/Icon_Verkaufen.png",
+      "target_webp_relative_path": "volksimmobilien_theme/assets/Fotos/Icon_Verkaufen.webp",
+      "target_webp_absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/volksimmobilien_theme/assets/Fotos/Icon_Verkaufen.webp",
+      "size_bytes": 3104
+    },
+    {
+      "filename": "MFH-blau.png",
+      "stem": "MFH-blau",
+      "extension": ".png",
+      "relative_path": "volksimmobilien_theme/assets/Fotos/MFH-blau.png",
+      "absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/volksimmobilien_theme/assets/Fotos/MFH-blau.png",
+      "target_webp_relative_path": "volksimmobilien_theme/assets/Fotos/MFH-blau.webp",
+      "target_webp_absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/volksimmobilien_theme/assets/Fotos/MFH-blau.webp",
+      "size_bytes": 11098
+    },
+    {
+      "filename": "MFH-grau.png",
+      "stem": "MFH-grau",
+      "extension": ".png",
+      "relative_path": "volksimmobilien_theme/assets/Fotos/MFH-grau.png",
+      "absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/volksimmobilien_theme/assets/Fotos/MFH-grau.png",
+      "target_webp_relative_path": "volksimmobilien_theme/assets/Fotos/MFH-grau.webp",
+      "target_webp_absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/volksimmobilien_theme/assets/Fotos/MFH-grau.webp",
+      "size_bytes": 10780
+    },
+    {
+      "filename": "MFH-rot.png",
+      "stem": "MFH-rot",
+      "extension": ".png",
+      "relative_path": "volksimmobilien_theme/assets/Fotos/MFH-rot.png",
+      "absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/volksimmobilien_theme/assets/Fotos/MFH-rot.png",
+      "target_webp_relative_path": "volksimmobilien_theme/assets/Fotos/MFH-rot.webp",
+      "target_webp_absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/volksimmobilien_theme/assets/Fotos/MFH-rot.webp",
+      "size_bytes": 11241
+    },
+    {
+      "filename": "Mallorca 1.png",
+      "stem": "Mallorca 1",
+      "extension": ".png",
+      "relative_path": "volksimmobilien_theme/assets/Fotos/Mallorca 1.png",
+      "absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/volksimmobilien_theme/assets/Fotos/Mallorca 1.png",
+      "target_webp_relative_path": "volksimmobilien_theme/assets/Fotos/Mallorca 1.webp",
+      "target_webp_absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/volksimmobilien_theme/assets/Fotos/Mallorca 1.webp",
+      "size_bytes": 4605402
+    },
+    {
+      "filename": "Mallorca 2.png",
+      "stem": "Mallorca 2",
+      "extension": ".png",
+      "relative_path": "volksimmobilien_theme/assets/Fotos/Mallorca 2.png",
+      "absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/volksimmobilien_theme/assets/Fotos/Mallorca 2.png",
+      "target_webp_relative_path": "volksimmobilien_theme/assets/Fotos/Mallorca 2.webp",
+      "target_webp_absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/volksimmobilien_theme/assets/Fotos/Mallorca 2.webp",
+      "size_bytes": 4664511
+    },
+    {
+      "filename": "Mallorca 3.png",
+      "stem": "Mallorca 3",
+      "extension": ".png",
+      "relative_path": "volksimmobilien_theme/assets/Fotos/Mallorca 3.png",
+      "absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/volksimmobilien_theme/assets/Fotos/Mallorca 3.png",
+      "target_webp_relative_path": "volksimmobilien_theme/assets/Fotos/Mallorca 3.webp",
+      "target_webp_absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/volksimmobilien_theme/assets/Fotos/Mallorca 3.webp",
+      "size_bytes": 3681474
+    },
+    {
+      "filename": "Mallorca 4.png",
+      "stem": "Mallorca 4",
+      "extension": ".png",
+      "relative_path": "volksimmobilien_theme/assets/Fotos/Mallorca 4.png",
+      "absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/volksimmobilien_theme/assets/Fotos/Mallorca 4.png",
+      "target_webp_relative_path": "volksimmobilien_theme/assets/Fotos/Mallorca 4.webp",
+      "target_webp_absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/volksimmobilien_theme/assets/Fotos/Mallorca 4.webp",
+      "size_bytes": 3902493
+    },
+    {
+      "filename": "Onlinerechner.png",
+      "stem": "Onlinerechner",
+      "extension": ".png",
+      "relative_path": "volksimmobilien_theme/assets/Fotos/Onlinerechner.png",
+      "absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/volksimmobilien_theme/assets/Fotos/Onlinerechner.png",
+      "target_webp_relative_path": "volksimmobilien_theme/assets/Fotos/Onlinerechner.webp",
+      "target_webp_absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/volksimmobilien_theme/assets/Fotos/Onlinerechner.webp",
+      "size_bytes": 9560
+    },
+    {
+      "filename": "RH-blau-aussen.png",
+      "stem": "RH-blau-aussen",
+      "extension": ".png",
+      "relative_path": "volksimmobilien_theme/assets/Fotos/RH-blau-aussen.png",
+      "absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/volksimmobilien_theme/assets/Fotos/RH-blau-aussen.png",
+      "target_webp_relative_path": "volksimmobilien_theme/assets/Fotos/RH-blau-aussen.webp",
+      "target_webp_absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/volksimmobilien_theme/assets/Fotos/RH-blau-aussen.webp",
+      "size_bytes": 9032
+    },
+    {
+      "filename": "RH-blau.png",
+      "stem": "RH-blau",
+      "extension": ".png",
+      "relative_path": "volksimmobilien_theme/assets/Fotos/RH-blau.png",
+      "absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/volksimmobilien_theme/assets/Fotos/RH-blau.png",
+      "target_webp_relative_path": "volksimmobilien_theme/assets/Fotos/RH-blau.webp",
+      "target_webp_absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/volksimmobilien_theme/assets/Fotos/RH-blau.webp",
+      "size_bytes": 8622
+    },
+    {
+      "filename": "RH-grau-aussen.png",
+      "stem": "RH-grau-aussen",
+      "extension": ".png",
+      "relative_path": "volksimmobilien_theme/assets/Fotos/RH-grau-aussen.png",
+      "absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/volksimmobilien_theme/assets/Fotos/RH-grau-aussen.png",
+      "target_webp_relative_path": "volksimmobilien_theme/assets/Fotos/RH-grau-aussen.webp",
+      "target_webp_absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/volksimmobilien_theme/assets/Fotos/RH-grau-aussen.webp",
+      "size_bytes": 10037
+    },
+    {
+      "filename": "RH-grau-mitte.png",
+      "stem": "RH-grau-mitte",
+      "extension": ".png",
+      "relative_path": "volksimmobilien_theme/assets/Fotos/RH-grau-mitte.png",
+      "absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/volksimmobilien_theme/assets/Fotos/RH-grau-mitte.png",
+      "target_webp_relative_path": "volksimmobilien_theme/assets/Fotos/RH-grau-mitte.webp",
+      "target_webp_absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/volksimmobilien_theme/assets/Fotos/RH-grau-mitte.webp",
+      "size_bytes": 9699
+    },
+    {
+      "filename": "RH-grau.png",
+      "stem": "RH-grau",
+      "extension": ".png",
+      "relative_path": "volksimmobilien_theme/assets/Fotos/RH-grau.png",
+      "absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/volksimmobilien_theme/assets/Fotos/RH-grau.png",
+      "target_webp_relative_path": "volksimmobilien_theme/assets/Fotos/RH-grau.webp",
+      "target_webp_absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/volksimmobilien_theme/assets/Fotos/RH-grau.webp",
+      "size_bytes": 9319
+    },
+    {
+      "filename": "RH-rot-aussen.png",
+      "stem": "RH-rot-aussen",
+      "extension": ".png",
+      "relative_path": "volksimmobilien_theme/assets/Fotos/RH-rot-aussen.png",
+      "absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/volksimmobilien_theme/assets/Fotos/RH-rot-aussen.png",
+      "target_webp_relative_path": "volksimmobilien_theme/assets/Fotos/RH-rot-aussen.webp",
+      "target_webp_absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/volksimmobilien_theme/assets/Fotos/RH-rot-aussen.webp",
+      "size_bytes": 9327
+    },
+    {
+      "filename": "RH-rot.png",
+      "stem": "RH-rot",
+      "extension": ".png",
+      "relative_path": "volksimmobilien_theme/assets/Fotos/RH-rot.png",
+      "absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/volksimmobilien_theme/assets/Fotos/RH-rot.png",
+      "target_webp_relative_path": "volksimmobilien_theme/assets/Fotos/RH-rot.webp",
+      "target_webp_absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/volksimmobilien_theme/assets/Fotos/RH-rot.webp",
+      "size_bytes": 8862
+    },
+    {
+      "filename": "Slider1.jpg",
+      "stem": "Slider1",
+      "extension": ".jpg",
+      "relative_path": "volksimmobilien_theme/assets/Fotos/Slider1.jpg",
+      "absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/volksimmobilien_theme/assets/Fotos/Slider1.jpg",
+      "target_webp_relative_path": "volksimmobilien_theme/assets/Fotos/Slider1.webp",
+      "target_webp_absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/volksimmobilien_theme/assets/Fotos/Slider1.webp",
+      "size_bytes": 39612
+    },
+    {
+      "filename": "Slider2.jpg",
+      "stem": "Slider2",
+      "extension": ".jpg",
+      "relative_path": "volksimmobilien_theme/assets/Fotos/Slider2.jpg",
+      "absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/volksimmobilien_theme/assets/Fotos/Slider2.jpg",
+      "target_webp_relative_path": "volksimmobilien_theme/assets/Fotos/Slider2.webp",
+      "target_webp_absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/volksimmobilien_theme/assets/Fotos/Slider2.webp",
+      "size_bytes": 39314
+    },
+    {
+      "filename": "Slider3.jpg",
+      "stem": "Slider3",
+      "extension": ".jpg",
+      "relative_path": "volksimmobilien_theme/assets/Fotos/Slider3.jpg",
+      "absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/volksimmobilien_theme/assets/Fotos/Slider3.jpg",
+      "target_webp_relative_path": "volksimmobilien_theme/assets/Fotos/Slider3.webp",
+      "target_webp_absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/volksimmobilien_theme/assets/Fotos/Slider3.webp",
+      "size_bytes": 30340
+    },
+    {
+      "filename": "Slider3_optimiert.png",
+      "stem": "Slider3_optimiert",
+      "extension": ".png",
+      "relative_path": "volksimmobilien_theme/assets/Fotos/Slider3_optimiert.png",
+      "absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/volksimmobilien_theme/assets/Fotos/Slider3_optimiert.png",
+      "target_webp_relative_path": "volksimmobilien_theme/assets/Fotos/Slider3_optimiert.webp",
+      "target_webp_absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/volksimmobilien_theme/assets/Fotos/Slider3_optimiert.webp",
+      "size_bytes": 1200082
+    },
+    {
+      "filename": "Vertrauen.jpg",
+      "stem": "Vertrauen",
+      "extension": ".jpg",
+      "relative_path": "volksimmobilien_theme/assets/Fotos/Vertrauen.jpg",
+      "absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/volksimmobilien_theme/assets/Fotos/Vertrauen.jpg",
+      "target_webp_relative_path": "volksimmobilien_theme/assets/Fotos/Vertrauen.webp",
+      "target_webp_absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/volksimmobilien_theme/assets/Fotos/Vertrauen.webp",
+      "size_bytes": 98753
+    },
+    {
+      "filename": "WGH-DG-blau.png",
+      "stem": "WGH-DG-blau",
+      "extension": ".png",
+      "relative_path": "volksimmobilien_theme/assets/Fotos/WGH-DG-blau.png",
+      "absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/volksimmobilien_theme/assets/Fotos/WGH-DG-blau.png",
+      "target_webp_relative_path": "volksimmobilien_theme/assets/Fotos/WGH-DG-blau.webp",
+      "target_webp_absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/volksimmobilien_theme/assets/Fotos/WGH-DG-blau.webp",
+      "size_bytes": 14143
+    },
+    {
+      "filename": "WGH-DG-grau.png",
+      "stem": "WGH-DG-grau",
+      "extension": ".png",
+      "relative_path": "volksimmobilien_theme/assets/Fotos/WGH-DG-grau.png",
+      "absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/volksimmobilien_theme/assets/Fotos/WGH-DG-grau.png",
+      "target_webp_relative_path": "volksimmobilien_theme/assets/Fotos/WGH-DG-grau.webp",
+      "target_webp_absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/volksimmobilien_theme/assets/Fotos/WGH-DG-grau.webp",
+      "size_bytes": 14809
+    },
+    {
+      "filename": "WGH-DG-rot.png",
+      "stem": "WGH-DG-rot",
+      "extension": ".png",
+      "relative_path": "volksimmobilien_theme/assets/Fotos/WGH-DG-rot.png",
+      "absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/volksimmobilien_theme/assets/Fotos/WGH-DG-rot.png",
+      "target_webp_relative_path": "volksimmobilien_theme/assets/Fotos/WGH-DG-rot.webp",
+      "target_webp_absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/volksimmobilien_theme/assets/Fotos/WGH-DG-rot.webp",
+      "size_bytes": 14901
+    },
+    {
+      "filename": "WGH-EG-blau.png",
+      "stem": "WGH-EG-blau",
+      "extension": ".png",
+      "relative_path": "volksimmobilien_theme/assets/Fotos/WGH-EG-blau.png",
+      "absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/volksimmobilien_theme/assets/Fotos/WGH-EG-blau.png",
+      "target_webp_relative_path": "volksimmobilien_theme/assets/Fotos/WGH-EG-blau.webp",
+      "target_webp_absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/volksimmobilien_theme/assets/Fotos/WGH-EG-blau.webp",
+      "size_bytes": 11434
+    },
+    {
+      "filename": "WGH-EG-grau.png",
+      "stem": "WGH-EG-grau",
+      "extension": ".png",
+      "relative_path": "volksimmobilien_theme/assets/Fotos/WGH-EG-grau.png",
+      "absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/volksimmobilien_theme/assets/Fotos/WGH-EG-grau.png",
+      "target_webp_relative_path": "volksimmobilien_theme/assets/Fotos/WGH-EG-grau.webp",
+      "target_webp_absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/volksimmobilien_theme/assets/Fotos/WGH-EG-grau.webp",
+      "size_bytes": 11917
+    },
+    {
+      "filename": "WGH-EG-rot.png",
+      "stem": "WGH-EG-rot",
+      "extension": ".png",
+      "relative_path": "volksimmobilien_theme/assets/Fotos/WGH-EG-rot.png",
+      "absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/volksimmobilien_theme/assets/Fotos/WGH-EG-rot.png",
+      "target_webp_relative_path": "volksimmobilien_theme/assets/Fotos/WGH-EG-rot.webp",
+      "target_webp_absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/volksimmobilien_theme/assets/Fotos/WGH-EG-rot.webp",
+      "size_bytes": 11854
+    },
+    {
+      "filename": "WGH-Mais-blau.png",
+      "stem": "WGH-Mais-blau",
+      "extension": ".png",
+      "relative_path": "volksimmobilien_theme/assets/Fotos/WGH-Mais-blau.png",
+      "absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/volksimmobilien_theme/assets/Fotos/WGH-Mais-blau.png",
+      "target_webp_relative_path": "volksimmobilien_theme/assets/Fotos/WGH-Mais-blau.webp",
+      "target_webp_absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/volksimmobilien_theme/assets/Fotos/WGH-Mais-blau.webp",
+      "size_bytes": 11421
+    },
+    {
+      "filename": "WGH-Mais-grau.png",
+      "stem": "WGH-Mais-grau",
+      "extension": ".png",
+      "relative_path": "volksimmobilien_theme/assets/Fotos/WGH-Mais-grau.png",
+      "absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/volksimmobilien_theme/assets/Fotos/WGH-Mais-grau.png",
+      "target_webp_relative_path": "volksimmobilien_theme/assets/Fotos/WGH-Mais-grau.webp",
+      "target_webp_absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/volksimmobilien_theme/assets/Fotos/WGH-Mais-grau.webp",
+      "size_bytes": 12038
+    },
+    {
+      "filename": "WGH-Mais-rot.png",
+      "stem": "WGH-Mais-rot",
+      "extension": ".png",
+      "relative_path": "volksimmobilien_theme/assets/Fotos/WGH-Mais-rot.png",
+      "absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/volksimmobilien_theme/assets/Fotos/WGH-Mais-rot.png",
+      "target_webp_relative_path": "volksimmobilien_theme/assets/Fotos/WGH-Mais-rot.webp",
+      "target_webp_absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/volksimmobilien_theme/assets/Fotos/WGH-Mais-rot.webp",
+      "size_bytes": 11905
+    },
+    {
+      "filename": "WGH-PH-blau.png",
+      "stem": "WGH-PH-blau",
+      "extension": ".png",
+      "relative_path": "volksimmobilien_theme/assets/Fotos/WGH-PH-blau.png",
+      "absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/volksimmobilien_theme/assets/Fotos/WGH-PH-blau.png",
+      "target_webp_relative_path": "volksimmobilien_theme/assets/Fotos/WGH-PH-blau.webp",
+      "target_webp_absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/volksimmobilien_theme/assets/Fotos/WGH-PH-blau.webp",
+      "size_bytes": 11041
+    },
+    {
+      "filename": "WGH-PH-grau.png",
+      "stem": "WGH-PH-grau",
+      "extension": ".png",
+      "relative_path": "volksimmobilien_theme/assets/Fotos/WGH-PH-grau.png",
+      "absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/volksimmobilien_theme/assets/Fotos/WGH-PH-grau.png",
+      "target_webp_relative_path": "volksimmobilien_theme/assets/Fotos/WGH-PH-grau.webp",
+      "target_webp_absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/volksimmobilien_theme/assets/Fotos/WGH-PH-grau.webp",
+      "size_bytes": 11296
+    },
+    {
+      "filename": "WGH-PH-rot.png",
+      "stem": "WGH-PH-rot",
+      "extension": ".png",
+      "relative_path": "volksimmobilien_theme/assets/Fotos/WGH-PH-rot.png",
+      "absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/volksimmobilien_theme/assets/Fotos/WGH-PH-rot.png",
+      "target_webp_relative_path": "volksimmobilien_theme/assets/Fotos/WGH-PH-rot.webp",
+      "target_webp_absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/volksimmobilien_theme/assets/Fotos/WGH-PH-rot.webp",
+      "size_bytes": 11448
+    },
+    {
+      "filename": "WGH-Studio-blau.png",
+      "stem": "WGH-Studio-blau",
+      "extension": ".png",
+      "relative_path": "volksimmobilien_theme/assets/Fotos/WGH-Studio-blau.png",
+      "absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/volksimmobilien_theme/assets/Fotos/WGH-Studio-blau.png",
+      "target_webp_relative_path": "volksimmobilien_theme/assets/Fotos/WGH-Studio-blau.webp",
+      "target_webp_absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/volksimmobilien_theme/assets/Fotos/WGH-Studio-blau.webp",
+      "size_bytes": 11340
+    },
+    {
+      "filename": "WGH-Studio-grau.png",
+      "stem": "WGH-Studio-grau",
+      "extension": ".png",
+      "relative_path": "volksimmobilien_theme/assets/Fotos/WGH-Studio-grau.png",
+      "absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/volksimmobilien_theme/assets/Fotos/WGH-Studio-grau.png",
+      "target_webp_relative_path": "volksimmobilien_theme/assets/Fotos/WGH-Studio-grau.webp",
+      "target_webp_absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/volksimmobilien_theme/assets/Fotos/WGH-Studio-grau.webp",
+      "size_bytes": 11948
+    },
+    {
+      "filename": "WGH-Studio-rot.png",
+      "stem": "WGH-Studio-rot",
+      "extension": ".png",
+      "relative_path": "volksimmobilien_theme/assets/Fotos/WGH-Studio-rot.png",
+      "absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/volksimmobilien_theme/assets/Fotos/WGH-Studio-rot.png",
+      "target_webp_relative_path": "volksimmobilien_theme/assets/Fotos/WGH-Studio-rot.webp",
+      "target_webp_absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/volksimmobilien_theme/assets/Fotos/WGH-Studio-rot.webp",
+      "size_bytes": 11737
+    },
+    {
+      "filename": "WGH-blau.png",
+      "stem": "WGH-blau",
+      "extension": ".png",
+      "relative_path": "volksimmobilien_theme/assets/Fotos/WGH-blau.png",
+      "absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/volksimmobilien_theme/assets/Fotos/WGH-blau.png",
+      "target_webp_relative_path": "volksimmobilien_theme/assets/Fotos/WGH-blau.webp",
+      "target_webp_absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/volksimmobilien_theme/assets/Fotos/WGH-blau.webp",
+      "size_bytes": 11758
+    },
+    {
+      "filename": "WGH-grau.png",
+      "stem": "WGH-grau",
+      "extension": ".png",
+      "relative_path": "volksimmobilien_theme/assets/Fotos/WGH-grau.png",
+      "absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/volksimmobilien_theme/assets/Fotos/WGH-grau.png",
+      "target_webp_relative_path": "volksimmobilien_theme/assets/Fotos/WGH-grau.webp",
+      "target_webp_absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/volksimmobilien_theme/assets/Fotos/WGH-grau.webp",
+      "size_bytes": 11781
+    },
+    {
+      "filename": "WGH-rot.png",
+      "stem": "WGH-rot",
+      "extension": ".png",
+      "relative_path": "volksimmobilien_theme/assets/Fotos/WGH-rot.png",
+      "absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/volksimmobilien_theme/assets/Fotos/WGH-rot.png",
+      "target_webp_relative_path": "volksimmobilien_theme/assets/Fotos/WGH-rot.webp",
+      "target_webp_absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/volksimmobilien_theme/assets/Fotos/WGH-rot.webp",
+      "size_bytes": 11955
+    },
+    {
+      "filename": "persönliche-Bewertung.png",
+      "stem": "persönliche-Bewertung",
+      "extension": ".png",
+      "relative_path": "volksimmobilien_theme/assets/Fotos/persönliche-Bewertung.png",
+      "absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/volksimmobilien_theme/assets/Fotos/persönliche-Bewertung.png",
+      "target_webp_relative_path": "volksimmobilien_theme/assets/Fotos/persönliche-Bewertung.webp",
+      "target_webp_absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/volksimmobilien_theme/assets/Fotos/persönliche-Bewertung.webp",
+      "size_bytes": 13005
+    },
+    {
+      "filename": "volksimmobilien-logo-weiss.png",
+      "stem": "volksimmobilien-logo-weiss",
+      "extension": ".png",
+      "relative_path": "volksimmobilien_theme/assets/Fotos/volksimmobilien-logo-weiss.png",
+      "absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/volksimmobilien_theme/assets/Fotos/volksimmobilien-logo-weiss.png",
+      "target_webp_relative_path": "volksimmobilien_theme/assets/Fotos/volksimmobilien-logo-weiss.webp",
+      "target_webp_absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/volksimmobilien_theme/assets/Fotos/volksimmobilien-logo-weiss.webp",
+      "size_bytes": 2606
+    },
+    {
+      "filename": "volksimmobilien_kaufen.jpg",
+      "stem": "volksimmobilien_kaufen",
+      "extension": ".jpg",
+      "relative_path": "volksimmobilien_theme/assets/Fotos/volksimmobilien_kaufen.jpg",
+      "absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/volksimmobilien_theme/assets/Fotos/volksimmobilien_kaufen.jpg",
+      "target_webp_relative_path": "volksimmobilien_theme/assets/Fotos/volksimmobilien_kaufen.webp",
+      "target_webp_absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/volksimmobilien_theme/assets/Fotos/volksimmobilien_kaufen.webp",
+      "size_bytes": 232964
+    },
+    {
+      "filename": "volksimmobilien_verkaufen.jpg",
+      "stem": "volksimmobilien_verkaufen",
+      "extension": ".jpg",
+      "relative_path": "volksimmobilien_theme/assets/Fotos/volksimmobilien_verkaufen.jpg",
+      "absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/volksimmobilien_theme/assets/Fotos/volksimmobilien_verkaufen.jpg",
+      "target_webp_relative_path": "volksimmobilien_theme/assets/Fotos/volksimmobilien_verkaufen.webp",
+      "target_webp_absolute_path": "/Users/atlas/Documents/Github/Volksimmobilien/volksimmobilien_theme/assets/Fotos/volksimmobilien_verkaufen.webp",
+      "size_bytes": 236180
+    }
+  ]
+}

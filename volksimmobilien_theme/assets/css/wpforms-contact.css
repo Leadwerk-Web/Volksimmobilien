@@ -1,0 +1,540 @@
+/**
+ * WPForms im Kontaktblock (Startseite + Bewerten) – gleiche Optik wie .home-contact-form
+ */
+
+.page-bewerten .home-contact-section .home-contact-wpforms,
+.page-bewerten .home-contact-section .volks-wpforms {
+	width: 100%;
+	min-width: 0;
+}
+
+/* Desktop: Zwei-Spalten wie Startseite (Formular links, Info-Karten rechts) */
+@media (min-width: 961px) {
+	.page-home .home-contact-grid,
+	.page-bewerten .home-contact-grid {
+		grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr);
+		align-items: stretch;
+	}
+}
+
+.page-home .home-contact-form-card,
+.page-bewerten .home-contact-form-card,
+.page-home .home-contact-aside,
+.page-bewerten .home-contact-aside {
+	min-width: 0;
+	max-width: 100%;
+}
+
+.page-home .home-contact-aside,
+.page-bewerten .home-contact-aside {
+	display: flex;
+	flex-direction: column;
+	gap: var(--space-lg);
+}
+
+.home-contact-form-card .home-contact-wpforms,
+.home-contact-form-card .volks-wpforms {
+	width: 100%;
+}
+
+/* WPForms-Wrapper: transparent wie natives .home-contact-form */
+.home-contact-wpforms .wpforms-container,
+.home-contact-wpforms .wpforms-container-full {
+	margin: 0 !important;
+	max-width: none !important;
+	background: transparent !important;
+	border: 0 !important;
+	box-shadow: none !important;
+	padding: 0 !important;
+}
+
+.home-contact-wpforms .wpforms-title,
+.home-contact-wpforms .wpforms-description {
+	display: none !important;
+}
+
+.home-contact-wpforms .wpforms-container-full,
+.home-contact-wpforms form.wpforms-form {
+	width: 100%;
+}
+
+/* 2-Spalten-Grid wie .home-contact-form-grid */
+.home-contact-wpforms form.wpforms-form {
+	display: grid;
+	grid-template-columns: repeat(2, minmax(0, 1fr));
+	gap: var(--space-md) var(--space-lg);
+	align-items: start;
+}
+
+.home-contact-wpforms .wpforms-field-container {
+	display: contents;
+}
+
+.home-contact-wpforms .wpforms-field {
+	grid-column: 1 / -1;
+	padding: 0;
+	margin: 0;
+	width: 100% !important;
+	max-width: none !important;
+	float: none !important;
+	clear: none !important;
+}
+
+/* Volle Breite wie .home-contact-field--full */
+.home-contact-wpforms .wpforms-field-email,
+.home-contact-wpforms .wpforms-field-phone,
+.home-contact-wpforms .wpforms-field-select,
+.home-contact-wpforms .wpforms-field-textarea,
+.home-contact-wpforms .wpforms-field-checkbox,
+.home-contact-wpforms .wpforms-field-gdpr-checkbox,
+.home-contact-wpforms .wpforms-field-consent,
+.home-contact-wpforms .wpforms-field-radio,
+.home-contact-wpforms .wpforms-field-fileupload {
+	grid-column: 1 / -1;
+}
+
+/* Name-Feld: 2 Spalten wie statisches Formular */
+.home-contact-wpforms .wpforms-field-name {
+	grid-column: 1 / -1;
+}
+
+/* Name: Vorname + Nachname nebeneinander (WPForms Modern) */
+.home-contact-wpforms .wpforms-field-name fieldset {
+	border: 0;
+	margin: 0;
+	padding: 0;
+	min-width: 0;
+}
+
+.home-contact-wpforms .wpforms-field-name legend.wpforms-field-label {
+	float: none;
+	width: 100%;
+	padding: 0;
+	margin: 0 0 0.4rem;
+}
+
+/* Container-Query von WPForms deaktivieren – sonst stapeln sich die Hälften unter 260px */
+.home-contact-wpforms .wpforms-field.wpforms-field-name,
+.home-contact-wpforms .wpforms-field-name .wpforms-field-row {
+	container-type: normal !important;
+	container-name: none !important;
+}
+
+.home-contact-wpforms .wpforms-field-name .wpforms-field-row {
+	display: grid !important;
+	grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+	gap: var(--space-md) var(--space-lg) !important;
+	align-items: start !important;
+	flex-wrap: nowrap !important;
+	justify-content: stretch !important;
+	margin: 0 !important;
+	max-width: none !important;
+}
+
+.home-contact-wpforms .wpforms-field-name .wpforms-field-row::before,
+.home-contact-wpforms .wpforms-field-name .wpforms-field-row::after {
+	display: none !important;
+}
+
+.home-contact-wpforms .wpforms-field-name .wpforms-field-row-block {
+	display: flex !important;
+	flex-direction: column !important;
+	width: 100% !important;
+	max-width: none !important;
+	flex: 1 1 0 !important;
+	min-width: 0 !important;
+	padding: 0 !important;
+	margin: 0 !important;
+	float: none !important;
+}
+
+.home-contact-wpforms .wpforms-field-name .wpforms-field-row-block:not(:last-child) {
+	margin-bottom: 0 !important;
+}
+
+/* Sublabels über dem Input wie im statischen Formular */
+.home-contact-wpforms .wpforms-field-name .wpforms-field-sublabel.after {
+	order: -1;
+	margin: 0 0 0.35rem;
+}
+
+.home-contact-wpforms .wpforms-field-row-block,
+.home-contact-wpforms .wpforms-one-half,
+.home-contact-wpforms .wpforms-one-third {
+	width: 100% !important;
+	max-width: none !important;
+	padding: 0;
+	margin: 0;
+	float: none !important;
+}
+
+/* Labels */
+.home-contact-wpforms .wpforms-field-label {
+	display: block;
+	margin: 0 0 0.4rem;
+	font-family: var(--font-heading);
+	font-weight: 600;
+	font-size: var(--fs-sm);
+	color: var(--color-gray-800);
+	line-height: 1.35;
+}
+
+/* Pflichtfeld-Stern wie .home-contact-req */
+.home-contact-wpforms .wpforms-required-label {
+	display: inline;
+	margin-left: 0.15rem;
+	color: var(--color-primary);
+	font-weight: 700;
+}
+
+.home-contact-wpforms .wpforms-field-sublabel {
+	display: block;
+	margin: 0 0 0.35rem;
+	font-size: var(--fs-xs);
+	font-weight: 600;
+	color: var(--color-gray-600);
+}
+
+.home-contact-wpforms .wpforms-field-sublabel.after {
+	margin: 0.35rem 0 0;
+}
+
+/* Inputs – wie .home-contact-field input (tel + select separat, siehe unten) */
+.home-contact-wpforms input[type="text"],
+.home-contact-wpforms input[type="email"],
+.home-contact-wpforms input[type="url"],
+.home-contact-wpforms input[type="number"],
+.home-contact-wpforms input[type="date"],
+.home-contact-wpforms textarea {
+	width: 100% !important;
+	max-width: 100% !important;
+	box-sizing: border-box;
+	padding: 0.85rem 1.1rem !important;
+	border: 1px solid var(--color-gray-200) !important;
+	border-radius: var(--radius-md) !important;
+	font-family: var(--font-body) !important;
+	font-size: var(--fs-base) !important;
+	color: var(--color-gray-800) !important;
+	background: var(--color-white) !important;
+	box-shadow: none !important;
+	transition: border-color var(--transition-base), box-shadow var(--transition-base);
+	outline: none;
+	min-height: 0;
+	height: auto;
+}
+
+/* Select: WPForms Modern setzt feste height + padding-block:0 → Text wird oben abgeschnitten */
+.home-contact-wpforms .wpforms-field-select select,
+.home-contact-wpforms select.wpforms-field-large,
+.home-contact-wpforms select.wpforms-field-medium,
+.home-contact-wpforms select.wpforms-field-small {
+	width: 100% !important;
+	max-width: 100% !important;
+	box-sizing: border-box !important;
+	display: block !important;
+	height: auto !important;
+	min-height: 3.125rem !important;
+	padding: 0.85rem 2.5rem 0.85rem 1.1rem !important;
+	border: 1px solid var(--color-gray-200) !important;
+	border-radius: var(--radius-md) !important;
+	font-family: var(--font-body) !important;
+	font-size: var(--fs-base) !important;
+	line-height: 1.5 !important;
+	color: var(--color-gray-800) !important;
+	background-color: var(--color-white) !important;
+	box-shadow: none !important;
+	transition: border-color var(--transition-base), box-shadow var(--transition-base);
+	outline: none;
+	overflow: visible !important;
+	cursor: pointer;
+	appearance: none;
+	-webkit-appearance: none;
+	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23737373' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E") !important;
+	background-repeat: no-repeat !important;
+	background-position: right 0.95rem center !important;
+}
+
+.home-contact-wpforms textarea {
+	min-height: 8rem;
+	resize: vertical;
+	line-height: 1.55;
+}
+
+.home-contact-wpforms input::placeholder,
+.home-contact-wpforms textarea::placeholder {
+	color: var(--color-gray-400);
+	opacity: 1;
+}
+
+.home-contact-wpforms input:hover,
+.home-contact-wpforms textarea:hover,
+.home-contact-wpforms select:hover {
+	border-color: var(--color-gray-300) !important;
+}
+
+.home-contact-wpforms input:focus,
+.home-contact-wpforms textarea:focus,
+.home-contact-wpforms select:focus {
+	border-color: var(--color-primary) !important;
+	box-shadow: 0 0 0 3px rgba(201, 90, 63, 0.14) !important;
+}
+
+/* Telefon (WPForms + intl-tel-input): Platz für Länderflagge links */
+.home-contact-wpforms .wpforms-field-phone .iti,
+.home-contact-wpforms .iti {
+	display: block;
+	width: 100% !important;
+	max-width: 100% !important;
+}
+
+.home-contact-wpforms .wpforms-field-phone input[type="tel"],
+.home-contact-wpforms .iti input[type="tel"],
+.home-contact-wpforms .iti .iti__tel-input {
+	width: 100% !important;
+	max-width: 100% !important;
+	box-sizing: border-box;
+	padding-top: 0.85rem !important;
+	padding-bottom: 0.85rem !important;
+	padding-right: 1.1rem !important;
+	padding-left: 3.5rem !important;
+	border: 1px solid var(--color-gray-200) !important;
+	border-radius: var(--radius-md) !important;
+	font-family: var(--font-body) !important;
+	font-size: var(--fs-base) !important;
+	color: var(--color-gray-800) !important;
+	background: var(--color-white) !important;
+	box-shadow: none !important;
+	transition: border-color var(--transition-base), box-shadow var(--transition-base);
+	outline: none;
+	min-height: 0;
+	height: auto;
+}
+
+/* separateDialCode: Vorwahl + Flagge brauchen mehr linken Abstand */
+.home-contact-wpforms .iti--separate-dial-code input[type="tel"],
+.home-contact-wpforms .iti--separate-dial-code .iti__tel-input {
+	padding-left: 4.75rem !important;
+}
+
+.home-contact-wpforms .iti__flag-container,
+.home-contact-wpforms .iti .iti__selected-country {
+	z-index: 2;
+}
+
+.home-contact-wpforms .wpforms-field-phone input[type="tel"]:hover,
+.home-contact-wpforms .iti input[type="tel"]:hover,
+.home-contact-wpforms .iti .iti__tel-input:hover {
+	border-color: var(--color-gray-300) !important;
+}
+
+.home-contact-wpforms .wpforms-field-phone input[type="tel"]:focus,
+.home-contact-wpforms .iti input[type="tel"]:focus,
+.home-contact-wpforms .iti .iti__tel-input:focus {
+	border-color: var(--color-primary) !important;
+	box-shadow: 0 0 0 3px rgba(201, 90, 63, 0.14) !important;
+}
+
+/* Checkbox / Einwilligung */
+.home-contact-wpforms .wpforms-field-checkbox ul,
+.home-contact-wpforms .wpforms-field-gdpr-checkbox ul,
+.home-contact-wpforms .wpforms-field-consent ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.home-contact-wpforms .wpforms-field-checkbox li,
+.home-contact-wpforms .wpforms-field-gdpr-checkbox li,
+.home-contact-wpforms .wpforms-field-consent li {
+	display: flex;
+	align-items: flex-start;
+	gap: var(--space-sm);
+	margin: 0 !important;
+	padding: 0;
+}
+
+.home-contact-wpforms .wpforms-field-checkbox label,
+.home-contact-wpforms .wpforms-field-gdpr-checkbox label,
+.home-contact-wpforms .wpforms-field-consent label {
+	display: flex;
+	align-items: flex-start;
+	gap: var(--space-sm);
+	margin: 0;
+	font-family: var(--font-body);
+	font-size: var(--fs-sm);
+	font-weight: 400;
+	line-height: 1.5;
+	color: var(--color-gray-600);
+	cursor: pointer;
+}
+
+.home-contact-wpforms .wpforms-field-checkbox input[type="checkbox"],
+.home-contact-wpforms .wpforms-field-gdpr-checkbox input[type="checkbox"],
+.home-contact-wpforms .wpforms-field-consent input[type="checkbox"] {
+	width: 1.125rem !important;
+	height: 1.125rem !important;
+	margin: 0.2rem 0 0 !important;
+	padding: 0 !important;
+	flex-shrink: 0;
+	accent-color: var(--color-primary);
+	cursor: pointer;
+}
+
+.home-contact-wpforms .wpforms-field-checkbox a,
+.home-contact-wpforms .wpforms-field-gdpr-checkbox a,
+.home-contact-wpforms .wpforms-field-consent a {
+	color: var(--color-primary);
+	font-weight: 600;
+	text-decoration: underline;
+	text-underline-offset: 2px;
+}
+
+.home-contact-wpforms .wpforms-field-checkbox a:hover,
+.home-contact-wpforms .wpforms-field-gdpr-checkbox a:hover,
+.home-contact-wpforms .wpforms-field-consent a:hover {
+	color: var(--color-primary-dark);
+}
+
+/* Feld-Hinweise dezent (optional) */
+.home-contact-wpforms .wpforms-field-description {
+	margin-top: 0.35rem;
+	font-size: var(--fs-xs);
+	color: var(--color-gray-500);
+	line-height: 1.5;
+	max-width: 42rem;
+}
+
+/* Submit – wie .btn.btn-primary.btn-lg */
+.home-contact-wpforms .wpforms-submit-container {
+	grid-column: 1 / -1;
+	margin: var(--space-lg) 0 0;
+	padding: 0;
+	display: flex;
+	flex-wrap: wrap;
+	gap: var(--space-md);
+	align-items: center;
+}
+
+.home-contact-wpforms button.wpforms-submit,
+.home-contact-wpforms .wpforms-page-button {
+	display: inline-flex !important;
+	align-items: center;
+	justify-content: center;
+	gap: var(--space-xs);
+	width: auto !important;
+	min-width: 12rem;
+	height: auto !important;
+	padding: 0.875rem 1.75rem !important;
+	border: 2px solid var(--color-primary) !important;
+	border-radius: var(--radius-full) !important;
+	background: var(--color-primary) !important;
+	color: var(--color-white) !important;
+	font-family: var(--font-heading) !important;
+	font-size: var(--fs-base) !important;
+	font-weight: 600 !important;
+	line-height: 1.3 !important;
+	cursor: pointer;
+	transition: all var(--transition-base);
+	box-shadow: none !important;
+}
+
+.home-contact-wpforms button.wpforms-submit:hover,
+.home-contact-wpforms .wpforms-page-button:hover {
+	background: var(--color-primary-dark) !important;
+	border-color: var(--color-primary-dark) !important;
+	transform: translateY(-1px);
+	box-shadow: var(--shadow-glow);
+}
+
+.home-contact-wpforms button.wpforms-submit:focus-visible,
+.home-contact-wpforms .wpforms-page-button:focus-visible {
+	outline: 2px solid var(--color-primary);
+	outline-offset: 2px;
+}
+
+/* WPForms-Basis zurücksetzen */
+.home-contact-wpforms .wpforms-field-hp,
+.home-contact-wpforms .wpforms-recaptcha-container.hidden {
+	display: none !important;
+	position: absolute !important;
+	left: -9999px !important;
+}
+
+.home-contact-wpforms .wpforms-error-container,
+.home-contact-wpforms .wpforms-error-container-full {
+	margin-bottom: var(--space-md);
+}
+
+.home-contact-wpforms label.wpforms-error {
+	margin-top: 0.35rem;
+	font-size: var(--fs-xs);
+	color: #b42318;
+}
+
+.home-contact-wpforms .wpforms-confirmation-container-full {
+	margin-top: var(--space-md);
+	padding: var(--space-md);
+	border-radius: var(--radius-md);
+	background: var(--color-white);
+	border: 1px solid var(--color-gray-200);
+	font-size: var(--fs-sm);
+	color: var(--color-gray-700);
+}
+
+/* Mobile/Tablet: eine Spalte – Formular oben, Kontakt-Karten darunter (Home + Bewerten) */
+@media (max-width: 960px) {
+	.page-home .home-contact-section .home-contact-grid,
+	.page-bewerten .home-contact-section .home-contact-grid,
+	.home-contact-grid {
+		display: grid;
+		grid-template-columns: minmax(0, 1fr) !important;
+		gap: var(--space-xl);
+		width: 100%;
+		max-width: 100%;
+	}
+
+	.home-contact-section .container {
+		padding-left: var(--space-md);
+		padding-right: var(--space-md);
+		box-sizing: border-box;
+	}
+
+	.home-contact-form-card,
+	.home-contact-aside {
+		width: 100%;
+		max-width: 100%;
+		min-width: 0;
+		box-sizing: border-box;
+	}
+
+	.home-contact-wpforms,
+	.home-contact-wpforms .wpforms-container,
+	.home-contact-wpforms .wpforms-container-full,
+	.home-contact-wpforms form.wpforms-form {
+		width: 100% !important;
+		max-width: 100% !important;
+		min-width: 0;
+		box-sizing: border-box;
+	}
+
+	.home-contact-wpforms .wpforms-field {
+		max-width: 100%;
+		overflow: hidden;
+	}
+}
+
+@media (max-width: 700px) {
+	.home-contact-wpforms form.wpforms-form {
+		grid-template-columns: 1fr;
+	}
+
+	.home-contact-wpforms .wpforms-field-name .wpforms-field-row {
+		grid-template-columns: 1fr !important;
+	}
+
+	.home-contact-wpforms button.wpforms-submit,
+	.home-contact-wpforms .wpforms-page-button {
+		width: 100% !important;
+		justify-content: center;
+	}
+}
