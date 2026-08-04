@@ -162,6 +162,118 @@
     heroVideo.pause();
   }
 
+  /* ─── VIDEO LIGHTBOX (Intro Imagefilm) ──────────── */
+  (function initVideoLightbox() {
+    var triggers = document.querySelectorAll('[data-video-lightbox]');
+    if (!triggers.length) return;
+
+    var boundDialogs = new WeakSet();
+
+    function loadCues(dialog) {
+      var cuesEl = document.getElementById(dialog.id + 'Cues');
+      if (!cuesEl) return [];
+      try {
+        var parsed = JSON.parse(cuesEl.textContent);
+        return Array.isArray(parsed) ? parsed : [];
+      } catch (err) {
+        return [];
+      }
+    }
+
+    function syncCaptions(video, captionEl, cues) {
+      if (!captionEl || !cues.length) return;
+      var t = video.currentTime;
+      var active = null;
+      for (var i = 0; i < cues.length; i++) {
+        if (t >= cues[i].start && t < cues[i].end) {
+          active = cues[i];
+          break;
+        }
+      }
+      if (active) {
+        captionEl.textContent = active.text;
+        captionEl.hidden = false;
+      } else {
+        captionEl.textContent = '';
+        captionEl.hidden = true;
+      }
+    }
+
+    triggers.forEach(function (trigger) {
+      var dialogId = trigger.getAttribute('data-video-lightbox');
+      var dialog = dialogId ? document.getElementById(dialogId) : null;
+      if (!dialog || typeof dialog.showModal !== 'function') return;
+
+      var video = dialog.querySelector('video');
+      var closeBtn = dialog.querySelector('[data-video-lightbox-close]');
+      var captionEl = dialog.querySelector('[data-video-captions]');
+      var cues = loadCues(dialog);
+
+      function openLightbox() {
+        dialog.showModal();
+        if (!video) return;
+        video.currentTime = 0;
+        syncCaptions(video, captionEl, cues);
+        var playPromise = video.play();
+        if (playPromise && typeof playPromise.catch === 'function') {
+          playPromise.catch(function () {});
+        }
+      }
+
+      function closeLightbox() {
+        if (video) {
+          video.pause();
+          video.currentTime = 0;
+        }
+        if (captionEl) {
+          captionEl.textContent = '';
+          captionEl.hidden = true;
+        }
+        if (dialog.open) dialog.close();
+      }
+
+      trigger.addEventListener('click', openLightbox);
+
+      if (boundDialogs.has(dialog)) return;
+      boundDialogs.add(dialog);
+
+      if (video) {
+        video.addEventListener('timeupdate', function () {
+          syncCaptions(video, captionEl, cues);
+        });
+        video.addEventListener('seeked', function () {
+          syncCaptions(video, captionEl, cues);
+        });
+      }
+
+      if (closeBtn) {
+        closeBtn.addEventListener('click', closeLightbox);
+      }
+
+      dialog.addEventListener('click', function (e) {
+        if (e.target === dialog) closeLightbox();
+      });
+
+      dialog.addEventListener('close', function () {
+        if (video) {
+          video.pause();
+          video.currentTime = 0;
+        }
+        if (captionEl) {
+          captionEl.textContent = '';
+          captionEl.hidden = true;
+        }
+      });
+
+      dialog.addEventListener('cancel', function () {
+        if (video) {
+          video.pause();
+          video.currentTime = 0;
+        }
+      });
+    });
+  })();
+
   /* ─── SMOOTH SCROLL FOR ANCHOR LINKS ────────────── */
   document.querySelectorAll('a[href^="#"]').forEach(function (anchor) {
     anchor.addEventListener('click', function (e) {

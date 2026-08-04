@@ -22,7 +22,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css?v=promo-badge-inline-mobile">
+<link rel="stylesheet" href="css/style.css?v=intro-pb-96">
 
 <script type="application/ld+json">
 {
@@ -214,18 +214,51 @@
             <a href="tel:+491702985141" class="btn btn-outline btn-lg">Anrufen</a>
           </div>
         </div>
-        <aside class="intro-trust reveal" aria-label="Vertrauenshinweise">
-          <div class="trust-panel-stack trust-panel-stack--solo">
-            <div class="trust-stat-banner trust-stat-banner--solo" role="note" aria-label="80 Prozent der Verkäufe in unserer Praxis innerhalb von 6 Wochen abgeschlossen">
-              <span class="trust-stat-banner__value">80&nbsp;<small>%</small></span>
-              <span class="trust-stat-banner__body">
-                <span class="trust-stat-banner__title">in 6 Wochen verkauft</span>
-                <span class="trust-stat-banner__desc">In unserer Praxis sind 80&nbsp;% der Verkäufe innerhalb von 6 Wochen abgeschlossen – durch realistische Preisstrategie und klaren Prozess.</span>
-              </span>
-              <a href="#wertermittlung" class="btn btn-primary btn-lg trust-stat-banner__cta">
-                Immobilie bewerten
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-              </a>
+        <aside class="intro-trust intro-trust--video" aria-label="Vertrauenshinweise">
+          <div class="intro-video-stack">
+            <div class="intro-video-frame">
+              <button
+                type="button"
+                class="intro-video-teaser"
+                data-video-lightbox="videoLightbox"
+                aria-haspopup="dialog"
+                aria-controls="videoLightbox"
+                aria-label="Imagefilm abspielen"
+              >
+                <img
+                  class="intro-video-teaser__poster"
+                  src="Video/Video-poster.jpg"
+                  alt=""
+                  width="480"
+                  height="848"
+                  loading="lazy"
+                  decoding="async"
+                >
+                <span class="intro-video-teaser__overlay" aria-hidden="true"></span>
+              </button>
+              <div class="intro-video-info">
+                <div class="trust-stat-banner trust-stat-banner--solo" role="note" aria-label="80 Prozent der Verkäufe in unserer Praxis innerhalb von 6 Wochen abgeschlossen">
+                  <span class="trust-stat-banner__value">80&nbsp;<small>%</small></span>
+                  <span class="trust-stat-banner__body">
+                    <span class="trust-stat-banner__title">in 6 Wochen verkauft</span>
+                    <span class="trust-stat-banner__desc">In unserer Praxis sind 80&nbsp;% der Verkäufe innerhalb von 6 Wochen abgeschlossen – durch realistische Preisstrategie und klaren Prozess.</span>
+                  </span>
+                  <a href="#wertermittlung" class="btn btn-primary btn-lg trust-stat-banner__cta">
+                    Immobilie bewerten
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                  </a>
+                </div>
+                <button
+                  type="button"
+                  class="intro-video-play"
+                  data-video-lightbox="videoLightbox"
+                  aria-haspopup="dialog"
+                  aria-controls="videoLightbox"
+                  aria-label="Imagefilm abspielen"
+                >
+                  <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.14v13.72L19 12 8 5.14z"/></svg>
+                </button>
+              </div>
             </div>
           </div>
         </aside>
@@ -731,6 +764,36 @@
   <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 15l-6-6-6 6"/></svg>
 </button>
 
-<script src="js/main.js"></script>
+<dialog class="video-lightbox" id="videoLightbox" aria-label="Imagefilm">
+  <div class="video-lightbox__panel">
+    <button type="button" class="video-lightbox__close" data-video-lightbox-close aria-label="Video schließen">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 6L6 18M6 6l12 12"/></svg>
+    </button>
+    <div class="video-lightbox__media">
+      <video class="video-lightbox__video" controls playsinline preload="metadata">
+        <source src="Video/Video.MP4" type="video/mp4">
+      </video>
+      <div class="video-lightbox__captions" data-video-captions aria-live="polite" hidden></div>
+    </div>
+  </div>
+</dialog>
+
+<script type="application/json" id="videoLightboxCues">
+[
+  {"start":0,"end":2.58,"text":"Eine Immobilie ist mehr als nur vier Wände."},
+  {"start":2.68,"end":5.5,"text":"Sie ist der Ort, an dem Erinnerungen entstehen,"},
+  {"start":5.5,"end":8.56,"text":"an dem Familien wachsen, an dem Zukunft beginnt."},
+  {"start":8.76,"end":13.36,"text":"Genau deshalb beginnt unsere Arbeit nicht nur\nmit einem Exposé, sondern mit dem Zuhören."},
+  {"start":13.54,"end":19.92,"text":"Wir nehmen uns Zeit für Ihre Wünsche und für Ihre Ziele\nund für die Geschichte hinter jeder Immobilie."},
+  {"start":20.06,"end":25.18,"text":"Denn kein Zuhause ist wie das andere –\nund kein Mensch hat dieselben Vorstellungen vom Wohnen."},
+  {"start":25.18,"end":29.2,"text":"Mit regionaler Marktkenntnis, mit einer persönlichen Betreuung"},
+  {"start":29.2,"end":32.76,"text":"und einem Service, der oft einen Schritt weitergeht,\nbegleiten wir Sie auf dem kompletten Weg."},
+  {"start":33.02,"end":39.26,"text":"Vom ersten Gespräch über jede wichtige Entscheidung\nbis zu dem Moment, wo aus einer Immobilie ein neues Kapitel wird."},
+  {"start":39.6,"end":45.74,"text":"Unser Anspruch ist dabei einfach:\nnicht nur Ihre Erwartungen zu erfüllen, sondern mehr zu tun, als Sie erwarten."},
+  {"start":46.64,"end":49.86,"text":"Volksimmobilien – persönlich, verlässlich und an Ihrer Seite."}
+]
+</script>
+
+<script src="js/main.js?v=captions-overlay"></script>
 </body>
 </html>
