@@ -46,14 +46,14 @@ $nav_items   = volks_get_main_nav_items();
 
 		<div class="header-actions">
 			<a href="<?php echo esc_url( $kontakt_url ); ?>" class="btn btn-primary btn-sm header-cta">Kontakt aufnehmen</a>
-			<button class="hamburger" id="hamburger" aria-label="Menü öffnen" aria-expanded="false">
+			<button class="hamburger" id="hamburger" aria-label="Menü öffnen" aria-controls="mobileOverlay" aria-expanded="false">
 				<span></span><span></span><span></span>
 			</button>
 		</div>
 	</div>
 </header>
 
-<div class="mobile-overlay" id="mobileOverlay">
+<div class="mobile-overlay" id="mobileOverlay" aria-hidden="true">
 	<nav aria-label="Mobile Navigation">
 		<ul class="mobile-nav-list">
 			<?php foreach ( $nav_items as $item ) : ?>

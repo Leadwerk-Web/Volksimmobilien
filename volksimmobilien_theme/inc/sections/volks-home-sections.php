@@ -131,7 +131,23 @@ function volks_render_section_hero( $s ) {
  * @return string
  */
 function volks_render_section_intro( $s ) {
-	$id = volks_esc_text( $s['section_id'] ?? 'einleitung' );
+	$id              = volks_esc_text( $s['section_id'] ?? 'einleitung' );
+	$video_poster    = volks_attachment_url( (int) ( $s['video_poster'] ?? 0 ) );
+	$video           = volks_video_source_url( $s['video'] ?? 0 );
+	$has_intro_video = '' !== $video_poster && '' !== $video;
+	$video_cues      = array(
+		array( 'start' => 0, 'end' => 2.58, 'text' => 'Eine Immobilie ist mehr als nur vier Wände.' ),
+		array( 'start' => 2.68, 'end' => 5.5, 'text' => 'Sie ist der Ort, an dem Erinnerungen entstehen,' ),
+		array( 'start' => 5.5, 'end' => 8.56, 'text' => 'an dem Familien wachsen, an dem Zukunft beginnt.' ),
+		array( 'start' => 8.76, 'end' => 13.36, 'text' => "Genau deshalb beginnt unsere Arbeit nicht nur\nmit einem Exposé, sondern mit dem Zuhören." ),
+		array( 'start' => 13.54, 'end' => 19.92, 'text' => "Wir nehmen uns Zeit für Ihre Wünsche und für Ihre Ziele\nund für die Geschichte hinter jeder Immobilie." ),
+		array( 'start' => 20.06, 'end' => 25.18, 'text' => "Denn kein Zuhause ist wie das andere –\nund kein Mensch hat dieselben Vorstellungen vom Wohnen." ),
+		array( 'start' => 25.18, 'end' => 29.2, 'text' => 'Mit regionaler Marktkenntnis, mit einer persönlichen Betreuung' ),
+		array( 'start' => 29.2, 'end' => 32.76, 'text' => "und einem Service, der oft einen Schritt weitergeht,\nbegleiten wir Sie auf dem kompletten Weg." ),
+		array( 'start' => 33.02, 'end' => 39.26, 'text' => "Vom ersten Gespräch über jede wichtige Entscheidung\nbis zu dem Moment, wo aus einer Immobilie ein neues Kapitel wird." ),
+		array( 'start' => 39.6, 'end' => 45.74, 'text' => "Unser Anspruch ist dabei einfach:\nnicht nur Ihre Erwartungen zu erfüllen, sondern mehr zu tun, als Sie erwarten." ),
+		array( 'start' => 46.64, 'end' => 49.86, 'text' => 'Volksimmobilien – persönlich, verlässlich und an Ihrer Seite.' ),
+	);
 	ob_start();
 	?>
 	<section class="section intro-section" id="<?php echo esc_attr( $id ); ?>" aria-labelledby="intro-heading">
@@ -147,7 +163,30 @@ function volks_render_section_intro( $s ) {
 						<?php echo volks_btn_link( $s['cta_secondary_url'] ?? '', $s['cta_secondary_label'] ?? '', 'btn btn-outline btn-lg' ); ?>
 					</div>
 				</div>
-				<aside class="intro-trust reveal" aria-label="Vertrauenshinweise">
+				<aside class="intro-trust<?php echo $has_intro_video ? ' intro-trust--video' : ' reveal'; ?>" aria-label="Vertrauenshinweise">
+					<?php if ( $has_intro_video ) : ?>
+					<div class="intro-video-stack">
+						<div class="intro-video-frame">
+							<button type="button" class="intro-video-teaser" data-video-lightbox="videoLightbox" aria-haspopup="dialog" aria-controls="videoLightbox" aria-label="Imagefilm abspielen">
+								<img class="intro-video-teaser__poster" src="<?php echo esc_url( $video_poster ); ?>" alt="" width="411" height="617" loading="lazy" decoding="async">
+								<span class="intro-video-teaser__overlay" aria-hidden="true"></span>
+							</button>
+							<div class="intro-video-info">
+								<div class="trust-stat-banner trust-stat-banner--solo" role="note">
+									<span class="trust-stat-banner__value"><?php echo volks_inline_html( $s['stat_value'] ?? '' ); ?></span>
+									<span class="trust-stat-banner__body">
+										<span class="trust-stat-banner__title"><?php echo volks_esc_text( $s['stat_title'] ?? '' ); ?></span>
+										<span class="trust-stat-banner__desc"><?php echo volks_esc_text( $s['stat_desc'] ?? '' ); ?></span>
+									</span>
+									<?php echo volks_btn_link( $s['stat_cta_url'] ?? '', $s['stat_cta_label'] ?? '', 'btn btn-primary btn-lg trust-stat-banner__cta' ); ?>
+								</div>
+								<button type="button" class="intro-video-play" data-video-lightbox="videoLightbox" aria-haspopup="dialog" aria-controls="videoLightbox" aria-label="Imagefilm abspielen">
+									<svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.14v13.72L19 12 8 5.14z"/></svg>
+								</button>
+							</div>
+						</div>
+					</div>
+					<?php else : ?>
 					<div class="trust-panel-stack trust-panel-stack--solo">
 						<div class="trust-stat-banner trust-stat-banner--solo" role="note">
 							<span class="trust-stat-banner__value"><?php echo volks_inline_html( $s['stat_value'] ?? '' ); ?></span>
@@ -158,10 +197,27 @@ function volks_render_section_intro( $s ) {
 							<?php echo volks_btn_link( $s['stat_cta_url'] ?? '', $s['stat_cta_label'] ?? '', 'btn btn-primary btn-lg trust-stat-banner__cta' ); ?>
 						</div>
 					</div>
+					<?php endif; ?>
 				</aside>
 			</div>
 		</div>
 	</section>
+	<?php if ( $has_intro_video ) : ?>
+	<dialog class="video-lightbox" id="videoLightbox" aria-label="Imagefilm">
+		<div class="video-lightbox__panel">
+			<button type="button" class="video-lightbox__close" data-video-lightbox-close aria-label="Video schließen">
+				<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 6L6 18M6 6l12 12"/></svg>
+			</button>
+			<div class="video-lightbox__media">
+				<video class="video-lightbox__video" controls playsinline preload="metadata">
+					<source src="<?php echo esc_url( $video ); ?>" type="video/mp4">
+				</video>
+				<div class="video-lightbox__captions" data-video-captions aria-live="polite" hidden></div>
+			</div>
+		</div>
+	</dialog>
+	<script type="application/json" id="videoLightboxCues"><?php echo wp_json_encode( $video_cues, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></script>
+	<?php endif; ?>
 	<?php
 	return (string) ob_get_clean();
 }
@@ -599,7 +655,7 @@ function volks_repair_home_contact_aside_html( $html ) {
 			$digits        = preg_replace( '/[^\d+]/', '', $phone_display );
 			$tel_href      = 'tel:' . $digits;
 			$inner         = sprintf(
-				'<a href="%1$s">%2$s</a><br><a href="mailto:post@volks.immobilien">post@volks.immobilien</a>',
+				'<a href="%1$s">%2$s</a><br><a href="mailto:info@volksimmobilien.eu">info@volksimmobilien.eu</a>',
 				esc_attr( $tel_href ),
 				esc_html( $phone_display )
 			);
@@ -777,7 +833,7 @@ function volks_render_editable_html_section( $s ) {
 				'price_main'    => false !== strpos( $out, 'valuation-option-card__price-main' ),
 				'has_detail'    => false !== strpos( $out, 'valuation-personal-detail-band' ),
 				'contact_tel'   => false !== strpos( $out, 'href="tel:' ),
-				'contact_mail'  => false !== strpos( $out, 'href="mailto:post@volks.immobilien"' ),
+				'contact_mail'  => false !== strpos( $out, 'href="mailto:info@volksimmobilien.eu"' ),
 			)
 		);
 	}

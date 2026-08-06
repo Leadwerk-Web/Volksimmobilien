@@ -82,3 +82,7 @@ body.page-home .intro-section {
     max-width: min(720px, 100%);
   }
 }
+#cmplz-manage-consent,
+#cmplz-manage-consent .cmplz-manage-consent {
+  display: none !important;
+}

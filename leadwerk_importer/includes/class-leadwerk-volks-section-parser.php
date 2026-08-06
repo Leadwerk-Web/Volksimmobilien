@@ -723,6 +723,14 @@ class Leadwerk_Volks_Section_Parser {
 		$primary   = $this->parse_link( $section_node, './/div[contains(@class,"intro-cta") or contains(@class,"section-cta-row")]//a[contains(@class,"btn-primary")][1]' );
 		$secondary = $this->parse_link( $section_node, './/div[contains(@class,"intro-cta") or contains(@class,"section-cta-row")]//a[contains(@class,"btn-outline")][1]' );
 		$stat_cta  = $this->parse_link( $section_node, './/a[contains(@class,"trust-stat-banner__cta")][1]' );
+		$video_src = $this->attr( $section_node, './/div[contains(@class,"intro-video-stack")][1]', 'data-video-src' );
+		$video_id  = 0;
+		if ( '' !== $video_src ) {
+			$video_id = (int) $this->call_filler(
+				'get_attachment_id_by_source',
+				array( $this->call_filler( 'resolve_asset_source_path', array( $video_src ) ) )
+			);
+		}
 
 		return array(
 			'acf_fc_layout'       => 'volks_intro',
@@ -740,6 +748,8 @@ class Leadwerk_Volks_Section_Parser {
 			'stat_desc'           => $this->text( $section_node, './/span[contains(@class,"trust-stat-banner__desc")]' ),
 			'stat_cta_label'      => $stat_cta['label'],
 			'stat_cta_url'        => $stat_cta['url'],
+			'video_poster'        => $this->image_id( $this->attr( $section_node, './/img[contains(@class,"intro-video-teaser__poster")][1]', 'src' ) ),
+			'video'               => $video_id,
 		);
 	}
 

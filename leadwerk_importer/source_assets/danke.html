@@ -39,14 +39,14 @@
     <div class="header-actions">
       <a href="bewerten.html" class="btn btn-outline-accent btn-sm header-bewerten-btn">Bewerten</a>
       <a href="index.html#kontakt-formular" class="btn btn-primary btn-sm header-cta">Kontakt aufnehmen</a>
-      <button class="hamburger" id="hamburger" aria-label="Menü öffnen" aria-expanded="false">
+      <button class="hamburger" id="hamburger" aria-label="Menü öffnen" aria-controls="mobileOverlay" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
     </div>
   </div>
 </header>
 
-<div class="mobile-overlay" id="mobileOverlay">
+<div class="mobile-overlay" id="mobileOverlay" aria-hidden="true">
   <nav aria-label="Mobile Navigation">
     <ul class="mobile-nav-list">
       <li><a href="index.html#hero">Start</a></li>
@@ -89,7 +89,7 @@
     <div class="container">
       <article class="legal-prose" id="danke-inhalt">
         <h2 id="danke-heading" class="legal-prose__title">Vielen Dank!</h2>
-        <p class="legal-prose__lead">Vielen Dank! Ihre Anfrage ist erfolgreich bei uns eingegangen und wir werden uns schnellstmöglichst mit Ihnen in Verbindung setzen.</p>
+        <p class="legal-prose__lead">Vielen Dank! Ihre Anfrage ist erfolgreich bei uns eingegangen und wir werden uns schnellstmöglich mit Ihnen in Verbindung setzen.</p>
         <p class="legal-prose__nav-back">
           <a href="index.html#hero" class="btn btn-primary btn-lg">Zur Startseite</a>
           <a href="index.html#kontakt-formular" class="btn btn-soft btn-lg">Weitere Anfrage</a>
@@ -108,7 +108,7 @@
       <div class="footer-cta-row">
         <a href="index.html#kontakt-formular" class="btn btn-primary btn-sm">Kontakt</a>
         <a href="bewerten.html" class="btn btn-outline-light btn-sm">Bewerten</a>
-        <a href="https://www.immobilienscout24.de/anbieter/profil/volksimmobilien-km-gmbh" class="btn btn-outline-light btn-sm" target="_blank" rel="noopener">Angebote</a>
+        <a href="/immobilien/" class="btn btn-outline-light btn-sm">Angebote</a>
       </div>
     </div>
     <div class="footer-col">
@@ -131,11 +131,16 @@
         </li>
         <li>
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 7l-10 7L2 7"/></svg>
-          <a href="mailto:post@volks.immobilien">post@volks.immobilien</a>
+          <a href="mailto:info@volksimmobilien.eu">info@volksimmobilien.eu</a>
         </li>
         <li>
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
           <span>Würmersheimer Str. 6<br>76474 Au am Rhein</span>
+        </li>
+        <li class="footer-instagram">
+          <a href="https://www.instagram.com/volksimmobilien/" target="_blank" rel="noopener noreferrer" aria-label="volksimmobilien auf Instagram">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><path d="M17.5 6.5h.01"/></svg>
+          </a>
         </li>
       </ul>
     </div>

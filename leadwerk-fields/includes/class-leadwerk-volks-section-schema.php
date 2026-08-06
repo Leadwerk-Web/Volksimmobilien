@@ -267,6 +267,8 @@ class Leadwerk_Volks_Section_Schema {
 				'stat_desc'           => self::textarea( 'Statistik – Beschreibung' ),
 				'stat_cta_label'      => self::text( 'Statistik – Button-Text' ),
 				'stat_cta_url'        => self::url( 'Statistik – Button-Link' ),
+				'video_poster'        => self::image( 'Imagefilm – Vorschaubild' ),
+				'video'               => self::video( 'Imagefilm – Video' ),
 			),
 		);
 	}

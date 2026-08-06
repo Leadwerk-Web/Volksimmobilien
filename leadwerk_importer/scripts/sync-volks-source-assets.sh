@@ -70,6 +70,12 @@ else
   echo "WARN: missing $ROOT/Fotos" >&2
 fi
 
+if [[ -d "$ROOT/Video" ]]; then
+  rsync -a --delete "$ROOT/Video/" "$DEST/Video/"
+else
+  echo "WARN: missing $ROOT/Video" >&2
+fi
+
 if [[ -f "$ROOT/css/style.css" ]]; then
   mkdir -p "$DEST/css"
   cp "$ROOT/css/style.css" "$DEST/css/style.css"
@@ -81,4 +87,4 @@ if [[ -f "$ROOT/js/main.js" ]]; then
 fi
 
 echo "Synced volksimmobilien source into: $DEST"
-echo "HTML: ${#HTML_FILES[@]} files | Fotos: $(find "$DEST/Fotos" -type f 2>/dev/null | wc -l | tr -d ' ') files"
+echo "HTML: ${#HTML_FILES[@]} files | Fotos: $(find "$DEST/Fotos" -type f 2>/dev/null | wc -l | tr -d ' ') files | Video: $(find "$DEST/Video" -type f 2>/dev/null | wc -l | tr -d ' ') files"

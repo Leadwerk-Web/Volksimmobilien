@@ -416,47 +416,58 @@ function volks_apply_landing_cta_patches_dom( DOMXPath $xpath, DOMElement $root 
 		volks_dom_remove_ctas_by_labels(
 			$xpath,
 			$root,
-			'hero',
-			array( 'Immobilienangebote ansehen' )
-		);
-		volks_dom_remove_ctas_by_labels(
-			$xpath,
-			$root,
-			'einstieg',
-			array( 'Zu den Angeboten' )
-		);
-		volks_dom_remove_ctas_by_labels(
-			$xpath,
-			$root,
-			'kaeufergruppen',
-			array( 'Immobilienangebote ansehen' )
-		);
-		volks_dom_remove_ctas_by_labels(
-			$xpath,
-			$root,
 			'region',
 			array( 'Karte auf der Startseite' )
 		);
-		volks_dom_remove_ctas_by_labels(
-			$xpath,
-			$root,
-			'ablauf',
-			array( 'Zu den Angeboten', 'Immobilienangebote ansehen' )
-		);
-		volks_dom_remove_ctas_by_labels(
-			$xpath,
-			$root,
-			'kontakt-abschluss',
-			array( 'Immobilienangebote ansehen' )
-		);
-
 		foreach ( $xpath->query( './/section[@id="angebote"]', $root ) as $section ) {
 			if ( ! $section instanceof DOMElement ) {
 				continue;
 			}
-			$class = trim( (string) $section->getAttribute( 'class' ) . ' volks-hidden' );
-			$section->setAttribute( 'class', $class );
-			$section->setAttribute( 'hidden', 'hidden' );
+			$class = trim( preg_replace( '/\bvolks-hidden\b/', '', (string) $section->getAttribute( 'class' ) ) );
+			$section->setAttribute( 'class', preg_replace( '/\s+/', ' ', $class ) );
+			$section->removeAttribute( 'hidden' );
+		}
+
+		$archive_url = post_type_exists( 'volks_property' )
+			? get_post_type_archive_link( 'volks_property' )
+			: home_url( '/immobilien/' );
+		$cta_locations = array(
+			array(
+				'query'   => './/section[@id="hero"]//div[contains(concat(" ", normalize-space(@class), " "), " hero-actions ")]',
+				'label'   => 'Immobilien ansehen',
+				'class'   => 'btn btn-primary btn-lg',
+				'prepend' => true,
+			),
+			array(
+				'query'   => './/section[@id="kontakt-abschluss"]//div[contains(concat(" ", normalize-space(@class), " "), " cta-actions--main ")]',
+				'label'   => 'Immobilien ansehen',
+				'class'   => 'btn btn-outline-accent btn-lg',
+				'prepend' => false,
+			),
+		);
+		foreach ( $cta_locations as $cta ) {
+			$row = $xpath->query( $cta['query'], $root )->item( 0 );
+			if ( ! $row instanceof DOMElement ) {
+				continue;
+			}
+			$exists = false;
+			foreach ( $xpath->query( './/a', $row ) as $link ) {
+				if ( $link instanceof DOMElement && untrailingslashit( (string) $link->getAttribute( 'href' ) ) === untrailingslashit( (string) $archive_url ) ) {
+					$exists = true;
+					break;
+				}
+			}
+			if ( $exists ) {
+				continue;
+			}
+			$link = $root->ownerDocument->createElement( 'a', $cta['label'] );
+			$link->setAttribute( 'href', $archive_url );
+			$link->setAttribute( 'class', $cta['class'] );
+			if ( $cta['prepend'] && $row->firstChild ) {
+				$row->insertBefore( $link, $row->firstChild );
+			} else {
+				$row->appendChild( $link );
+			}
 		}
 
 		volks_dom_promote_solo_cta_rows( $xpath, $root, './/section[@id="hero"]//div[contains(@class,"hero-actions")]' );
@@ -576,7 +587,14 @@ function volks_normalize_html_fragment( $html ) {
 		if ( '' === $raw ) {
 			continue;
 		}
-		$node->setAttribute( 'href', volks_resolve_href( $raw ) );
+		$resolved = volks_resolve_href( $raw );
+		$node->setAttribute( 'href', $resolved );
+		$site_host = wp_parse_url( home_url( '/' ), PHP_URL_HOST );
+		$link_host = wp_parse_url( $resolved, PHP_URL_HOST );
+		if ( $site_host && $link_host && strtolower( (string) $site_host ) === strtolower( (string) $link_host ) ) {
+			$node->removeAttribute( 'target' );
+			$node->removeAttribute( 'rel' );
+		}
 	}
 
 	volks_apply_landing_cta_patches_dom( $xpath, $root );

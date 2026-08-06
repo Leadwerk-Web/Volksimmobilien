@@ -52,20 +52,38 @@
   const mobileOverlay = document.getElementById('mobileOverlay');
 
   if (hamburger && mobileOverlay) {
-    hamburger.addEventListener('click', function () {
-      const isOpen = hamburger.classList.toggle('active');
-      mobileOverlay.classList.toggle('active');
-      hamburger.setAttribute('aria-expanded', isOpen);
+    function setMobileMenuState(isOpen, returnFocus) {
+      hamburger.classList.toggle('active', isOpen);
+      mobileOverlay.classList.toggle('active', isOpen);
+      hamburger.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      hamburger.setAttribute('aria-label', isOpen ? 'Menü schließen' : 'Menü öffnen');
+      mobileOverlay.setAttribute('aria-hidden', isOpen ? 'false' : 'true');
       document.body.style.overflow = isOpen ? 'hidden' : '';
+
+      if (isOpen) {
+        const firstLink = mobileOverlay.querySelector('a');
+        if (firstLink) {
+          firstLink.focus();
+        }
+      } else if (returnFocus) {
+        hamburger.focus();
+      }
+    }
+
+    hamburger.addEventListener('click', function () {
+      setMobileMenuState(hamburger.getAttribute('aria-expanded') !== 'true', false);
     });
 
     mobileOverlay.querySelectorAll('a').forEach(function (link) {
       link.addEventListener('click', function () {
-        hamburger.classList.remove('active');
-        mobileOverlay.classList.remove('active');
-        hamburger.setAttribute('aria-expanded', 'false');
-        document.body.style.overflow = '';
+        setMobileMenuState(false, false);
       });
+    });
+
+    document.addEventListener('keydown', function (event) {
+      if (event.key === 'Escape' && hamburger.getAttribute('aria-expanded') === 'true') {
+        setMobileMenuState(false, true);
+      }
     });
   }
 
@@ -161,6 +179,118 @@
     heroVideo.removeAttribute('autoplay');
     heroVideo.pause();
   }
+
+  /* ─── VIDEO LIGHTBOX (Intro Imagefilm) ──────────── */
+  (function initVideoLightbox() {
+    var triggers = document.querySelectorAll('[data-video-lightbox]');
+    if (!triggers.length) return;
+
+    var boundDialogs = new WeakSet();
+
+    function loadCues(dialog) {
+      var cuesEl = document.getElementById(dialog.id + 'Cues');
+      if (!cuesEl) return [];
+      try {
+        var parsed = JSON.parse(cuesEl.textContent);
+        return Array.isArray(parsed) ? parsed : [];
+      } catch (err) {
+        return [];
+      }
+    }
+
+    function syncCaptions(video, captionEl, cues) {
+      if (!captionEl || !cues.length) return;
+      var t = video.currentTime;
+      var active = null;
+      for (var i = 0; i < cues.length; i++) {
+        if (t >= cues[i].start && t < cues[i].end) {
+          active = cues[i];
+          break;
+        }
+      }
+      if (active) {
+        captionEl.textContent = active.text;
+        captionEl.hidden = false;
+      } else {
+        captionEl.textContent = '';
+        captionEl.hidden = true;
+      }
+    }
+
+    triggers.forEach(function (trigger) {
+      var dialogId = trigger.getAttribute('data-video-lightbox');
+      var dialog = dialogId ? document.getElementById(dialogId) : null;
+      if (!dialog || typeof dialog.showModal !== 'function') return;
+
+      var video = dialog.querySelector('video');
+      var closeBtn = dialog.querySelector('[data-video-lightbox-close]');
+      var captionEl = dialog.querySelector('[data-video-captions]');
+      var cues = loadCues(dialog);
+
+      function openLightbox() {
+        dialog.showModal();
+        if (!video) return;
+        video.currentTime = 0;
+        syncCaptions(video, captionEl, cues);
+        var playPromise = video.play();
+        if (playPromise && typeof playPromise.catch === 'function') {
+          playPromise.catch(function () {});
+        }
+      }
+
+      function closeLightbox() {
+        if (video) {
+          video.pause();
+          video.currentTime = 0;
+        }
+        if (captionEl) {
+          captionEl.textContent = '';
+          captionEl.hidden = true;
+        }
+        if (dialog.open) dialog.close();
+      }
+
+      trigger.addEventListener('click', openLightbox);
+
+      if (boundDialogs.has(dialog)) return;
+      boundDialogs.add(dialog);
+
+      if (video) {
+        video.addEventListener('timeupdate', function () {
+          syncCaptions(video, captionEl, cues);
+        });
+        video.addEventListener('seeked', function () {
+          syncCaptions(video, captionEl, cues);
+        });
+      }
+
+      if (closeBtn) {
+        closeBtn.addEventListener('click', closeLightbox);
+      }
+
+      dialog.addEventListener('click', function (e) {
+        if (e.target === dialog) closeLightbox();
+      });
+
+      dialog.addEventListener('close', function () {
+        if (video) {
+          video.pause();
+          video.currentTime = 0;
+        }
+        if (captionEl) {
+          captionEl.textContent = '';
+          captionEl.hidden = true;
+        }
+      });
+
+      dialog.addEventListener('cancel', function () {
+        if (video) {
+          video.pause();
+          video.currentTime = 0;
+        }
+      });
+    });
+  })();
 
   /* ─── SMOOTH SCROLL FOR ANCHOR LINKS ────────────── */
   document.querySelectorAll('a[href^="#"]').forEach(function (anchor) {
@@ -382,6 +512,18 @@
       }
 
       btnNext.disabled = !valid;
+    }
+
+    function showWizardSubmitError(message) {
+      var error = wizard.querySelector('.wizard-submit-error');
+      if (!error) {
+        error = document.createElement('p');
+        error.className = 'wizard-submit-error';
+        error.setAttribute('role', 'alert');
+        navBar.parentNode.insertBefore(error, navBar);
+      }
+      error.textContent = message;
+      error.hidden = !message;
     }
 
     /* Typ-Auswahl: setzt Subtyp zurück, wenn der Typ wechselt */
@@ -789,7 +931,7 @@
       sel.addEventListener('change', function () { validateStep(current); });
     });
 
-    btnNext.addEventListener('click', function () {
+    btnNext.addEventListener('click', async function () {
       if (btnNext.disabled) return;
 
       if (current === totalSteps) {
@@ -807,8 +949,40 @@
         if (data.type !== 'mehrfamilienhaus') delete data.mieteinnahmen_jahr;
         if (data.type === 'mehrfamilienhaus') delete data.zimmer;
         else delete data.wohneinheiten;
-        current = successStep;
-        showStep(current);
+        showWizardSubmitError('');
+        if (!window.volksWizardConfig || !window.volksWizardConfig.ajaxUrl || !window.volksWizardConfig.nonce) {
+          showWizardSubmitError('Die Anfrage kann gerade nicht gesendet werden. Bitte ruf uns an oder nutze das Kontaktformular.');
+          return;
+        }
+
+        btnNext.disabled = true;
+        btnNext.textContent = 'Wird gesendet …';
+        try {
+          var response = await fetch(window.volksWizardConfig.ajaxUrl, {
+            method: 'POST',
+            credentials: 'same-origin',
+            headers: { 'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8' },
+            body: new URLSearchParams({
+              action: 'volks_submit_valuation',
+              nonce: window.volksWizardConfig.nonce,
+              payload: JSON.stringify(data)
+            }).toString()
+          });
+          var result = await response.json();
+          if (!response.ok || !result.success) {
+            throw new Error(result && result.data && result.data.message
+              ? result.data.message
+              : 'Die Anfrage konnte nicht gesendet werden.');
+          }
+          current = successStep;
+          showStep(current);
+        } catch (error) {
+          showWizardSubmitError(error && error.message
+            ? error.message
+            : 'Die Anfrage konnte nicht gesendet werden. Bitte versuche es erneut.');
+          btnNext.textContent = 'Absenden';
+          validateStep(current);
+        }
         return;
       }
 

@@ -237,10 +237,10 @@ function volks_home_section_url( $anchor_id ) {
 /**
  * Main navigation items.
  *
- * @return array<int,array{label:string,source_key:string,anchor?:string}>
+ * @return array<int,array{label:string,source_key?:string,anchor?:string,url?:string,post_type?:string}>
  */
 function volks_get_main_nav_items() {
-	return array(
+	$items = array(
 		array(
 			'label'      => 'Start',
 			'source_key' => 'volks-home-v1',
@@ -267,15 +267,22 @@ function volks_get_main_nav_items() {
 			'anchor'     => 'kontakt-formular',
 		),
 	);
+
+	return apply_filters( 'volks_main_nav_items', $items );
 }
 
 /**
  * Resolved URL for one navigation item.
  *
- * @param array{label:string,source_key:string,anchor?:string} $item Nav item.
+ * @param array{label:string,source_key?:string,anchor?:string,url?:string,post_type?:string} $item Nav item.
  * @return string
  */
 function volks_nav_item_url( $item ) {
+	$url = trim( (string) ( $item['url'] ?? '' ) );
+	if ( '' !== $url ) {
+		return $url;
+	}
+
 	$anchor = trim( (string) ( $item['anchor'] ?? '' ) );
 	if ( '' !== $anchor ) {
 		return volks_section_url( $anchor );
@@ -287,10 +294,19 @@ function volks_nav_item_url( $item ) {
 /**
  * Whether a nav item matches the current page.
  *
- * @param array{label:string,source_key:string,anchor?:string} $item Nav item.
+ * @param array{label:string,source_key?:string,anchor?:string,url?:string,post_type?:string} $item Nav item.
  * @return bool
  */
 function volks_is_nav_item_active( $item ) {
+	if ( array_key_exists( 'active', $item ) ) {
+		return (bool) $item['active'];
+	}
+
+	$post_type = sanitize_key( (string) ( $item['post_type'] ?? '' ) );
+	if ( '' !== $post_type ) {
+		return is_post_type_archive( $post_type ) || is_singular( $post_type );
+	}
+
 	$anchor = trim( (string) ( $item['anchor'] ?? '' ) );
 	if ( '' !== $anchor ) {
 		return false;
@@ -311,7 +327,7 @@ function volks_unwrap_false_absolute_html_href( $href ) {
 		return $href;
 	}
 
-	if ( preg_match( '#^https?://([^/:#?]+\.html)(.*)$#i', $href, $matches ) ) {
+	if ( preg_match( '~^https?://([^/:?#]+\.html)(.*)$~i', $href, $matches ) ) {
 		$href = $matches[1] . (string) ( $matches[2] ?? '' );
 	}
 
@@ -337,6 +353,17 @@ function volks_resolve_href( $href ) {
 
 	if ( preg_match( '#^(?:mailto:|tel:)#i', $href ) ) {
 		return $href;
+	}
+
+	$legacy_offer_link = '#angebote' === strtolower( $href )
+		|| false !== stripos( $href, 'immobilienscout24.de/anbieter/profil/volksimmobilien-km-gmbh' )
+		|| (bool) preg_match( '~^https?://(?:www\.)?volks\.immobilien/angebote/?(?:[?#].*)?$~i', $href )
+		|| (bool) preg_match( '~^(?:kaufen(?:\.html|/))?#angebote$~i', $href );
+	if ( $legacy_offer_link ) {
+		$archive_url = post_type_exists( 'volks_property' )
+			? get_post_type_archive_link( 'volks_property' )
+			: home_url( '/immobilien/' );
+		return is_string( $archive_url ) && '' !== $archive_url ? $archive_url : home_url( '/immobilien/' );
 	}
 
 	// Real external URLs only (not http://bewerten.html placeholders).
@@ -380,7 +407,7 @@ function volks_resolve_href( $href ) {
 				}
 			}
 		}
-		if ( preg_match( '#^https?://[^/:#?]+\.html#i', $href ) ) {
+		if ( preg_match( '~^https?://[^/:?#]+\.html~i', $href ) ) {
 			$href = volks_unwrap_false_absolute_html_href( $href );
 		} else {
 			return $href;

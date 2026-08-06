@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>volksimmobilien – Immobilienmakler von Heidelberg bis Baden-Baden | Persönlich vor Ort</title>
-<meta name="description" content="volksimmobilien verkauft Immobilien von Heidelberg bis Baden-Baden persönlich vor Ort – mit ehrlicher Bewertung und klarem Vermarktungsprozess. 80 % der Verkäufe innerhalb von 6 Wochen.">
+<meta name="description" content="Immobilienverkauf von Heidelberg bis Baden-Baden: ehrliche Bewertung, klare Vermarktung und persönliche Begleitung durch volksimmobilien km GmbH.">
 <link rel="icon" type="image/png" href="Fotos/Volksimmobilien%20-%20favicon.png">
 <link rel="shortcut icon" type="image/png" href="Fotos/Volksimmobilien%20-%20favicon.png">
 <link rel="canonical" href="https://volks.immobilien/">
@@ -92,7 +92,7 @@
 
     <div class="header-actions">
       <a href="#kontakt-formular" class="btn btn-primary btn-sm header-cta">Kontakt aufnehmen</a>
-      <button class="hamburger" id="hamburger" aria-label="Menü öffnen" aria-expanded="false">
+      <button class="hamburger" id="hamburger" aria-label="Menü öffnen" aria-controls="mobileOverlay" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
     </div>
@@ -100,7 +100,7 @@
 </header>
 
 <!-- Mobile Overlay -->
-<div class="mobile-overlay" id="mobileOverlay">
+<div class="mobile-overlay" id="mobileOverlay" aria-hidden="true">
   <nav aria-label="Mobile Navigation">
     <ul class="mobile-nav-list">
       <li><a href="index.html" class="active" aria-current="page">Start</a></li>
@@ -179,7 +179,7 @@
             </div>
             <svg class="intent-tile-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
           </a>
-          <a href="https://www.immobilienscout24.de/anbieter/profil/volksimmobilien-km-gmbh" class="intent-tile intent-tile--secondary" target="_blank" rel="noopener">
+          <a href="/immobilien/" class="intent-tile intent-tile--secondary">
             <div class="intent-tile-icon">
               <img src="Fotos/Icon_Kaufen.webp" alt="" aria-hidden="true">
             </div>
@@ -215,7 +215,7 @@
           </div>
         </div>
         <aside class="intro-trust intro-trust--video" aria-label="Vertrauenshinweise">
-          <div class="intro-video-stack">
+          <div class="intro-video-stack" data-video-src="Video/Video.MP4">
             <div class="intro-video-frame">
               <button
                 type="button"
@@ -702,7 +702,7 @@
       <div class="footer-cta-row">
         <a href="#kontakt-formular" class="btn btn-primary btn-sm">Kontakt</a>
         <a href="bewerten.html" class="btn btn-outline-light btn-sm">Bewerten</a>
-        <a href="https://www.immobilienscout24.de/anbieter/profil/volksimmobilien-km-gmbh" class="btn btn-outline-light btn-sm" target="_blank" rel="noopener">Angebote</a>
+        <a href="/immobilien/" class="btn btn-outline-light btn-sm">Angebote</a>
       </div>
     </div>
     <div class="footer-col">
@@ -731,6 +731,11 @@
         <li>
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
           <span>Würmersheimer Str. 6<br>76474 Au am Rhein</span>
+        </li>
+        <li class="footer-instagram">
+          <a href="https://www.instagram.com/volksimmobilien/" target="_blank" rel="noopener noreferrer" aria-label="volksimmobilien auf Instagram">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><path d="M17.5 6.5h.01"/></svg>
+          </a>
         </li>
       </ul>
     </div>

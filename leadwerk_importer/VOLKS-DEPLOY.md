@@ -19,7 +19,7 @@ chmod +x leadwerk_importer/scripts/sync-volks-source-assets.sh
 ./leadwerk_importer/scripts/sync-volks-source-assets.sh
 ```
 
-Das Skript kopiert HTML, `Fotos/`, `css/`, `js/` nach `leadwerk_importer/source_assets/` (ohne ACM-Dateien).
+Das Skript kopiert HTML, `Fotos/`, `Video/`, `css/`, `js/` nach `leadwerk_importer/source_assets/` (ohne ACM-Dateien).
 
 ## WordPress-Plugins
 

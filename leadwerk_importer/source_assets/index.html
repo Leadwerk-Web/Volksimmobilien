@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>volksimmobilien – Immobilienmakler von Heidelberg bis Baden-Baden | Persönlich vor Ort</title>
-<meta name="description" content="volksimmobilien verkauft Immobilien von Heidelberg bis Baden-Baden persönlich vor Ort – mit ehrlicher Bewertung und klarem Vermarktungsprozess. 80 % der Verkäufe innerhalb von 6 Wochen.">
+<meta name="description" content="Immobilienverkauf von Heidelberg bis Baden-Baden: ehrliche Bewertung, klare Vermarktung und persönliche Begleitung durch volksimmobilien km GmbH.">
 <link rel="icon" type="image/png" href="Fotos/Volksimmobilien%20-%20favicon.png">
 <link rel="shortcut icon" type="image/png" href="Fotos/Volksimmobilien%20-%20favicon.png">
 <link rel="canonical" href="https://volks.immobilien/">
@@ -22,7 +22,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css?v=promo-badge-inline-mobile">
+<link rel="stylesheet" href="css/style.css?v=preview-2-3">
 
 <script type="application/ld+json">
 {
@@ -92,7 +92,7 @@
 
     <div class="header-actions">
       <a href="#kontakt-formular" class="btn btn-primary btn-sm header-cta">Kontakt aufnehmen</a>
-      <button class="hamburger" id="hamburger" aria-label="Menü öffnen" aria-expanded="false">
+      <button class="hamburger" id="hamburger" aria-label="Menü öffnen" aria-controls="mobileOverlay" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
     </div>
@@ -100,7 +100,7 @@
 </header>
 
 <!-- Mobile Overlay -->
-<div class="mobile-overlay" id="mobileOverlay">
+<div class="mobile-overlay" id="mobileOverlay" aria-hidden="true">
   <nav aria-label="Mobile Navigation">
     <ul class="mobile-nav-list">
       <li><a href="index.html" class="active" aria-current="page">Start</a></li>
@@ -179,7 +179,7 @@
             </div>
             <svg class="intent-tile-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
           </a>
-          <a href="https://www.immobilienscout24.de/anbieter/profil/volksimmobilien-km-gmbh" class="intent-tile intent-tile--secondary" target="_blank" rel="noopener">
+          <a href="/immobilien/" class="intent-tile intent-tile--secondary">
             <div class="intent-tile-icon">
               <img src="Fotos/Icon_Kaufen.webp" alt="" aria-hidden="true">
             </div>
@@ -214,18 +214,51 @@
             <a href="tel:+491702985141" class="btn btn-outline btn-lg">Anrufen</a>
           </div>
         </div>
-        <aside class="intro-trust reveal" aria-label="Vertrauenshinweise">
-          <div class="trust-panel-stack trust-panel-stack--solo">
-            <div class="trust-stat-banner trust-stat-banner--solo" role="note" aria-label="80 Prozent der Verkäufe in unserer Praxis innerhalb von 6 Wochen abgeschlossen">
-              <span class="trust-stat-banner__value">80&nbsp;<small>%</small></span>
-              <span class="trust-stat-banner__body">
-                <span class="trust-stat-banner__title">in 6 Wochen verkauft</span>
-                <span class="trust-stat-banner__desc">In unserer Praxis sind 80&nbsp;% der Verkäufe innerhalb von 6 Wochen abgeschlossen – durch realistische Preisstrategie und klaren Prozess.</span>
-              </span>
-              <a href="#wertermittlung" class="btn btn-primary btn-lg trust-stat-banner__cta">
-                Immobilie bewerten
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-              </a>
+        <aside class="intro-trust intro-trust--video" aria-label="Vertrauenshinweise">
+          <div class="intro-video-stack" data-video-src="Video/Video.MP4">
+            <div class="intro-video-frame">
+              <button
+                type="button"
+                class="intro-video-teaser"
+                data-video-lightbox="videoLightbox"
+                aria-haspopup="dialog"
+                aria-controls="videoLightbox"
+                aria-label="Imagefilm abspielen"
+              >
+                <img
+                  class="intro-video-teaser__poster"
+                  src="Fotos/Video_Vorschau.PNG"
+                  alt=""
+                  width="411"
+                  height="617"
+                  loading="lazy"
+                  decoding="async"
+                >
+                <span class="intro-video-teaser__overlay" aria-hidden="true"></span>
+              </button>
+              <div class="intro-video-info">
+                <div class="trust-stat-banner trust-stat-banner--solo" role="note" aria-label="80 Prozent der Verkäufe in unserer Praxis innerhalb von 6 Wochen abgeschlossen">
+                  <span class="trust-stat-banner__value">80&nbsp;<small>%</small></span>
+                  <span class="trust-stat-banner__body">
+                    <span class="trust-stat-banner__title">in 6 Wochen verkauft</span>
+                    <span class="trust-stat-banner__desc">In unserer Praxis sind 80&nbsp;% der Verkäufe innerhalb von 6 Wochen abgeschlossen – durch realistische Preisstrategie und klaren Prozess.</span>
+                  </span>
+                  <a href="#wertermittlung" class="btn btn-primary btn-lg trust-stat-banner__cta">
+                    Immobilie bewerten
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                  </a>
+                </div>
+                <button
+                  type="button"
+                  class="intro-video-play"
+                  data-video-lightbox="videoLightbox"
+                  aria-haspopup="dialog"
+                  aria-controls="videoLightbox"
+                  aria-label="Imagefilm abspielen"
+                >
+                  <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.14v13.72L19 12 8 5.14z"/></svg>
+                </button>
+              </div>
             </div>
           </div>
         </aside>
@@ -669,7 +702,7 @@
       <div class="footer-cta-row">
         <a href="#kontakt-formular" class="btn btn-primary btn-sm">Kontakt</a>
         <a href="bewerten.html" class="btn btn-outline-light btn-sm">Bewerten</a>
-        <a href="https://www.immobilienscout24.de/anbieter/profil/volksimmobilien-km-gmbh" class="btn btn-outline-light btn-sm" target="_blank" rel="noopener">Angebote</a>
+        <a href="/immobilien/" class="btn btn-outline-light btn-sm">Angebote</a>
       </div>
     </div>
     <div class="footer-col">
@@ -698,6 +731,11 @@
         <li>
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
           <span>Würmersheimer Str. 6<br>76474 Au am Rhein</span>
+        </li>
+        <li class="footer-instagram">
+          <a href="https://www.instagram.com/volksimmobilien/" target="_blank" rel="noopener noreferrer" aria-label="volksimmobilien auf Instagram">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><path d="M17.5 6.5h.01"/></svg>
+          </a>
         </li>
       </ul>
     </div>
@@ -731,6 +769,36 @@
   <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 15l-6-6-6 6"/></svg>
 </button>
 
-<script src="js/main.js"></script>
+<dialog class="video-lightbox" id="videoLightbox" aria-label="Imagefilm">
+  <div class="video-lightbox__panel">
+    <button type="button" class="video-lightbox__close" data-video-lightbox-close aria-label="Video schließen">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 6L6 18M6 6l12 12"/></svg>
+    </button>
+    <div class="video-lightbox__media">
+      <video class="video-lightbox__video" controls playsinline preload="metadata">
+        <source src="Video/Video.MP4" type="video/mp4">
+      </video>
+      <div class="video-lightbox__captions" data-video-captions aria-live="polite" hidden></div>
+    </div>
+  </div>
+</dialog>
+
+<script type="application/json" id="videoLightboxCues">
+[
+  {"start":0,"end":2.58,"text":"Eine Immobilie ist mehr als nur vier Wände."},
+  {"start":2.68,"end":5.5,"text":"Sie ist der Ort, an dem Erinnerungen entstehen,"},
+  {"start":5.5,"end":8.56,"text":"an dem Familien wachsen, an dem Zukunft beginnt."},
+  {"start":8.76,"end":13.36,"text":"Genau deshalb beginnt unsere Arbeit nicht nur\nmit einem Exposé, sondern mit dem Zuhören."},
+  {"start":13.54,"end":19.92,"text":"Wir nehmen uns Zeit für Ihre Wünsche und für Ihre Ziele\nund für die Geschichte hinter jeder Immobilie."},
+  {"start":20.06,"end":25.18,"text":"Denn kein Zuhause ist wie das andere –\nund kein Mensch hat dieselben Vorstellungen vom Wohnen."},
+  {"start":25.18,"end":29.2,"text":"Mit regionaler Marktkenntnis, mit einer persönlichen Betreuung"},
+  {"start":29.2,"end":32.76,"text":"und einem Service, der oft einen Schritt weitergeht,\nbegleiten wir Sie auf dem kompletten Weg."},
+  {"start":33.02,"end":39.26,"text":"Vom ersten Gespräch über jede wichtige Entscheidung\nbis zu dem Moment, wo aus einer Immobilie ein neues Kapitel wird."},
+  {"start":39.6,"end":45.74,"text":"Unser Anspruch ist dabei einfach:\nnicht nur Ihre Erwartungen zu erfüllen, sondern mehr zu tun, als Sie erwarten."},
+  {"start":46.64,"end":49.86,"text":"Volksimmobilien – persönlich, verlässlich und an Ihrer Seite."}
+]
+</script>
+
+<script src="js/main.js?v=captions-overlay"></script>
 </body>
 </html>

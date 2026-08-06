@@ -92,6 +92,16 @@ function leadwerk_theme_rebuild_yoast_post_indexable( $post_id ) {
 		return;
 	}
 
+	// Yoast intentionally skips persisting indexables in local/development
+	// environments. The editor still saves its score post meta there, which
+	// otherwise leaves the admin list showing a stale/grey score after Update.
+	$force_local_indexable_save = function_exists( 'wp_get_environment_type' )
+		&& in_array( wp_get_environment_type(), array( 'local', 'development' ), true );
+	if ( $force_local_indexable_save ) {
+		add_filter( 'Yoast\\WP\\SEO\\should_index_indexables', '__return_true', 999 );
+		add_filter( 'wpseo_should_save_indexable', '__return_true', 999 );
+	}
+
 	try {
 		$yoast = YoastSEO();
 		if ( ! is_object( $yoast ) || ! isset( $yoast->classes ) || ! is_object( $yoast->classes ) || ! method_exists( $yoast->classes, 'get' ) ) {
@@ -104,6 +114,11 @@ function leadwerk_theme_rebuild_yoast_post_indexable( $post_id ) {
 		}
 	} catch ( \Throwable $e ) { // phpcs:ignore Generic.CodeAnalysis.EmptyStatement.DetectedCatch
 		return;
+	} finally {
+		if ( $force_local_indexable_save ) {
+			remove_filter( 'Yoast\\WP\\SEO\\should_index_indexables', '__return_true', 999 );
+			remove_filter( 'wpseo_should_save_indexable', '__return_true', 999 );
+		}
 	}
 }
 
@@ -117,19 +132,45 @@ function leadwerk_theme_rebuild_yoast_post_indexable( $post_id ) {
  */
 function leadwerk_theme_leadwerk_page_yoast_indexable_touch( $post_id, $post, $update ) {
 	unset( $update );
-	if ( ! $post instanceof WP_Post || 'page' !== $post->post_type ) {
+	if ( ! $post instanceof WP_Post || ! in_array( $post->post_type, array( 'page', 'volks_property' ), true ) ) {
 		return;
 	}
 	if ( wp_is_post_autosave( $post_id ) || wp_is_post_revision( $post_id ) ) {
 		return;
 	}
-	if ( '' === (string) get_post_meta( $post_id, 'leadwerk_source_key', true ) ) {
+
+	$is_local_environment = function_exists( 'wp_get_environment_type' )
+		&& in_array( wp_get_environment_type(), array( 'local', 'development' ), true );
+	$is_leadwerk_page = 'page' === $post->post_type
+		&& '' !== (string) get_post_meta( $post_id, 'leadwerk_source_key', true );
+	if ( ! $is_local_environment && ! $is_leadwerk_page ) {
 		return;
 	}
 
 	leadwerk_theme_rebuild_yoast_post_indexable( $post_id );
 }
-add_action( 'save_post', 'leadwerk_theme_leadwerk_page_yoast_indexable_touch', 99, 3 );
+// Yoast stores its classic-editor score meta on wp_insert_post (priority 10),
+// which runs after save_post. Rebuild only after those values are available.
+add_action( 'wp_insert_post', 'leadwerk_theme_leadwerk_page_yoast_indexable_touch', 99, 3 );
+
+/**
+ * Refresh the indexable after Gutenberg/REST has stored its registered meta.
+ *
+ * @param WP_Post $post     Saved post.
+ * @param mixed   $request  REST request (unused).
+ * @param bool    $creating Whether the post is being created.
+ * @return void
+ */
+function leadwerk_theme_rest_yoast_indexable_touch( $post, $request, $creating ) {
+	unset( $request );
+	if ( ! $post instanceof WP_Post ) {
+		return;
+	}
+
+	leadwerk_theme_leadwerk_page_yoast_indexable_touch( $post->ID, $post, ! $creating );
+}
+add_action( 'rest_after_insert_page', 'leadwerk_theme_rest_yoast_indexable_touch', 99, 3 );
+add_action( 'rest_after_insert_volks_property', 'leadwerk_theme_rest_yoast_indexable_touch', 99, 3 );
 
 /**
  * Feed rendered Volks page content into Yoast's readability/SEO analysis in the editor.

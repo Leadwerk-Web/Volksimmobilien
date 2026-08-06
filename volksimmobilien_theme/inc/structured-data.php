@@ -350,7 +350,7 @@ function volks_schema_collect_graph_nodes( $post_id ) {
 	$graph[] = volks_schema_build_organization();
 	$graph[] = volks_schema_build_realestate_agent( $post_id, $source_key );
 
-	if ( 'volks-home-v1' === $source_key ) {
+	if ( 'volks-home-v1' === $source_key && ! defined( 'WPSEO_VERSION' ) ) {
 		$graph[] = volks_schema_build_website();
 	}
 

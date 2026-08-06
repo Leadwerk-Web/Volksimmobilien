@@ -3570,11 +3570,11 @@ class Leadwerk_Importer {
 		}
 
 		if ( ! $this->leadwerk_get_option( 'company_email' ) ) {
-			$this->leadwerk_update_option( 'company_email', 'post@volks.immobilien' );
+			$this->leadwerk_update_option( 'company_email', 'info@volksimmobilien.eu' );
 		}
 
 		if ( ! $this->leadwerk_get_option( 'valuation_wizard_recipient_email' ) ) {
-			$this->leadwerk_update_option( 'valuation_wizard_recipient_email', 'post@volks.immobilien' );
+			$this->leadwerk_update_option( 'valuation_wizard_recipient_email', 'info@volksimmobilien.eu' );
 		}
 
 		$this->repair_volks_stored_media_urls();

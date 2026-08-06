@@ -2843,7 +2843,7 @@ class Leadwerk_ACF_Filler {
 			return '';
 		}
 
-		if ( preg_match( '#^https?://([^/:#?]+\.html)#i', $href, $false_abs ) ) {
+		if ( preg_match( '~^https?://([^/:?#]+\.html)~i', $href, $false_abs ) ) {
 			$href = $false_abs[1];
 		}
 
@@ -2952,7 +2952,7 @@ class Leadwerk_ACF_Filler {
 			return $href;
 		}
 
-		if ( preg_match( '#^https?://([^/:#?]+\.html)(.*)$#i', $href, $false_abs ) ) {
+		if ( preg_match( '~^https?://([^/:?#]+\.html)(.*)$~i', $href, $false_abs ) ) {
 			$href = $false_abs[1] . (string) ( $false_abs[2] ?? '' );
 		}
 		$href = preg_replace( '#^([a-z0-9_-]+\.html)/+#i', '$1', $href );

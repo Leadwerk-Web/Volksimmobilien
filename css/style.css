@@ -4335,7 +4335,7 @@ body.page-home .site-header {
     ) 0 0 / 100% 100% no-repeat,
     radial-gradient(ellipse 90% 50% at 50% 0%, rgba(201, 90, 63, 0.12), transparent 55%) 0 0 / 100% 100% no-repeat,
     radial-gradient(ellipse 50% 45% at 100% 100%, rgba(127, 189, 189, 0.1), transparent 50%) 0 0 / 100% 100% no-repeat,
-    url('../Fotos/Mallorca%202.png');
+    url('../Fotos/Mallorca%202.webp');
   background-size: 100% 100%, 100% 100%, 100% 100%, cover;
   background-position: 0 0, 0 0, 0 0, center 42%;
   background-repeat: no-repeat;
@@ -4531,6 +4531,43 @@ body.page-home .site-header {
 }
 .footer-contact svg { flex-shrink: 0; margin-top: 2px; color: var(--color-gray-500); }
 
+.footer-contact .footer-instagram {
+  margin-top: var(--space-xs);
+}
+
+.footer-instagram a {
+  display: grid;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  color: var(--color-white);
+  background: var(--color-primary);
+  box-shadow: 0 8px 22px rgba(218, 23, 27, 0.32);
+  transition: background var(--transition-base), transform var(--transition-base), box-shadow var(--transition-base);
+}
+
+.footer-instagram a:hover,
+.footer-instagram a:focus-visible {
+  color: var(--color-white);
+  background: var(--color-primary-dark);
+  box-shadow: 0 10px 26px rgba(218, 23, 27, 0.42);
+  transform: translateY(-2px);
+  outline: none;
+}
+
+.footer-instagram a:focus-visible {
+  outline: 2px solid var(--color-white);
+  outline-offset: 3px;
+}
+
+.footer-contact .footer-instagram svg {
+  width: 24px;
+  height: 24px;
+  margin: 0;
+  color: currentColor;
+}
+
 .footer-bottom {
   padding: var(--space-xl) 0;
 }
@@ -4611,6 +4648,11 @@ body.page-home .site-header {
 }
 
 /* ─── SCROLL TO TOP ─────────────────────────────────── */
+#cmplz-manage-consent,
+#cmplz-manage-consent .cmplz-manage-consent {
+  display: none !important;
+}
+
 .scroll-to-top {
   position: fixed;
   right: var(--space-lg);
@@ -5415,11 +5457,108 @@ body.page-home .site-header {
   .cta-actions { flex-direction: column; }
   .cta-actions .btn { width: 100%; }
 
-  .footer-grid { grid-template-columns: 1fr; gap: var(--space-xl); }
-  .footer-bottom-inner { flex-direction: column; gap: var(--space-md); text-align: center; }
+  .site-footer {
+    padding-top: clamp(2.75rem, 10vw, 3.5rem);
+  }
+
+  .footer-grid {
+    grid-template-columns: minmax(0, 0.78fr) minmax(0, 1.22fr);
+    column-gap: clamp(1rem, 5vw, 1.5rem);
+    row-gap: 2rem;
+    padding-bottom: 2rem;
+  }
+
+  .footer-col--brand {
+    grid-column: 1 / -1;
+  }
+
+  .footer-logo {
+    width: auto;
+    max-width: 100%;
+    height: 26px;
+    margin-bottom: 1rem;
+  }
+
+  .footer-col--brand p {
+    max-width: 34rem;
+    font-size: 0.9375rem;
+    line-height: 1.6;
+  }
+
+  .footer-cta-row {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0.5rem;
+    margin-top: 1.25rem;
+  }
+
+  .site-footer .footer-cta-row .btn {
+    width: 100%;
+    min-width: 0;
+    padding: 0.7rem 0.4rem;
+    justify-content: center;
+    font-size: 0.8125rem;
+    white-space: nowrap;
+  }
+
+  .footer-col h4 {
+    margin-bottom: 0.875rem;
+    font-size: 0.75rem;
+  }
+
+  .footer-col ul {
+    gap: 0.6rem;
+  }
+
+  .footer-col a,
+  .footer-contact li {
+    min-width: 0;
+    font-size: 0.9375rem;
+    line-height: 1.45;
+  }
+
+  .footer-contact a,
+  .footer-contact span {
+    overflow-wrap: anywhere;
+  }
+
+  .footer-bottom {
+    padding: 1.25rem 0 calc(5rem + env(safe-area-inset-bottom, 0px));
+  }
+
+  .footer-bottom-inner {
+    flex-direction: column;
+    gap: 0.75rem;
+    text-align: center;
+  }
+
+  .footer-bottom p {
+    max-width: 32rem;
+    font-size: 0.8125rem;
+    line-height: 1.5;
+  }
+
+  .footer-legal {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem 1rem;
+  }
+
+  .footer-legal a {
+    font-size: 0.8125rem;
+  }
 
   .mobile-sticky-cta { display: flex; }
-  body { padding-bottom: 60px; }
+  .mobile-sticky-cta {
+    padding-bottom: max(var(--space-sm), env(safe-area-inset-bottom, 0px));
+  }
+  .scroll-to-top {
+    right: 1rem;
+    bottom: calc(76px + env(safe-area-inset-bottom, 0px));
+    width: 44px;
+    height: 44px;
+  }
+  body { padding-bottom: calc(60px + env(safe-area-inset-bottom, 0px)); }
 
   .wizard-step { padding: var(--space-2xl) var(--space-lg) var(--space-md); }
   .wizard-step.active {
@@ -6223,7 +6362,7 @@ body.page-home .site-header {
 
 .editorial-section--dark.editorial-section--sell-bg::before {
   z-index: 0;
-  background-image: url('../Fotos/Mallorca%203.png');
+  background-image: url('../Fotos/Mallorca%203.webp');
   background-size: cover;
   background-position: 72% center;
   background-repeat: no-repeat;
@@ -8391,7 +8530,7 @@ body.page-home .site-header {
   z-index: 0;
   border-radius: inherit;
   background-color: var(--color-near-black);
-  background-image: url('../Fotos/volksimmobilien_verkaufen.jpg');
+  background-image: url('../Fotos/volksimmobilien_verkaufen.webp');
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
@@ -8493,7 +8632,7 @@ body.page-home .site-header {
 }
 
 .page-verkauf .editorial-section--dark.editorial-section--sell-bg::before {
-  background-image: url('../Fotos/9.png');
+  background-image: url('../Fotos/9.webp');
   background-position: center center;
 }
 
@@ -8517,7 +8656,7 @@ body.page-home .site-header {
   z-index: 0;
   border-radius: inherit;
   background-color: var(--color-near-black);
-  background-image: url('../Fotos/11.png');
+  background-image: url('../Fotos/11.webp');
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
@@ -8531,38 +8670,9 @@ body.page-home .site-header {
   background: var(--color-gray-50);
 }
 
-.volks-hidden {
+/* Kaufen: Angebots-CTAs führen ins Propstack-Archiv; nur der veraltete Karten-Link bleibt verborgen. */
+.page-kauf #region a[href*="regionen"] {
   display: none !important;
-}
-
-/* Kaufen: Angebots-CTAs + Karte ausblenden (Fallback für WP/Import) */
-.page-kauf .hero-actions a[href*="#angebote"],
-.page-kauf .hero-actions a[href*="kaufen/#angebote"],
-.page-kauf #einstieg a[href*="#angebote"],
-.page-kauf #kaeufergruppen .section-cta-row a[href*="#angebote"],
-.page-kauf #region a[href*="regionen"],
-.page-kauf #ablauf a[href*="#angebote"],
-.page-kauf #kontakt-abschluss a[href*="#angebote"] {
-  display: none !important;
-}
-
-.page-kauf #angebote.listings-section {
-  display: none !important;
-}
-
-/* Kaufen: verbleibender CTA rot/weiß wenn Angebots-Button davor ausgeblendet */
-.page-kauf .hero-actions a[href*="#angebote"] + .btn,
-.page-kauf #kaeufergruppen .section-cta-row a[href*="#angebote"] + .btn {
-  background: var(--color-primary) !important;
-  border-color: var(--color-primary) !important;
-  color: #fff !important;
-}
-
-.page-kauf .hero-actions a[href*="#angebote"] + .btn:hover,
-.page-kauf #kaeufergruppen .section-cta-row a[href*="#angebote"] + .btn:hover {
-  background: var(--color-primary-dark) !important;
-  border-color: var(--color-primary-dark) !important;
-  color: #fff !important;
 }
 
 /* Hero – Bewerten-Seite */
@@ -8582,7 +8692,7 @@ body.page-home .site-header {
   z-index: 0;
   border-radius: inherit;
   background-color: var(--color-near-black);
-  background-image: url('../Fotos/Vertrauen.jpg');
+  background-image: url('../Fotos/Vertrauen.webp');
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;

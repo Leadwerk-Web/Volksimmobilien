@@ -34,7 +34,12 @@ function leadwerk_theme_render_exact_page_group( $group, $value, $post_id = 0 ) 
 			continue;
 		}
 		$layout = (string) ( $section['acf_fc_layout'] ?? '' );
-		if ( 'html_section' === $layout ) {
+		$section_id = sanitize_key( (string) ( $section['section_id'] ?? '' ) );
+		$original_html = (string) ( $section['original_html'] ?? '' );
+		if ( 'angebote' === $section_id && '' !== trim( $original_html ) ) {
+			$offers_html = volks_normalize_html_fragment( $original_html );
+			$html .= apply_filters( 'volks_offers_showcase_html', $offers_html );
+		} elseif ( 'html_section' === $layout ) {
 			$html .= volks_render_html_section( $section );
 		} elseif ( function_exists( 'volks_render_structured_section' ) ) {
 			$html .= volks_render_structured_section( $layout, $section );
@@ -42,6 +47,34 @@ function leadwerk_theme_render_exact_page_group( $group, $value, $post_id = 0 ) 
 	}
 
 	return $html;
+}
+
+/**
+ * Render a regular WordPress page that is not part of the imported schema.
+ *
+ * @param int $post_id Post ID.
+ * @return string
+ */
+function volks_render_generic_page_content( $post_id ) {
+	$title   = get_the_title( $post_id );
+	$content = apply_filters( 'the_content', (string) get_post_field( 'post_content', $post_id ) );
+
+	ob_start();
+	?>
+	<section class="section legal-content-section">
+		<div class="container">
+			<article class="legal-prose">
+				<?php if ( '' !== trim( (string) $title ) ) : ?>
+					<h1 class="legal-prose__title"><?php echo esc_html( $title ); ?></h1>
+				<?php endif; ?>
+				<div class="legal-prose__body">
+					<?php echo wp_kses_post( $content ); ?>
+				</div>
+			</article>
+		</div>
+	</section>
+	<?php
+	return (string) ob_get_clean();
 }
 
 /**
@@ -83,8 +116,11 @@ function volks_render_page_content( $post_id = 0 ) {
 	}
 
 	$post_id = $post_id ? (int) $post_id : (int) get_queried_object_id();
-	if ( ! $post_id || ! class_exists( 'Leadwerk_Content_Schema' ) ) {
+	if ( ! $post_id ) {
 		return '';
+	}
+	if ( ! class_exists( 'Leadwerk_Content_Schema' ) ) {
+		return volks_render_generic_page_content( $post_id );
 	}
 
 	++$render_depth;
@@ -96,7 +132,7 @@ function volks_render_page_content( $post_id = 0 ) {
 	$group = Leadwerk_Content_Schema::get_group_for_post( $post_id );
 	if ( ! $group || empty( $group['field_name'] ) ) {
 		--$render_depth;
-		return '';
+		return volks_render_generic_page_content( $post_id );
 	}
 
 	$field_name = (string) $group['field_name'];
@@ -125,7 +161,12 @@ function volks_render_page_content( $post_id = 0 ) {
 			continue;
 		}
 		$layout = (string) ( $section['acf_fc_layout'] ?? '' );
-		if ( 'html_section' === $layout ) {
+		$section_id = sanitize_key( (string) ( $section['section_id'] ?? '' ) );
+		$original_html = (string) ( $section['original_html'] ?? '' );
+		if ( 'angebote' === $section_id && '' !== trim( $original_html ) ) {
+			$offers_html = volks_normalize_html_fragment( $original_html );
+			$html .= apply_filters( 'volks_offers_showcase_html', $offers_html );
+		} elseif ( 'html_section' === $layout ) {
 			$html .= volks_render_html_section( $section );
 		} elseif ( function_exists( 'volks_render_structured_section' ) ) {
 			$html .= volks_render_structured_section( $layout, $section );
@@ -194,11 +235,31 @@ function volks_render_html_section( $section ) {
  * Hero copy for legal-style utility pages.
  *
  * @param string $headline Page headline.
- * @return array{eyebrow:string,sub:string}|null
+ * @return array{eyebrow:string,sub:string,title?:string}|null
  */
 function volks_get_legal_hero_meta( $headline ) {
 	$headline = trim( (string) $headline );
 	$map      = array(
+		'Impressum'            => array(
+			'eyebrow' => 'Rechtliche Hinweise',
+			'sub'     => 'Pflichtangaben nach TMG und ergänzende Transparenz zu Ansprechpartnern und externen Leistungen.',
+			'title'   => 'Impressum',
+		),
+		'Anbieterkennzeichnung' => array(
+			'eyebrow' => 'Rechtliche Hinweise',
+			'sub'     => 'Pflichtangaben nach TMG und ergänzende Transparenz zu Ansprechpartnern und externen Leistungen.',
+			'title'   => 'Impressum',
+		),
+		'Datenschutzerklärung' => array(
+			'eyebrow' => 'Datenschutz',
+			'sub'     => 'Transparente Informationen zur Verarbeitung personenbezogener Daten auf dieser Website – gemäß DSGVO und TDDDG.',
+			'title'   => 'Datenschutzerklärung',
+		),
+		'1. Datenschutz auf einen Blick' => array(
+			'eyebrow' => 'Datenschutz',
+			'sub'     => 'Transparente Informationen zur Verarbeitung personenbezogener Daten auf dieser Website – gemäß DSGVO und TDDDG.',
+			'title'   => 'Datenschutzerklärung',
+		),
 		'Vielen Dank!'         => array(
 			'eyebrow' => 'Anfrage erhalten',
 			'sub'     => 'Ihre Nachricht ist bei uns eingegangen – wir melden uns schnellstmöglich bei Ihnen.',
@@ -223,6 +284,9 @@ function volks_render_legal_page( $value ) {
 	$headline  = (string) ( $value['headline'] ?? '' );
 	$content   = volks_normalize_html_fragment( (string) ( $value['content'] ?? '' ) );
 	$hero_meta = volks_get_legal_hero_meta( $headline );
+	$hero_title = is_array( $hero_meta ) && '' !== trim( (string) ( $hero_meta['title'] ?? '' ) )
+		? (string) $hero_meta['title']
+		: $headline;
 
 	ob_start();
 
@@ -238,7 +302,7 @@ function volks_render_legal_page( $value ) {
 					<?php if ( '' !== trim( (string) ( $hero_meta['eyebrow'] ?? '' ) ) ) : ?>
 						<p class="section-eyebrow reveal"><?php echo esc_html( (string) $hero_meta['eyebrow'] ); ?></p>
 					<?php endif; ?>
-					<h1 id="volks-legal-hero-heading" class="hero-title reveal"><?php echo esc_html( $headline ); ?></h1>
+					<h1 id="volks-legal-hero-heading" class="hero-title reveal"><?php echo esc_html( $hero_title ); ?></h1>
 					<?php if ( '' !== trim( (string) ( $hero_meta['sub'] ?? '' ) ) ) : ?>
 						<p class="hero-sub reveal"><?php echo esc_html( (string) $hero_meta['sub'] ); ?></p>
 					<?php endif; ?>
@@ -251,8 +315,12 @@ function volks_render_legal_page( $value ) {
 	<section class="section legal-content-section">
 		<div class="container">
 			<article class="legal-prose">
-				<?php if ( '' !== trim( $headline ) && ! is_array( $hero_meta ) ) : ?>
-					<h1 class="legal-prose__title"><?php echo esc_html( $headline ); ?></h1>
+				<?php if ( '' !== trim( $headline ) ) : ?>
+					<?php if ( is_array( $hero_meta ) ) : ?>
+						<h2 class="legal-prose__title"><?php echo esc_html( $headline ); ?></h2>
+					<?php else : ?>
+						<h1 class="legal-prose__title"><?php echo esc_html( $headline ); ?></h1>
+					<?php endif; ?>
 				<?php endif; ?>
 				<div class="legal-prose__body">
 					<?php echo wp_kses_post( $content ); ?>

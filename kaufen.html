@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Immobilie kaufen von Heidelberg bis Baden-Baden | volksimmobilien</title>
-<meta name="description" content="Aktuelle Immobilienangebote ansehen, Suchwunsch hinterlegen und den Immobilienkauf transparent begleiten lassen. volksimmobilien unterstützt Käufer auf der Achse Heidelberg–Baden-Baden.">
+<meta name="description" content="Immobilienangebote entdecken, Suchwunsch hinterlegen und den Kauf persönlich begleiten lassen – transparent zwischen Heidelberg und Baden-Baden.">
 <link rel="icon" type="image/png" href="Fotos/Volksimmobilien%20-%20favicon.png">
 <link rel="shortcut icon" type="image/png" href="Fotos/Volksimmobilien%20-%20favicon.png">
 <link rel="canonical" href="https://volks.immobilien/kaufen.html">
@@ -148,14 +148,14 @@
 
     <div class="header-actions">
       <a href="index.html#kontakt-formular" class="btn btn-primary btn-sm header-cta">Kontakt aufnehmen</a>
-      <button class="hamburger" id="hamburger" aria-label="Menü öffnen" aria-expanded="false">
+      <button class="hamburger" id="hamburger" aria-label="Menü öffnen" aria-controls="mobileOverlay" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
     </div>
   </div>
 </header>
 
-<div class="mobile-overlay" id="mobileOverlay">
+<div class="mobile-overlay" id="mobileOverlay" aria-hidden="true">
   <nav aria-label="Mobile Navigation">
     <ul class="mobile-nav-list">
       <li><a href="index.html">Start</a></li>
@@ -196,6 +196,7 @@
           Ob Eigenheim, Eigentumswohnung oder Kapitalanlage: Wir helfen Ihnen, Angebote realistisch einzuordnen und den Kauf transparent zu verstehen – persönlich vor Ort zwischen Heidelberg und Baden-Baden, ohne Druck und ohne leere Versprechen.
         </p>
         <div class="hero-actions reveal">
+          <a href="/immobilien/" class="btn btn-primary btn-lg">Immobilien ansehen</a>
           <a href="index.html#kontakt-formular" class="btn btn-primary btn-lg">Suchwunsch hinterlegen</a>
           <a href="index.html#kontakt-formular" class="btn btn-ghost-light btn-lg">Kontakt aufnehmen</a>
         </div>
@@ -358,7 +359,7 @@
     </div>
   </section>
 
-  <section class="section listings-section volks-hidden" id="angebote" aria-labelledby="angebote-heading" hidden>
+  <section class="section listings-section" id="angebote" aria-labelledby="angebote-heading">
     <div class="container">
       <div class="section-header reveal">
         <span class="section-eyebrow">Immobilienangebote</span>
@@ -366,7 +367,7 @@
         <p class="section-subtitle">Entdecken Sie unsere aktuellen Immobilienangebote von Heidelberg bis Baden-Baden. Mit einem Klick auf das gewünschte Immobilienangebot gelangen Sie zur Detailansicht.</p>
       </div>
       <div class="listings-grid reveal">
-        <a href="https://volks.immobilien/angebote/" class="listing-card" target="_blank" rel="noopener">
+        <a href="/immobilien/" class="listing-card">
           <div class="listing-card-image">
             <img src="Fotos/Angebot1.webp" alt="Einfamilienhaus im Raum Heidelberg" loading="lazy">
             <span class="listing-card-badge">Beispiel</span>
@@ -388,7 +389,7 @@
             <span class="listing-card-cta">Immobilienangebot ansehen</span>
           </div>
         </a>
-        <a href="https://volks.immobilien/angebote/" class="listing-card" target="_blank" rel="noopener">
+        <a href="/immobilien/" class="listing-card">
           <div class="listing-card-image">
             <img src="Fotos/Angebot2.webp" alt="Eigentumswohnung im Rhein-Neckar-Kreis" loading="lazy">
           </div>
@@ -409,7 +410,7 @@
             <span class="listing-card-cta">Immobilienangebot ansehen</span>
           </div>
         </a>
-        <a href="https://volks.immobilien/angebote/" class="listing-card" target="_blank" rel="noopener">
+        <a href="/immobilien/" class="listing-card">
           <div class="listing-card-image">
             <img src="Fotos/Angebot3.webp" alt="Mehrfamilienhaus im Raum Baden-Baden" loading="lazy">
             <span class="listing-card-badge listing-card-badge--reserved">Reserviert</span>
@@ -433,7 +434,7 @@
         </a>
       </div>
       <div class="listings-cta reveal section-cta-row section-cta-row--compact">
-        <a href="https://volks.immobilien/angebote/" class="btn btn-primary btn-lg" target="_blank" rel="noopener">Alle Immobilienangebote</a>
+        <a href="/immobilien/" class="btn btn-primary btn-lg">Alle Immobilienangebote</a>
         <a href="index.html#kontakt-formular" class="btn btn-outline btn-lg">Suchwunsch hinterlegen</a>
       </div>
     </div>
@@ -862,6 +863,7 @@
         <p class="cta-lead">Teilen Sie uns mit, wonach Sie suchen. So können wir Sie gezielt informieren, wenn eine passende Immobilie verfügbar wird.</p>
         <div class="cta-actions cta-actions--main">
           <a href="index.html#kontakt-formular" class="btn btn-primary btn-lg">Suchwunsch hinterlegen</a>
+          <a href="/immobilien/" class="btn btn-outline-accent btn-lg">Immobilien ansehen</a>
         </div>
         <p class="cta-divider"><span>oder</span></p>
         <div class="cta-actions cta-actions--secondary">
@@ -882,8 +884,8 @@
       <p>Immobilienmakler von Heidelberg bis Baden-Baden. Persönlich vor Ort, ehrlich eingeordnet, klar im Prozess.</p>
       <div class="footer-cta-row">
         <a href="index.html#kontakt-formular" class="btn btn-primary btn-sm">Kontakt</a>
-        <a href="https://www.immobilienscout24.de/anbieter/profil/volksimmobilien-km-gmbh" class="btn btn-outline-light btn-sm" target="_blank" rel="noopener">Angebote</a>
-        <a href="https://volks.immobilien/angebote/" class="btn btn-outline-light btn-sm" target="_blank" rel="noopener">Alle Exposés</a>
+        <a href="/immobilien/" class="btn btn-outline-light btn-sm">Angebote</a>
+        <a href="/immobilien/" class="btn btn-outline-light btn-sm">Alle Exposés</a>
       </div>
     </div>
     <div class="footer-col">
@@ -912,6 +914,11 @@
         <li>
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
           <span>Würmersheimer Str. 6<br>76474 Au am Rhein</span>
+        </li>
+        <li class="footer-instagram">
+          <a href="https://www.instagram.com/volksimmobilien/" target="_blank" rel="noopener noreferrer" aria-label="volksimmobilien auf Instagram">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><path d="M17.5 6.5h.01"/></svg>
+          </a>
         </li>
       </ul>
     </div>
