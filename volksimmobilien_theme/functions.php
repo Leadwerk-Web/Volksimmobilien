@@ -9,7 +9,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-define( 'VOLKS_THEME_VERSION', '1.0.4' );
+define( 'VOLKS_THEME_VERSION', '1.0.6' );
 define( 'VOLKS_THEME_PATH', get_template_directory() );
 define( 'VOLKS_THEME_URI', get_template_directory_uri() );
 

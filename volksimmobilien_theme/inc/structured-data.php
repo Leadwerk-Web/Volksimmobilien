@@ -118,6 +118,14 @@ function volks_schema_realestate_agent_page_map() {
 			),
 			'with_address' => false,
 		),
+		'volks-durmersheim-v1' => array(
+			'description'  => 'Immobilienmakler in Durmersheim und Würmersheim für Verkauf, Wertermittlung und Kauf – persönlich vor Ort, ehrlich bewertet, klar vermarktet.',
+			'areaServed'   => array(
+				array( '@type' => 'City', 'name' => 'Durmersheim' ),
+				array( '@type' => 'City', 'name' => 'Würmersheim' ),
+			),
+			'with_address' => true,
+		),
 	);
 }
 
@@ -133,6 +141,7 @@ function volks_schema_breadcrumb_label_map() {
 		'volks-bewerten-v1'    => 'Bewerten',
 		'volks-ausland-v1'     => 'Immobilien Mallorca & Kroatien',
 		'volks-mallorca-v1'    => 'Immobilien Mallorca',
+		'volks-durmersheim-v1' => 'Immobilienmakler Durmersheim',
 		'volks-impressum-v1'   => 'Impressum',
 		'volks-datenschutz-v1' => 'Datenschutz',
 		'volks-danke-v1'       => 'Vielen Dank',
@@ -362,6 +371,21 @@ function volks_schema_collect_graph_nodes( $post_id ) {
 	$faq = volks_schema_get_faq_page( $post_id );
 	if ( is_array( $faq ) ) {
 		$graph[] = $faq;
+	}
+
+	if ( 'volks-durmersheim-v1' === $source_key ) {
+		$page_url = get_permalink( $post_id );
+		$page_url = is_string( $page_url ) && '' !== $page_url ? $page_url : home_url( '/' );
+		$graph[]  = array(
+			'@type'       => 'WebPage',
+			'@id'         => trailingslashit( $page_url ) . '#webpage',
+			'url'         => $page_url,
+			'name'        => 'Immobilienmakler Durmersheim',
+			'description' => 'Immobilienmakler in Durmersheim für Verkauf, Wertermittlung und Kauf. Persönlich vor Ort, ehrlich bewertet, klar vermarktet.',
+			'isPartOf'    => array( '@id' => volks_schema_site_origin() . '/#website' ),
+			'about'       => array( '@id' => volks_schema_agent_id() ),
+			'inLanguage'  => 'de-DE',
+		);
 	}
 
 	return $graph;

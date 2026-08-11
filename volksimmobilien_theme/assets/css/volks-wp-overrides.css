@@ -86,3 +86,185 @@ body.page-home .intro-section {
 #cmplz-manage-consent .cmplz-manage-consent {
   display: none !important;
 }
+
+/* Local landing: Durmersheim */
+body.page-durmersheim .hero--mallorca .hero-actions {
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.listings-empty-state {
+  grid-column: 1 / -1;
+  padding: clamp(1.75rem, 4vw, 2.75rem);
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  border-radius: var(--radius-lg, 16px);
+  background: rgba(255, 255, 255, 0.72);
+  text-align: left;
+}
+
+.listings-empty-state__title {
+  margin: 0 0 0.5rem;
+  font-family: var(--font-display, inherit);
+  font-size: clamp(1.15rem, 2vw, 1.4rem);
+  font-weight: 700;
+  color: var(--color-primary, #0f172a);
+}
+
+.listings-empty-state__text {
+  margin: 0 0 1.25rem;
+  max-width: 42rem;
+  color: var(--color-text-muted, #475569);
+}
+
+.listings-empty-state .section-cta-row {
+  margin-top: 0;
+}
+
+.local-cta-split {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(1.25rem, 3vw, 2rem);
+  margin-top: 1.5rem;
+  text-align: left;
+}
+
+.local-cta-split__col h3 {
+  margin: 0 0 0.5rem;
+  font-size: clamp(1.15rem, 2vw, 1.35rem);
+}
+
+.local-cta-split__col p {
+  margin: 0 0 1rem;
+  opacity: 0.92;
+}
+
+@media (max-width: 767px) {
+  .local-cta-split {
+    grid-template-columns: 1fr;
+  }
+
+  body.page-durmersheim .hero--mallorca .hero-actions .btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+/* Durmersheim: Für Eigentümer – dunkler Einfarb-Abschnitt */
+.owner-sell-section {
+  background: var(--color-near-black, #0a0a0a);
+  color: var(--color-white, #fff);
+}
+
+.owner-sell-section .section-eyebrow {
+  color: var(--color-accent, #7FBDBD);
+}
+
+.owner-sell-intro {
+  max-width: 46rem;
+  margin: 0 auto var(--space-2xl, 3rem);
+  text-align: center;
+}
+
+.owner-sell-title {
+  margin: 0.75rem 0 1rem;
+  font-family: var(--font-heading, inherit);
+  font-size: var(--fs-3xl, clamp(1.875rem, 1.5rem + 1.875vw, 2.75rem));
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  color: var(--color-white, #fff);
+}
+
+.owner-sell-lead {
+  margin: 0 auto;
+  max-width: 40rem;
+  font-size: var(--fs-lg, 1.125rem);
+  line-height: 1.65;
+  color: rgba(255, 255, 255, 0.78);
+}
+
+.owner-sell-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: clamp(1rem, 2vw, 1.35rem);
+  margin-bottom: clamp(2rem, 4vw, 3rem);
+}
+
+.owner-sell-tile {
+  padding: clamp(1.25rem, 2.5vw, 1.75rem);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: var(--radius-lg, 16px);
+  background: rgba(255, 255, 255, 0.04);
+  text-align: left;
+  transition: border-color 0.2s ease, background 0.2s ease;
+}
+
+.owner-sell-tile:hover {
+  border-color: rgba(127, 189, 189, 0.45);
+  background: rgba(255, 255, 255, 0.07);
+}
+
+.owner-sell-tile-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 3rem;
+  height: 3rem;
+  margin-bottom: 1rem;
+  border-radius: 999px;
+  background: rgba(201, 90, 63, 0.16);
+  color: var(--color-primary, #C95A3F);
+}
+
+.owner-sell-tile h3 {
+  margin: 0 0 0.55rem;
+  font-family: var(--font-heading, inherit);
+  font-size: var(--fs-lg, 1.125rem);
+  font-weight: 700;
+  line-height: 1.3;
+  color: var(--color-white, #fff);
+}
+
+.owner-sell-tile p {
+  margin: 0;
+  font-size: var(--fs-sm, 0.875rem);
+  line-height: 1.55;
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.owner-sell-footer {
+  max-width: 44rem;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.owner-sell-note {
+  margin: 0 0 1.5rem;
+  font-size: var(--fs-base, 1rem);
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.78);
+}
+
+.owner-sell-footer .section-cta-row,
+.section-cta-row--center {
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 1024px) {
+  .owner-sell-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 640px) {
+  .owner-sell-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .owner-sell-footer .section-cta-row .btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
+

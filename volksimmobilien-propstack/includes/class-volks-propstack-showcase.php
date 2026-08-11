@@ -191,6 +191,12 @@ final class Volks_Propstack_Showcase {
 	 * @return string
 	 */
 	public static function replace_showcase_cards( $html ) {
+		$html = (string) $html;
+		// Local landing pages with city-filtered grids must not use the Kaufen showcase.
+		if ( false !== stripos( $html, 'data-volks-city-listings' ) ) {
+			return $html;
+		}
+
 		$ids = self::selected_ids();
 		if ( count( $ids ) < 3 || ! $ids[0] || ! $ids[1] || ! class_exists( 'DOMDocument' ) ) {
 			return $html;

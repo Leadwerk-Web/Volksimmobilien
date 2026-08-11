@@ -16,16 +16,17 @@ if ( ! defined( 'ABSPATH' ) ) {
  */
 function volks_get_og_image_path_map() {
 	return array(
-		'volks-home-v1'       => 'Fotos/Slider1_optimiert.webp',
-		'volks-kaufen-v1'     => 'Fotos/volksimmobilien_kaufen.webp',
-		'volks-verkaufen-v1'  => 'Fotos/volksimmobilien_verkaufen.webp',
-		'volks-bewerten-v1'   => 'Fotos/Vertrauen_optimiert.webp',
-		'volks-ausland-v1'    => 'Fotos/Zadar.webp',
-		'volks-mallorca-v1'   => 'Fotos/Mallorca 1.webp',
-		'volks-impressum-v1'  => 'Fotos/Slider1_optimiert.webp',
+		'volks-home-v1'        => 'Fotos/Slider1_optimiert.webp',
+		'volks-kaufen-v1'      => 'Fotos/volksimmobilien_kaufen.webp',
+		'volks-verkaufen-v1'   => 'Fotos/volksimmobilien_verkaufen.webp',
+		'volks-bewerten-v1'    => 'Fotos/Vertrauen_optimiert.webp',
+		'volks-ausland-v1'     => 'Fotos/Zadar.webp',
+		'volks-mallorca-v1'    => 'Fotos/Mallorca 1.webp',
+		'volks-durmersheim-v1' => 'Fotos/Angebot3.webp',
+		'volks-impressum-v1'   => 'Fotos/Slider1_optimiert.webp',
 		'volks-datenschutz-v1' => 'Fotos/Slider1_optimiert.webp',
-		'volks-danke-v1'      => 'Fotos/Slider1_optimiert.webp',
-		'volks-404-v1'        => 'Fotos/Slider1_optimiert.webp',
+		'volks-danke-v1'       => 'Fotos/Slider1_optimiert.webp',
+		'volks-404-v1'         => 'Fotos/Slider1_optimiert.webp',
 	);
 }
 

@@ -59,6 +59,7 @@ class Leadwerk_Volks_Section_Schema {
 		return array(
 			'volks_mallorca_sections',
 			'volks_ausland_sections',
+			'volks_durmersheim_sections',
 			'volks_kaufen_sections',
 			'volks_verkaufen_sections',
 			'volks_bewerten_sections',

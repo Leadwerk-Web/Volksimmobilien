@@ -405,6 +405,15 @@ class Leadwerk_Content_Schema {
 					? Leadwerk_Volks_Section_Schema::landing_layouts()
 					: array( 'html_section' => self::layout_volks_html_section() ),
 			),
+			'volks_durmersheim_sections'  => array(
+				'label'       => 'volksimmobilien Durmersheim',
+				'description' => 'Sektionen der lokalen Landingpage Immobilienmakler Durmersheim.',
+				'source_keys' => array( 'volks-durmersheim-v1' ),
+				'import_mode' => 'volks_multi_section',
+				'layouts'     => class_exists( 'Leadwerk_Volks_Section_Schema' )
+					? Leadwerk_Volks_Section_Schema::landing_layouts()
+					: array( 'html_section' => self::layout_volks_html_section() ),
+			),
 			'volks_impressum_page'        => array(
 				'label'             => 'volksimmobilien Impressum',
 				'description'       => 'Impressum bearbeiten.',

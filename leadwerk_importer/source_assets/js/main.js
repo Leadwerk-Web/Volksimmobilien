@@ -324,6 +324,23 @@
     var data = {};
     var mapDebounce = null;
 
+    /* Prefill Ort/PLZ from query params (e.g. Durmersheim landing page). */
+    (function prefillWizardLocationFromQuery() {
+      try {
+        var params = new URLSearchParams(window.location.search || '');
+        var ort = (params.get('ort') || '').trim();
+        var plz = (params.get('plz') || '').trim();
+        var ortInput = wizard.querySelector('#wiz-ort');
+        var plzInput = wizard.querySelector('#wiz-plz');
+        if (ort && ortInput && !ortInput.value) {
+          ortInput.value = ort;
+        }
+        if (plz && /^[0-9]{5}$/.test(plz) && plzInput && !plzInput.value) {
+          plzInput.value = plz;
+        }
+      } catch (e) { /* ignore */ }
+    })();
+
     function hasSubtype() {
       return data.type === 'einfamilienhaus' || data.type === 'wohnung';
     }
@@ -512,6 +529,18 @@
       }
 
       btnNext.disabled = !valid;
+    }
+
+    function showWizardSubmitError(message) {
+      var error = wizard.querySelector('.wizard-submit-error');
+      if (!error) {
+        error = document.createElement('p');
+        error.className = 'wizard-submit-error';
+        error.setAttribute('role', 'alert');
+        navBar.parentNode.insertBefore(error, navBar);
+      }
+      error.textContent = message;
+      error.hidden = !message;
     }
 
     /* Typ-Auswahl: setzt Subtyp zurück, wenn der Typ wechselt */
@@ -919,7 +948,7 @@
       sel.addEventListener('change', function () { validateStep(current); });
     });
 
-    btnNext.addEventListener('click', function () {
+    btnNext.addEventListener('click', async function () {
       if (btnNext.disabled) return;
 
       if (current === totalSteps) {
@@ -937,8 +966,40 @@
         if (data.type !== 'mehrfamilienhaus') delete data.mieteinnahmen_jahr;
         if (data.type === 'mehrfamilienhaus') delete data.zimmer;
         else delete data.wohneinheiten;
-        current = successStep;
-        showStep(current);
+        showWizardSubmitError('');
+        if (!window.volksWizardConfig || !window.volksWizardConfig.ajaxUrl || !window.volksWizardConfig.nonce) {
+          showWizardSubmitError('Die Anfrage kann gerade nicht gesendet werden. Bitte ruf uns an oder nutze das Kontaktformular.');
+          return;
+        }
+
+        btnNext.disabled = true;
+        btnNext.textContent = 'Wird gesendet …';
+        try {
+          var response = await fetch(window.volksWizardConfig.ajaxUrl, {
+            method: 'POST',
+            credentials: 'same-origin',
+            headers: { 'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8' },
+            body: new URLSearchParams({
+              action: 'volks_submit_valuation',
+              nonce: window.volksWizardConfig.nonce,
+              payload: JSON.stringify(data)
+            }).toString()
+          });
+          var result = await response.json();
+          if (!response.ok || !result.success) {
+            throw new Error(result && result.data && result.data.message
+              ? result.data.message
+              : 'Die Anfrage konnte nicht gesendet werden.');
+          }
+          current = successStep;
+          showStep(current);
+        } catch (error) {
+          showWizardSubmitError(error && error.message
+            ? error.message
+            : 'Die Anfrage konnte nicht gesendet werden. Bitte versuche es erneut.');
+          btnNext.textContent = 'Absenden';
+          validateStep(current);
+        }
         return;
       }
 

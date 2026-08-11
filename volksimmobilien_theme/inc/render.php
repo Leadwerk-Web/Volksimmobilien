@@ -383,6 +383,9 @@ function volks_get_page_body_class( $post_id = 0 ) {
 	if ( 'volks-ausland-v1' === $key ) {
 		return 'page-mallorca page-ausland';
 	}
+	if ( 'volks-durmersheim-v1' === $key ) {
+		return 'page-mallorca page-durmersheim';
+	}
 	if ( 'volks-kaufen-v1' === $key ) {
 		return 'page-kauf';
 	}
@@ -400,4 +403,29 @@ function volks_get_page_body_class( $post_id = 0 ) {
 	}
 
 	return 'page-' . sanitize_html_class( get_post_field( 'post_name', $post_id ) );
+}
+
+/**
+ * Body class for a source key (used by Leadwerk Importer when no post exists yet).
+ *
+ * @param string $source_key Source key.
+ * @return string
+ */
+function leadwerk_theme_get_source_template_body_class( $source_key ) {
+	$source_key = sanitize_key( (string) $source_key );
+	$map        = array(
+		'volks-home-v1'        => 'page-home',
+		'volks-bewerten-v1'    => 'page-bewerten',
+		'volks-mallorca-v1'    => 'page-mallorca',
+		'volks-ausland-v1'     => 'page-mallorca page-ausland',
+		'volks-durmersheim-v1' => 'page-mallorca page-durmersheim',
+		'volks-kaufen-v1'      => 'page-kauf',
+		'volks-verkaufen-v1'   => 'page-verkauf',
+		'volks-danke-v1'       => 'page-legal page-danke',
+		'volks-404-v1'         => 'page-legal page-not-found',
+		'volks-impressum-v1'   => 'page-legal',
+		'volks-datenschutz-v1' => 'page-legal',
+	);
+
+	return isset( $map[ $source_key ] ) ? $map[ $source_key ] : '';
 }

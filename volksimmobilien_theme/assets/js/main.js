@@ -324,6 +324,23 @@
     var data = {};
     var mapDebounce = null;
 
+    /* Prefill Ort/PLZ from query params (e.g. Durmersheim landing page). */
+    (function prefillWizardLocationFromQuery() {
+      try {
+        var params = new URLSearchParams(window.location.search || '');
+        var ort = (params.get('ort') || '').trim();
+        var plz = (params.get('plz') || '').trim();
+        var ortInput = wizard.querySelector('#wiz-ort');
+        var plzInput = wizard.querySelector('#wiz-plz');
+        if (ort && ortInput && !ortInput.value) {
+          ortInput.value = ort;
+        }
+        if (plz && /^[0-9]{5}$/.test(plz) && plzInput && !plzInput.value) {
+          plzInput.value = plz;
+        }
+      } catch (e) { /* ignore */ }
+    })();
+
     function hasSubtype() {
       return data.type === 'einfamilienhaus' || data.type === 'wohnung';
     }

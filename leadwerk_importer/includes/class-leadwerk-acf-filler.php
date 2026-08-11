@@ -2860,16 +2860,17 @@ class Leadwerk_ACF_Filler {
 		}
 
 		$volks_map = array(
-			'index.html'       => 'volks-home-v1',
-			'bewerten.html'    => 'volks-bewerten-v1',
-			'kaufen.html'      => 'volks-kaufen-v1',
-			'verkaufen.html'   => 'volks-verkaufen-v1',
-			'mallorca.html'    => 'volks-mallorca-v1',
-			'ausland.html'     => 'volks-ausland-v1',
-			'impressum.html'   => 'volks-impressum-v1',
-			'datenschutz.html' => 'volks-datenschutz-v1',
-			'danke.html'       => 'volks-danke-v1',
-			'404.html'         => 'volks-404-v1',
+			'index.html'                         => 'volks-home-v1',
+			'bewerten.html'                      => 'volks-bewerten-v1',
+			'kaufen.html'                        => 'volks-kaufen-v1',
+			'verkaufen.html'                     => 'volks-verkaufen-v1',
+			'mallorca.html'                      => 'volks-mallorca-v1',
+			'ausland.html'                       => 'volks-ausland-v1',
+			'immobilienmakler-durmersheim.html'  => 'volks-durmersheim-v1',
+			'impressum.html'                     => 'volks-impressum-v1',
+			'datenschutz.html'                   => 'volks-datenschutz-v1',
+			'danke.html'                         => 'volks-danke-v1',
+			'404.html'                           => 'volks-404-v1',
 		);
 
 		if ( $this->is_volks_import_project() ) {
@@ -2878,15 +2879,16 @@ class Leadwerk_ACF_Filler {
 			}
 			$slug = strtolower( preg_replace( '#\.html$#i', '', $href ) );
 			$slug_to_key = array(
-				'bewerten'    => 'volks-bewerten-v1',
-				'kaufen'      => 'volks-kaufen-v1',
-				'verkaufen'   => 'volks-verkaufen-v1',
-				'mallorca'    => 'volks-mallorca-v1',
-				'ausland'     => 'volks-ausland-v1',
-				'impressum'   => 'volks-impressum-v1',
-				'datenschutz' => 'volks-datenschutz-v1',
-				'danke'       => 'volks-danke-v1',
-				'index'       => 'volks-home-v1',
+				'bewerten'                     => 'volks-bewerten-v1',
+				'kaufen'                       => 'volks-kaufen-v1',
+				'verkaufen'                    => 'volks-verkaufen-v1',
+				'mallorca'                     => 'volks-mallorca-v1',
+				'ausland'                      => 'volks-ausland-v1',
+				'immobilienmakler-durmersheim' => 'volks-durmersheim-v1',
+				'impressum'                    => 'volks-impressum-v1',
+				'datenschutz'                  => 'volks-datenschutz-v1',
+				'danke'                        => 'volks-danke-v1',
+				'index'                        => 'volks-home-v1',
 			);
 			return isset( $slug_to_key[ $slug ] ) ? $slug_to_key[ $slug ] : '';
 		}
@@ -2970,16 +2972,17 @@ class Leadwerk_ACF_Filler {
 
 		$normalized = ltrim( str_replace( '\\', '/', $href ), '/' );
 		$file_map   = array(
-			'index.html'       => 'volks-home-v1',
-			'bewerten.html'    => 'volks-bewerten-v1',
-			'kaufen.html'      => 'volks-kaufen-v1',
-			'verkaufen.html'   => 'volks-verkaufen-v1',
-			'mallorca.html'    => 'volks-mallorca-v1',
-			'ausland.html'     => 'volks-ausland-v1',
-			'impressum.html'   => 'volks-impressum-v1',
-			'datenschutz.html' => 'volks-datenschutz-v1',
-			'danke.html'       => 'volks-danke-v1',
-			'404.html'         => 'volks-404-v1',
+			'index.html'                        => 'volks-home-v1',
+			'bewerten.html'                     => 'volks-bewerten-v1',
+			'kaufen.html'                       => 'volks-kaufen-v1',
+			'verkaufen.html'                    => 'volks-verkaufen-v1',
+			'mallorca.html'                     => 'volks-mallorca-v1',
+			'ausland.html'                      => 'volks-ausland-v1',
+			'immobilienmakler-durmersheim.html' => 'volks-durmersheim-v1',
+			'impressum.html'                    => 'volks-impressum-v1',
+			'datenschutz.html'                  => 'volks-datenschutz-v1',
+			'danke.html'                        => 'volks-danke-v1',
+			'404.html'                          => 'volks-404-v1',
 		);
 
 		$source_key = '';
@@ -2988,15 +2991,16 @@ class Leadwerk_ACF_Filler {
 		} else {
 			$slug = strtolower( preg_replace( '#\.html$#i', '', $normalized ) );
 			$slug_map = array(
-				'bewerten'    => 'volks-bewerten-v1',
-				'kaufen'      => 'volks-kaufen-v1',
-				'verkaufen'   => 'volks-verkaufen-v1',
-				'mallorca'    => 'volks-mallorca-v1',
-				'ausland'     => 'volks-ausland-v1',
-				'impressum'   => 'volks-impressum-v1',
-				'datenschutz' => 'volks-datenschutz-v1',
-				'danke'       => 'volks-danke-v1',
-				'index'       => 'volks-home-v1',
+				'bewerten'                     => 'volks-bewerten-v1',
+				'kaufen'                       => 'volks-kaufen-v1',
+				'verkaufen'                    => 'volks-verkaufen-v1',
+				'mallorca'                     => 'volks-mallorca-v1',
+				'ausland'                      => 'volks-ausland-v1',
+				'immobilienmakler-durmersheim' => 'volks-durmersheim-v1',
+				'impressum'                    => 'volks-impressum-v1',
+				'datenschutz'                  => 'volks-datenschutz-v1',
+				'danke'                        => 'volks-danke-v1',
+				'index'                        => 'volks-home-v1',
 			);
 			$source_key = $slug_map[ $slug ] ?? '';
 		}
@@ -3031,16 +3035,17 @@ class Leadwerk_ACF_Filler {
 	 */
 	protected function get_volks_import_page_url( $source_key, $source_file ) {
 		$fallbacks = array(
-			'volks-home-v1'       => '/',
-			'volks-bewerten-v1'   => '/bewerten/',
-			'volks-kaufen-v1'     => '/kaufen/',
-			'volks-verkaufen-v1'  => '/verkaufen/',
-			'volks-mallorca-v1'   => '/mallorca/',
-			'volks-ausland-v1'    => '/ausland/',
-			'volks-impressum-v1'  => '/impressum/',
-			'volks-datenschutz-v1' => '/datenschutz/',
-			'volks-danke-v1'      => '/danke/',
-			'volks-404-v1'        => '/404/',
+			'volks-home-v1'          => '/',
+			'volks-bewerten-v1'      => '/bewerten/',
+			'volks-kaufen-v1'        => '/kaufen/',
+			'volks-verkaufen-v1'     => '/verkaufen/',
+			'volks-mallorca-v1'      => '/mallorca/',
+			'volks-ausland-v1'       => '/ausland/',
+			'volks-durmersheim-v1'   => '/immobilienmakler-durmersheim/',
+			'volks-impressum-v1'     => '/impressum/',
+			'volks-datenschutz-v1'   => '/datenschutz/',
+			'volks-danke-v1'         => '/danke/',
+			'volks-404-v1'           => '/404/',
 		);
 
 		$de_lookup = isset( $this->page_lookup['de'] ) && is_array( $this->page_lookup['de'] ) ? $this->page_lookup['de'] : array();

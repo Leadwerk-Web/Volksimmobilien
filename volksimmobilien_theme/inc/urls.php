@@ -16,16 +16,17 @@ if ( ! defined( 'ABSPATH' ) ) {
  */
 function volks_get_source_file_map() {
 	return array(
-		'volks-home-v1'       => 'index.html',
-		'volks-bewerten-v1'   => 'bewerten.html',
-		'volks-kaufen-v1'     => 'kaufen.html',
-		'volks-verkaufen-v1'  => 'verkaufen.html',
-		'volks-mallorca-v1'   => 'mallorca.html',
-		'volks-ausland-v1'    => 'ausland.html',
-		'volks-impressum-v1'   => 'impressum.html',
-		'volks-datenschutz-v1' => 'datenschutz.html',
-		'volks-danke-v1'       => 'danke.html',
-		'volks-404-v1'         => '404.html',
+		'volks-home-v1'          => 'index.html',
+		'volks-bewerten-v1'      => 'bewerten.html',
+		'volks-kaufen-v1'        => 'kaufen.html',
+		'volks-verkaufen-v1'     => 'verkaufen.html',
+		'volks-mallorca-v1'      => 'mallorca.html',
+		'volks-ausland-v1'       => 'ausland.html',
+		'volks-durmersheim-v1'   => 'immobilienmakler-durmersheim.html',
+		'volks-impressum-v1'     => 'impressum.html',
+		'volks-datenschutz-v1'   => 'datenschutz.html',
+		'volks-danke-v1'         => 'danke.html',
+		'volks-404-v1'           => '404.html',
 	);
 }
 
@@ -129,8 +130,9 @@ function volks_get_section_ids_for_source_key( $source_key ) {
 		'volks-bewerten-v1'   => array( 'hero', 'einleitung', 'persoenliche-bewertung', 'wertermittlung', 'faq', 'kontakt-cta', 'kontakt-formular' ),
 		'volks-kaufen-v1'     => array( 'hero', 'einstieg', 'marktgebiet', 'kaeufergruppen', 'angebote', 'suchwunsch', 'ablauf', 'fragen-kauf', 'region', 'vertrauen-kauf', 'begleitung', 'faq', 'kontakt-abschluss' ),
 		'volks-verkaufen-v1'  => array( 'hero', 'einstieg', 'strategie', 'objektarten', 'wertermittlung', 'vertrauen', 'region', 'ablauf', 'diskret', 'faq', 'kontakt-abschluss' ),
-		'volks-mallorca-v1'   => array( 'hero', 'einleitung', 'kaufen', 'verkaufen', 'immobilienarten', 'prozess', 'regionen', 'vertrauen', 'kontakt-cta' ),
-		'volks-ausland-v1'    => array( 'hero', 'einleitung', 'mallorca', 'kroatien', 'kaufen', 'verkaufen', 'immobilienarten', 'prozess', 'vertrauen', 'kontakt-cta' ),
+		'volks-mallorca-v1'      => array( 'hero', 'einleitung', 'kaufen', 'verkaufen', 'immobilienarten', 'prozess', 'regionen', 'vertrauen', 'kontakt-cta' ),
+		'volks-ausland-v1'       => array( 'hero', 'einleitung', 'mallorca', 'kroatien', 'kaufen', 'verkaufen', 'immobilienarten', 'prozess', 'vertrauen', 'kontakt-cta' ),
+		'volks-durmersheim-v1'   => array( 'hero', 'einleitung', 'vertrauen', 'verkaufen', 'wertermittlung', 'kaufen', 'angebote', 'lage', 'prozess', 'suchwunsch', 'warum', 'faq', 'kontakt-cta' ),
 	);
 
 	$source_key = sanitize_key( (string) $source_key );
@@ -155,16 +157,17 @@ function volks_get_current_source_key() {
 	}
 
 	$slug_map = array(
-		'home'        => 'volks-home-v1',
-		'bewerten'    => 'volks-bewerten-v1',
-		'kaufen'      => 'volks-kaufen-v1',
-		'verkaufen'   => 'volks-verkaufen-v1',
-		'mallorca'    => 'volks-mallorca-v1',
-		'ausland'     => 'volks-ausland-v1',
-		'impressum'   => 'volks-impressum-v1',
-		'datenschutz' => 'volks-datenschutz-v1',
-		'danke'       => 'volks-danke-v1',
-		'404'         => 'volks-404-v1',
+		'home'                          => 'volks-home-v1',
+		'bewerten'                      => 'volks-bewerten-v1',
+		'kaufen'                        => 'volks-kaufen-v1',
+		'verkaufen'                     => 'volks-verkaufen-v1',
+		'mallorca'                      => 'volks-mallorca-v1',
+		'ausland'                       => 'volks-ausland-v1',
+		'immobilienmakler-durmersheim'  => 'volks-durmersheim-v1',
+		'impressum'                     => 'volks-impressum-v1',
+		'datenschutz'                   => 'volks-datenschutz-v1',
+		'danke'                         => 'volks-danke-v1',
+		'404'                           => 'volks-404-v1',
 	);
 
 	$slug = sanitize_key( (string) get_post_field( 'post_name', $post_id ) );
@@ -390,11 +393,12 @@ function volks_resolve_href( $href ) {
 
 				$slug_key = strtolower( preg_replace( '#\.html$#i', '', basename( $href_path ) ) );
 				$slug_map = array(
-					'bewerten'  => 'volks-bewerten-v1',
-					'kaufen'    => 'volks-kaufen-v1',
-					'verkaufen' => 'volks-verkaufen-v1',
-					'mallorca'  => 'volks-mallorca-v1',
-					'ausland'   => 'volks-ausland-v1',
+					'bewerten'                     => 'volks-bewerten-v1',
+					'kaufen'                       => 'volks-kaufen-v1',
+					'verkaufen'                    => 'volks-verkaufen-v1',
+					'mallorca'                     => 'volks-mallorca-v1',
+					'ausland'                      => 'volks-ausland-v1',
+					'immobilienmakler-durmersheim' => 'volks-durmersheim-v1',
 				);
 				if ( isset( $slug_map[ $slug_key ] ) ) {
 					$page_key = $slug_map[ $slug_key ];
@@ -465,14 +469,15 @@ function volks_resolve_href( $href ) {
 
 	// Slug without .html (e.g. bewerten).
 	$slug_candidates = array(
-		'bewerten'    => 'volks-bewerten-v1',
-		'kaufen'      => 'volks-kaufen-v1',
-		'verkaufen'   => 'volks-verkaufen-v1',
-		'mallorca'    => 'volks-mallorca-v1',
-		'ausland'     => 'volks-ausland-v1',
-		'impressum'   => 'volks-impressum-v1',
-		'datenschutz' => 'volks-datenschutz-v1',
-		'danke'       => 'volks-danke-v1',
+		'bewerten'                     => 'volks-bewerten-v1',
+		'kaufen'                       => 'volks-kaufen-v1',
+		'verkaufen'                    => 'volks-verkaufen-v1',
+		'mallorca'                     => 'volks-mallorca-v1',
+		'ausland'                      => 'volks-ausland-v1',
+		'immobilienmakler-durmersheim' => 'volks-durmersheim-v1',
+		'impressum'                    => 'volks-impressum-v1',
+		'datenschutz'                  => 'volks-datenschutz-v1',
+		'danke'                        => 'volks-danke-v1',
 	);
 	$slug_key        = strtolower( preg_replace( '#\.html$#i', '', $normalized ) );
 	if ( isset( $slug_candidates[ $slug_key ] ) ) {

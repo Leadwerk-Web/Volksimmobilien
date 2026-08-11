@@ -24,6 +24,7 @@ require_once VOLKS_PROPSTACK_PATH . 'includes/class-volks-propstack-sync.php';
 require_once VOLKS_PROPSTACK_PATH . 'includes/class-volks-propstack-frontend.php';
 require_once VOLKS_PROPSTACK_PATH . 'includes/class-volks-propstack-admin.php';
 require_once VOLKS_PROPSTACK_PATH . 'includes/class-volks-propstack-showcase.php';
+require_once VOLKS_PROPSTACK_PATH . 'includes/class-volks-propstack-city-listings.php';
 
 /**
  * Start the integration after all plugins are available.
@@ -34,6 +35,7 @@ function volks_propstack_boot() {
 	Volks_Propstack_Frontend::init();
 	Volks_Propstack_Admin::init();
 	Volks_Propstack_Showcase::init();
+	Volks_Propstack_City_Listings::init();
 	add_action( 'init', 'volks_propstack_maybe_upgrade', 99 );
 }
 add_action( 'plugins_loaded', 'volks_propstack_boot' );

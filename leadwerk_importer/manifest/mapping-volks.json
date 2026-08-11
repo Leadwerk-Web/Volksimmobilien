@@ -52,6 +52,15 @@
       "post_status": "publish"
     },
     {
+      "source_key": "volks-durmersheim-v1",
+      "field_name": "volks_durmersheim_sections",
+      "source_file": "immobilienmakler-durmersheim.html",
+      "title": "Immobilienmakler Durmersheim",
+      "slug": "immobilienmakler-durmersheim",
+      "target_type": "page",
+      "post_status": "publish"
+    },
+    {
       "source_key": "volks-mallorca-v1",
       "field_name": "volks_mallorca_sections",
       "source_file": "mallorca.html",
