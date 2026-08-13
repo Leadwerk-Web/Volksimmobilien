@@ -4319,12 +4319,14 @@ body.page-home .site-header {
   pointer-events: none;
 }
 
-/* Mallorca: Foto als volle CTA-Sektionsfläche + Verlauf (Lesbarkeit) */
-.cta-section--mallorca-bg {
+/* Foto-CTA: volle Sektionsfläche + Verlauf (Lesbarkeit) */
+.cta-section--mallorca-bg,
+.cta-section--durmersheim-bg {
   isolation: isolate;
 }
 
-.cta-section--mallorca-bg::before {
+.cta-section--mallorca-bg::before,
+.cta-section--durmersheim-bg::before {
   z-index: 0;
   background:
     linear-gradient(
@@ -4341,13 +4343,28 @@ body.page-home .site-header {
   background-repeat: no-repeat;
 }
 
-.cta-section--mallorca-bg .container {
+.cta-section--durmersheim-bg::before {
+  background-image:
+    linear-gradient(
+      180deg,
+      rgba(10, 10, 10, 0.72) 0%,
+      rgba(10, 10, 10, 0.66) 40%,
+      rgba(10, 10, 10, 0.6) 100%
+    ),
+    radial-gradient(ellipse 90% 50% at 50% 0%, rgba(201, 90, 63, 0.12), transparent 55%),
+    radial-gradient(ellipse 50% 45% at 100% 100%, rgba(127, 189, 189, 0.1), transparent 50%),
+    url('../Fotos/Durmersheim/durmersheim-hauptstrasse.jpeg');
+}
+
+.cta-section--mallorca-bg .container,
+.cta-section--durmersheim-bg .container {
   position: relative;
   z-index: 1;
 }
 
-/* Mallorca CTA: starker Frostglas-Effekt (Hintergrund durch Panel erkennbar) */
-.cta-section--mallorca-bg .cta-panel {
+/* Foto-CTA: starker Frostglas-Effekt (Hintergrund durch Panel erkennbar) */
+.cta-section--mallorca-bg .cta-panel,
+.cta-section--durmersheim-bg .cta-panel {
   -webkit-backdrop-filter: blur(42px) saturate(1.4);
   backdrop-filter: blur(42px) saturate(1.4);
   background: linear-gradient(
@@ -4363,7 +4380,8 @@ body.page-home .site-header {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .cta-section--mallorca-bg .cta-panel {
+  .cta-section--mallorca-bg .cta-panel,
+  .cta-section--durmersheim-bg .cta-panel {
     -webkit-backdrop-filter: none;
     backdrop-filter: none;
   }

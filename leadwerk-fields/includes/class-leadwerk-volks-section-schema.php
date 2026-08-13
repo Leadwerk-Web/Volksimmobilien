@@ -84,6 +84,7 @@ class Leadwerk_Volks_Section_Schema {
 			''                             => 'Inline (style-Attribut)',
 			'editorial-section--sell-bg'   => 'Sektions-Hintergrund Verkaufen',
 			'cta-section--mallorca-bg'     => 'Sektions-Hintergrund CTA (Mallorca)',
+			'cta-section--durmersheim-bg'  => 'Sektions-Hintergrund CTA (Durmersheim)',
 		);
 	}
 
@@ -534,7 +535,7 @@ class Leadwerk_Volks_Section_Schema {
 						'css_class' => array(
 							'label'       => 'Zuordnung',
 							'type'        => 'text',
-							'description' => 'Leer = inline im HTML. editorial-section--sell-bg oder cta-section--mallorca-bg fuer CSS-Sektionsflaeche.',
+							'description' => 'Leer = inline im HTML. editorial-section--sell-bg, cta-section--mallorca-bg oder cta-section--durmersheim-bg fuer CSS-Sektionsflaeche.',
 						),
 					),
 				),
@@ -542,7 +543,7 @@ class Leadwerk_Volks_Section_Schema {
 				'css_section_background_class' => array(
 					'label'       => 'CSS-Ziel (automatisch beim Import)',
 					'type'        => 'text',
-					'description' => 'editorial-section--sell-bg oder cta-section--mallorca-bg',
+					'description' => 'editorial-section--sell-bg, cta-section--mallorca-bg oder cta-section--durmersheim-bg',
 				),
 				'original_html'      => array(
 					'label' => 'Original-HTML (Fallback / Struktur)',

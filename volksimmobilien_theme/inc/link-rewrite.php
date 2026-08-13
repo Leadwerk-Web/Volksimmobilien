@@ -16,8 +16,9 @@ if ( ! defined( 'ABSPATH' ) ) {
  */
 function volks_known_section_css_backgrounds() {
 	return array(
-		'editorial-section--sell-bg' => 'Fotos/Mallorca%203.webp',
-		'cta-section--mallorca-bg'   => 'Fotos/Mallorca%202.webp',
+		'editorial-section--sell-bg'  => 'Fotos/Mallorca%203.webp',
+		'cta-section--mallorca-bg'    => 'Fotos/Mallorca%202.webp',
+		'cta-section--durmersheim-bg' => 'Fotos/Durmersheim/durmersheim-hauptstrasse.jpeg',
 	);
 }
 
@@ -89,8 +90,8 @@ function volks_build_section_background_style_rule( $section_id, $class_key, $ur
 		return $selector . '.editorial-section--sell-bg::before{background-image:url("' . $url . '")!important;background-size:cover!important;background-position:72% center!important;background-repeat:no-repeat!important;z-index:0!important;}';
 	}
 
-	if ( 'cta-section--mallorca-bg' === $class_key ) {
-		return $selector . '.cta-section--mallorca-bg::before{background:linear-gradient(180deg,rgba(10,10,10,.72) 0%,rgba(10,10,10,.66) 40%,rgba(10,10,10,.6) 100%) 0 0/100% 100% no-repeat,radial-gradient(ellipse 90% 50% at 50% 0%,rgba(201,90,63,.12),transparent 55%) 0 0/100% 100% no-repeat,radial-gradient(ellipse 50% 45% at 100% 100%,rgba(127,189,189,.1),transparent 50%) 0 0/100% 100% no-repeat,url("' . $url . '")!important;background-size:100% 100%,100% 100%,100% 100%,cover!important;background-position:0 0,0 0,0 0,center 42%!important;background-repeat:no-repeat!important;z-index:0!important;}';
+	if ( 'cta-section--mallorca-bg' === $class_key || 'cta-section--durmersheim-bg' === $class_key ) {
+		return $selector . '.' . $class_key . '::before{background:linear-gradient(180deg,rgba(10,10,10,.72) 0%,rgba(10,10,10,.66) 40%,rgba(10,10,10,.6) 100%) 0 0/100% 100% no-repeat,radial-gradient(ellipse 90% 50% at 50% 0%,rgba(201,90,63,.12),transparent 55%) 0 0/100% 100% no-repeat,radial-gradient(ellipse 50% 45% at 100% 100%,rgba(127,189,189,.1),transparent 50%) 0 0/100% 100% no-repeat,url("' . $url . '")!important;background-size:100% 100%,100% 100%,100% 100%,cover!important;background-position:0 0,0 0,0 0,center 42%!important;background-repeat:no-repeat!important;z-index:0!important;}';
 	}
 
 	return '';
@@ -112,7 +113,7 @@ function volks_apply_section_css_background_variables( $html, $background_rows =
 	}
 
 	$known = volks_known_section_css_backgrounds();
-	if ( ! preg_match( '/editorial-section--sell-bg|cta-section--mallorca-bg/', $html ) ) {
+	if ( ! preg_match( '/editorial-section--sell-bg|cta-section--mallorca-bg|cta-section--durmersheim-bg/', $html ) ) {
 		return $html;
 	}
 

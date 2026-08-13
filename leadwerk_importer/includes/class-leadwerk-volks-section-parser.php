@@ -121,7 +121,7 @@ class Leadwerk_Volks_Section_Parser {
 		}
 
 		if ( 'volks_cta' === $layout ) {
-			if ( $this->query_nodes( $section_node, './/*[contains(@class,"cta-section--mallorca")]' ) ) {
+			if ( $this->query_nodes( $section_node, './/*[contains(@class,"cta-section--mallorca") or contains(@class,"cta-section--durmersheim")]' ) ) {
 				return false;
 			}
 		}
@@ -377,8 +377,9 @@ class Leadwerk_Volks_Section_Parser {
 		}
 
 		$map = array(
-			'editorial-section--sell-bg' => 'Fotos/Mallorca%203.webp',
-			'cta-section--mallorca-bg'   => 'Fotos/Mallorca%202.webp',
+			'editorial-section--sell-bg'  => 'Fotos/Mallorca%203.webp',
+			'cta-section--mallorca-bg'    => 'Fotos/Mallorca%202.webp',
+			'cta-section--durmersheim-bg' => 'Fotos/Durmersheim/durmersheim-hauptstrasse.jpeg',
 		);
 
 		foreach ( $map as $class_key => $path ) {
