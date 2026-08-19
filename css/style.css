@@ -10455,3 +10455,55 @@ body.page-home .site-header {
   position: relative;
   z-index: 1;
 }
+
+
+/* Segmentseiten: CTA-Hintergruende */
+.cta-section--gewerbeimmobilien-bg {
+  isolation: isolate;
+}
+
+.cta-section--gewerbeimmobilien-bg::before {
+  z-index: 0;
+  background:
+    linear-gradient(
+      180deg,
+      rgba(10, 10, 10, 0.72) 0%,
+      rgba(10, 10, 10, 0.66) 40%,
+      rgba(10, 10, 10, 0.6) 100%
+    ) 0 0 / 100% 100% no-repeat,
+    radial-gradient(ellipse 90% 50% at 50% 0%, rgba(201, 90, 63, 0.12), transparent 55%) 0 0 / 100% 100% no-repeat,
+    radial-gradient(ellipse 50% 45% at 100% 100%, rgba(127, 189, 189, 0.1), transparent 50%) 0 0 / 100% 100% no-repeat,
+    url('../Fotos/Gewerbe/gw-gewerbegebiet.jpg');
+  background-size: 100% 100%, 100% 100%, 100% 100%, cover;
+  background-position: center;
+}
+
+.cta-section--gewerbeimmobilien-bg .container {
+  position: relative;
+  z-index: 1;
+}
+
+.cta-section--mehrfamilienhaus-bg {
+  isolation: isolate;
+}
+
+.cta-section--mehrfamilienhaus-bg::before {
+  z-index: 0;
+  background:
+    linear-gradient(
+      180deg,
+      rgba(10, 10, 10, 0.72) 0%,
+      rgba(10, 10, 10, 0.66) 40%,
+      rgba(10, 10, 10, 0.6) 100%
+    ) 0 0 / 100% 100% no-repeat,
+    radial-gradient(ellipse 90% 50% at 50% 0%, rgba(201, 90, 63, 0.12), transparent 55%) 0 0 / 100% 100% no-repeat,
+    radial-gradient(ellipse 50% 45% at 100% 100%, rgba(127, 189, 189, 0.1), transparent 50%) 0 0 / 100% 100% no-repeat,
+    url('../Fotos/MFH/mfh-durlach2.jpg');
+  background-size: 100% 100%, 100% 100%, 100% 100%, cover;
+  background-position: center;
+}
+
+.cta-section--mehrfamilienhaus-bg .container {
+  position: relative;
+  z-index: 1;
+}
