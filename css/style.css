@@ -10303,3 +10303,155 @@ body.page-home .site-header {
   .owner-sell-grid { grid-template-columns: 1fr; }
   .owner-sell-footer .section-cta-row .btn { width: 100%; justify-content: center; }
 }
+
+
+/* Ortsseiten: CTA-Hintergruende */
+.cta-section--rheinstetten-bg {
+  isolation: isolate;
+}
+
+.cta-section--rheinstetten-bg::before {
+  z-index: 0;
+  background:
+    linear-gradient(
+      180deg,
+      rgba(10, 10, 10, 0.72) 0%,
+      rgba(10, 10, 10, 0.66) 40%,
+      rgba(10, 10, 10, 0.6) 100%
+    ) 0 0 / 100% 100% no-repeat,
+    radial-gradient(ellipse 90% 50% at 50% 0%, rgba(201, 90, 63, 0.12), transparent 55%) 0 0 / 100% 100% no-repeat,
+    radial-gradient(ellipse 50% 45% at 100% 100%, rgba(127, 189, 189, 0.1), transparent 50%) 0 0 / 100% 100% no-repeat,
+    url('../Fotos/Rheinstetten/rheinstetten-moersch-kirche.jpg');
+  background-size: 100% 100%, 100% 100%, 100% 100%, cover;
+  background-position: center;
+}
+
+.cta-section--rheinstetten-bg .container {
+  position: relative;
+  z-index: 1;
+}
+
+.cta-section--au-am-rhein-bg {
+  isolation: isolate;
+}
+
+.cta-section--au-am-rhein-bg::before {
+  z-index: 0;
+  background:
+    linear-gradient(
+      180deg,
+      rgba(10, 10, 10, 0.72) 0%,
+      rgba(10, 10, 10, 0.66) 40%,
+      rgba(10, 10, 10, 0.6) 100%
+    ) 0 0 / 100% 100% no-repeat,
+    radial-gradient(ellipse 90% 50% at 50% 0%, rgba(201, 90, 63, 0.12), transparent 55%) 0 0 / 100% 100% no-repeat,
+    radial-gradient(ellipse 50% 45% at 100% 100%, rgba(127, 189, 189, 0.1), transparent 50%) 0 0 / 100% 100% no-repeat,
+    url('../Fotos/Au-am-Rhein/au-am-rhein-rhein.jpg');
+  background-size: 100% 100%, 100% 100%, 100% 100%, cover;
+  background-position: center;
+}
+
+.cta-section--au-am-rhein-bg .container {
+  position: relative;
+  z-index: 1;
+}
+
+.cta-section--rastatt-bg {
+  isolation: isolate;
+}
+
+.cta-section--rastatt-bg::before {
+  z-index: 0;
+  background:
+    linear-gradient(
+      180deg,
+      rgba(10, 10, 10, 0.72) 0%,
+      rgba(10, 10, 10, 0.66) 40%,
+      rgba(10, 10, 10, 0.6) 100%
+    ) 0 0 / 100% 100% no-repeat,
+    radial-gradient(ellipse 90% 50% at 50% 0%, rgba(201, 90, 63, 0.12), transparent 55%) 0 0 / 100% 100% no-repeat,
+    radial-gradient(ellipse 50% 45% at 100% 100%, rgba(127, 189, 189, 0.1), transparent 50%) 0 0 / 100% 100% no-repeat,
+    url('../Fotos/Rastatt/rastatt-schloss-park.jpg');
+  background-size: 100% 100%, 100% 100%, 100% 100%, cover;
+  background-position: center;
+}
+
+.cta-section--rastatt-bg .container {
+  position: relative;
+  z-index: 1;
+}
+
+.cta-section--ettlingen-bg {
+  isolation: isolate;
+}
+
+.cta-section--ettlingen-bg::before {
+  z-index: 0;
+  background:
+    linear-gradient(
+      180deg,
+      rgba(10, 10, 10, 0.72) 0%,
+      rgba(10, 10, 10, 0.66) 40%,
+      rgba(10, 10, 10, 0.6) 100%
+    ) 0 0 / 100% 100% no-repeat,
+    radial-gradient(ellipse 90% 50% at 50% 0%, rgba(201, 90, 63, 0.12), transparent 55%) 0 0 / 100% 100% no-repeat,
+    radial-gradient(ellipse 50% 45% at 100% 100%, rgba(127, 189, 189, 0.1), transparent 50%) 0 0 / 100% 100% no-repeat,
+    url('../Fotos/Ettlingen/ettlingen-altstadt.jpg');
+  background-size: 100% 100%, 100% 100%, 100% 100%, cover;
+  background-position: center;
+}
+
+.cta-section--ettlingen-bg .container {
+  position: relative;
+  z-index: 1;
+}
+
+.cta-section--gaggenau-bg {
+  isolation: isolate;
+}
+
+.cta-section--gaggenau-bg::before {
+  z-index: 0;
+  background:
+    linear-gradient(
+      180deg,
+      rgba(10, 10, 10, 0.72) 0%,
+      rgba(10, 10, 10, 0.66) 40%,
+      rgba(10, 10, 10, 0.6) 100%
+    ) 0 0 / 100% 100% no-repeat,
+    radial-gradient(ellipse 90% 50% at 50% 0%, rgba(201, 90, 63, 0.12), transparent 55%) 0 0 / 100% 100% no-repeat,
+    radial-gradient(ellipse 50% 45% at 100% 100%, rgba(127, 189, 189, 0.1), transparent 50%) 0 0 / 100% 100% no-repeat,
+    url('../Fotos/Gaggenau/gaggenau-ausblick.jpg');
+  background-size: 100% 100%, 100% 100%, 100% 100%, cover;
+  background-position: center;
+}
+
+.cta-section--gaggenau-bg .container {
+  position: relative;
+  z-index: 1;
+}
+
+.cta-section--malsch-bg {
+  isolation: isolate;
+}
+
+.cta-section--malsch-bg::before {
+  z-index: 0;
+  background:
+    linear-gradient(
+      180deg,
+      rgba(10, 10, 10, 0.72) 0%,
+      rgba(10, 10, 10, 0.66) 40%,
+      rgba(10, 10, 10, 0.6) 100%
+    ) 0 0 / 100% 100% no-repeat,
+    radial-gradient(ellipse 90% 50% at 50% 0%, rgba(201, 90, 63, 0.12), transparent 55%) 0 0 / 100% 100% no-repeat,
+    radial-gradient(ellipse 50% 45% at 100% 100%, rgba(127, 189, 189, 0.1), transparent 50%) 0 0 / 100% 100% no-repeat,
+    url('../Fotos/Malsch/malsch-waldprechtsweier.jpg');
+  background-size: 100% 100%, 100% 100%, 100% 100%, cover;
+  background-position: center;
+}
+
+.cta-section--malsch-bg .container {
+  position: relative;
+  z-index: 1;
+}
