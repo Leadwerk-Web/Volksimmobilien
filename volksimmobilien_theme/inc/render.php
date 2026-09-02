@@ -386,6 +386,33 @@ function volks_get_page_body_class( $post_id = 0 ) {
 	if ( 'volks-durmersheim-v1' === $key ) {
 		return 'page-mallorca page-durmersheim';
 	}
+	if ( 'volks-gewerbe-v1' === $key ) {
+		return 'page-mallorca page-gewerbeimmobilien';
+	}
+	if ( 'volks-mfh-v1' === $key ) {
+		return 'page-mallorca page-mehrfamilienhaus';
+	}
+	if ( 'volks-checkliste-v1' === $key ) {
+		return 'page-leadmagnet';
+	}
+	if ( 'volks-ettlingen-v1' === $key ) {
+		return 'page-mallorca page-ettlingen';
+	}
+	if ( 'volks-gaggenau-v1' === $key ) {
+		return 'page-mallorca page-gaggenau';
+	}
+	if ( 'volks-malsch-v1' === $key ) {
+		return 'page-mallorca page-malsch';
+	}
+	if ( 'volks-rastatt-v1' === $key ) {
+		return 'page-mallorca page-rastatt';
+	}
+	if ( 'volks-rheinstetten-v1' === $key ) {
+		return 'page-mallorca page-rheinstetten';
+	}
+	if ( 'volks-au-am-rhein-v1' === $key ) {
+		return 'page-mallorca page-au-am-rhein';
+	}
 	if ( 'volks-kaufen-v1' === $key ) {
 		return 'page-kauf';
 	}
@@ -419,6 +446,15 @@ function leadwerk_theme_get_source_template_body_class( $source_key ) {
 		'volks-mallorca-v1'    => 'page-mallorca',
 		'volks-ausland-v1'     => 'page-mallorca page-ausland',
 		'volks-durmersheim-v1' => 'page-mallorca page-durmersheim',
+		'volks-gewerbe-v1'     => 'page-mallorca page-gewerbeimmobilien',
+		'volks-mfh-v1'         => 'page-mallorca page-mehrfamilienhaus',
+		'volks-checkliste-v1'  => 'page-leadmagnet',
+		'volks-ettlingen-v1'   => 'page-mallorca page-ettlingen',
+		'volks-gaggenau-v1'    => 'page-mallorca page-gaggenau',
+		'volks-malsch-v1'      => 'page-mallorca page-malsch',
+		'volks-rastatt-v1'     => 'page-mallorca page-rastatt',
+		'volks-rheinstetten-v1'=> 'page-mallorca page-rheinstetten',
+		'volks-au-am-rhein-v1' => 'page-mallorca page-au-am-rhein',
 		'volks-kaufen-v1'      => 'page-kauf',
 		'volks-verkaufen-v1'   => 'page-verkauf',
 		'volks-danke-v1'       => 'page-legal page-danke',
