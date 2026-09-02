@@ -467,7 +467,7 @@ class Leadwerk_Importer {
 			$current_validation  = $filler->validate_group_value( $field_name, $current_value );
 			$current_render      = $this->validate_exact_group_render( $group, $current_value, $page_config, $de_id );
 			$source_drift        = $this->assess_canonical_source_drift( $page_config, $group, $current_value, $current_validation, $current_render, $de_id, $filler );
-			$needs_repair        = empty( $current_validation['has_visible_content'] ) || empty( $current_render['is_valid'] );
+			$needs_repair        = empty( $current_validation['has_visible_content'] ) || empty( $current_render['is_valid'] ) || ! empty( $source_drift['has_drift'] );
 
 			$page_entry['current_validation'] = $this->compact_validation( (array) $current_validation );
 			$page_entry['current_render']     = $this->compact_render_validation( $current_render );
