@@ -199,6 +199,35 @@ class Leadwerk_Importer {
 	}
 
 	/**
+	 * Filters the manifest to only include the 9 newly added pages.
+	 *
+	 * @return void
+	 */
+	public function filter_manifest_for_new_pages() {
+		$new_keys = array(
+			'volks-gewerbe-v1',
+			'volks-mfh-v1',
+			'volks-checkliste-v1',
+			'volks-ettlingen-v1',
+			'volks-gaggenau-v1',
+			'volks-malsch-v1',
+			'volks-rastatt-v1',
+			'volks-rheinstetten-v1',
+			'volks-au-am-rhein-v1',
+		);
+
+		if ( isset( $this->manifest['pages'] ) && is_array( $this->manifest['pages'] ) ) {
+			$filtered = array();
+			foreach ( $this->manifest['pages'] as $page ) {
+				if ( in_array( $page['source_key'], $new_keys, true ) ) {
+					$filtered[] = $page;
+				}
+			}
+			$this->manifest['pages'] = $filtered;
+		}
+	}
+
+	/**
 	 * Create or resume one import job state.
 	 *
 	 * @return array<string,mixed>

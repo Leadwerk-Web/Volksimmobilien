@@ -368,6 +368,7 @@ function leadwerk_importer_admin_page() {
 		<div class="leadwerk-importer-toolbar">
 			<button type="button" class="button" data-leadwerk-start-import="dry-run">Dry-Run starten</button>
 			<button type="button" class="button button-primary" data-leadwerk-start-import="apply">Import mit Live-Progress starten</button>
+			<button type="button" class="button button-primary" data-leadwerk-start-import="apply-new">Live Import (Sadece Yeni 9 Sayfa)</button>
 			<a href="<?php echo esc_url( wp_nonce_url( add_query_arg( array( 'options_only' => '1' ), admin_url( 'tools.php?page=leadwerk-import' ) ), 'leadwerk_options_only' ) ); ?>" class="button">Nur Optionen importieren</a>
 			<a href="<?php echo esc_url( wp_nonce_url( add_query_arg( array( 'repair_structured_de' => '1' ), admin_url( 'tools.php?page=leadwerk-import' ) ), 'leadwerk_repair_structured_de' ) ); ?>" class="button">DE Structured Content reparieren</a>
 			<button type="button" class="button" data-leadwerk-reset-progress>Ansicht zuruecksetzen</button>
@@ -497,15 +498,21 @@ function leadwerk_importer_ajax_start() {
 	leadwerk_importer_verify_ajax_request();
 	leadwerk_importer_maybe_raise_php_limits();
 
-	$dry_run = ! empty( $_POST['dry_run'] );
-	$state   = Leadwerk_Logger::get_state();
+	$dry_run  = ! empty( $_POST['dry_run'] );
+	$only_new = ! empty( $_POST['only_new'] );
+	$state    = Leadwerk_Logger::get_state();
 
 	if ( Leadwerk_Logger::has_active_job() ) {
 		wp_send_json_success( array( 'state' => $state ) );
 	}
 
 	$importer = new Leadwerk_Importer( ! $dry_run );
-	$state    = $importer->build_initial_job_state();
+	
+	if ( $only_new ) {
+		$importer->filter_manifest_for_new_pages();
+	}
+
+	$state = $importer->build_initial_job_state();
 	wp_send_json_success( array( 'state' => $state ) );
 }
 add_action( 'wp_ajax_leadwerk_import_start', 'leadwerk_importer_ajax_start' );

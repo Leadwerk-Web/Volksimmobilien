@@ -372,6 +372,7 @@
       const mode = button.getAttribute("data-leadwerk-start-import");
       api("leadwerk_import_start", {
         dry_run: mode === "dry-run" ? "1" : "",
+        only_new: mode === "apply-new" ? "1" : "",
       })
         .then(function (result) {
           if (result && result.success) {
