@@ -104,6 +104,87 @@
       "slug": "404",
       "target_type": "page",
       "post_status": "publish"
+    },
+    {
+      "source_key": "volks-gewerbe-v1",
+      "field_name": "volks_gewerbe_sections",
+      "source_file": "gewerbeimmobilien-verkaufen.html",
+      "title": "Gewerbeimmobilie verkaufen",
+      "slug": "gewerbeimmobilien-verkaufen",
+      "target_type": "page",
+      "post_status": "publish"
+    },
+    {
+      "source_key": "volks-mfh-v1",
+      "field_name": "volks_mfh_sections",
+      "source_file": "mehrfamilienhaus-verkaufen.html",
+      "title": "Mehrfamilienhaus verkaufen",
+      "slug": "mehrfamilienhaus-verkaufen",
+      "target_type": "page",
+      "post_status": "publish"
+    },
+    {
+      "source_key": "volks-checkliste-v1",
+      "field_name": "volks_checkliste_sections",
+      "source_file": "verkaufs-checkliste.html",
+      "title": "Verkaufs-Checkliste",
+      "slug": "verkaufs-checkliste",
+      "target_type": "page",
+      "post_status": "publish"
+    },
+    {
+      "source_key": "volks-ettlingen-v1",
+      "field_name": "volks_ettlingen_sections",
+      "source_file": "immobilienmakler-ettlingen.html",
+      "title": "Immobilienmakler Ettlingen",
+      "slug": "immobilienmakler-ettlingen",
+      "target_type": "page",
+      "post_status": "publish"
+    },
+    {
+      "source_key": "volks-gaggenau-v1",
+      "field_name": "volks_gaggenau_sections",
+      "source_file": "immobilienmakler-gaggenau.html",
+      "title": "Immobilienmakler Gaggenau",
+      "slug": "immobilienmakler-gaggenau",
+      "target_type": "page",
+      "post_status": "publish"
+    },
+    {
+      "source_key": "volks-malsch-v1",
+      "field_name": "volks_malsch_sections",
+      "source_file": "immobilienmakler-malsch.html",
+      "title": "Immobilienmakler Malsch",
+      "slug": "immobilienmakler-malsch",
+      "target_type": "page",
+      "post_status": "publish"
+    },
+    {
+      "source_key": "volks-rastatt-v1",
+      "field_name": "volks_rastatt_sections",
+      "source_file": "immobilienmakler-rastatt.html",
+      "title": "Immobilienmakler Rastatt",
+      "slug": "immobilienmakler-rastatt",
+      "target_type": "page",
+      "post_status": "publish"
+    },
+    {
+      "source_key": "volks-rheinstetten-v1",
+      "field_name": "volks_rheinstetten_sections",
+      "source_file": "immobilienmakler-rheinstetten.html",
+      "title": "Immobilienmakler Rheinstetten",
+      "slug": "immobilienmakler-rheinstetten",
+      "target_type": "page",
+      "post_status": "publish"
+    },
+    {
+      "source_key": "volks-au-am-rhein-v1",
+      "field_name": "volks_au_am_rhein_sections",
+      "source_file": "immobilienmakler-au-am-rhein.html",
+      "title": "Immobilienmakler Au am Rhein",
+      "slug": "immobilienmakler-au-am-rhein",
+      "target_type": "page",
+      "post_status": "publish"
     }
   ]
 }

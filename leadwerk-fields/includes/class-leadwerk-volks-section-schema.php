@@ -63,6 +63,15 @@ class Leadwerk_Volks_Section_Schema {
 			'volks_kaufen_sections',
 			'volks_verkaufen_sections',
 			'volks_bewerten_sections',
+			'volks_gewerbe_sections',
+			'volks_mfh_sections',
+			'volks_checkliste_sections',
+			'volks_ettlingen_sections',
+			'volks_gaggenau_sections',
+			'volks_malsch_sections',
+			'volks_rastatt_sections',
+			'volks_rheinstetten_sections',
+			'volks_au_am_rhein_sections',
 		);
 	}
 
@@ -81,10 +90,18 @@ class Leadwerk_Volks_Section_Schema {
 	 */
 	public static function editable_background_css_labels() {
 		return array(
-			''                             => 'Inline (style-Attribut)',
-			'editorial-section--sell-bg'   => 'Sektions-Hintergrund Verkaufen',
-			'cta-section--mallorca-bg'     => 'Sektions-Hintergrund CTA (Mallorca)',
-			'cta-section--durmersheim-bg'  => 'Sektions-Hintergrund CTA (Durmersheim)',
+			''                                 => 'Inline (style-Attribut)',
+			'editorial-section--sell-bg'       => 'Sektions-Hintergrund Verkaufen',
+			'cta-section--mallorca-bg'         => 'Sektions-Hintergrund CTA (Mallorca)',
+			'cta-section--durmersheim-bg'      => 'Sektions-Hintergrund CTA (Durmersheim)',
+			'cta-section--rheinstetten-bg'     => 'Sektions-Hintergrund CTA (Rheinstetten)',
+			'cta-section--au-am-rhein-bg'      => 'Sektions-Hintergrund CTA (Au am Rhein)',
+			'cta-section--rastatt-bg'          => 'Sektions-Hintergrund CTA (Rastatt)',
+			'cta-section--ettlingen-bg'        => 'Sektions-Hintergrund CTA (Ettlingen)',
+			'cta-section--gaggenau-bg'         => 'Sektions-Hintergrund CTA (Gaggenau)',
+			'cta-section--malsch-bg'           => 'Sektions-Hintergrund CTA (Malsch)',
+			'cta-section--gewerbeimmobilien-bg' => 'Sektions-Hintergrund CTA (Gewerbeimmobilien)',
+			'cta-section--mehrfamilienhaus-bg' => 'Sektions-Hintergrund CTA (Mehrfamilienhaus)',
 		);
 	}
 

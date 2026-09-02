@@ -414,6 +414,87 @@ class Leadwerk_Content_Schema {
 					? Leadwerk_Volks_Section_Schema::landing_layouts()
 					: array( 'html_section' => self::layout_volks_html_section() ),
 			),
+			'volks_gewerbe_sections'      => array(
+				'label'       => 'volksimmobilien Gewerbeimmobilien',
+				'description' => 'Sektionen der Gewerbeimmobilien-Landingpage.',
+				'source_keys' => array( 'volks-gewerbe-v1' ),
+				'import_mode' => 'volks_multi_section',
+				'layouts'     => class_exists( 'Leadwerk_Volks_Section_Schema' )
+					? Leadwerk_Volks_Section_Schema::landing_layouts()
+					: array( 'html_section' => self::layout_volks_html_section() ),
+			),
+			'volks_mfh_sections'          => array(
+				'label'       => 'volksimmobilien Mehrfamilienhaus',
+				'description' => 'Sektionen der Mehrfamilienhaus-Landingpage.',
+				'source_keys' => array( 'volks-mfh-v1' ),
+				'import_mode' => 'volks_multi_section',
+				'layouts'     => class_exists( 'Leadwerk_Volks_Section_Schema' )
+					? Leadwerk_Volks_Section_Schema::landing_layouts()
+					: array( 'html_section' => self::layout_volks_html_section() ),
+			),
+			'volks_checkliste_sections'   => array(
+				'label'       => 'volksimmobilien Verkaufs-Checkliste',
+				'description' => 'Sektionen der Verkaufs-Checkliste Seite.',
+				'source_keys' => array( 'volks-checkliste-v1' ),
+				'import_mode' => 'volks_multi_section',
+				'layouts'     => class_exists( 'Leadwerk_Volks_Section_Schema' )
+					? Leadwerk_Volks_Section_Schema::landing_layouts()
+					: array( 'html_section' => self::layout_volks_html_section() ),
+			),
+			'volks_ettlingen_sections'    => array(
+				'label'       => 'volksimmobilien Ettlingen',
+				'description' => 'Sektionen der lokalen Landingpage Immobilienmakler Ettlingen.',
+				'source_keys' => array( 'volks-ettlingen-v1' ),
+				'import_mode' => 'volks_multi_section',
+				'layouts'     => class_exists( 'Leadwerk_Volks_Section_Schema' )
+					? Leadwerk_Volks_Section_Schema::landing_layouts()
+					: array( 'html_section' => self::layout_volks_html_section() ),
+			),
+			'volks_gaggenau_sections'     => array(
+				'label'       => 'volksimmobilien Gaggenau',
+				'description' => 'Sektionen der lokalen Landingpage Immobilienmakler Gaggenau.',
+				'source_keys' => array( 'volks-gaggenau-v1' ),
+				'import_mode' => 'volks_multi_section',
+				'layouts'     => class_exists( 'Leadwerk_Volks_Section_Schema' )
+					? Leadwerk_Volks_Section_Schema::landing_layouts()
+					: array( 'html_section' => self::layout_volks_html_section() ),
+			),
+			'volks_malsch_sections'       => array(
+				'label'       => 'volksimmobilien Malsch',
+				'description' => 'Sektionen der lokalen Landingpage Immobilienmakler Malsch.',
+				'source_keys' => array( 'volks-malsch-v1' ),
+				'import_mode' => 'volks_multi_section',
+				'layouts'     => class_exists( 'Leadwerk_Volks_Section_Schema' )
+					? Leadwerk_Volks_Section_Schema::landing_layouts()
+					: array( 'html_section' => self::layout_volks_html_section() ),
+			),
+			'volks_rastatt_sections'      => array(
+				'label'       => 'volksimmobilien Rastatt',
+				'description' => 'Sektionen der lokalen Landingpage Immobilienmakler Rastatt.',
+				'source_keys' => array( 'volks-rastatt-v1' ),
+				'import_mode' => 'volks_multi_section',
+				'layouts'     => class_exists( 'Leadwerk_Volks_Section_Schema' )
+					? Leadwerk_Volks_Section_Schema::landing_layouts()
+					: array( 'html_section' => self::layout_volks_html_section() ),
+			),
+			'volks_rheinstetten_sections' => array(
+				'label'       => 'volksimmobilien Rheinstetten',
+				'description' => 'Sektionen der lokalen Landingpage Immobilienmakler Rheinstetten.',
+				'source_keys' => array( 'volks-rheinstetten-v1' ),
+				'import_mode' => 'volks_multi_section',
+				'layouts'     => class_exists( 'Leadwerk_Volks_Section_Schema' )
+					? Leadwerk_Volks_Section_Schema::landing_layouts()
+					: array( 'html_section' => self::layout_volks_html_section() ),
+			),
+			'volks_au_am_rhein_sections'  => array(
+				'label'       => 'volksimmobilien Au am Rhein',
+				'description' => 'Sektionen der lokalen Landingpage Immobilienmakler Au am Rhein.',
+				'source_keys' => array( 'volks-au-am-rhein-v1' ),
+				'import_mode' => 'volks_multi_section',
+				'layouts'     => class_exists( 'Leadwerk_Volks_Section_Schema' )
+					? Leadwerk_Volks_Section_Schema::landing_layouts()
+					: array( 'html_section' => self::layout_volks_html_section() ),
+			),
 			'volks_impressum_page'        => array(
 				'label'             => 'volksimmobilien Impressum',
 				'description'       => 'Impressum bearbeiten.',

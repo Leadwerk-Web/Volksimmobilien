@@ -19,6 +19,16 @@ HTML_FILES=(
   datenschutz.html
   danke.html
   404.html
+  immobilienmakler-durmersheim.html
+  gewerbeimmobilien-verkaufen.html
+  mehrfamilienhaus-verkaufen.html
+  verkaufs-checkliste.html
+  immobilienmakler-ettlingen.html
+  immobilienmakler-gaggenau.html
+  immobilienmakler-malsch.html
+  immobilienmakler-rastatt.html
+  immobilienmakler-rheinstetten.html
+  immobilienmakler-au-am-rhein.html
 )
 
 # Remove ACM / legacy HTML at destination root (not in Volks manifest).
@@ -81,10 +91,14 @@ if [[ -f "$ROOT/css/style.css" ]]; then
   cp "$ROOT/css/style.css" "$DEST/css/style.css"
 fi
 
-if [[ -f "$ROOT/js/main.js" ]]; then
-  mkdir -p "$DEST/js"
-  cp "$ROOT/js/main.js" "$DEST/js/main.js"
+# js/main.js removed from project; clean up stale copy.
+rm -f "$DEST/js/main.js"
+
+# Sync downloads (PDF lead magnets etc.).
+if [[ -d "$ROOT/downloads" ]]; then
+  mkdir -p "$DEST/downloads"
+  rsync -a --delete "$ROOT/downloads/" "$DEST/downloads/"
 fi
 
 echo "Synced volksimmobilien source into: $DEST"
-echo "HTML: ${#HTML_FILES[@]} files | Fotos: $(find "$DEST/Fotos" -type f 2>/dev/null | wc -l | tr -d ' ') files | Video: $(find "$DEST/Video" -type f 2>/dev/null | wc -l | tr -d ' ') files"
+echo "HTML: ${#HTML_FILES[@]} files | Fotos: $(find "$DEST/Fotos" -type f 2>/dev/null | wc -l | tr -d ' ') files | Video: $(find "$DEST/Video" -type f 2>/dev/null | wc -l | tr -d ' ') files | Downloads: $(find "$DEST/downloads" -type f 2>/dev/null | wc -l | tr -d ' ') files"

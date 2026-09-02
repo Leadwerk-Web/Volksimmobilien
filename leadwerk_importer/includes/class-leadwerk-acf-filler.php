@@ -2983,6 +2983,15 @@ class Leadwerk_ACF_Filler {
 			'datenschutz.html'                  => 'volks-datenschutz-v1',
 			'danke.html'                        => 'volks-danke-v1',
 			'404.html'                          => 'volks-404-v1',
+			'gewerbeimmobilien-verkaufen.html'  => 'volks-gewerbe-v1',
+			'mehrfamilienhaus-verkaufen.html'   => 'volks-mfh-v1',
+			'verkaufs-checkliste.html'          => 'volks-checkliste-v1',
+			'immobilienmakler-ettlingen.html'   => 'volks-ettlingen-v1',
+			'immobilienmakler-gaggenau.html'    => 'volks-gaggenau-v1',
+			'immobilienmakler-malsch.html'      => 'volks-malsch-v1',
+			'immobilienmakler-rastatt.html'     => 'volks-rastatt-v1',
+			'immobilienmakler-rheinstetten.html' => 'volks-rheinstetten-v1',
+			'immobilienmakler-au-am-rhein.html' => 'volks-au-am-rhein-v1',
 		);
 
 		$source_key = '';
@@ -2991,16 +3000,25 @@ class Leadwerk_ACF_Filler {
 		} else {
 			$slug = strtolower( preg_replace( '#\.html$#i', '', $normalized ) );
 			$slug_map = array(
-				'bewerten'                     => 'volks-bewerten-v1',
-				'kaufen'                       => 'volks-kaufen-v1',
-				'verkaufen'                    => 'volks-verkaufen-v1',
-				'mallorca'                     => 'volks-mallorca-v1',
-				'ausland'                      => 'volks-ausland-v1',
-				'immobilienmakler-durmersheim' => 'volks-durmersheim-v1',
-				'impressum'                    => 'volks-impressum-v1',
-				'datenschutz'                  => 'volks-datenschutz-v1',
-				'danke'                        => 'volks-danke-v1',
-				'index'                        => 'volks-home-v1',
+				'bewerten'                       => 'volks-bewerten-v1',
+				'kaufen'                         => 'volks-kaufen-v1',
+				'verkaufen'                      => 'volks-verkaufen-v1',
+				'mallorca'                       => 'volks-mallorca-v1',
+				'ausland'                        => 'volks-ausland-v1',
+				'immobilienmakler-durmersheim'   => 'volks-durmersheim-v1',
+				'impressum'                      => 'volks-impressum-v1',
+				'datenschutz'                    => 'volks-datenschutz-v1',
+				'danke'                          => 'volks-danke-v1',
+				'index'                          => 'volks-home-v1',
+				'gewerbeimmobilien-verkaufen'    => 'volks-gewerbe-v1',
+				'mehrfamilienhaus-verkaufen'     => 'volks-mfh-v1',
+				'verkaufs-checkliste'            => 'volks-checkliste-v1',
+				'immobilienmakler-ettlingen'     => 'volks-ettlingen-v1',
+				'immobilienmakler-gaggenau'      => 'volks-gaggenau-v1',
+				'immobilienmakler-malsch'        => 'volks-malsch-v1',
+				'immobilienmakler-rastatt'       => 'volks-rastatt-v1',
+				'immobilienmakler-rheinstetten'  => 'volks-rheinstetten-v1',
+				'immobilienmakler-au-am-rhein'   => 'volks-au-am-rhein-v1',
 			);
 			$source_key = $slug_map[ $slug ] ?? '';
 		}
@@ -3046,6 +3064,15 @@ class Leadwerk_ACF_Filler {
 			'volks-datenschutz-v1'   => '/datenschutz/',
 			'volks-danke-v1'         => '/danke/',
 			'volks-404-v1'           => '/404/',
+			'volks-gewerbe-v1'       => '/gewerbeimmobilien-verkaufen/',
+			'volks-mfh-v1'           => '/mehrfamilienhaus-verkaufen/',
+			'volks-checkliste-v1'    => '/verkaufs-checkliste/',
+			'volks-ettlingen-v1'     => '/immobilienmakler-ettlingen/',
+			'volks-gaggenau-v1'      => '/immobilienmakler-gaggenau/',
+			'volks-malsch-v1'        => '/immobilienmakler-malsch/',
+			'volks-rastatt-v1'       => '/immobilienmakler-rastatt/',
+			'volks-rheinstetten-v1'  => '/immobilienmakler-rheinstetten/',
+			'volks-au-am-rhein-v1'   => '/immobilienmakler-au-am-rhein/',
 		);
 
 		$de_lookup = isset( $this->page_lookup['de'] ) && is_array( $this->page_lookup['de'] ) ? $this->page_lookup['de'] : array();
