@@ -249,7 +249,11 @@
     var dialog = el('div', 'ig-lightbox__dialog');
 
     var stage = el('div', 'ig-lightbox__stage');
-    stage.setAttribute('data-ig-stage', '');
+    // Das Medium bekommt einen eigenen Behaelter, damit die Pfeile beim
+    // Blaettern nicht mitgeloescht werden.
+    var media = el('div', 'ig-lightbox__media');
+    media.setAttribute('data-ig-stage', '');
+    stage.appendChild(media);
 
     var aside = el('div', 'ig-lightbox__aside');
     aside.innerHTML =
@@ -284,8 +288,11 @@
     dialog.appendChild(stage);
     dialog.appendChild(aside);
     dialog.appendChild(close);
-    dialog.appendChild(prev);
-    dialog.appendChild(next);
+    // Die Pfeile sitzen in der Buehne, nicht im Dialog. Sonst wandern sie bei
+    // schmaleren Fenstern in die Textspalte, weil die Buehne schrumpft und die
+    // Textspalte ihre feste Breite behaelt.
+    stage.appendChild(prev);
+    stage.appendChild(next);
     root.appendChild(dialog);
 
     root.addEventListener('click', function (event) {
