@@ -1,0 +1,513 @@
+/* ═══════════════════════════════════════════════
+   INSTAGRAM-FEED
+   Eigenstaendiges Modul. Nutzt die Design-Tokens aus style.css
+   und wird nur auf Seiten geladen, die den Feed zeigen.
+   ═══════════════════════════════════════════════ */
+
+.ig-section {
+  background: linear-gradient(180deg, var(--color-white) 0%, var(--color-gray-50) 100%);
+  overflow: hidden;
+}
+
+/* ---------- Profilkopf ---------- */
+
+.ig-profile {
+  display: flex;
+  align-items: center;
+  gap: clamp(1rem, 3vw, 2rem);
+  flex-wrap: wrap;
+  padding: clamp(1.25rem, 3vw, 2rem);
+  margin-bottom: clamp(1.75rem, 4vw, 2.75rem);
+  background: var(--color-white);
+  border: 1px solid var(--color-gray-200);
+  border-radius: 20px;
+  box-shadow: 0 18px 40px -32px rgba(0, 0, 0, 0.45);
+}
+
+.ig-profile__avatar-ring {
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+  width: 84px;
+  height: 84px;
+  border-radius: 50%;
+  /* Der Instagram-Verlauf bleibt auf den Ring beschraenkt, damit die
+     Marke der Seite die Flaeche behaelt. */
+  background: conic-gradient(from 210deg, #f9ce34, #ee2a7b, #6228d7, #f9ce34);
+  padding: 3px;
+}
+
+.ig-profile__avatar {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--color-white);
+  background: var(--color-gray-100);
+}
+
+.ig-profile__body {
+  flex: 1 1 240px;
+  min-width: 0;
+}
+
+.ig-profile__handle {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-family: var(--font-heading);
+  font-size: var(--fs-lg);
+  font-weight: 700;
+  color: var(--color-gray-900);
+  text-decoration: none;
+}
+
+.ig-profile__handle:hover {
+  color: var(--color-primary);
+}
+
+.ig-profile__verified {
+  color: var(--color-accent);
+}
+
+.ig-profile__bio {
+  margin: 0.35rem 0 0;
+  font-size: var(--fs-sm);
+  color: var(--color-gray-600);
+  max-width: 46ch;
+}
+
+.ig-profile__stats {
+  display: flex;
+  gap: clamp(1.25rem, 3vw, 2.25rem);
+  margin-top: 0.85rem;
+  padding: 0;
+  list-style: none;
+}
+
+.ig-profile__stats li {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.2;
+}
+
+.ig-profile__stat-value {
+  font-family: var(--font-heading);
+  font-size: var(--fs-lg);
+  font-weight: 700;
+  color: var(--color-gray-900);
+  font-variant-numeric: tabular-nums;
+}
+
+.ig-profile__stat-label {
+  font-size: var(--fs-xs);
+  color: var(--color-gray-500);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.ig-profile__action {
+  flex-shrink: 0;
+}
+
+/* ---------- Raster ---------- */
+
+/* Zwoelf Beitraege gehen bei 6, 4, 3 und 2 Spalten glatt auf,
+   deshalb bleibt das Raster auf jeder Breite ohne Luecke. */
+.ig-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: clamp(0.5rem, 1.2vw, 0.875rem);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+@media (max-width: 1100px) {
+  .ig-grid { grid-template-columns: repeat(4, 1fr); }
+}
+
+@media (max-width: 720px) {
+  .ig-grid { grid-template-columns: repeat(3, 1fr); }
+}
+
+@media (max-width: 480px) {
+  .ig-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+.ig-tile {
+  position: relative;
+  aspect-ratio: 4 / 5;
+  border-radius: 14px;
+  overflow: hidden;
+  background: var(--color-gray-200);
+  cursor: pointer;
+  border: 0;
+  padding: 0;
+  width: 100%;
+  display: block;
+  /* Startzustand der Einblendung; ohne JS bleibt die Kachel sichtbar. */
+  opacity: 1;
+  transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1),
+              box-shadow 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.ig-tile:hover,
+.ig-tile:focus-visible {
+  transform: translateY(-4px);
+  box-shadow: 0 22px 38px -22px rgba(0, 0, 0, 0.55);
+  z-index: 2;
+}
+
+.ig-tile:focus-visible {
+  outline: 3px solid var(--color-primary);
+  outline-offset: 3px;
+}
+
+.ig-tile__media {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.ig-tile:hover .ig-tile__media,
+.ig-tile:focus-visible .ig-tile__media {
+  transform: scale(1.06);
+}
+
+/* Das Reel liegt ueber dem Standbild und wird erst beim Hover eingeblendet. */
+.ig-tile__video {
+  opacity: 0;
+  transition: opacity 0.35s ease, transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.ig-tile.is-playing .ig-tile__video {
+  opacity: 1;
+}
+
+.ig-tile__badge {
+  position: absolute;
+  top: 0.6rem;
+  right: 0.6rem;
+  z-index: 3;
+  display: grid;
+  place-items: center;
+  width: 26px;
+  height: 26px;
+  border-radius: 8px;
+  color: var(--color-white);
+  background: rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  transition: opacity 0.3s ease;
+}
+
+.ig-tile.is-playing .ig-tile__badge {
+  opacity: 0;
+}
+
+.ig-tile__overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 0.5rem;
+  padding: 0.85rem;
+  text-align: left;
+  color: var(--color-white);
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 45%, rgba(0, 0, 0, 0.78) 100%);
+  opacity: 0;
+  transition: opacity 0.35s ease;
+}
+
+.ig-tile:hover .ig-tile__overlay,
+.ig-tile:focus-visible .ig-tile__overlay {
+  opacity: 1;
+}
+
+.ig-tile__caption {
+  font-size: var(--fs-xs);
+  line-height: 1.45;
+  margin: 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.ig-tile__meta {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  font-size: var(--fs-xs);
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}
+
+.ig-tile__meta span {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+/* ---------- Abschluss unter dem Raster ---------- */
+
+.ig-footer-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: var(--space-md);
+  margin-top: clamp(1.25rem, 3vw, 1.75rem);
+}
+
+.ig-footer-note {
+  margin: 0;
+  font-size: var(--fs-xs);
+  color: var(--color-gray-500);
+}
+
+/* ---------- Lightbox ---------- */
+
+.ig-lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: grid;
+  place-items: center;
+  padding: clamp(0.75rem, 3vw, 2rem);
+  background: rgba(10, 10, 10, 0.88);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  opacity: 0;
+  /* Bewusst kein visibility:hidden. Das wuerde den Tastaturfokus auf den
+     Schliessen-Knopf verhindern, solange der Uebergang laeuft. */
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+/* display:grid ueberschreibt das eingebaute [hidden], deshalb explizit. */
+.ig-lightbox[hidden] {
+  display: none;
+}
+
+.ig-lightbox.is-open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.ig-lightbox__dialog {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(280px, 360px);
+  width: min(1000px, 100%);
+  /* Feste Hoehe, sonst bestimmt die kurze Textspalte die Groesse und
+     hochkant aufgenommene Reels werden zusammengedrueckt. */
+  height: min(88vh, 760px);
+  background: var(--color-white);
+  border-radius: 18px;
+  overflow: hidden;
+  transform: scale(0.96);
+  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.ig-lightbox.is-open .ig-lightbox__dialog {
+  transform: scale(1);
+}
+
+@media (max-width: 860px) {
+  .ig-lightbox__dialog {
+    grid-template-columns: 1fr;
+    /* Medium oben in fester Hoehe, Text darunter scrollbar. */
+    grid-template-rows: minmax(0, 46vh) minmax(0, 1fr);
+    height: min(92vh, 820px);
+    width: min(560px, 100%);
+  }
+}
+
+.ig-lightbox__stage {
+  position: relative;
+  display: grid;
+  place-items: center;
+  background: var(--color-near-black);
+  min-height: 0;
+}
+
+.ig-lightbox__stage img,
+.ig-lightbox__stage video {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+.ig-lightbox__aside {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+  padding: clamp(1.1rem, 2.5vw, 1.6rem);
+  overflow-y: auto;
+  min-height: 0;
+}
+
+.ig-lightbox__head {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  padding-right: 2.5rem;
+}
+
+.ig-lightbox__avatar {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.ig-lightbox__handle {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: var(--fs-sm);
+  color: var(--color-gray-900);
+  text-decoration: none;
+}
+
+.ig-lightbox__handle:hover { color: var(--color-primary); }
+
+.ig-lightbox__date {
+  display: block;
+  font-size: var(--fs-xs);
+  color: var(--color-gray-500);
+}
+
+.ig-lightbox__caption {
+  margin: 0;
+  font-size: var(--fs-sm);
+  line-height: 1.6;
+  color: var(--color-gray-700);
+  white-space: pre-line;
+}
+
+.ig-lightbox__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.ig-lightbox__tag {
+  font-size: var(--fs-xs);
+  color: var(--color-primary);
+  background: var(--color-primary-light);
+  border-radius: 999px;
+  padding: 0.2rem 0.6rem;
+}
+
+.ig-lightbox__meta {
+  display: flex;
+  gap: 1.1rem;
+  font-size: var(--fs-sm);
+  color: var(--color-gray-600);
+  font-variant-numeric: tabular-nums;
+  padding-top: 0.2rem;
+  border-top: 1px solid var(--color-gray-200);
+  margin-top: auto;
+}
+
+.ig-lightbox__meta span {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding-top: 0.75rem;
+}
+
+.ig-lightbox__link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+}
+
+/* Bedienelemente */
+
+.ig-lightbox__close,
+.ig-lightbox__nav {
+  position: absolute;
+  z-index: 5;
+  display: grid;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  border: 0;
+  border-radius: 50%;
+  cursor: pointer;
+  color: var(--color-white);
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  transition: background 0.25s ease, transform 0.25s ease;
+}
+
+.ig-lightbox__close:hover,
+.ig-lightbox__nav:hover {
+  background: var(--color-primary);
+  transform: scale(1.08);
+}
+
+.ig-lightbox__close:focus-visible,
+.ig-lightbox__nav:focus-visible {
+  outline: 3px solid var(--color-white);
+  outline-offset: 2px;
+}
+
+.ig-lightbox__close {
+  top: 0.75rem;
+  right: 0.75rem;
+}
+
+.ig-lightbox__nav--prev { left: 0.75rem; top: 50%; transform: translateY(-50%); }
+.ig-lightbox__nav--next { right: calc(min(360px, 36%) + 0.75rem); top: 50%; transform: translateY(-50%); }
+
+.ig-lightbox__nav--prev:hover { transform: translateY(-50%) scale(1.08); }
+.ig-lightbox__nav--next:hover { transform: translateY(-50%) scale(1.08); }
+
+@media (max-width: 860px) {
+  .ig-lightbox__nav--next { right: 0.75rem; top: 23%; }
+  .ig-lightbox__nav--prev { top: 23%; }
+}
+
+/* ---------- Einblendung und Bewegungsarmut ---------- */
+
+.ig-grid.is-ready .ig-tile {
+  animation: ig-tile-in 0.5s cubic-bezier(0.22, 1, 0.36, 1) backwards;
+}
+
+@keyframes ig-tile-in {
+  from { opacity: 0; transform: translateY(14px) scale(0.97); }
+  to   { opacity: 1; transform: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ig-grid.is-ready .ig-tile { animation: none; }
+  .ig-tile,
+  .ig-tile__media,
+  .ig-tile__video,
+  .ig-tile__overlay,
+  .ig-lightbox,
+  .ig-lightbox__dialog {
+    transition-duration: 0.01ms;
+  }
+  .ig-tile:hover,
+  .ig-tile:focus-visible { transform: none; }
+  .ig-tile:hover .ig-tile__media { transform: none; }
+}
+
+body.ig-lightbox-open {
+  overflow: hidden;
+}
