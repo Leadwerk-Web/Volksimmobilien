@@ -67,7 +67,7 @@
 }
 
 .home-contact-wpforms .wpforms-field-container {
-	display: contents;
+	display: contents !important;
 }
 
 .home-contact-wpforms .wpforms-field {
@@ -537,4 +537,34 @@
 		width: 100% !important;
 		justify-content: center;
 	}
+}
+
+/*
+ * GTD / WPForms tokens. Set on the container so they beat the inline
+ * #wpforms-{id} defaults (41px button / 43px field). Never target a numeric form ID.
+ * Do not give .wpforms-field-container display:grid here: the contact layout uses
+ * display:contents so fields participate in the two-column form grid.
+ */
+.leadwerk-wpforms,
+.home-contact-wpforms,
+.leadwerk-wpforms .wpforms-container,
+.home-contact-wpforms .wpforms-container {
+	--wpforms-field-border-radius: var(--radius-md) !important;
+	--wpforms-field-background-color: var(--color-white) !important;
+	--wpforms-field-border-color: var(--color-gray-200) !important;
+	--wpforms-field-text-color: var(--color-gray-800) !important;
+	--wpforms-label-color: var(--color-gray-800) !important;
+	--wpforms-button-background-color: var(--color-primary) !important;
+	--wpforms-button-border-color: var(--color-primary) !important;
+	--wpforms-button-text-color: var(--color-white) !important;
+	--wpforms-button-border-radius: var(--radius-full) !important;
+	--wpforms-button-size-height: 3.25rem !important;
+	--wpforms-button-size-padding-h: 1.75rem !important;
+	--wpforms-button-size-font-size: var(--fs-base) !important;
+	--wpforms-field-size-padding-h: 1.1rem !important;
+}
+
+.home-contact-wpforms .wpforms-field-container,
+.leadwerk-wpforms.home-contact-wpforms .wpforms-field-container {
+	display: contents !important;
 }
