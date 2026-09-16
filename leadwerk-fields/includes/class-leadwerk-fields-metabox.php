@@ -54,10 +54,15 @@ class Leadwerk_Fields_Metabox {
 			'fields'      => array(
 				'wpforms_form_id_de'                 => array( 'label' => 'WPForms Form ID / Shortcode (DE)', 'type' => 'text' ),
 				'wpforms_form_id_en'                 => array( 'label' => 'WPForms Form ID / Shortcode (EN)', 'type' => 'text' ),
+				'wpforms_form_id_valuation'          => array(
+					'label' => 'WPForms Form ID Wertermittlungsrechner',
+					'type'  => 'text',
+					'help'  => 'Wird automatisch angelegt. Einträge liegen unter WPForms → Einträge. Shortcode nur intern, der Wizard bleibt das Frontend.',
+				),
 				'valuation_wizard_recipient_email' => array(
 					'label' => 'Wertermittlung: Empfänger-E-Mail',
 					'type'  => 'email',
-					'help'  => 'Alle Angaben aus dem Bewertungs-Wizard (valuation-wizard) werden an diese Adresse gesendet.',
+					'help'  => 'Standard: anfragen@volksimmobilien.eu. Versand über WP Mail SMTP, Absender webseite@volksimmobilien.eu.',
 				),
 			),
 		),

@@ -9,7 +9,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-define( 'VOLKS_THEME_VERSION', '1.0.8' );
+define( 'VOLKS_THEME_VERSION', '1.0.11' );
 define( 'VOLKS_THEME_PATH', get_template_directory() );
 define( 'VOLKS_THEME_URI', get_template_directory_uri() );
 
@@ -88,92 +88,6 @@ function volks_enqueue_assets() {
 
 }
 add_action( 'wp_enqueue_scripts', 'volks_enqueue_assets' );
-
-/**
- * Deliver valuation-wizard leads only after the server accepts the request.
- */
-function volks_submit_valuation() {
-	check_ajax_referer( 'volks_valuation_submit', 'nonce' );
-
-	$raw = isset( $_POST['payload'] ) ? wp_unslash( (string) $_POST['payload'] ) : ''; // phpcs:ignore WordPress.Security.NonceVerification.Missing
-	if ( '' === $raw || strlen( $raw ) > 20000 ) {
-		wp_send_json_error( array( 'message' => 'Die Anfrage konnte nicht verarbeitet werden.' ), 400 );
-	}
-
-	$payload = json_decode( $raw, true );
-	if ( ! is_array( $payload ) ) {
-		wp_send_json_error( array( 'message' => 'Die Anfrage enthält ungültige Daten.' ), 400 );
-	}
-
-	$first_name = sanitize_text_field( (string) ( $payload['vorname'] ?? '' ) );
-	$last_name  = sanitize_text_field( (string) ( $payload['nachname'] ?? '' ) );
-	$email      = sanitize_email( (string) ( $payload['email'] ?? '' ) );
-	$privacy    = ! empty( $payload['datenschutz'] );
-	if ( '' === $first_name || '' === $last_name || ! is_email( $email ) || ! $privacy ) {
-		wp_send_json_error( array( 'message' => 'Bitte fülle alle Pflichtfelder korrekt aus.' ), 422 );
-	}
-
-	$type_labels = array(
-		'einfamilienhaus'  => 'Einfamilienhaus',
-		'wohnung'          => 'Wohnung',
-		'mehrfamilienhaus' => 'Mehrfamilienhaus',
-	);
-	$type        = sanitize_key( (string) ( $payload['type'] ?? '' ) );
-	$type_label  = $type_labels[ $type ] ?? $type;
-	$field_labels = array(
-		'subtype'             => 'Untertyp',
-		'strasse'             => 'Straße und Hausnummer',
-		'plz'                 => 'Postleitzahl',
-		'ort'                 => 'Ort',
-		'flaeche'             => 'Wohnfläche (m²)',
-		'grundstueck'         => 'Grundstücksfläche (m²)',
-		'zimmer'              => 'Zimmer',
-		'wohneinheiten'       => 'Wohneinheiten',
-		'baujahr'             => 'Baujahr',
-		'mieteinnahmen_jahr'  => 'Jährliche Mieteinnahmen (€)',
-		'ausstattung'         => 'Ausstattung',
-		'zustand'             => 'Zustand',
-		'anlass'              => 'Anlass',
-		'telefon'             => 'Telefon',
-	);
-
-	$lines = array(
-		'Neue Anfrage über die Online-Wertermittlung',
-		'',
-		'Objekttyp: ' . $type_label,
-	);
-	foreach ( $field_labels as $key => $label ) {
-		$value = sanitize_text_field( (string) ( $payload[ $key ] ?? '' ) );
-		if ( '' !== $value ) {
-			$lines[] = $label . ': ' . $value;
-		}
-	}
-	$lines[] = '';
-	$lines[] = 'Kontakt: ' . $first_name . ' ' . $last_name;
-	$lines[] = 'E-Mail: ' . $email;
-	$lines[] = 'Datenschutz-Zustimmung: Ja';
-
-	$recipient = sanitize_email( (string) get_option( 'leadwerk_opt_company_email', 'info@volksimmobilien.eu' ) );
-	if ( ! is_email( $recipient ) ) {
-		$recipient = 'info@volksimmobilien.eu';
-	}
-
-	$headers = array( sprintf( 'Reply-To: %s <%s>', $first_name . ' ' . $last_name, $email ) );
-	$sent    = wp_mail(
-		$recipient,
-		'Neue Online-Wertermittlung: ' . $type_label,
-		implode( "\n", $lines ),
-		$headers
-	);
-
-	if ( ! $sent ) {
-		wp_send_json_error( array( 'message' => 'Die Anfrage konnte gerade nicht gesendet werden. Bitte versuche es erneut oder ruf uns an.' ), 500 );
-	}
-
-	wp_send_json_success( array( 'message' => 'Vielen Dank! Deine Anfrage wurde gesendet.' ) );
-}
-add_action( 'wp_ajax_volks_submit_valuation', 'volks_submit_valuation' );
-add_action( 'wp_ajax_nopriv_volks_submit_valuation', 'volks_submit_valuation' );
 
 /**
  * Load WPForms core assets on pages that embed the contact form via theme options.

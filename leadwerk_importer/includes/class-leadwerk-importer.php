@@ -3603,8 +3603,12 @@ class Leadwerk_Importer {
 			$this->leadwerk_update_option( 'company_email', 'info@volksimmobilien.eu' );
 		}
 
+		if ( ! $this->leadwerk_get_option( 'wpforms_form_id_valuation' ) ) {
+			$this->leadwerk_update_option( 'wpforms_form_id_valuation', '' );
+		}
+
 		if ( ! $this->leadwerk_get_option( 'valuation_wizard_recipient_email' ) ) {
-			$this->leadwerk_update_option( 'valuation_wizard_recipient_email', 'info@volksimmobilien.eu' );
+			$this->leadwerk_update_option( 'valuation_wizard_recipient_email', 'anfragen@volksimmobilien.eu' );
 		}
 
 		$this->repair_volks_stored_media_urls();
