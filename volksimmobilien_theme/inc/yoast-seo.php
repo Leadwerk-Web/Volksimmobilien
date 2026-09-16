@@ -21,15 +21,8 @@ function leadwerk_theme_truncate_seo_title_for_yoast( $title, $max_chars = 58 ) 
 	if ( '' === $title ) {
 		return '';
 	}
-	if ( $max_chars < 8 ) {
-		$max_chars = 8;
-	}
-	if ( function_exists( 'mb_strlen' ) && function_exists( 'mb_substr' ) && mb_strlen( $title ) > $max_chars ) {
-		return rtrim( mb_substr( $title, 0, $max_chars - 1 ) ) . '…';
-	}
-	if ( strlen( $title ) > $max_chars ) {
-		return rtrim( substr( $title, 0, $max_chars - 1 ) ) . '…';
-	}
+	// Seit 16.09.2026 bewusst ohne Kürzung: ein „…“ im Title stand wörtlich in den Google-Ergebnissen. Google kürzt selbst.
+	unset( $max_chars );
 
 	return $title;
 }

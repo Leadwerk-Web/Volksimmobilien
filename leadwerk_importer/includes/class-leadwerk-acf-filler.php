@@ -2850,6 +2850,9 @@ class Leadwerk_ACF_Filler {
 		if ( false !== strpos( $href, '#' ) ) {
 			$href = substr( $href, 0, (int) strpos( $href, '#' ) );
 		}
+		if ( false !== strpos( $href, '?' ) ) {
+			$href = substr( $href, 0, (int) strpos( $href, '?' ) );
+		}
 
 		$href = trim( str_replace( '\\', '/', $href ) );
 		$href = preg_replace( '#^(?:https?:)?//[^/]+/#i', '', $href );

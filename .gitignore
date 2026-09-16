@@ -1,0 +1,6 @@
+# Zugangsdaten gehoeren nie ins Repository (es ist oeffentlich).
+scripts/.instagram-token
+*.token
+
+# System
+.DS_Store
