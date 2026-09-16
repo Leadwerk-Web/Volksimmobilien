@@ -341,12 +341,42 @@ function volks_unwrap_false_absolute_html_href( $href ) {
 }
 
 /**
- * Resolve one href from static HTML to a WordPress URL.
+ * Resolve one href from static HTML to a WordPress URL, keeping any query string.
+ *
+ * Beispiel: bewerten.html?ort=Ettlingen&plz=76275 → /bewerten/?ort=Ettlingen&plz=76275
+ * Ohne diese Hülle blieb der Link relativ und lief auf den Ortsseiten ins Leere
+ * (/immobilienmakler-ettlingen/bewerten.html → 302 → 404, Audit 16.09.2026).
  *
  * @param string $href Raw href.
  * @return string
  */
 function volks_resolve_href( $href ) {
+	$raw = trim( html_entity_decode( (string) $href, ENT_QUOTES | ENT_HTML5, 'UTF-8' ) );
+
+	if ( '' !== $raw && ! preg_match( '#^(?:mailto:|tel:|javascript:)#i', $raw ) && preg_match( '#^([^?\#]+)\?([^\#]*)(\#.*)?$#', $raw, $m ) ) {
+		$stripped = $m[1] . ( isset( $m[3] ) ? $m[3] : '' );
+		$query    = (string) $m[2];
+		$resolved = volks_resolve_href_inner( $stripped );
+		if ( $resolved === $stripped || '' === $query ) {
+			return $resolved === $stripped ? $raw : $resolved;
+		}
+		$hash_pos = strpos( $resolved, '#' );
+		$base     = false === $hash_pos ? $resolved : substr( $resolved, 0, $hash_pos );
+		$hash     = false === $hash_pos ? '' : substr( $resolved, $hash_pos );
+		$sep      = false === strpos( $base, '?' ) ? '?' : '&';
+		return $base . $sep . $query . $hash;
+	}
+
+	return volks_resolve_href_inner( $raw );
+}
+
+/**
+ * Resolve one href from static HTML to a WordPress URL (without query handling).
+ *
+ * @param string $href Raw href.
+ * @return string
+ */
+function volks_resolve_href_inner( $href ) {
 	$href = trim( html_entity_decode( (string) $href, ENT_QUOTES | ENT_HTML5, 'UTF-8' ) );
 	$href = volks_unwrap_false_absolute_html_href( $href );
 

@@ -3255,7 +3255,8 @@ class Leadwerk_Importer {
 		}
 
 		if ( ! empty( $payload['document_title'] ) ) {
-			$seo_title = $this->truncate_seo_title_for_yoast( (string) $payload['document_title'] );
+			// Kein Kürzen mit Auslassungspunkten: Google kürzt selbst, ein „…“ im Title landet sonst wörtlich in den Suchergebnissen (Befund 16.09.2026, Startseite „… bis Bad…“).
+			$seo_title = trim( (string) $payload['document_title'] );
 			update_post_meta( $post_id, '_yoast_wpseo_title', sanitize_text_field( $seo_title ) );
 		}
 
