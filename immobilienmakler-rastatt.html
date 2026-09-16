@@ -193,14 +193,14 @@
   <section class="hero hero--mallorca" id="hero">
     <div class="hero-bg">
       <div class="hero-slider" id="heroSlider" aria-roledescription="carousel" aria-label="Bildslider Immobilien Rastatt">
-        <div class="hero-slide is-active">
-          <div class="hero-slide-image" style="background-image: url('Fotos/Rastatt/rastatt-schloss.jpg');" role="img" aria-label="Residenzschloss Rastatt von der Stadtseite"></div>
+        <div class="hero-slide is-active" data-lw-item-key="schloss">
+          <div class="hero-slide-image" aria-hidden="true"><img data-lw-field="hero.slides.image" data-lw-type="image" data-lw-label="Hero-Hintergrund" src="Fotos/Rastatt/rastatt-schloss.jpg" alt=""></div>
         </div>
-        <div class="hero-slide">
-          <div class="hero-slide-image" style="background-image: url('Fotos/Rastatt/rastatt-marktplatz.jpg');" role="img" aria-label="Rastatter Innenstadt mit Blick auf das Residenzschloss"></div>
+        <div class="hero-slide" data-lw-item-key="marktplatz">
+          <div class="hero-slide-image" aria-hidden="true"><img data-lw-field="hero.slides.image" data-lw-type="image" data-lw-label="Hero-Hintergrund" src="Fotos/Rastatt/rastatt-marktplatz.jpg" alt=""></div>
         </div>
-        <div class="hero-slide">
-          <div class="hero-slide-image" style="background-image: url('Fotos/Rastatt/rastatt-schloss-park.jpg');" role="img" aria-label="Schlossanlage in Rastatt"></div>
+        <div class="hero-slide" data-lw-item-key="schloss-park">
+          <div class="hero-slide-image" aria-hidden="true"><img data-lw-field="hero.slides.image" data-lw-type="image" data-lw-label="Hero-Hintergrund" src="Fotos/Rastatt/rastatt-schloss-park.jpg" alt=""></div>
         </div>
       </div>
       <div class="hero-overlay"></div>
@@ -700,7 +700,7 @@
   <section class="weil-slider weil-slider--static" id="suchwunsch" aria-label="Suchwunsch Rastatt">
     <div class="weil-slider-track">
       <div class="weil-slide active">
-        <div class="weil-slide-media" style="background-image: url('Fotos/Rastatt/rastatt-marktplatz.jpg')" aria-hidden="true"></div>
+        <div class="weil-slide-media" aria-hidden="true"><img data-lw-field="suchwunsch.background" data-lw-type="image" data-lw-label="Suchwunsch-Hintergrundbild" src="Fotos/Rastatt/rastatt-marktplatz.jpg" alt=""></div>
         <div class="weil-slide-overlay"></div>
         <div class="weil-slide-content reveal">
           <h3 class="weil-slide-claim">Aktuell ist nicht das passende Immobilienangebot in Rastatt dabei?</h3>
@@ -881,6 +881,7 @@
 
   <!-- SECTION: CTA -->
   <section class="section cta-section cta-section--rastatt-bg" id="kontakt-cta">
+    <img class="volks-section-bg-source" hidden data-lw-field="kontakt-cta.background" data-lw-type="image" data-lw-label="CTA-Hintergrundbild" src="Fotos/Rastatt/rastatt-schloss-park.jpg" alt="">
     <div class="container">
       <div class="cta-panel reveal">
         <span class="section-eyebrow">Kontakt</span>

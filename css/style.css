@@ -583,9 +583,41 @@ body.page-home .site-header {
   inset: 0;
   width: 100%;
   height: 100%;
+  max-width: none;
+  max-height: none;
   object-fit: cover;
   object-position: center;
   z-index: 0;
+  pointer-events: none;
+}
+
+.hero-static-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  border-radius: inherit;
+  overflow: hidden;
+  background-color: var(--color-near-black);
+}
+
+.hero-static-bg img,
+.hero-slide-image img,
+img.hero-slide-image,
+.weil-slide-media img,
+img.weil-slide-media,
+.process-reel-scene-image img,
+img.process-reel-scene-image,
+.process-reel-scene-bg img,
+img.process-reel-scene-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  max-height: none;
+  object-fit: cover;
+  object-position: center;
+  display: block;
   pointer-events: none;
 }
 
@@ -8555,11 +8587,8 @@ body.page-home .site-header {
   inset: 0;
   z-index: 0;
   border-radius: inherit;
+  overflow: hidden;
   background-color: var(--color-near-black);
-  background-image: url('../Fotos/volksimmobilien_verkaufen.webp');
-  background-size: cover;
-  background-position: center center;
-  background-repeat: no-repeat;
 }
 
 .page-verkauf .hero--verkauf .hero-overlay {
@@ -8681,11 +8710,8 @@ body.page-home .site-header {
   inset: 0;
   z-index: 0;
   border-radius: inherit;
+  overflow: hidden;
   background-color: var(--color-near-black);
-  background-image: url('../Fotos/11.webp');
-  background-size: cover;
-  background-position: center center;
-  background-repeat: no-repeat;
 }
 
 .page-kauf .hero--kauf .hero-overlay {
@@ -8717,11 +8743,8 @@ body.page-home .site-header {
   inset: 0;
   z-index: 0;
   border-radius: inherit;
+  overflow: hidden;
   background-color: var(--color-near-black);
-  background-image: url('../Fotos/Vertrauen.webp');
-  background-size: cover;
-  background-position: center center;
-  background-repeat: no-repeat;
 }
 
 .page-bewerten .hero--bewerten .hero-overlay {
@@ -10514,4 +10537,213 @@ body.page-home .site-header {
 .cta-section--mehrfamilienhaus-bg .container {
   position: relative;
   z-index: 1;
+}
+
+/* ═══════════════════════════════════════════════════════
+   Desktop ≥1024px: hohe Fotobühnen, keine überlaufenden CTAs
+   (überschreibt Tablet-Kürzen aus max-width: 1100px)
+   ═══════════════════════════════════════════════════════ */
+@media (min-width: 1024px) {
+  .hero:not(.hero--legal) {
+    height: auto;
+    min-height: min(86vh, 54rem);
+    padding-bottom: clamp(2.75rem, 6vh, 4.5rem);
+  }
+
+  .hero:not(.hero--legal) .hero-content {
+    flex: 0 1 auto;
+    min-height: auto;
+    padding-top: clamp(1.25rem, 3vh, 2.5rem);
+    padding-bottom: clamp(1.5rem, 4vh, 2.75rem);
+  }
+
+  .page-verkauf .hero--verkauf,
+  .page-kauf .hero--kauf,
+  .page-bewerten .hero--bewerten {
+    min-height: min(86vh, 54rem);
+    height: auto;
+    padding-bottom: clamp(3rem, 7vh, 5rem);
+  }
+
+  body.page-home .hero {
+    justify-content: flex-start;
+    height: auto;
+    min-height: min(90vh, 58rem);
+    padding-bottom: clamp(1.25rem, 3vh, 2rem);
+  }
+
+  body.page-home .hero-content {
+    flex: 0 1 auto;
+    min-height: auto;
+    padding-top: var(--space-3xl);
+    padding-bottom: var(--space-lg);
+  }
+
+  body.page-home .intent-hub-wrapper,
+  body .hero--mallorca .intent-hub-wrapper {
+    position: relative;
+    top: auto;
+    bottom: auto;
+    left: auto;
+    right: auto;
+    inset: auto;
+    height: auto;
+    transform: none;
+    flex: 0 0 auto;
+    align-self: stretch;
+    width: 100%;
+    margin-top: var(--space-md);
+    z-index: 4;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .page-home .intro-section {
+    padding-top: clamp(2.75rem, 5vw + 1.5rem, 4.5rem);
+  }
+
+  body:not(.page-home) .hero .intent-hub:not(.intent-hub--dual),
+  body.page-home .intent-hub {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-rows: auto;
+    grid-auto-flow: column;
+    grid-auto-columns: minmax(0, 1fr);
+  }
+
+  body:not(.page-home) .hero .intent-hub:not(.intent-hub--dual) > .intent-tile {
+    grid-row: 1;
+  }
+
+  body:not(.page-home) .intent-tile {
+    border-right: 1px solid var(--color-gray-200);
+    border-bottom: none;
+    flex-direction: row;
+    min-height: clamp(5.25rem, 8vh, 6.5rem);
+  }
+
+  body:not(.page-home) .intent-tile:last-child {
+    border-right: none;
+    border-bottom: none;
+  }
+
+  .intent-tile-icon {
+    overflow: hidden;
+    flex-shrink: 0;
+  }
+
+  body:not(.page-home) .intent-hub--dual,
+  .hero--mallorca .intent-hub--dual {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-auto-flow: column;
+  }
+
+  .hero--mallorca .intent-hub--dual > .intent-tile {
+    grid-row: 1;
+  }
+
+  .hero--mallorca {
+    height: auto;
+    min-height: clamp(34rem, 82vh, 52rem);
+    justify-content: flex-start;
+    overflow: visible;
+    padding-bottom: clamp(1.25rem, 3vh, 2rem);
+  }
+
+  .hero--mallorca .hero-content {
+    flex: 0 1 auto;
+    min-height: auto;
+    padding-bottom: var(--space-lg);
+  }
+
+  .hero--mallorca .intent-tile-icon {
+    width: 56px;
+    height: 56px;
+  }
+
+  .hero--mallorca .intent-tile-icon img {
+    width: 48px;
+    height: 48px;
+    max-width: none;
+    object-fit: contain;
+  }
+
+  .hero--mallorca .intent-hub:not(.intent-hub--dual) .intent-tile {
+    min-height: 4.75rem;
+    padding: 0.85rem 1rem;
+    gap: 0.75rem;
+  }
+
+  .editorial-section--dark.editorial-section--sell-bg {
+    min-height: min(68vh, 44rem);
+  }
+
+  #regionen.region-section + .weil-slider {
+    --weil-slide-viewport: clamp(360px, 42vw, 520px);
+  }
+}
+
+@media (min-width: 1024px) and (max-width: 1366px) {
+  body:not(.page-home) .intent-tile-desc,
+  body.page-home .intent-tile-desc {
+    display: none;
+  }
+}
+
+@media (min-width: 1024px) and (max-height: 850px) {
+  .hero:not(.hero--legal) .hero-title {
+    font-size: clamp(1.7rem, 1.15rem + 1.5vw, 2.45rem);
+    margin-bottom: var(--space-md);
+  }
+
+  .hero:not(.hero--legal) .hero-sub {
+    font-size: clamp(0.9375rem, 0.85rem + 0.3vw, 1.0625rem);
+    line-height: 1.55;
+    margin-bottom: var(--space-lg);
+  }
+
+  .hero:not(.hero--legal) .section-eyebrow {
+    margin-bottom: var(--space-sm);
+  }
+
+  .hero:not(.hero--legal) .hero-content {
+    padding-top: var(--space-lg);
+    padding-bottom: var(--space-lg);
+  }
+
+  .page-verkauf .hero--verkauf,
+  .page-kauf .hero--kauf,
+  .page-bewerten .hero--bewerten {
+    min-height: min(84vh, 44rem);
+    padding-bottom: clamp(2rem, 4.5vh, 3.25rem);
+  }
+}
+
+@media (min-width: 1441px) {
+  body.page-home .intent-hub-wrapper,
+  body .hero--mallorca .intent-hub-wrapper {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    top: auto;
+    transform: translateY(50%);
+    margin-top: 0;
+    padding-left: var(--hero-intent-inset, var(--space-md));
+    padding-right: var(--hero-intent-inset, var(--space-md));
+  }
+
+  body.page-home .hero,
+  .hero--mallorca {
+    padding-bottom: clamp(5.5rem, 10vh, 8.5rem);
+    min-height: min(90vh, 64rem);
+  }
+
+  .page-home .intro-section {
+    padding-top: clamp(8rem, 6rem + 8vw, 12rem);
+  }
+
+  .hero--mallorca .hero-content {
+    padding-bottom: clamp(5.5rem, 12vh, 8rem);
+  }
 }
