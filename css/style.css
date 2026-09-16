@@ -4536,7 +4536,7 @@ img.process-reel-scene-bg {
 
 .footer-grid {
   display: grid;
-  grid-template-columns: 1.5fr 1fr 1.2fr 1fr;
+  grid-template-columns: 1.35fr 0.95fr 1.1fr 0.9fr 1fr;
   gap: var(--space-2xl);
   padding-bottom: var(--space-3xl);
   border-bottom: 1px solid rgba(255,255,255,0.08);
@@ -10544,6 +10544,11 @@ img.process-reel-scene-bg {
    (überschreibt Tablet-Kürzen aus max-width: 1100px)
    ═══════════════════════════════════════════════════════ */
 @media (min-width: 1024px) {
+  .footer-grid {
+    grid-template-columns: minmax(0, 1.35fr) repeat(4, minmax(0, 1fr));
+    column-gap: clamp(1rem, 2vw, 2rem);
+  }
+
   .hero:not(.hero--legal) {
     height: auto;
     min-height: min(86vh, 54rem);
