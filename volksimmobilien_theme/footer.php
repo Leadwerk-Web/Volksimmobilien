@@ -9,7 +9,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-$home_url        = volks_get_page_url( 'volks-home-v1', home_url( '/' ) );
 $bewerten_url    = volks_get_page_url( 'volks-bewerten-v1', home_url( '/bewerten/' ) );
 $impressum_url   = volks_get_page_url( 'volks-impressum-v1', home_url( '/impressum/' ) );
 $datenschutz_url = volks_get_page_url( 'volks-datenschutz-v1', home_url( '/datenschutz/' ) );
@@ -18,7 +17,8 @@ $cookie_url      = function_exists( 'cmplz_get_document_url' )
 	: home_url( '/cookie-richtlinie-eu/' );
 $kontakt_url     = volks_section_url( 'kontakt-formular' );
 $logo_url        = volks_get_logo_url();
-$nav_items       = volks_get_main_nav_items();
+$footer_items    = function_exists( 'volks_get_footer_nav_items' ) ? volks_get_footer_nav_items() : volks_get_main_nav_items();
+$standort_items  = function_exists( 'volks_get_standort_nav_items' ) ? volks_get_standort_nav_items() : array();
 $offers_url      = post_type_exists( 'volks_property' ) ? get_post_type_archive_link( 'volks_property' ) : home_url( '/immobilien/' );
 ?>
 
@@ -36,11 +36,21 @@ $offers_url      = post_type_exists( 'volks_property' ) ? get_post_type_archive_
 		<div class="footer-col">
 			<h4>Navigation</h4>
 			<ul>
-				<?php foreach ( $nav_items as $item ) : ?>
+				<?php foreach ( $footer_items as $item ) : ?>
 					<li><a href="<?php echo esc_url( volks_nav_item_url( $item ) ); ?>"><?php echo esc_html( $item['label'] ); ?></a></li>
 				<?php endforeach; ?>
 			</ul>
 		</div>
+		<?php if ( $standort_items ) : ?>
+		<div class="footer-col footer-col--standorte">
+			<h4>Standorte</h4>
+			<ul>
+				<?php foreach ( $standort_items as $item ) : ?>
+					<li><a href="<?php echo esc_url( volks_nav_item_url( $item ) ); ?>"><?php echo esc_html( $item['label'] ); ?></a></li>
+				<?php endforeach; ?>
+			</ul>
+		</div>
+		<?php endif; ?>
 		<div class="footer-col">
 			<h4>Kontakt</h4>
 			<ul class="footer-contact">

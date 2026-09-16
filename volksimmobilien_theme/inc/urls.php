@@ -53,6 +53,23 @@ function volks_get_href_source_key_map() {
 }
 
 /**
+ * Static HTML slug without .html → source key (index excluded).
+ *
+ * @return array<string,string>
+ */
+function volks_get_slug_source_key_map() {
+	$out = array();
+	foreach ( volks_get_source_file_map() as $source_key => $file ) {
+		$slug = strtolower( (string) preg_replace( '#\.html$#i', '', (string) $file ) );
+		if ( '' === $slug || 'index' === $slug ) {
+			continue;
+		}
+		$out[ $slug ] = $source_key;
+	}
+	return $out;
+}
+
+/**
  * Find a page ID by leadwerk_source_key.
  *
  * @param string $source_key Source key.
@@ -96,6 +113,9 @@ function volks_get_page_url( $source_key, $fallback = '#' ) {
 	if ( $page_id > 0 ) {
 		$url = get_permalink( $page_id );
 		if ( is_string( $url ) && '' !== $url ) {
+			if ( false === strpos( $url, '?' ) && false === strpos( $url, '#' ) && function_exists( 'user_trailingslashit' ) ) {
+				return user_trailingslashit( $url );
+			}
 			return $url;
 		}
 	}
@@ -165,23 +185,11 @@ function volks_get_current_source_key() {
 		return $key;
 	}
 
-	$slug_map = array(
-		'home'                          => 'volks-home-v1',
-		'bewerten'                      => 'volks-bewerten-v1',
-		'kaufen'                        => 'volks-kaufen-v1',
-		'verkaufen'                     => 'volks-verkaufen-v1',
-		'mallorca'                      => 'volks-mallorca-v1',
-		'ausland'                       => 'volks-ausland-v1',
-		'immobilienmakler-durmersheim'  => 'volks-durmersheim-v1',
-		'impressum'                     => 'volks-impressum-v1',
-		'datenschutz'                   => 'volks-datenschutz-v1',
-		'danke'                         => 'volks-danke-v1',
-		'404'                           => 'volks-404-v1',
-	);
-
 	$slug = sanitize_key( (string) get_post_field( 'post_name', $post_id ) );
+	$map  = volks_get_slug_source_key_map();
+	$map['home'] = 'volks-home-v1';
 
-	return isset( $slug_map[ $slug ] ) ? $slug_map[ $slug ] : '';
+	return isset( $map[ $slug ] ) ? $map[ $slug ] : '';
 }
 
 /**
@@ -281,6 +289,91 @@ function volks_get_main_nav_items() {
 	);
 
 	return apply_filters( 'volks_main_nav_items', $items );
+}
+
+/**
+ * Footer navigation (broader than the header menu).
+ *
+ * @return array<int,array{label:string,source_key?:string,anchor?:string}>
+ */
+function volks_get_footer_nav_items() {
+	return array(
+		array(
+			'label'      => 'Start',
+			'source_key' => 'volks-home-v1',
+		),
+		array(
+			'label'      => 'Kaufen',
+			'source_key' => 'volks-kaufen-v1',
+		),
+		array(
+			'label'      => 'Verkaufen',
+			'source_key' => 'volks-verkaufen-v1',
+		),
+		array(
+			'label'      => 'Bewerten',
+			'source_key' => 'volks-bewerten-v1',
+		),
+		array(
+			'label'      => 'Gewerbeimmobilie verkaufen',
+			'source_key' => 'volks-gewerbe-v1',
+		),
+		array(
+			'label'      => 'Mehrfamilienhaus verkaufen',
+			'source_key' => 'volks-mfh-v1',
+		),
+		array(
+			'label'      => 'Ausland',
+			'source_key' => 'volks-ausland-v1',
+		),
+		array(
+			'label'      => 'Immobilien Mallorca',
+			'source_key' => 'volks-mallorca-v1',
+		),
+		array(
+			'label'      => 'Kontakt',
+			'source_key' => 'volks-home-v1',
+			'anchor'     => 'kontakt-formular',
+		),
+	);
+}
+
+/**
+ * Footer location pages for internal linking.
+ *
+ * @return array<int,array{label:string,source_key:string}>
+ */
+function volks_get_standort_nav_items() {
+	return array(
+		array(
+			'label'      => 'Immobilienmakler Au am Rhein',
+			'source_key' => 'volks-au-am-rhein-v1',
+		),
+		array(
+			'label'      => 'Immobilienmakler Durmersheim',
+			'source_key' => 'volks-durmersheim-v1',
+		),
+		array(
+			'label'      => 'Immobilienmakler Ettlingen',
+			'source_key' => 'volks-ettlingen-v1',
+		),
+		array(
+			'label'      => 'Immobilienmakler Gaggenau',
+			'source_key' => 'volks-gaggenau-v1',
+		),
+		array(
+			'label'      => 'Immobilienmakler Malsch',
+			'source_key' => 'volks-malsch-v1',
+		),
+		array(
+			'label'      => 'Immobilienmakler Rastatt',
+			'source_key' => 'volks-rastatt-v1',
+		),
+		array(
+			'label'      => 'Immobilienmakler Rheinstetten',
+			'source_key' => 'volks-rheinstetten-v1',
+		),
+	);
 }
 
 /**
@@ -431,14 +524,7 @@ function volks_resolve_href_inner( $href ) {
 				}
 
 				$slug_key = strtolower( preg_replace( '#\.html$#i', '', basename( $href_path ) ) );
-				$slug_map = array(
-					'bewerten'                     => 'volks-bewerten-v1',
-					'kaufen'                       => 'volks-kaufen-v1',
-					'verkaufen'                    => 'volks-verkaufen-v1',
-					'mallorca'                     => 'volks-mallorca-v1',
-					'ausland'                      => 'volks-ausland-v1',
-					'immobilienmakler-durmersheim' => 'volks-durmersheim-v1',
-				);
+				$slug_map = volks_get_slug_source_key_map();
 				if ( isset( $slug_map[ $slug_key ] ) ) {
 					$page_key = $slug_map[ $slug_key ];
 					if ( 'prozess' === $anchor && 'volks-verkaufen-v1' === $page_key ) {
@@ -507,17 +593,7 @@ function volks_resolve_href_inner( $href ) {
 	}
 
 	// Slug without .html (e.g. bewerten).
-	$slug_candidates = array(
-		'bewerten'                     => 'volks-bewerten-v1',
-		'kaufen'                       => 'volks-kaufen-v1',
-		'verkaufen'                    => 'volks-verkaufen-v1',
-		'mallorca'                     => 'volks-mallorca-v1',
-		'ausland'                      => 'volks-ausland-v1',
-		'immobilienmakler-durmersheim' => 'volks-durmersheim-v1',
-		'impressum'                    => 'volks-impressum-v1',
-		'datenschutz'                  => 'volks-datenschutz-v1',
-		'danke'                        => 'volks-danke-v1',
-	);
+	$slug_candidates = volks_get_slug_source_key_map();
 	$slug_key        = strtolower( preg_replace( '#\.html$#i', '', $normalized ) );
 	if ( isset( $slug_candidates[ $slug_key ] ) ) {
 		return volks_get_page_url( $slug_candidates[ $slug_key ], home_url( '/' ) ) . $fragment;

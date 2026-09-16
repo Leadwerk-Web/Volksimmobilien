@@ -240,3 +240,83 @@ function leadwerk_theme_enqueue_admin_yoast_analysis( $hook_suffix ) {
 	);
 }
 add_action( 'admin_enqueue_scripts', 'leadwerk_theme_enqueue_admin_yoast_analysis', 100 );
+
+/**
+ * Intended homepage SEO title (must not be stored or rendered with a 58-character ellipsis).
+ *
+ * @return string
+ */
+function volks_home_seo_title() {
+	return 'volksimmobilien | Immobilienmakler Heidelberg bis Baden-Baden';
+}
+
+/**
+ * Keep the full homepage title even if an older import stored a truncated Yoast value.
+ *
+ * @param string $title Current title.
+ * @return string
+ */
+function volks_filter_home_seo_title( $title ) {
+	if ( ! function_exists( 'is_front_page' ) || ! is_front_page() ) {
+		return $title;
+	}
+	return volks_home_seo_title();
+}
+add_filter( 'wpseo_title', 'volks_filter_home_seo_title', 30 );
+add_filter( 'wpseo_opengraph_title', 'volks_filter_home_seo_title', 30 );
+add_filter( 'pre_get_document_title', 'volks_filter_home_seo_title', 30 );
+
+/**
+ * Whether the queried page is a leftover imported 404 shell.
+ *
+ * @return bool
+ */
+function volks_is_imported_notfound_page() {
+	if ( ! function_exists( 'is_singular' ) || ! is_singular( 'page' ) ) {
+		return false;
+	}
+	$slug = sanitize_title( (string) get_post_field( 'post_name', get_queried_object_id() ) );
+	return in_array( $slug, array( '404', '404-2' ), true );
+}
+
+/**
+ * Keep leftover /404-2/ out of the index.
+ *
+ * @param string $robots Robots string.
+ * @return string
+ */
+function volks_filter_imported_notfound_yoast_robots( $robots ) {
+	if ( volks_is_imported_notfound_page() ) {
+		return 'noindex, follow';
+	}
+	return $robots;
+}
+add_filter( 'wpseo_robots', 'volks_filter_imported_notfound_yoast_robots' );
+
+/**
+ * Core robots array for leftover /404-2/.
+ *
+ * @param array<string,mixed> $robots Robots directives.
+ * @return array<string,mixed>
+ */
+function volks_filter_imported_notfound_wp_robots( $robots ) {
+	if ( volks_is_imported_notfound_page() ) {
+		$robots['noindex'] = true;
+		unset( $robots['index'] );
+	}
+	return $robots;
+}
+add_filter( 'wp_robots', 'volks_filter_imported_notfound_wp_robots' );
+
+/**
+ * Fallback robots meta when Yoast is inactive.
+ *
+ * @return void
+ */
+function volks_imported_notfound_robots_head() {
+	if ( ! volks_is_imported_notfound_page() || defined( 'WPSEO_VERSION' ) ) {
+		return;
+	}
+	echo '<meta name="robots" content="noindex, follow">' . "\n";
+}
+add_action( 'wp_head', 'volks_imported_notfound_robots_head', 1 );

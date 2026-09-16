@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Volksimmobilien Propstack
  * Description: Read-only Propstack sync with active listings, single-property pages and a sold-property gallery.
- * Version: 1.1.0
+ * Version: 1.1.1
  * Author: volksimmobilien km GmbH
  * Text Domain: volks-propstack
  * Requires at least: 6.6
@@ -13,7 +13,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-define( 'VOLKS_PROPSTACK_VERSION', '1.1.0' );
+define( 'VOLKS_PROPSTACK_VERSION', '1.1.1' );
 define( 'VOLKS_PROPSTACK_FILE', __FILE__ );
 define( 'VOLKS_PROPSTACK_PATH', plugin_dir_path( __FILE__ ) );
 define( 'VOLKS_PROPSTACK_URL', plugin_dir_url( __FILE__ ) );

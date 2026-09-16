@@ -189,12 +189,22 @@
 
     function loadCues(dialog) {
       var cuesEl = document.getElementById(dialog.id + 'Cues');
-      if (!cuesEl) return [];
+      if (!cuesEl) return Promise.resolve([]);
+      var src = cuesEl.getAttribute('href') || cuesEl.getAttribute('src');
+      if (src) {
+        return fetch(src).then(function (response) {
+          return response.ok ? response.json() : [];
+        }).then(function (parsed) {
+          return Array.isArray(parsed) ? parsed : [];
+        }).catch(function () {
+          return [];
+        });
+      }
       try {
         var parsed = JSON.parse(cuesEl.textContent);
-        return Array.isArray(parsed) ? parsed : [];
+        return Promise.resolve(Array.isArray(parsed) ? parsed : []);
       } catch (err) {
-        return [];
+        return Promise.resolve([]);
       }
     }
 
@@ -225,7 +235,10 @@
       var video = dialog.querySelector('video');
       var closeBtn = dialog.querySelector('[data-video-lightbox-close]');
       var captionEl = dialog.querySelector('[data-video-captions]');
-      var cues = loadCues(dialog);
+      var cues = [];
+      loadCues(dialog).then(function (loaded) {
+        cues = loaded;
+      });
 
       function openLightbox() {
         dialog.showModal();

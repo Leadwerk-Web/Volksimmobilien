@@ -3,27 +3,25 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="leadwerk:focus-keyphrase" content="Immobilie verkaufen Checkliste">
 <title>Checkliste Hausverkauf als PDF: alle Unterlagen auf einen Blick | volksimmobilien</title>
 <meta name="description" content="Welche Unterlagen brauchst Du für den Hausverkauf? Die kostenlose Checkliste als PDF: 31 Punkte, jeweils mit Amt, Dauer und Kosten. Für Haus, Wohnung und Grundstück.">
 <meta name="robots" content="index, follow">
-<link rel="icon" type="image/png" href="Fotos/Volksimmobilien%20-%20favicon.png">
-<link rel="shortcut icon" type="image/png" href="Fotos/Volksimmobilien%20-%20favicon.png">
-<link rel="canonical" href="https://volks.immobilien/verkaufs-checkliste.html">
+<link rel="icon" type="image/webp" href="assets/favicon.webp">
 <meta property="og:title" content="Checkliste Hausverkauf als PDF: alle Unterlagen auf einen Blick">
 <meta property="og:description" content="31 Punkte, jeweils mit Amt, Dauer und Kosten. Für Haus, Wohnung und Grundstück. Kostenlos als PDF.">
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://volks.immobilien/verkaufs-checkliste.html">
+
 <meta property="og:locale" content="de_DE">
 <meta property="og:site_name" content="volksimmobilien">
-<meta property="og:image" content="https://volks.immobilien/Fotos/verkaufs-checkliste-cover.webp">
+<meta property="og:image" content="Fotos/verkaufs-checkliste-cover.webp">
 <meta property="og:image:alt" content="Titelseite der Verkaufs-Checkliste von volksimmobilien">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://volks.immobilien/Fotos/verkaufs-checkliste-cover.webp">
+<meta name="twitter:image" content="Fotos/verkaufs-checkliste-cover.webp">
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css?v=intro-padding-64">
+<link rel="stylesheet" href="css/local-fonts.css">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/wpforms-contact.css">
 
 <script type="application/ld+json">
 {
@@ -117,6 +115,7 @@
 
     <div class="header-actions">
       <a href="#checkliste-anfordern" class="btn btn-primary btn-sm header-cta">Checkliste holen</a>
+      <div class="site-language-switcher" data-lw-language-switcher-slot hidden></div>
       <button class="hamburger" id="hamburger" aria-label="Menü öffnen" aria-controls="mobileOverlay" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
@@ -282,7 +281,7 @@
             <div class="home-contact-field home-contact-field--full home-contact-consent">
               <label class="home-contact-check">
                 <input type="checkbox" id="lm-consent" name="consent" value="1" required>
-                <span>Ich habe die <a href="datenschutz.html" target="_blank" rel="noopener">Datenschutzerklärung</a> zur Kenntnis genommen und möchte die Checkliste erhalten. <span class="home-contact-req">*</span></span>
+                <span>Ich habe die <a href="datenschutz.html" target="_blank" rel="noopener noreferrer">Datenschutzerklärung</a> zur Kenntnis genommen und möchte die Checkliste erhalten. <span class="home-contact-req">*</span></span>
               </label>
             </div>
           </div>
@@ -467,48 +466,6 @@
 </button>
 
 <script src="js/main.js"></script>
-<script>
-/* Freischaltung des Downloads.
-   Prototyp: prueft die Eingaben, gibt den Download frei und meldet das Ereignis an den
-   dataLayer. In WordPress uebernimmt das WPForms, siehe Uebergabe-Notiz im Kundenordner. */
-(function () {
-  var form = document.getElementById('leadmagnetForm');
-  var karte = document.getElementById('leadmagnetCard');
-  var erfolg = document.getElementById('leadmagnetSuccess');
-  if (!form || !karte || !erfolg) return;
-
-  form.addEventListener('submit', function (ev) {
-    ev.preventDefault();
-    if (!form.reportValidity()) return;
-
-    var plz = document.getElementById('lm-plz');
-    window.dataLayer = window.dataLayer || [];
-    window.dataLayer.push({
-      event: 'lw_leadmagnet_submit',
-      magnet: 'verkaufs-checkliste',
-      plz: plz ? plz.value || '' : '',
-      page_path: location.pathname
-    });
-
-    karte.hidden = true;
-    erfolg.hidden = false;
-    erfolg.scrollIntoView({ behavior: 'smooth', block: 'center' });
-    var link = document.getElementById('leadmagnetDownload');
-    if (link) link.focus();
-  });
-
-  var link = document.getElementById('leadmagnetDownload');
-  if (link) {
-    link.addEventListener('click', function () {
-      window.dataLayer = window.dataLayer || [];
-      window.dataLayer.push({
-        event: 'lw_leadmagnet_download',
-        magnet: 'verkaufs-checkliste',
-        page_path: location.pathname
-      });
-    });
-  }
-})();
-</script>
+<script src="js/leadmagnet.js"></script>
 </body>
 </html>

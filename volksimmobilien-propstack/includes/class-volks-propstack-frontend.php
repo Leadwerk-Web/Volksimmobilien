@@ -53,12 +53,19 @@ final class Volks_Propstack_Frontend {
 	public static function document_title_parts( $parts ) {
 		if ( self::is_sold_gallery() ) {
 			$parts['title'] = 'Verkaufte Immobilien';
+			return $parts;
+		}
+		if ( is_post_type_archive( Volks_Propstack_Post_Type::POST_TYPE ) ) {
+			$parts['title'] = self::archive_title();
 		}
 		return $parts;
 	}
 
 	public static function sold_gallery_head() {
 		if ( ! self::is_sold_gallery() ) {
+			return;
+		}
+		if ( defined( 'WPSEO_VERSION' ) ) {
 			return;
 		}
 		echo '<link rel="canonical" href="' . esc_url( self::sold_gallery_url() ) . '">' . "\n";
@@ -303,12 +310,28 @@ final class Volks_Propstack_Frontend {
 		<?php
 	}
 
+	public static function archive_page_number() {
+		$paged = (int) get_query_var( 'paged' );
+		if ( $paged < 2 ) {
+			$paged = (int) get_query_var( 'page' );
+		}
+		return max( 1, $paged );
+	}
+
+	public static function archive_title() {
+		$page = self::archive_page_number();
+		if ( $page > 1 ) {
+			return sprintf( 'Aktuelle Immobilienangebote – Seite %d', $page );
+		}
+		return 'Aktuelle Immobilienangebote';
+	}
+
 	public static function seo_title( $title ) {
 		if ( self::is_sold_gallery() ) {
 			return 'Verkaufte Immobilien | volksimmobilien';
 		}
 		if ( is_post_type_archive( Volks_Propstack_Post_Type::POST_TYPE ) ) {
-			return 'Aktuelle Immobilienangebote | volksimmobilien';
+			return self::archive_title() . ' | volksimmobilien';
 		}
 		if ( is_singular( Volks_Propstack_Post_Type::POST_TYPE ) ) {
 			return get_the_title() . ' | volksimmobilien';

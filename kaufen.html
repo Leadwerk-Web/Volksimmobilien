@@ -3,26 +3,24 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="leadwerk:focus-keyphrase" content="Immobilie kaufen Karlsruhe">
 <title>Immobilie kaufen von Heidelberg bis Baden-Baden | volksimmobilien</title>
 <meta name="description" content="Immobilienangebote entdecken, Suchwunsch hinterlegen und den Kauf persönlich begleiten lassen – transparent zwischen Heidelberg und Baden-Baden.">
-<link rel="icon" type="image/png" href="Fotos/Volksimmobilien%20-%20favicon.png">
-<link rel="shortcut icon" type="image/png" href="Fotos/Volksimmobilien%20-%20favicon.png">
-<link rel="canonical" href="https://volks.immobilien/kaufen.html">
+<link rel="icon" type="image/webp" href="assets/favicon.webp">
 <meta property="og:title" content="Immobilie kaufen von Heidelberg bis Baden-Baden | volksimmobilien">
 <meta property="og:description" content="Immobilienangebote, Suchwunsch und Orientierung beim Haus- oder Wohnungskauf von Heidelberg bis Baden-Baden – mit regionaler Marktkenntnis und klarem Prozess.">
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://volks.immobilien/kaufen.html">
+
 <meta property="og:locale" content="de_DE">
 <meta property="og:site_name" content="volksimmobilien">
-<meta property="og:image" content="https://volks.immobilien/Fotos/volksimmobilien_kaufen.webp">
+<meta property="og:image" content="Fotos/volksimmobilien_kaufen.webp">
 <meta property="og:image:alt" content="Immobilie kaufen – volksimmobilien">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://volks.immobilien/Fotos/volksimmobilien_kaufen.webp">
+<meta name="twitter:image" content="Fotos/volksimmobilien_kaufen.webp">
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/local-fonts.css">
 <link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/wpforms-contact.css">
 
 <script type="application/ld+json">
 {
@@ -148,6 +146,7 @@
 
     <div class="header-actions">
       <a href="index.html#kontakt-formular" class="btn btn-primary btn-sm header-cta">Kontakt aufnehmen</a>
+      <div class="site-language-switcher" data-lw-language-switcher-slot hidden></div>
       <button class="hamburger" id="hamburger" aria-label="Menü öffnen" aria-controls="mobileOverlay" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
@@ -196,7 +195,7 @@
           Ob Eigenheim, Eigentumswohnung oder Kapitalanlage: Wir helfen Ihnen, Angebote realistisch einzuordnen und den Kauf transparent zu verstehen – persönlich vor Ort zwischen Heidelberg und Baden-Baden, ohne Druck und ohne leere Versprechen.
         </p>
         <div class="hero-actions reveal">
-          <a href="/immobilien/" class="btn btn-primary btn-lg">Immobilien ansehen</a>
+          <a href="kaufen.html" data-volks-listings="archive" class="btn btn-primary btn-lg">Immobilien ansehen</a>
           <a href="index.html#kontakt-formular" class="btn btn-primary btn-lg">Suchwunsch hinterlegen</a>
           <a href="index.html#kontakt-formular" class="btn btn-ghost-light btn-lg">Kontakt aufnehmen</a>
         </div>
@@ -367,7 +366,7 @@
         <p class="section-subtitle">Entdecken Sie unsere aktuellen Immobilienangebote von Heidelberg bis Baden-Baden. Mit einem Klick auf das gewünschte Immobilienangebot gelangen Sie zur Detailansicht.</p>
       </div>
       <div class="listings-grid reveal">
-        <a href="/immobilien/" class="listing-card">
+        <a href="kaufen.html" data-volks-listings="archive" class="listing-card">
           <div class="listing-card-image">
             <img src="Fotos/Angebot1.webp" alt="Einfamilienhaus im Raum Heidelberg" loading="lazy">
             <span class="listing-card-badge">Beispiel</span>
@@ -389,7 +388,7 @@
             <span class="listing-card-cta">Immobilienangebot ansehen</span>
           </div>
         </a>
-        <a href="/immobilien/" class="listing-card">
+        <a href="kaufen.html" data-volks-listings="archive" class="listing-card">
           <div class="listing-card-image">
             <img src="Fotos/Angebot2.webp" alt="Eigentumswohnung im Rhein-Neckar-Kreis" loading="lazy">
           </div>
@@ -410,7 +409,7 @@
             <span class="listing-card-cta">Immobilienangebot ansehen</span>
           </div>
         </a>
-        <a href="/immobilien/" class="listing-card">
+        <a href="kaufen.html" data-volks-listings="archive" class="listing-card">
           <div class="listing-card-image">
             <img src="Fotos/Angebot3.webp" alt="Mehrfamilienhaus im Raum Baden-Baden" loading="lazy">
             <span class="listing-card-badge listing-card-badge--reserved">Reserviert</span>
@@ -434,7 +433,7 @@
         </a>
       </div>
       <div class="listings-cta reveal section-cta-row section-cta-row--compact">
-        <a href="/immobilien/" class="btn btn-primary btn-lg">Alle Immobilienangebote</a>
+        <a href="kaufen.html" data-volks-listings="archive" class="btn btn-primary btn-lg">Alle Immobilienangebote</a>
         <a href="index.html#kontakt-formular" class="btn btn-outline btn-lg">Suchwunsch hinterlegen</a>
       </div>
     </div>
@@ -863,7 +862,7 @@
         <p class="cta-lead">Teilen Sie uns mit, wonach Sie suchen. So können wir Sie gezielt informieren, wenn eine passende Immobilie verfügbar wird.</p>
         <div class="cta-actions cta-actions--main">
           <a href="index.html#kontakt-formular" class="btn btn-primary btn-lg">Suchwunsch hinterlegen</a>
-          <a href="/immobilien/" class="btn btn-outline-accent btn-lg">Immobilien ansehen</a>
+          <a href="kaufen.html" data-volks-listings="archive" class="btn btn-outline-accent btn-lg">Immobilien ansehen</a>
         </div>
         <p class="cta-divider"><span>oder</span></p>
         <div class="cta-actions cta-actions--secondary">
@@ -884,8 +883,8 @@
       <p>Immobilienmakler von Heidelberg bis Baden-Baden. Persönlich vor Ort, ehrlich eingeordnet, klar im Prozess.</p>
       <div class="footer-cta-row">
         <a href="index.html#kontakt-formular" class="btn btn-primary btn-sm">Kontakt</a>
-        <a href="/immobilien/" class="btn btn-outline-light btn-sm">Angebote</a>
-        <a href="/immobilien/" class="btn btn-outline-light btn-sm">Alle Exposés</a>
+        <a href="kaufen.html" data-volks-listings="archive" class="btn btn-outline-light btn-sm">Angebote</a>
+        <a href="kaufen.html" data-volks-listings="archive" class="btn btn-outline-light btn-sm">Alle Exposés</a>
       </div>
     </div>
     <div class="footer-col">
